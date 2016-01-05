@@ -53,10 +53,11 @@
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\JsonConvert.cs" />
+    <Compile Include="Serialization\XmlConvert.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
-    <Folder Include="Serialization\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
