@@ -8,7 +8,7 @@ namespace Nebula.Utilities.Convert
     public static class DictionaryObjectConvert
     {
         /// <summary>
-        /// 对象契约转排序字典
+        /// 契约对象转排序字典
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
