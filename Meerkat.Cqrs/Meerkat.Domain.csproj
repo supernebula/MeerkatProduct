@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Aggregates\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Factories\" />
-    <Folder Include="Models\Aggregates\" />
     <Folder Include="Models\Entities\" />
     <Folder Include="Models\Values\" />
     <Folder Include="Repositories\" />
