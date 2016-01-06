@@ -10,9 +10,32 @@ namespace Nebula.Utilities.Serialization
     public static class XmlConvert
     {
 
-
+        public static T DeSerialize<T>(string xml)
+        {
+            T obj;
+            using (StringReader reader = new StringReader(xml))
+            {
+                var ser = new XmlSerializer(typeof(T));
+                obj = (T)ser.Deserialize(reader);
+            }
+            return obj;
+        }
 
         public static string Serialize(object obj)
+        {
+            string str;
+            using(var ms1 = new MemoryStream())
+            {
+                var writer = new XmlTextWriter(ms1, Encoding.UTF8);
+                var ser = new XmlSerializer(obj.GetType());
+                ser.Serialize(writer, obj);
+                str = Encoding.UTF8.GetString(ms1.ToArray());
+                writer.Close();
+            }
+            return str;
+        }
+
+        public static string SerializeNoXmlNs(object obj)
         {
             string result = null;
             var setting = new XmlWriterSettings();
@@ -33,9 +56,6 @@ namespace Nebula.Utilities.Serialization
         }
 
 
-        public static T DeSerialize<T>(string str)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

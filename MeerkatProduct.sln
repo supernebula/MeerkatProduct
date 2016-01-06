@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeerkatProduct", "MeerkatProduct\MeerkatProduct.csproj", "{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1B0B30AF-E41A-4719-AC85-97DB64FC8135}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities", "Nebula.Utilities\Nebula.Utilities.csproj", "{8431D32B-C3BA-4EFB-B85D-7BC70798F571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities.Test", "Nebula.Utilities.Test\Nebula.Utilities.Test.csproj", "{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +31,16 @@ Global
 		{8431D32B-C3BA-4EFB-B85D-7BC70798F571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8431D32B-C3BA-4EFB-B85D-7BC70798F571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8431D32B-C3BA-4EFB-B85D-7BC70798F571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8431D32B-C3BA-4EFB-B85D-7BC70798F571} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 	EndGlobalSection
 EndGlobal
