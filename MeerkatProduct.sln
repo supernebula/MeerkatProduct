@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities", "Nebula.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities.Test", "Nebula.Utilities.Test\Nebula.Utilities.Test.csproj", "{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Repository", "Nebula.Repository\Nebula.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Repository.Test", "Nebula.Repository.Test\Nebula.Repository.Test.csproj", "{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8431D32B-C3BA-4EFB-B85D-7BC70798F571} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{8F600136-F3FB-4FC3-8CDF-982FD06CAC71} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{CD58A276-8A17-44FD-8764-09AD2E5403C4} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 	EndGlobalSection
 EndGlobal
