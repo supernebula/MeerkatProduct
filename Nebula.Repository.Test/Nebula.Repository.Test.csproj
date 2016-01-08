@@ -59,12 +59,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BaseDbContextTest.cs" />
+    <Compile Include="ProductDbContextTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Repository\Nebula.Repository.csproj">
+      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
+      <Name>Nebula.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Nebula.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

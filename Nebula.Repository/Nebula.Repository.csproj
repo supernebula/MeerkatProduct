@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Map\ProductMap.cs" />
+    <Compile Include="Migrations\201601081308395_Create-Table.cs" />
+    <Compile Include="Migrations\201601081308395_Create-Table.Designer.cs">
+      <DependentUpon>201601081308395_Create-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="ProductDbContext.cs" />
     <Compile Include="Class1.cs" />
@@ -59,7 +64,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601081308395_Create-Table.resx">
+      <DependentUpon>201601081308395_Create-Table.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

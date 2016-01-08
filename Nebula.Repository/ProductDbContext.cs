@@ -6,20 +6,34 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Nebula.Repository.Map;
+using Nebula.Repository.Model;
 
 namespace Nebula.Repository
 {
     public class ProductDbContext : DbContext
     {
+        private static ProductDbContext _instance;
 
-        static ProductDbContext()
+        public static ProductDbContext Instance
         {
-            Database.SetInitializer<ProductDbContext>(new CreateDatabaseIfNotExists<ProductDbContext>());
+            get
+            {
+                if (_instance == null)
+                    _instance = new ProductDbContext();
+                return _instance;
+            }
+        }
+
+    static ProductDbContext()
+        {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ProductDbContext>());
         }
         public ProductDbContext() : base("name=productContext")
         {
             Configuration.LazyLoadingEnabled = false;
         }
+
+        public DbSet<Product> Pruducts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
