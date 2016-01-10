@@ -10,6 +10,7 @@ namespace Nebula.Repository.Repository
 {
     public interface IRepository<T> where T : IPrimaryKey
     {
+        void Add(T entity);
         T Find(Guid id);
 
         T Find(Expression<Func<T, bool>> predicate);
