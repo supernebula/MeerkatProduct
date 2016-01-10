@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.Repository.Model
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public Guid ID { get; set; }
-
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -21,9 +19,8 @@ namespace Nebula.Repository.Model
         public string SourceUri { get; set; }
 
         public string SourceSite { get; set; }
-        public DateTime CreateDate { get; set; }
 
-
+        public IEnumerable<SpecValue> Specs { get; set; }
 
     }
 }

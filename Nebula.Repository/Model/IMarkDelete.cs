@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.Repository.Model
 {
-    public class SpecValue : BaseEntity
+    public interface IMarkDelete
     {
-
-        public Guid SpecID { get; set; }
-
-        public string Value { get; set; }
+        bool MarkDelete { get; set; }
     }
 }

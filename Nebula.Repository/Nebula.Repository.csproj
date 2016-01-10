@@ -55,9 +55,16 @@
       <DependentUpon>201601081308395_Create-Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
+    <Compile Include="Model\Categary.cs" />
+    <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\IMarkDelete.cs" />
+    <Compile Include="Model\IPrimaryKey.cs" />
+    <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Spec.cs" />
     <Compile Include="Model\SpecValue.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="ProductDbContext.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

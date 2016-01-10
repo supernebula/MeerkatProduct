@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.Repository.Model
 {
-    public class SpecValue : BaseEntity
+    public class Order : BaseEntity
     {
-
-        public Guid SpecID { get; set; }
-
-        public string Value { get; set; }
     }
 }
