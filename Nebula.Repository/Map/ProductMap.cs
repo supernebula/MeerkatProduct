@@ -13,7 +13,7 @@ namespace Nebula.Repository.Map
     {
         public ProductMap()
         {
-            this.HasKey(e => e.Id);
+            this.HasKey(e => e.ID);
             this.Property(e => e.Name).IsRequired().HasMaxLength(100);
             this.Property(e => e.Description).IsOptional().HasMaxLength(8000);
             this.Property(e => e.SourceUri).HasMaxLength(500);

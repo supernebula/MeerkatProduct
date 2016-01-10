@@ -43,7 +43,7 @@ namespace Nebula.Repository.Test
         {
             var model = new Product()
             {
-                Id = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB"),
+                ID = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB"),
                 Name = "华为荣耀9手机 国产精品",
                 Description = "华为荣耀9手机，国产精品,7天无理由退货",
                 Price = 1999.00,
@@ -93,7 +93,7 @@ namespace Nebula.Repository.Test
         {
             using (var context = ProductDbContext.Instance)
             {
-                var model = new Product() { Id = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB") };
+                var model = new Product() { ID = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB") };
                 context.Set<Product>().Attach(model);
                 //附加关联数据
                 //context.Entry(product)
@@ -110,7 +110,7 @@ namespace Nebula.Repository.Test
         {
             using (var context = ProductDbContext.Instance)
             {
-                var model = new Product() { Id = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB") };
+                var model = new Product() { ID = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB") };
                 context.Entry(model).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -209,11 +209,20 @@ namespace Nebula.Repository.Test
         {
             using (var context = ProductDbContext.Instance)
             {
-                var model = context.Set<Product>().AsNoTracking<Product>().Where(e => e.Id == new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB")).SingleOrDefault();
+                var model = context.Set<Product>().AsNoTracking<Product>().Where(e => e.ID == new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB")).SingleOrDefault();
                 Assert.IsNotNull(model, "该记录不存在");
                 model.Price = 2499.00;
                 context.SaveChanges();//对NoTracking 实体更新，将失败
 
+            }
+        }
+
+        [TestMethod]
+        public void NoMapTest()
+        {
+            using(var context = ProductDbContext.Instance)
+            {
+                var model = context.Set<Spec>().ToList();
             }
         }
 
