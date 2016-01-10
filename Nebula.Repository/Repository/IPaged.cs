@@ -13,11 +13,12 @@ namespace Nebula.Repository.Repository
 
     public interface IPaged
     {
-        int Count { get; set; }
+        int PageCount { get; set; }
+        int RecordCount { get; set; }
 
-        int index { get; set; }
+        int Index { get; set; }
 
-        int site { get; set; }
+        int Size { get; set; }
 
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeerkatProduct", "MeerkatProduct\MeerkatProduct.csproj", "{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}"
 EndProject
@@ -16,6 +16,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Repository", "Nebula.Repository\Nebula.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Repository.Test", "Nebula.Repository.Test\Nebula.Repository.Test.csproj", "{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26F1E490-D348-4EA0-AF52-8CBA2D2F0F1B}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
