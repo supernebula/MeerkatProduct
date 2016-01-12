@@ -196,6 +196,13 @@ namespace Nebula.Repository.Test
             var list = ProductDbContext.Instance.Database.SqlQuery<TempProduct>("SELECT [Name],[Price] From [Product] WHERE [Price] > {0}", 1500).ToListAsync().Result;
         }
 
+        [TestMethod]
+        public void DbParamSqlQueryTest()
+        {
+            var list = ProductDbContext.Instance.Database.ExecuteSqlCommand("");
+                Database.SqlQuery<TempProduct>("SELECT [Name],[Price] From [Product] WHERE [Price] > {0}", 1500).ToListAsync().Result;
+        }
+
 
         [TestMethod]
         public void DbSetQueryTest()
