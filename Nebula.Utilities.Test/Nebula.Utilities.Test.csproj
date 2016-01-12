@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
+    <Compile Include="Sql\SqlWhereTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

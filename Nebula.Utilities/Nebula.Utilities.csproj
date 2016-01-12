@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\JsonConvert.cs" />
     <Compile Include="Serialization\XmlConvert.cs" />
+    <Compile Include="Sql\SqlWhere.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
