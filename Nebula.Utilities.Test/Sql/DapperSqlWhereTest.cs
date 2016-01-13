@@ -3,18 +3,20 @@ using Nebula.Utilities.Sql;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Repository;
+using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace Nebula.Utilities.Test.Sql
 {
     [TestClass]
-    public class SqlWhereTest
+    public class DapperSqlWhereTest
     {
         [TestMethod]
         public void SelectSimpleTest()
         {
             var param = new { Id = Guid.NewGuid(), Name = "手机" };
 
-            var sql = SqlWhere.Create("Select * From [Product]")
+            var sql = DapperSqlWhere.Create("Select * From [Product]")
                 .And("Id = @Id", "value").Like("Name", "@Name", param.Name)
                 .ToSqlString();
             Assert.IsNotNull(sql, "语句为空");
@@ -23,8 +25,6 @@ namespace Nebula.Utilities.Test.Sql
 
         public void SelectParameterTest()
         {
-            
-            ProductDbContext.Instance.Database.ExecuteSqlCommand("");
             
         }
     }

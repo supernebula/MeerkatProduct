@@ -6,7 +6,7 @@ namespace Nebula.Utilities.Sql
     /// <summary>
     /// 
     /// </summary>
-    public class SqlWhere
+    public class DapperSqlWhere
     {
 
         string sqlMainStatement;
@@ -15,7 +15,7 @@ namespace Nebula.Utilities.Sql
         // List<string> cdtFragment;
 
 
-        public SqlWhere(string sqlMainStatement)
+        public DapperSqlWhere(string sqlMainStatement)
         {
             this.sqlMainStatement = sqlMainStatement;
             cdtFragment = new StringBuilder();
@@ -25,9 +25,9 @@ namespace Nebula.Utilities.Sql
         /// </summary>
         /// <param name="sqlMainStatement">SELECT * FROM  [TableName]</param>
         /// <returns></returns>
-        public static SqlWhere Create(string sqlMainStatement)
+        public static DapperSqlWhere Create(string sqlMainStatement)
         {
-            return new SqlWhere(sqlMainStatement);
+            return new DapperSqlWhere(sqlMainStatement);
         }
 
 
@@ -41,7 +41,7 @@ namespace Nebula.Utilities.Sql
         /// <param name="cdt">[ColumnName]=@Value1</param>
         /// <param name="value">SqlConditionBuilder</param>
         /// <returns></returns>
-        public SqlWhere And(string cdt, object value)
+        public DapperSqlWhere And(string cdt, object value)
         {
             return AddCondition(cdt, value, ConstraintType.And);
         }
@@ -52,7 +52,7 @@ namespace Nebula.Utilities.Sql
         /// <param name="cdt">[ColumnName]=@Value1</param>
         /// <param name="value">SqlConditionBuilder</param>
         /// <returns></returns>
-        public SqlWhere Or(string cdt, object value)
+        public DapperSqlWhere Or(string cdt, object value)
         {
             return AddCondition(cdt, value, ConstraintType.Or);
         }
@@ -66,17 +66,17 @@ namespace Nebula.Utilities.Sql
         /// <param name="ruleFormat"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public SqlWhere Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
+        public DapperSqlWhere Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
         {
             return AddCondition(columnName + SqlFragment.LIKE + String.Format(ruleFormat, paramName), value, ConstraintType.Or);
         }
 
-        public SqlWhere OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
+        public DapperSqlWhere OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
         {
             return Like(columnName, paramName, value, ruleFormat, ConstraintType.Or);
         }
 
-        SqlWhere AddCondition(string cdt, object value, ConstraintType type)
+        DapperSqlWhere AddCondition(string cdt, object value, ConstraintType type)
         {
             if (value == null)
                 return this;
@@ -92,9 +92,9 @@ namespace Nebula.Utilities.Sql
         }
 
 
-        public SqlWhere AddConditionExpression(Func<SqlWhere, SqlWhere> expression, ConstraintType type)
+        public DapperSqlWhere AddConditionExpression(Func<DapperSqlWhere, DapperSqlWhere> expression, ConstraintType type)
         {
-            var tempBuilder = new SqlWhere(null);
+            var tempBuilder = new DapperSqlWhere(null);
             expression.Invoke(tempBuilder);
             if (tempBuilder.cdtFragment.Length == 0)
                 return this;
@@ -109,7 +109,7 @@ namespace Nebula.Utilities.Sql
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        public SqlWhere AndExpression(Func<SqlWhere, SqlWhere> expression)
+        public DapperSqlWhere AndExpression(Func<DapperSqlWhere, DapperSqlWhere> expression)
         {
 
             return AddConditionExpression(expression, ConstraintType.And);
@@ -120,7 +120,7 @@ namespace Nebula.Utilities.Sql
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        public SqlWhere OrExpression(Func<SqlWhere, SqlWhere> expression)
+        public DapperSqlWhere OrExpression(Func<DapperSqlWhere, DapperSqlWhere> expression)
         {
             return AddConditionExpression(expression, ConstraintType.Or);
         }
@@ -130,7 +130,6 @@ namespace Nebula.Utilities.Sql
         #region Order by
 
         #endregion
-
 
         /// <summary>
         /// return complete sql statement
@@ -192,68 +191,7 @@ namespace Nebula.Utilities.Sql
 
 
 
-    /// <summary>
-    /// Where, And, Or
-    /// </summary>
-    public enum ConstraintType
-    {
-        /// <summary>
-        /// WHERE operator
-        /// </summary>
-        Where,
-        /// <summary>
-        /// AND operator
-        /// </summary>
-        And,
-        /// <summary>
-        /// OR Operator
-        /// </summary>
-        Or
-    }
 
 
-    /// <summary>
-    /// Summary for the SqlFragment class
-    /// </summary>
-    public static class SqlFragment
-    {
-        public const string AND = " AND ";
-        public const string AS = " AS ";
-        public const string ASC = " ASC";
-        public const string BETWEEN = " BETWEEN ";
-        public const string CROSS_JOIN = " CROSS JOIN ";
-        public const string DELETE_FROM = "DELETE FROM ";
-        public const string DESC = " DESC";
-        public const string DISTINCT = "DISTINCT ";
-        public const string EQUAL_TO = " = ";
-        public const string FROM = " FROM ";
-        public const string GROUP_BY = " GROUP BY ";
-        public const string HAVING = " HAVING ";
-        public const string IN = " IN ";
-        public const string LIKE = " LIKE ";
 
-        public const string INNER_JOIN = " INNER JOIN ";
-
-        public const string INSERT_INTO = "INSERT INTO ";
-        public const string JOIN_PREFIX = "J";
-        public const string LEFT_INNER_JOIN = " LEFT INNER JOIN ";
-        public const string LEFT_JOIN = " LEFT JOIN ";
-        public const string LEFT_OUTER_JOIN = " LEFT OUTER JOIN ";
-        public const string NOT_EQUAL_TO = " <> ";
-        public const string NOT_IN = " NOT IN ";
-        public const string ON = " ON ";
-        public const string OR = " OR ";
-        public const string ORDER_BY = " ORDER BY ";
-        public const string OUTER_JOIN = " OUTER JOIN ";
-        public const string RIGHT_INNER_JOIN = " RIGHT INNER JOIN ";
-        public const string RIGHT_JOIN = " RIGHT JOIN ";
-        public const string RIGHT_OUTER_JOIN = " RIGHT OUTER JOIN ";
-        public const string SELECT = "SELECT ";
-        public const string SET = " SET ";
-        public const string SPACE = " ";
-        public const string TOP = "TOP ";
-        public const string UNEQUAL_JOIN = " JOIN ";
-        public const string UPDATE = "UPDATE ";
-        public const string WHERE = " WHERE ";
-    }
 }

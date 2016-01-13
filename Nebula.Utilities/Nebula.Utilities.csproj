@@ -55,7 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\JsonConvert.cs" />
     <Compile Include="Serialization\XmlConvert.cs" />
-    <Compile Include="Sql\SqlWhere.cs" />
+    <Compile Include="Sql\ConstraintType.cs" />
+    <Compile Include="Sql\DapperSqlWhere.cs" />
+    <Compile Include="Sql\EFSqlWhere.cs" />
+    <Compile Include="Sql\SqlFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />

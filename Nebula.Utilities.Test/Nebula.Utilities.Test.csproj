@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <Choose>
@@ -64,7 +65,8 @@
   <ItemGroup>
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
-    <Compile Include="Sql\SqlWhereTest.cs" />
+    <Compile Include="Sql\DapperSqlWhereTest.cs" />
+    <Compile Include="Sql\SqlBuilderTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
