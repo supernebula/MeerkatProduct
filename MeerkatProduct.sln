@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeerkatProduct", "MeerkatProduct\MeerkatProduct.csproj", "{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}"
 EndProject
@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyntaxTest.cs", "SyntaxTest.cs\SyntaxTest.cs.csproj", "{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cache", "Nebula.Cache\Nebula.Cache.csproj", "{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cache.Test", "Nebula.Cache.Test\Nebula.Cache.Test.csproj", "{72804F53-5EB2-4E8C-874A-02C501ECFA6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +62,14 @@ Global
 		{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +80,6 @@ Global
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{6D9BBEFC-EDC8-499A-890D-2B0CF49A9552} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 	EndGlobalSection
 EndGlobal
