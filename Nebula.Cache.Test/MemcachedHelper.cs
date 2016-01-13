@@ -19,7 +19,7 @@ namespace Nebula.Cache.Test
         {
             _client = new MemcachedClient(new MemcachedClientConfiguration()
             {
-                /// init   param
+                /// init   paramd  
             });
         }
 
