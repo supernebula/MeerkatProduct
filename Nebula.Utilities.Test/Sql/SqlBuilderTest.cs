@@ -10,15 +10,15 @@ namespace Nebula.Utilities.Test.Sql
         [TestMethod]
         public void SimpleSqlTest()
         {
-            var sqlBuilder = SqlBuilder.Create("Select * From Product")
-                .And("Name Like '%' + @Name + '%'", "@Name", "手机")
-                .And("Price > @Price", "@Price", 1300)
-                .AndExpression(s => s.And("Site = @Site", "@Site", "jd.com").Or("Site = @Site", "@Site", "taoba.com"));
+            var sqlWhereBuilder = SqlWhereBuilder.Create("Select * From Product")
+                .And("Name Like '%' + {0} + '%'", "@Name", "手机")
+                .And("Price > {0}", "@Price", 1300)
+                .AndExpression(s => s.And("Site = {0}", "@Site", "jd.com").Or("Site = {0}", "@Site", "taoba.com"));
                 
 
-            var sql = sqlBuilder.ToSqlString();
+            var sql = sqlWhereBuilder.ToSqlString();
             Trace.WriteLine(sql);
-            var sqlParam = sqlBuilder.ToSqlParameters();
+            var sqlParam = sqlWhereBuilder.ToSqlParameters();
             Trace.WriteLine(sqlParam.Count);
         }
     }
