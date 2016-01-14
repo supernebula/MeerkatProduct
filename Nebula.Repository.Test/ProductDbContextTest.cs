@@ -234,6 +234,38 @@ namespace Nebula.Repository.Test
             }
         }
 
+
+        public Expression<Func<Product, bool>> DynamicExpressionQuery()
+        {
+            var price1 = 1500.00;
+            var name1 = "xiaomi";
+            Expression<Func<Product, bool>> predicate1 = p => p.Price > price1;
+            Expression<Func<Product, bool>> predicate2 = p => p.Name.Contains(name1);
+
+            var invokeExp2 = Expression.Invoke(predicate2, predicate2.Parameters);
+            var query = Expression.Lambda<Func<Product, bool>>(Expression.Or(predicate1.Body, invokeExp2), predicate1.Parameters);
+            return query;
+        }
+
+        [TestMethod]
+        public void DynamicQueryTest()
+        {
+            var query = DynamicExpressionQuery();
+
+            using (var context = ProductDbContext.Instance)
+            {
+                try
+                {
+                    var model = context.Set<Product>().AsQueryable().Where(query).ToList();
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.Message);
+                }
+                
+            }
+        }
+
         #endregion
     }
 }

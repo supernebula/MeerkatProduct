@@ -63,6 +63,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Expressions\ExpressionBuilderTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
     <Compile Include="Sql\DapperSqlWhereTest.cs" />

@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Nebula.Cache.Test
 {
-    public static class MemcachedHelper
+    public static class MemcachedHelper2
     {
         private static MemcachedClient _client;
 
-        static MemcachedHelper()
+        static MemcachedHelper2()
         {
             _client = new MemcachedClient(new MemcachedClientConfiguration()
             {
