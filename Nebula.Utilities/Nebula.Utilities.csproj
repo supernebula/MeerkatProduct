@@ -50,6 +50,7 @@
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
     <Compile Include="Extension\DateExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Linq\LinqLambdaWhere.cs" />
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

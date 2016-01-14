@@ -27,6 +27,7 @@ namespace Nebula.Repository.Test
         [TestMethod]
         public void DbSetSqlQueryTest()
         {
+            var count = DbSet.Count();
             //var result = ProductDbContext.Instance.Database.SqlQuery<Product>("select * from [Product]").ToListAsync().Result;
             var values = DbSet.SqlQuery("select * from [Product]").ToListAsync().Result;
         }
