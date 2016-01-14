@@ -63,7 +63,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Expressions\ExpressionBuilderTest.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\Dynamic.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\DynamicQuery.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\ExpressionVisitor.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\ExpressionVisitorT.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\LinqToSqlExtensions.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\ObjectConverter.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\ObjectDumper.cs" />
+    <Compile Include="Expressions\Linq2SqlExtension\ParameterConverter.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
     <Compile Include="Sql\DapperSqlWhereTest.cs" />
@@ -85,6 +92,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
