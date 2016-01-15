@@ -8,7 +8,7 @@ namespace Nebula.Repository.Model
 {
     public class Product : BaseEntity
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         public string Description { get; set; }
 
@@ -20,7 +20,19 @@ namespace Nebula.Repository.Model
 
         public string SourceSite { get; set; }
 
+        public ProductStatusType Status { get; set; }
+
         public IEnumerable<SpecValue> Specs { get; set; }
 
+    }
+
+
+    public enum ProductStatusType
+    {
+        Normal,
+
+        SellOut,
+
+        OutOfStock,
     }
 }

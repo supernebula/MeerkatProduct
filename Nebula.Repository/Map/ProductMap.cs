@@ -15,7 +15,7 @@ namespace Nebula.Repository.Map
         {
             this.ToTable("Product");
             this.HasKey(e => e.ID);
-            this.Property(e => e.Name).IsRequired().HasMaxLength(100).HasColumnName("Name");
+            this.Property(e => e.Title).IsRequired().HasMaxLength(100).HasColumnName("Name");
             this.Property(e => e.Description).IsOptional().HasMaxLength(8000);
             this.Property(e => e.SourceUri).HasMaxLength(500);
             this.Property(e => e.SourceSite).HasMaxLength(100);

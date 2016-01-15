@@ -6,6 +6,7 @@ using Nebula.Repository.Model;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using System.Linq;
+using Nebula.Utilities.Expressions;
 
 namespace Nebula.Repository.Test
 {
@@ -32,7 +33,12 @@ namespace Nebula.Repository.Test
             var values = DbSet.SqlQuery("select * from [Product]").ToListAsync().Result;
         }
 
-
+        [TestMethod]
+        public void DynamiclQueryTest()
+        {
+            var predicate = ExpressionBuildExtension.True<Product>().And(p => p.Price > 1000).And(p => p.Title.Contains("华为"));
+            var values = DbSet.Where(predicate).ToList();
+        }
 
 
 
@@ -45,7 +51,7 @@ namespace Nebula.Repository.Test
             var model = new Product()
             {
                 ID = new Guid("8B0F4C10-3CC1-4EC9-8767-566AF07AABCB"),
-                Name = "华为荣耀9手机 国产精品",
+                Title = "华为荣耀9手机 国产精品",
                 Description = "华为荣耀9手机，国产精品,7天无理由退货",
                 Price = 1999.00,
                 SourceUri = "http://www.jd.com/4431.html",
@@ -152,7 +158,7 @@ namespace Nebula.Repository.Test
         {
             using(var context = ProductDbContext.Instance)
             {
-                var list = context.Set<Product>().Where(e => e.Name.Contains("手机") && e.Price > 1500).OrderBy(e => e.Price).ThenByDescending(e => e.Name).Select(e => new TempProduct { Name = e.Name, Price = e.Price });
+                var list = context.Set<Product>().Where(e => e.Title.Contains("手机") && e.Price > 1500).OrderBy(e => e.Price).ThenByDescending(e => e.Title).Select(e => new TempProduct { Name = e.Title, Price = e.Price });
                 foreach (var item in list)
                 {
                     Debug.WriteLine("Name:{0},Price:{1}", item.Name, item.Price);
@@ -166,12 +172,12 @@ namespace Nebula.Repository.Test
         {
             using (var context = ProductDbContext.Instance)
             {
-                context.Set<Product>().Where(e => e.Name.Contains("手机") && e.Price > 1500).OrderBy(e => e.Price).ThenByDescending(e => e.Name).Load();
+                context.Set<Product>().Where(e => e.Title.Contains("手机") && e.Price > 1500).OrderBy(e => e.Price).ThenByDescending(e => e.Title).Load();
 
                 Debug.WriteLine("从内存读取");
                 foreach (Product item in context.Set<Product>().Local)
                 {
-                    Debug.WriteLine("Name:{0},Price:{1}", item.Name, item.Price);
+                    Debug.WriteLine("Name:{0},Price:{1}", item.Title, item.Price);
                 }
 
                 context.Set<Product>().Local.Clear();
@@ -186,7 +192,7 @@ namespace Nebula.Repository.Test
                 var entity = context.Set<Product>().Find(new Guid("8b0f4c10-3cc1-4ec9-8767-566af07aabcb"));
                 Assert.IsNotNull(entity, "没有任何数据");
                 Trace.WriteLine("Find(8B0F4C10-3CC1-4EC9-8767-566AF07AABCB):");
-                Trace.WriteLine(String.Format("Name:{0},Price:{1}", entity.Name, entity.Price));
+                Trace.WriteLine(String.Format("Name:{0},Price:{1}", entity.Title, entity.Price));
 
             }
         }
@@ -240,7 +246,7 @@ namespace Nebula.Repository.Test
             var price1 = 1500.00;
             var name1 = "xiaomi";
             Expression<Func<Product, bool>> predicate1 = p => p.Price > price1;
-            Expression<Func<Product, bool>> predicate2 = p => p.Name.Contains(name1);
+            Expression<Func<Product, bool>> predicate2 = p => p.Title.Contains(name1);
 
             var invokeExp2 = Expression.Invoke(predicate2, predicate2.Parameters);
             var query = Expression.Lambda<Func<Product, bool>>(Expression.Or(predicate1.Body, invokeExp2), predicate1.Parameters);
