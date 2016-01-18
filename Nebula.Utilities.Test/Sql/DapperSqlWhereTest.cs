@@ -16,7 +16,7 @@ namespace Nebula.Utilities.Test.Sql
         {
             var param = new { Id = Guid.NewGuid(), Name = "手机" };
 
-            var sql = DapperSqlWhere.Create("Select * From [Product]")
+            var sql = DapperSqlWhereBuilder.Create("Select * From [Product]")
                 .And("Id = @Id", "value").Like("Name", "@Name", param.Name)
                 .ToSqlString();
             Assert.IsNotNull(sql, "语句为空");

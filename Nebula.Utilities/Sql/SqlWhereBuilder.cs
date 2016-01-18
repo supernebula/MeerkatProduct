@@ -1,33 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 
 namespace Nebula.Utilities.Sql
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class DapperSqlWhereBuilder
+    public class SqlWhereBuilder
     {
+
+        class SqlParameterComparer : IEqualityComparer<SqlParameter>
+        {
+            public bool Equals(SqlParameter x, SqlParameter y)
+            {
+                return x.ParameterName == y.ParameterName;
+            }
+
+            public int GetHashCode(SqlParameter obj)
+            {
+                return obj.ToString().GetHashCode();
+            }
+        }
 
         string sqlMainStatement;
 
         StringBuilder cdtFragment;
+        List<SqlParameter> sqlParameters;
         // List<string> cdtFragment;
 
 
-        public DapperSqlWhereBuilder(string sqlMainStatement)
+        public SqlWhereBuilder(string sqlMainStatement)
         {
             this.sqlMainStatement = sqlMainStatement;
+            this.sqlParameters = new List<SqlParameter>();
             cdtFragment = new StringBuilder();
+
         }
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sqlMainStatement">SELECT * FROM  [TableName]</param>
+        /// <param name="sqlMainStatement">如：SELECT * FROM  [TableName]</param>
         /// <returns></returns>
-        public static DapperSqlWhereBuilder Create(string sqlMainStatement)
+        public static SqlWhereBuilder Create(string sqlMainStatement)
         {
-            return new DapperSqlWhereBuilder(sqlMainStatement);
+            return new SqlWhereBuilder(sqlMainStatement);
         }
 
 
@@ -38,69 +54,76 @@ namespace Nebula.Utilities.Sql
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="cdt">[ColumnName]=@Value1</param>
-        /// <param name="value">SqlConditionBuilder</param>
+        /// <param name="condition">参数化SQL条件表达式</param>
+        /// <param name="paramName">SQL参数名</param>
+        /// <param name="value">参数值</param>
         /// <returns></returns>
-        public DapperSqlWhereBuilder And(string cdt, object value)
+        public SqlWhereBuilder And(string condition, string paramName, object value)
         {
-            return AddCondition(cdt, value, ConstraintType.And);
+            return AddCondition(condition, paramName, value, ConstraintType.And);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="cdt">[ColumnName]=@Value1</param>
-        /// <param name="value">SqlConditionBuilder</param>
+        /// <param name="condition">参数化SQL条件表达式</param>
+        /// <param name="paramName">SQL参数名</param>
+        /// <param name="value">参数值</param>
         /// <returns></returns>
-        public DapperSqlWhereBuilder Or(string cdt, object value)
+        public SqlWhereBuilder Or(string condition, string paramName, object value)
         {
-            return AddCondition(cdt, value, ConstraintType.Or);
+            return AddCondition(condition, paramName, value, ConstraintType.Or);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="columnName"></param>
-        /// <param name="paramName">@ParamName</param>
-        /// <param name="value"></param>
+        /// <param name="columnName">列名</param>
+        /// <param name="paramName">SQL参数名</param>
+        /// <param name="value">参数值</param>
         /// <param name="ruleFormat"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public DapperSqlWhereBuilder Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
+        public SqlWhereBuilder Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
         {
-            return AddCondition(columnName + SqlFragment.LIKE + String.Format(ruleFormat, paramName), value, ConstraintType.Or);
+            return AddCondition(columnName + SqlFragment.LIKE + String.Format(ruleFormat, paramName), paramName, value, ConstraintType.Or);
         }
 
-        public DapperSqlWhereBuilder OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
+        public SqlWhereBuilder OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
         {
             return Like(columnName, paramName, value, ruleFormat, ConstraintType.Or);
         }
 
-        DapperSqlWhereBuilder AddCondition(string cdt, object value, ConstraintType type)
+        SqlWhereBuilder AddCondition(string condition, string paramName, object value, ConstraintType type)
         {
+            condition = String.Format(condition, paramName);
             if (value == null)
                 return this;
             if ((value is string) && String.IsNullOrWhiteSpace(value.ToString()))
                 return this;
             if (value is Array && ((Array)value).Length == 0)
                 return this;
+
             if (cdtFragment.Length == 0)
-                cdtFragment.Append(cdt);
+                cdtFragment.Append(condition);
             else
-                cdtFragment.Append(ConstraintFragment(type) + cdt);
+                cdtFragment.Append(ConstraintFragment(type) + condition);
+
+            sqlParameters.Add(new SqlParameter(paramName, value));
             return this;
         }
 
 
-        public DapperSqlWhereBuilder AddConditionExpression(Func<DapperSqlWhereBuilder, DapperSqlWhereBuilder> expression, ConstraintType type)
+        public SqlWhereBuilder AddConditionExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression, ConstraintType type)
         {
-            var tempBuilder = new DapperSqlWhereBuilder(null);
+            var tempBuilder = new SqlWhereBuilder(null);
             expression.Invoke(tempBuilder);
             if (tempBuilder.cdtFragment.Length == 0)
                 return this;
             if (cdtFragment.Length > 0)
                 cdtFragment.Append(ConstraintFragment(type));
             cdtFragment.Append("(" + tempBuilder.cdtFragment + ")");
+            sqlParameters.AddRange(tempBuilder.sqlParameters);
             return this;
         }
 
@@ -109,7 +132,7 @@ namespace Nebula.Utilities.Sql
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        public DapperSqlWhereBuilder AndExpression(Func<DapperSqlWhereBuilder, DapperSqlWhereBuilder> expression)
+        public SqlWhereBuilder AndExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
         {
 
             return AddConditionExpression(expression, ConstraintType.And);
@@ -120,7 +143,7 @@ namespace Nebula.Utilities.Sql
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        public DapperSqlWhereBuilder OrExpression(Func<DapperSqlWhereBuilder, DapperSqlWhereBuilder> expression)
+        public SqlWhereBuilder OrExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
         {
             return AddConditionExpression(expression, ConstraintType.Or);
         }
@@ -130,6 +153,11 @@ namespace Nebula.Utilities.Sql
         #region Order by
 
         #endregion
+
+        public List<SqlParameter> ToSqlParameters()
+        {
+            return sqlParameters.Distinct(new SqlParameterComparer()).ToList();
+        }
 
         /// <summary>
         /// return complete sql statement
@@ -146,7 +174,7 @@ namespace Nebula.Utilities.Sql
         /// return Where statement
         /// </summary>
         /// <returns></returns>
-        public string ToSqlCdtString()
+        public string ToWhereString()
         {
             if (cdtFragment.Length == 0)
                 return String.Empty;
@@ -157,7 +185,7 @@ namespace Nebula.Utilities.Sql
         /// return only condition statement
         /// </summary>
         /// <returns></returns>
-        public string ToOnlyCdtString()
+        public string ToOnlyConditionString()
         {
             if (cdtFragment.Length == 0)
                 return String.Empty;
@@ -190,8 +218,5 @@ namespace Nebula.Utilities.Sql
     }
 
 
-
-
-
-
+    
 }
