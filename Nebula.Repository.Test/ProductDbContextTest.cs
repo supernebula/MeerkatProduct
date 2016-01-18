@@ -41,6 +41,7 @@ namespace Nebula.Repository.Test
             string site = null;
             var status = ProductStatusType.Normal;
 
+            //动态条件拼接
             var predicate = QueryPredicateBuilder.True<Product>()
                 .And(p => p.Price > price, price)
                 .And(p => p.Title.Contains(name), "")
