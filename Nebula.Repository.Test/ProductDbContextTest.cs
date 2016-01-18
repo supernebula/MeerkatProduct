@@ -34,9 +34,27 @@ namespace Nebula.Repository.Test
         }
 
         [TestMethod]
-        public void DynamiclQueryTest()
+        public void QueryPredicateBuilderTest()
         {
-            var predicate = ExpressionBuildExtension.True<Product>().And(p => p.Price > 1000).And(p => p.Title.Contains("华为"));
+            double price = 1000.00;
+            string name = "华为";
+            string site = null;
+            var status = ProductStatusType.Normal;
+
+            var predicate = QueryPredicateBuilder.True<Product>()
+                .And(p => p.Price > price, price)
+                .And(p => p.Title.Contains(name), "")
+                .And(p => p.SourceSite.StartsWith(site), site)
+                .And(p => p.Status == status);
+                
+            var result = DbSet.Where(predicate).ToList();
+        }
+
+        [TestMethod]
+        public void QueryPredicateBuildTest()
+        {
+            var predicate = QueryPredicateBuilder.True<Product>().And(p => p.Price > 1000).And(p => p.Title.Contains("华为")).And(p => p.SourceSite.StartsWith("http"));
+            //Expression<Func<int, int, int>> f = (a, b) => a * b + 2;
             var values = DbSet.Where(predicate).ToList();
         }
 

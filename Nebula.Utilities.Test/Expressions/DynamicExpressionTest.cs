@@ -20,8 +20,8 @@ namespace Nebula.Utilities.Test.Expressions
         [TestMethod]
         public void DynamicExpressionJoinTest()
         {
-            var exp = ExpressionBuilder<Product>.Create().And(p => p.Price > 1500).And(p => p.Title.Contains("xiaomi"));
-            Trace.WriteLine(exp.ToBodyString());
+            var exp = QueryPredicateBuilder.True<Product>().And(p => p.Price > 1500).And(p => p.Title.Contains("xiaomi"));
+            Trace.WriteLine(exp.Body);
         }
 
     }
