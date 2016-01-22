@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeerkatProduct", "MeerkatProduct\MeerkatProduct.csproj", "{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}"
 EndProject
@@ -25,6 +25,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyntaxTest.cs", "SyntaxTest.cs\SyntaxTest.cs.csproj", "{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cache.Test", "Nebula.Cache.Test\Nebula.Cache.Test.csproj", "{72804F53-5EB2-4E8C-874A-02C501ECFA6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Node", "Node", "{50F8FF58-6B6C-4DDB-BD66-BE8DA360D563}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Faster", "Faster\Faster.njsproj", "{0E0B7879-AD24-42E7-A720-8D6E7033F58C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +68,10 @@ Global
 		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72804F53-5EB2-4E8C-874A-02C501ECFA6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +82,6 @@ Global
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{985CAA5C-61AE-4F73-BCB3-4564A0FF2689} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{0E0B7879-AD24-42E7-A720-8D6E7033F58C} = {50F8FF58-6B6C-4DDB-BD66-BE8DA360D563}
 	EndGlobalSection
 EndGlobal

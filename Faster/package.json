@@ -1,0 +1,13 @@
+{
+  "name": "Faster",
+  "version": "0.0.0",
+  "description": "Faster",
+  "main": "app.js",
+  "author": {
+    "name": "CZHQ",
+    "email": ""
+  },
+  "dependencies": {
+    "co": "^4.6.0"
+  }
+}
