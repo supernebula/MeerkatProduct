@@ -24,14 +24,23 @@ namespace Nebula.Utilities.Test.Expressions
             Trace.WriteLine(exp.Body);
         }
 
+
+        [TestMethod]
+        public void LambdaPredicateBuilderTest()
+        {
+            var price = 1500;
+            string title = null;
+            var predicate = LambdaPredicateBuilder.True<Product>()
+                .And(p => p.Price > price)
+                //.And(p => p.Title == title)
+                .And(p => p.SourceSite == "www.jd.com")
+                .And(p => p.Picture == null);
+            Trace.WriteLine(predicate.Body);
+        }
+
     }
 
-    public class ExpressionCalculator
-    {
-        public ExpressionCalculator()
-        { }
 
-    }
 
 
 }

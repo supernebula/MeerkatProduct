@@ -48,10 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
+    <Compile Include="Expressions\ExpressionConstantValidator.cs" />
     <Compile Include="Expressions\QueryPredicateBuilder.cs" />
     <Compile Include="Expressions\ExpressionParameterReplacer.cs" />
     <Compile Include="Extension\DateExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Expressions\LambdaPredicateBuilder.cs" />
     <Compile Include="Linq\LinqLambdaWhere.cs" />
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
