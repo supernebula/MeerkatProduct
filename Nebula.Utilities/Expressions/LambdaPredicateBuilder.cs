@@ -6,7 +6,7 @@ namespace Nebula.Utilities.Expressions
     /// <summary>
     /// IQueryable<T> 查询条件构建器, 目前只实现 &&、||
     /// 使用方法, 如下：
-    /// var predicate = QueryPredicateBuilder.True<T>().And(t.Property1 == constant1).And(t.Property2 > constant2, constant2).Or(t.Property3 > constant3, constant3);
+    /// var predicate = LambdaPredicateBuilder.True<T>().And(t.Property1 == constant1).And(t.Property2 > constant2, constant2).Or(t.Property3 > constant3, constant3);
     /// var result = IQueryable<T>.Where(predicate);
     /// 将验证变量queryConstant的有效性
     /// </summary>
@@ -22,12 +22,11 @@ namespace Nebula.Utilities.Expressions
         public static Expression<Func<T, bool>> False<T>() { return DefaultExpression<T>.lambdaTrue; }
 
         /// <summary>
-        /// leftExpression && rightExpression
+        /// leftExpression && rightExpression, 如果rightExpression中的常量无效，则不拼接，只返回leftExpression
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="left"></param>
         /// <param name="right"></param>
-        /// <param name="queryParam"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
         {
@@ -35,7 +34,7 @@ namespace Nebula.Utilities.Expressions
         }
 
         /// <summary>
-        /// leftExpression || rightExpression
+        /// leftExpression || rightExpression, 如果rightExpression中的常量无效，则不拼接，只返回leftExpression
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="left"></param>
@@ -46,6 +45,14 @@ namespace Nebula.Utilities.Expressions
             return Merge(left, right, Expression.OrElse);
         }
 
+        /// <summary>
+        /// leftExpression 表达式操作符 rightExpression, 如果rightExpression中的常量无效，则不拼接，只返回leftExpression
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <param name="exprOperate"></param>
+        /// <returns></returns>
         public static Expression<Func<T, bool>> Merge<T>(Expression<Func<T, bool>> left, Expression<Func<T, bool>> right, Func<Expression, Expression, Expression> exprOperate)
         {
             if (!ExpressionConstantIsValid(right))

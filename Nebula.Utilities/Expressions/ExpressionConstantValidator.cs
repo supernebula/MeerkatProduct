@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,22 +11,20 @@ namespace Nebula.Utilities.Expressions
     public class ExpressionConstantValidator : ExpressionVisitor
     {
 
-        private string CurrentExprBody { get; set; }
-
         /// <summary>
-        /// 常量有效性验证器
+        /// 常量有效性验证方法
         /// </summary>
         private Func<object, bool> ValidateFunc { get; set; }
 
         /// <summary>
-        /// 无效的常量
+        /// 所有常量
         /// </summary>
         public List<KeyValuePair<object, bool>> Constants { get; set; }
 
         /// <summary>
-        /// 
+        /// 构造方法
         /// </summary>
-        /// <param name="constantValidator"></param>
+        /// <param name="validateFunc"></param>
         public ExpressionConstantValidator(Func<object, bool> validateFunc)
         {
             ValidateFunc = validateFunc;
@@ -48,5 +47,33 @@ namespace Nebula.Utilities.Expressions
             Constants.Add(new KeyValuePair<object, bool>(node.Value, ValidateFunc(node.Value)));
             return node;
         }
+
+
+        protected override Expression VisitMember(MemberExpression node)
+        {
+
+            Foo foo = new Foo { Bar = "abc" };
+            Expression<Func<string>> func = () => foo.Bar;
+
+            //MemberExpression outerMember = (MemberExpression)func.Body;
+            //PropertyInfo outerProp = (PropertyInfo)outerMember.Member;
+            PropertyInfo outerProp = (PropertyInfo)outerMember.Member;
+            MemberExpression innerMember = (MemberExpression)outerMember.Expression;
+            FieldInfo innerField = (FieldInfo)innerMember.Member;
+            ConstantExpression ce = (ConstantExpression)innerMember.Expression;
+            object innerObj = ce.Value;
+            object outerObj = innerField.GetValue(innerObj);
+            string value = (string)outerProp.GetValue(outerObj, null);
+
+            var node1 = node;
+            return node;
+        }
     }
+
+
+    public class Foo
+    {
+        public string Bar  { get; set; }
+    }
+
 }
