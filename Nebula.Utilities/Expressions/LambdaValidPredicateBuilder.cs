@@ -10,7 +10,7 @@ namespace Nebula.Utilities.Expressions
     /// var result = IQueryable<T>.Where(predicate);
     /// 将验证变量queryConstant的有效性
     /// </summary>
-    public static class LambdaPredicateBuilder
+    public static class LambdaValidPredicateBuilder
     {
 
         private class DefaultExpression<T>

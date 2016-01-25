@@ -51,29 +51,20 @@ namespace Nebula.Utilities.Expressions
 
         protected override Expression VisitMember(MemberExpression node)
         {
+            if (node.Expression.NodeType == ExpressionType.Parameter)
+                return node;
 
-            Foo foo = new Foo { Bar = "abc" };
-            Expression<Func<string>> func = () => foo.Bar;
-
-            //MemberExpression outerMember = (MemberExpression)func.Body;
-            //PropertyInfo outerProp = (PropertyInfo)outerMember.Member;
-            PropertyInfo outerProp = (PropertyInfo)outerMember.Member;
-            MemberExpression innerMember = (MemberExpression)outerMember.Expression;
+            PropertyInfo outerProp = (PropertyInfo)node.Member;
+            MemberExpression innerMember = (MemberExpression)node.Expression;
             FieldInfo innerField = (FieldInfo)innerMember.Member;
             ConstantExpression ce = (ConstantExpression)innerMember.Expression;
             object innerObj = ce.Value;
             object outerObj = innerField.GetValue(innerObj);
-            string value = (string)outerProp.GetValue(outerObj, null);
+            var value = outerProp.GetValue(outerObj, null);
 
-            var node1 = node;
+            Constants.Add(new KeyValuePair<object, bool>(value, ValidateFunc(value)));
             return node;
         }
-    }
-
-
-    public class Foo
-    {
-        public string Bar  { get; set; }
     }
 
 }

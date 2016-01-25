@@ -53,7 +53,7 @@
     <Compile Include="Expressions\ExpressionParameterReplacer.cs" />
     <Compile Include="Extension\DateExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
-    <Compile Include="Expressions\LambdaPredicateBuilder.cs" />
+    <Compile Include="Expressions\LambdaValidPredicateBuilder.cs" />
     <Compile Include="Linq\LinqLambdaWhere.cs" />
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />

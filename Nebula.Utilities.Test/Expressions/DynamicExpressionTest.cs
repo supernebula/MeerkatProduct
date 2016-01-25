@@ -35,7 +35,7 @@ namespace Nebula.Utilities.Test.Expressions
 
             var price = 1500;
             string title = null;
-            var predicate = LambdaPredicateBuilder.True<Product>()
+            var predicate = LambdaValidPredicateBuilder.True<Product>()
                 .And(p => p.Price > price)
                 //.And(p => p.Title == title)
                 .And(p => p.SourceSite == "www.jd.com")
@@ -61,7 +61,7 @@ namespace Nebula.Utilities.Test.Expressions
                 Picture = null
             };
 
-            var predicate = LambdaPredicateBuilder.True<Product>()
+            var predicate = LambdaValidPredicateBuilder.True<Product>()
                 .And(p => p.Price > query.Price)
                 .And(p => p.SourceSite == query.SourceSite)
                 .And(p => p.Picture == query.Picture);
