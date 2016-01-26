@@ -64,6 +64,7 @@
     <Compile Include="Sql\DapperSqlWhere.cs" />
     <Compile Include="Sql\SqlWhereBuilder.cs" />
     <Compile Include="Sql\SqlFragment.cs" />
+    <Compile Include="Tests\TimeMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />

@@ -4,6 +4,8 @@ using System.Diagnostics;
 using Nebula.Repository.Model;
 using Nebula.Utilities.Expressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.Utilities.Tests;
+using Nebula.Utilities.Sql;
 
 namespace Nebula.Utilities.Test.Expressions
 {
@@ -49,7 +51,13 @@ namespace Nebula.Utilities.Test.Expressions
 
             public string SourceSite { get; set; }
 
+            public int Follows { get; set; }
+
             public string Picture { get; set; }
+
+            public string Description { get; set; }
+
+            public ProductStatusType Status { get; set; }
         }
 
         [TestMethod]
@@ -61,12 +69,110 @@ namespace Nebula.Utilities.Test.Expressions
                 Picture = null
             };
 
+
             var predicate = LambdaValidPredicateBuilder.True<Product>()
                 .And(p => p.Price > query.Price)
                 .And(p => p.SourceSite == query.SourceSite)
                 .And(p => p.Picture == query.Picture);
             Trace.WriteLine(predicate.Body);
         }
+
+        [TestMethod]
+        public void PredicateBuilderCompareTest()
+        {
+            var query = new QueryParameter()
+            {
+                SourceSite = "www.jd.com",
+                Follows = 100,
+                Picture = null
+            };
+
+            var query2 = new QueryParameter()
+            {
+                Price = 1600,
+                SourceSite = "www.51buy.com",
+                Picture = null,
+                Description = "笔记本"
+                
+            };
+
+            var query3 = new QueryParameter()
+            {
+                Price = 2600,
+                SourceSite = "www.taobao.com",
+                Picture = null,
+                Status = ProductStatusType.OutOfStock
+            };
+
+            TimeMonitor.Watch("SqlWhereBuilder", () => {
+                var predicate = SqlWhereBuilder.Create("Select * From [Product]")
+                .And("[Price] > {0}", "@Price", query2.Price)
+                .And("[SourceSite] > {0}", "@SourceSite", query2.SourceSite)
+                .And("[Picture] > {0}", "@Picture", query2.Picture).ToSqlString();
+            });
+
+            TimeMonitor.Watch("SqlWhereBuilder2", () => {
+                var predicate = SqlWhereBuilder.Create("Select * From [Product]")
+                .And("[Price] > {0}", "@Price", query2.Price)
+                .And("[SourceSite] > {0}", "@SourceSite", query2.SourceSite)
+                .Like("[Description]", "@Description", query2.Description) .ToSqlString();
+            });
+
+            TimeMonitor.Watch("SqlWhereBuilder3", () => {
+                var predicate = SqlWhereBuilder.Create("Select * From [Product]")
+                .And("[Price] > {0}", "@Price", query2.Price)
+                .And("[SourceSite] > {0}", "@SourceSite", query2.SourceSite)
+                .Like("[Picture]", "@Picture", query2.Description)
+                .And("[Status] = {0}", "@Status", query2.Status)
+                .ToSqlString();
+            });
+
+
+
+
+            TimeMonitor.Watch("LambdaValidPredicateBuilder", () => {
+
+                var predicate = LambdaValidPredicateBuilder.True<Product>()
+                    .And(p => p.Follows > query.Follows)
+                    .And(p => p.SourceSite == query.SourceSite)
+                    .And(p => p.Picture == query.Picture);
+            });
+
+            TimeMonitor.Watch("LambdaValidPredicateBuilder2", () => {
+                var predicate = LambdaValidPredicateBuilder.True<Product>()
+                    .And(p => p.Price > query2.Price)
+                    .And(p => p.SourceSite == query2.SourceSite)
+                    .And(p => p.Picture == query2.Picture)
+                    .And(p => p.Description.Contains(query2.Description));
+            });
+
+            TimeMonitor.Watch("LambdaValidPredicateBuilder3", () => {
+                var predicate = LambdaValidPredicateBuilder.True<Product>()
+                    .And(p => p.Price > query3.Price)
+                    .And(p => p.SourceSite == query3.SourceSite)
+                    .And(p => p.Picture == query3.Picture)
+                    .And(p => p.Status == query3.Status);
+            });
+
+            TimeMonitor.Watch("QueryPredicateBuilder", () => {
+
+                var predicate = QueryPredicateBuilder.True<Product>()
+                    .And(p => p.Follows > query.Follows, query.Follows)
+                    .And(p => p.SourceSite == query.SourceSite, query.SourceSite)
+                    .And(p => p.Picture == query.Picture, query.Picture);
+            });
+
+
+            //TimeMonitor.WatchLoop("SqlWhereBuilder", 3, () => {
+            //    var predicate = SqlWhereBuilder.Create("Select * From [Product]")
+            //    .And("[Price] > {0}", "@Price", query2.Price)
+            //    .And("[SourceSite] > {0}", "@SourceSite", query2.SourceSite)
+            //    .And("[Picture] > {0}", "@Picture", query2.Picture).ToSqlString();
+            //});
+
+
+        }
+
 
     }
 

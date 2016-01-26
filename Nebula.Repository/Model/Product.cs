@@ -18,6 +18,8 @@ namespace Nebula.Repository.Model
 
         public string SourceUri { get; set; }
 
+        public int Follows { get; set; }
+
         public string SourceSite { get; set; }
 
         public ProductStatusType Status { get; set; }
