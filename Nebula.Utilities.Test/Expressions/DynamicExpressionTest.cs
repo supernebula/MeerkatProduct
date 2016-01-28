@@ -6,6 +6,8 @@ using Nebula.Utilities.Expressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Utilities.Tests;
 using Nebula.Utilities.Sql;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Nebula.Utilities.Test.Expressions
 {
@@ -162,6 +164,16 @@ namespace Nebula.Utilities.Test.Expressions
                     .And(p => p.Picture == query.Picture, query.Picture);
             });
 
+
+            var prices = new double[] { 1000.00, 1500.00, 2100.00};
+            var priceList = new List<double>();
+
+            TimeMonitor.Watch("LambdaValidPredicateBuilder4", () => {
+                var predicate = LambdaValidPredicateBuilder.True<Product>()
+                    .And(p => p.SourceSite == query3.SourceSite)
+                    .And(p => p.Picture == query3.Picture)
+                    .And(p => p.Status == query3.Status);
+            });
 
             //TimeMonitor.WatchLoop("SqlWhereBuilder", 3, () => {
             //    var predicate = SqlWhereBuilder.Create("Select * From [Product]")

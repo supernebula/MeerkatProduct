@@ -10,16 +10,17 @@ namespace Nebula.Utilities.Expressions
     /// var result = IQueryable<T>.Where(predicate);
     /// 将验证变量queryConstant的有效性
     /// </summary>
-    public static class LambdaValidPredicateBuilder
+    public class LambdaPredicateBuilder<T>
     {
+        private Expression<Func<T, bool>> left;
 
         private class DefaultExpression<T>
         {
             public static Expression<Func<T, bool>> lambdaTrue = f => true;
             public static Expression<Func<T, bool>> lambdaFalse = f => false;
         }
-        public static Expression<Func<T, bool>> True<T>() { return DefaultExpression<T>.lambdaTrue; }
-        public static Expression<Func<T, bool>> False<T>() { return DefaultExpression<T>.lambdaTrue; }
+        public static Expression<Func<T, bool>> True() { return DefaultExpression<T>.lambdaTrue; }
+        public static Expression<Func<T, bool>> False() { return DefaultExpression<T>.lambdaTrue; }
 
         /// <summary>
         /// leftExpression && rightExpression, 如果rightExpression中的常量无效，则不拼接，只返回leftExpression
@@ -28,7 +29,7 @@ namespace Nebula.Utilities.Expressions
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
+        public Expression<Func<T, bool>> And(Expression<Func<T, bool>> right)
         {
             return Merge(left, right, Expression.AndAlso);
         }
@@ -40,7 +41,7 @@ namespace Nebula.Utilities.Expressions
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> left, Expression<Func<T, bool>> right)
+        public Expression<Func<T, bool>> Or(Expression<Func<T, bool>> right)
         {
             return Merge(left, right, Expression.OrElse);
         }
@@ -53,7 +54,7 @@ namespace Nebula.Utilities.Expressions
         /// <param name="right"></param>
         /// <param name="exprOperate"></param>
         /// <returns></returns>
-        public static Expression<Func<T, bool>> Merge<T>(Expression<Func<T, bool>> left, Expression<Func<T, bool>> right, Func<Expression, Expression, Expression> exprOperate)
+        public Expression<Func<T, bool>> Merge(Expression<Func<T, bool>> left, Expression<Func<T, bool>> right, Func<Expression, Expression, Expression> exprOperate)
         {
             if (!ExpressionConstantIsValid(right))
                 return left;
@@ -68,14 +69,14 @@ namespace Nebula.Utilities.Expressions
             return lambda;
         }
 
-        private static bool ExpressionConstantIsValid<T>(Expression<Func<T, bool>> expr)
+        private bool ExpressionConstantIsValid(Expression<Func<T, bool>> expr)
         {
-            var constantValidtor = new ExpressionConstantValidator(ConstantNotNull);
+            var constantValidtor = new ExpressionConstantValidator(ConstantValidFunc);
             return constantValidtor.Validate(expr);
         }
 
 
-        private static bool ConstantNotNull(object value)
+        private bool ConstantValidFunc(object value)
         {
             if (value == null)
                 return false;
