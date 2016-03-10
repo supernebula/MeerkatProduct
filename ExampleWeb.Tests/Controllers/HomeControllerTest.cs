@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Web.Mvc;
+using Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ExampleWeb;
 using ExampleWeb.Controllers;
@@ -12,6 +14,29 @@ namespace ExampleWeb.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
+        private TestContext testContext;
+        private HttpContextBase HttpContext { get; set; }
+
+        private ControllerContext ControllerContext { get; set; }
+
+        [TestInitialize()]
+        public void Init()
+        {
+            ControllerContext = new ControllerContext();
+            HttpContext = Mock.Of<HttpContextBase>();
+            var MockHttpContext = new Mock<HttpContextBase>();
+            MockHttpContext.Setup(c => c.Request.Cookies.Add(new HttpCookie("token", "323232323"))).Throws();
+
+        }
+
+        [TestCleanup()]
+        public void Cleanup()
+        {
+
+        }
+
+        
+
         [TestMethod]
         public void Index()
         {
