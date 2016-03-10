@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeerkatProduct", "MeerkatProduct\MeerkatProduct.csproj", "{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meerkat.Domain", "Meerkat.Cqrs\Meerkat.Domain.csproj", "{BC6B665E-8F63-4171-934C-9D44648777ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1B0B30AF-E41A-4719-AC85-97DB64FC8135}"
@@ -30,16 +28,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Node", "Node", "{50F8FF58-6
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Faster", "Faster\Faster.njsproj", "{0E0B7879-AD24-42E7-A720-8D6E7033F58C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWeb", "ExampleWeb\ExampleWeb.csproj", "{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWeb.Tests", "ExampleWeb.Tests\ExampleWeb.Tests.csproj", "{B7E279B7-F4FD-402B-898B-C981362FB420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E29EC76-3E94-43EF-9DBD-F1D358E90E9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC6B665E-8F63-4171-934C-9D44648777ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC6B665E-8F63-4171-934C-9D44648777ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6B665E-8F63-4171-934C-9D44648777ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -72,6 +70,14 @@ Global
 		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E0B7879-AD24-42E7-A720-8D6E7033F58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7E279B7-F4FD-402B-898B-C981362FB420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E279B7-F4FD-402B-898B-C981362FB420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E279B7-F4FD-402B-898B-C981362FB420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E279B7-F4FD-402B-898B-C981362FB420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
