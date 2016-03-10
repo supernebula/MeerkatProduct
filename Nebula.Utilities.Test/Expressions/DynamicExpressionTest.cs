@@ -79,6 +79,27 @@ namespace Nebula.Utilities.Test.Expressions
             Trace.WriteLine(predicate.Body);
         }
 
+        /// <summary>
+        /// 集合测试
+        /// </summary>
+        [TestMethod]
+        public void LambdaPredicateBuilderSetTest()
+        {
+            var query = new QueryParameter()
+            {
+                Price = 1500,
+                SourceSite = "www.jd.com",
+                Picture = null
+            };
+
+            var price = new List<double>() { 1000.00, 1400, 1500, 2000 };
+
+            var predicate = LambdaValidPredicateBuilder.True<Product>()
+                .And(p => price.Contains(p.Price))
+                .And(p => p.SourceSite == query.SourceSite);
+            Trace.WriteLine(predicate.Body);
+        }
+
         [TestMethod]
         public void PredicateBuilderCompareTest()
         {

@@ -9,7 +9,7 @@ namespace Nebula.Utilities.Expressions
     /// <summary>
     /// 默认常量验证器
     /// </summary>
-    class DefaultConstantValidtor : IConstantValidtor
+    public class DefaultConstantValidtor : IConstantValidtor
     {
         public bool Validate(object value)
         {

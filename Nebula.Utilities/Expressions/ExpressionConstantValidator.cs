@@ -51,18 +51,31 @@ namespace Nebula.Utilities.Expressions
 
         protected override Expression VisitMember(MemberExpression node)
         {
+
             if (node.Expression.NodeType == ExpressionType.Parameter)
                 return node;
 
-            PropertyInfo outerProp = (PropertyInfo)node.Member;
-            MemberExpression innerMember = (MemberExpression)node.Expression;
-            FieldInfo innerField = (FieldInfo)innerMember.Member;
-            ConstantExpression ce = (ConstantExpression)innerMember.Expression;
-            object innerObj = ce.Value;
-            object outerObj = innerField.GetValue(innerObj);
-            var value = outerProp.GetValue(outerObj, null);
+            if (node.Member.MemberType == MemberTypes.Property)
+            {
+                PropertyInfo outerProp = (PropertyInfo)node.Member;
+                MemberExpression innerMember = (MemberExpression)node.Expression;
+                FieldInfo innerField = (FieldInfo)innerMember.Member;
+                ConstantExpression ce = (ConstantExpression)innerMember.Expression;
+                object innerObj = ce.Value;
+                object outerObj = innerField.GetValue(innerObj);
+                var value = outerProp.GetValue(outerObj, null);
+                Constants.Add(new KeyValuePair<object, bool>(value, ValidateFunc(value)));
 
-            Constants.Add(new KeyValuePair<object, bool>(value, ValidateFunc(value)));
+            }
+            else if (node.Member.MemberType == MemberTypes.Field)
+            {
+                FieldInfo innerField = (FieldInfo)node.Member;
+                ConstantExpression ce = (ConstantExpression)node.Expression;
+                object innerObj = ce.Value;
+                object value = innerField.GetValue(innerObj);
+                Constants.Add(new KeyValuePair<object, bool>(value, ValidateFunc(value)));
+            }
+
             return node;
         }
     }

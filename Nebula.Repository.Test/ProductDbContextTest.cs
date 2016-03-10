@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Linq.Expressions;
 using System.Linq;
 using Nebula.Utilities.Expressions;
+using System.Collections.Generic;
 
 namespace Nebula.Repository.Test
 {
@@ -56,6 +57,40 @@ namespace Nebula.Repository.Test
         {
             var predicate = QueryPredicateBuilder.True<Product>().And(p => p.Price > 1000).And(p => p.Title.Contains("华为")).And(p => p.SourceSite.StartsWith("http"));
             //Expression<Func<int, int, int>> f = (a, b) => a * b + 2;
+            var values = DbSet.Where(predicate).ToList();
+        }
+
+
+        public class QueryParameter
+        {
+            public double Price { get; set; }
+
+            public int VisitTotal;
+
+            public string SourceSite { get; set; }
+
+            public int Follows { get; set; }
+
+            public string Picture { get; set; }
+
+            public string Description { get; set; }
+
+            public ProductStatusType Status { get; set; }
+        }
+
+        [TestMethod]
+        public void QueryPredicateBuildSetTest()
+        {
+            var queryParam = new QueryParameter() { VisitTotal = 1000 };
+
+            var price = new double[] { 1000.00, 1400.00, 1500.00, 2000.00 };
+
+            var predicate = LambdaValidPredicateBuilder.True<Product>()
+                .And(p => price.Contains(p.Price))
+                .And(p => p.SourceSite == "www.jd.com")
+                .And(p => p.VisitTotal == queryParam.VisitTotal);
+            Trace.WriteLine(predicate.Body);
+
             var values = DbSet.Where(predicate).ToList();
         }
 

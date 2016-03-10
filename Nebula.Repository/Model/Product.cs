@@ -26,6 +26,8 @@ namespace Nebula.Repository.Model
 
         public IEnumerable<SpecValue> Specs { get; set; }
 
+        public int VisitTotal { get; set; }
+
     }
 
 
