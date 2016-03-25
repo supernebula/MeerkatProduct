@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection\BloomFilter.cs" />
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
     <Compile Include="Expressions\DefaultConstantValidtor.cs" />
     <Compile Include="Expressions\ExpressionConstantValidator.cs" />

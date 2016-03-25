@@ -22,8 +22,6 @@ namespace ExampleWeb.Controllers
 
         public ActionResult Contact()
         {
-            var httpcontext = HttpContext;
-            this.HttpContext
             ViewBag.Message = "Your contact page.";
 
             return View();

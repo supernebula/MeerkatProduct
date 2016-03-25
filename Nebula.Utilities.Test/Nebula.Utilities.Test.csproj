@@ -66,6 +66,8 @@
     <Compile Include="Expressions\DynamicExpressionTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
+    <Compile Include="Space\SpaceComplexityTest.cs" />
+    <Compile Include="Space\SpaceSizeTest.cs" />
     <Compile Include="Sql\DapperSqlWhereTest.cs" />
     <Compile Include="Sql\SqlBuilderTest.cs" />
     <Compile Include="UnitTest1.cs" />

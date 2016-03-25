@@ -25,7 +25,7 @@ namespace ExampleWeb.Tests.Controllers
             ControllerContext = new ControllerContext();
             HttpContext = Mock.Of<HttpContextBase>();
             var MockHttpContext = new Mock<HttpContextBase>();
-            MockHttpContext.Setup(c => c.Request.Cookies.Add(new HttpCookie("token", "323232323"))).Throws();
+            MockHttpContext.Setup(c => c.Request.Cookies.Add(new HttpCookie("token", "323232323")));
 
         }
 

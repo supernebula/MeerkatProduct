@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Mvc;
 using Moq;
 
 namespace ExampleWeb.Tests.TestStart
@@ -25,7 +30,37 @@ namespace ExampleWeb.Tests.TestStart
             httpContenxt.Setup(ctx => ctx.Session).Returns(session.Object);
             httpContenxt.Setup(ctx => ctx.Server).Returns(server.Object);
 
+            return httpContenxt.Object;
+        }
+
+
+        public static HttpContextBase MockHttpContext(string url)
+        {
+            HttpContextBase httpContext = MockHttpContext();
+            httpContext.Request.SetRequestUrl(url);
+            return httpContext;
 
         }
+
+        public static void SetSession(this HttpSessionStateBase session)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public static void SetRequestUrl(this HttpRequestBase request, string url, FormCollection formCollection = null)
+        {
+            url = url ?? String.Empty;
+            if (String.IsNullOrWhiteSpace(url))
+                return;
+            var mock = Mock.Get(request);
+            mock.Setup(req => req.QueryString).Returns(HttpUtility.ParseQueryString(url.Contains("?") ? url.Substring(url.IndexOf("?", StringComparison.CurrentCulture)) : String.Empty));
+            mock.Setup(req => req.AppRelativeCurrentExecutionFilePath).Returns(url.Contains("?") ? url.Substring(0, url.IndexOf("?", StringComparison.CurrentCulture)) : url);
+            mock.Setup(req => req.PathInfo).Returns(String.Empty);
+            mock.Setup(req => req.Form).Returns(formCollection);
+
+        }
+
+
     }
 }
