@@ -2,68 +2,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nebula.Utilities.Collection
 {
+    /// <summary>
+    /// 布隆过滤器
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BloomFilter<T>
     {
         #region Fields
 
-        private BitArray _bitArray;
+        /// <summary>
+        /// 位数组
+        /// </summary>
+        private readonly BitArray _bitArray;
 
         /// <summary>
         /// 数据量
         /// </summary>
-        private int _dataSize;
-
-        /// <summary>
-        /// 假阳性概率
-        /// </summary>
-        private float _falsePositiveRate;
-
+        private readonly int _dataSize;
         /// <summary>
         /// 空间大小
         /// </summary>
-        private int _spaceSize;
-
-        private int _numberOfHashes;
-
-        #endregion
-
-
-        #region Constructors
+        private readonly int _spaceSize;
 
         /// <summary>
-        /// 自动计算最佳空间和Hash函数个数
+        /// Hash函数最佳个数
         /// </summary>
-        /// <param name="dataSize"></param>
-        /// <param name="falsePositiveRate"></param>
-        public BloomFilter(int dataSize, float falsePositiveRate)
-        {
-            _dataSize = dataSize;
-            _falsePositiveRate = falsePositiveRate;
-        }
-
-        public BloomFilter(int dateSize, int spaceSize)
-        {
-            _bitArray = new BitArray(spaceSize);
-        }
-
-        public BloomFilter(int dateSize, int spaceSize, int numberOfHashes)
-        {
-            _numberOfHashes = numberOfHashes;
-            _bitArray = new BitArray(spaceSize);
-        }
+        private readonly int _numberOfHashes;
 
         #endregion
 
         #region Properties
 
-        public int DataSize => _dataSize;
+        /// <summary>
+        /// 假阳性概率
+        /// </summary>
+        public double FalsePositiveRate { get; private set; }
 
-        public float FalsePositiveRate => _falsePositiveRate;
+
+        public int DataSize => _dataSize;
 
         public int SpaceSize => _spaceSize;
 
@@ -72,37 +51,87 @@ namespace Nebula.Utilities.Collection
         #endregion
 
 
+        #region Constructors
+
+        /// <summary>
+        /// 构造方法， 自动计算最佳空间和Hash函数最佳个数
+        /// </summary>
+        /// <param name="dataSize">数据量</param>
+        /// <param name="falsePositiveRate">假阳性概率</param>
+        [Obsolete("未实现...")]
+        public BloomFilter(int dataSize, float falsePositiveRate)
+        {
+            _dataSize = dataSize;
+            FalsePositiveRate = falsePositiveRate;
+            throw  new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 构造方法， 自动计算Hash函数最佳个数
+        /// </summary>
+        /// <param name="dateSize">数据量</param>
+        /// <param name="spaceSize">空间量</param>
+        public BloomFilter(int dateSize, int spaceSize)
+        {
+            _dataSize = dateSize;
+            _spaceSize = spaceSize;
+            _numberOfHashes = OptimalNumberOfHashes();
+            FalsePositiveRate = FalsePositiveProbability();
+            _bitArray = new BitArray(_spaceSize);
+
+        }
+
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        /// <param name="dateSize">数据量</param>
+        /// <param name="spaceSize">空间量</param>
+        /// <param name="numberOfHashes">Hash函数最佳个数</param>
+        public BloomFilter(int dateSize, int spaceSize, int numberOfHashes)
+        {
+            _dataSize = dateSize;
+            _spaceSize = spaceSize;
+            _numberOfHashes = numberOfHashes;
+            FalsePositiveRate = FalsePositiveProbability();
+            _bitArray = new BitArray(_spaceSize);
+        }
+
+        #endregion
+
+
+
+
         #region Method
 
-        public void Void(T item)
+        public void Add(T item)
         {
+            var random = new Random(Hash(item));
+            for (int i = 0; i < _numberOfHashes; i++)
+            {
+                _bitArray[random.Next(_spaceSize)] = true;
+            }
         }
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            var random = new Random(Hash(item));
+            for (int i = 0; i < _numberOfHashes; i++)
+            {
+                if(!_bitArray[random.Next(_spaceSize)])
+                    return false;
+
+            }
+            return true;
         }
 
         public bool ContainsAny(IEnumerable<T> items)
         {
-            foreach (T item in items)
-            {
-                if (Contains(item))
-                    return true;
-            }
-
-            return false;
+            return items.Any(Contains);
         }
 
         public bool ContainsAll(IEnumerable<T> items)
         {
-            foreach (T item in items)
-            {
-                if (!Contains(item))
-                    return false;
-            }
-
-            return true;
+            return items.All(Contains);
         }
 
         /// <summary>
@@ -119,9 +148,9 @@ namespace Nebula.Utilities.Collection
             return item.GetHashCode();
         }
 
-        private int OptimalNumberOfHashes(int spaceSize, int dataSize)
+        private int OptimalNumberOfHashes()
         {
-            return (int)Math.Ceiling((spaceSize / dataSize) * Math.Log(2.0));
+            return (int)Math.Ceiling((_spaceSize * 1.00 / _dataSize) * Math.Log(2.0));
         }
 
         #endregion
