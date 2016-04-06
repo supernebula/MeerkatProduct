@@ -62,6 +62,8 @@
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Hash.cs" />
+    <Compile Include="Security\Signature.cs" />
     <Compile Include="Serialization\JsonConvert.cs" />
     <Compile Include="Serialization\XmlConvert.cs" />
     <Compile Include="Sql\ConstraintType.cs" />
