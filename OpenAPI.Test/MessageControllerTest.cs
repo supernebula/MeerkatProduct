@@ -24,7 +24,7 @@ namespace OpenAPI.Test
                 Content = "您好，欢迎您关注医保服务窗<a href=\"http://www.baidu.com\">帮助中心</a>"
             };
 
-            var paramDic = new Dictionary<string, string>();
+            var paramDic = new Dictionary<string, string>(); 
             paramDic.Add("SiUserId", param.SiUserId);
             paramDic.Add("Content", param.Content);
             paramDic.Add("Timestamp", param.Timestamp);
