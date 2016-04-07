@@ -24,12 +24,12 @@ namespace OpenAPI.Controllers
 
         // POST: api/Message/Single
         /// <summary>
-        /// POST方法请求，单发接口，向来源平台的单个用户推送消息
+        /// POST方法请求，单发接口
         /// </summary>
         ///单用户发送消息参数
         /// <returns>推送结果</returns>
         [Route("api/Message/Single")]
-        public SendMessageResult PostSingle([FromBody]SingleUserParameter param)
+        public SendMResult PostSingle([FromBody]SingleUserParameter param)
         {
             //return SendMessageResult.Ok;
             var paramDic = new Dictionary<string, string>();
@@ -46,12 +46,12 @@ namespace OpenAPI.Controllers
 
         // POST: api/Message/Mult
         /// <summary>
-        /// POST方法请求，多发接口，向来源平台的多个用户推送消息
+        /// POST方法请求，多发接口
         /// </summary>
         ///单用户发送消息参数
         /// <returns>推送结果</returns>
         [Route("api/Message/Mult")]
-        public SendMessageResult PostMult([FromBody]MultUserParameter param)
+        public SendMResult PostMult([FromBody]MultUserParameter param)
         {
             var paramDic = new Dictionary<string, string>();
             paramDic.Add("platform", param.Platform.ToString());
@@ -68,21 +68,21 @@ namespace OpenAPI.Controllers
             });
         }
 
-        private SendMessageResult Failover(IApiParameter apiParam, IDictionary<string, string> paramDic, Action action)
+        private SendMResult Failover(IApiParameter apiParam, IDictionary<string, string> paramDic, Action action)
         {
             try
             {
                 if (apiParam.Sign != Signature.Sign(paramDic, AppSecret1))
-                    return SendMessageResult.SignFailed;
+                    return SendMResult.SignFailed;
                 if (!Signature.IsValidTimestamp(apiParam.Timestamp))
-                    return SendMessageResult.Expire;
+                    return SendMResult.Expire;
                 action.Invoke();
             }
             catch (Exception ex)
             {
-                return new SendMessageResult() { Code = (int)System.Net.HttpStatusCode.InternalServerError, Result = false, Message = ex.Message };
+                return new SendMResult() { Code = (int)System.Net.HttpStatusCode.BadRequest, Result = false, Message = ex.Message };
             }
-            return SendMessageResult.Ok;
+            return SendMResult.Ok;
         }
     }
 
