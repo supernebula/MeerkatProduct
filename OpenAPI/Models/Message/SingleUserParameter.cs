@@ -1,22 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using OpenAPI.Core.API;
 
 namespace OpenAPI.Models.Message
 {
-    //[DataContract]
-    [XmlRoot(Namespace = "")]
-    public class SingleUserParameter : BaseSecurityParameter
+    /// <summary>
+    /// 单用户消息参数
+    /// </summary>
+    [DataContract(Name = "SingleUserParameter", Namespace = "")]
+    [XmlRoot(ElementName = "SingleUserParameter", Namespace = "")]
+    public class SingleUserParameter : IApiParameter
     {
-        [XmlElement(ElementName = "siuserid")]
-        [DataMember(Name = "siuserid")]
+        /// <summary>
+        /// 单个社保用户编号
+        /// </summary>
+        [DataMember(Name = "SiUserId")]
+        [XmlElement("SiUserId")]
         public string SiUserId { get; set; }
 
-        [XmlElement(ElementName = "content")]
-        [DataMember(Name = "content")]
+        /// <summary>
+        /// 平台类型
+        /// </summary>
+        [DataMember(Name = "Platform")]
+        [XmlElement("Platform")]
+        public int Platform { get; set; }
+
+        /// <summary>
+        /// 消息正文
+        /// </summary>
+        [DataMember(Name = "Content")]
+        [XmlElement("Content")]
         public string Content { get; set; }
 
         #region sign
@@ -24,24 +37,28 @@ namespace OpenAPI.Models.Message
         /// <summary>
         /// AppKey
         /// </summary>
-        [XmlElement(ElementName = "key")]
+        [DataMember(Name = "Key")]
+        [XmlElement("Key")]
         public string Key { get; set; }
         /// <summary>
-        /// MD5 Sign
+        /// MD5签名
         /// </summary>
-        [XmlElement(ElementName = "sign")]
+        [DataMember(Name = "Sign")]
+        [XmlElement("Sign")]
         public string Sign { get; set; }
 
         /// <summary>
-        /// yyyyMMddHHmmss
+        /// 当前时间时间戳，格式：yyyyMMddHHmmss
         /// </summary>
-        [XmlElement(ElementName = "timestamp")]
+        [DataMember(Name = "Timestamp")]
+        [XmlElement("Timestamp")]
         public string Timestamp { get; set; }
 
         /// <summary>
         /// 随机数
         /// </summary>
-        [XmlElement(ElementName = "nonce")]
+        [DataMember(Name = "Nonce")]
+        [XmlElement("Nonce")]
         public string Nonce { get; set; }
 
         #endregion

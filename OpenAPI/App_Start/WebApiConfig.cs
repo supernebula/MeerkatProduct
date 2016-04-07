@@ -25,6 +25,9 @@ namespace OpenAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.UseDataContractJsonSerializer = true;
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.UseXmlSerializer = true;
         }
     }
 }
