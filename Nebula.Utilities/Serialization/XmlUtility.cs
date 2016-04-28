@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Nebula.Utilities.Serialization
 {
-    public static class XmlConvert
+    public static class XmlUtility
     {
 
         public static T DeSerialize<T>(string xml)
