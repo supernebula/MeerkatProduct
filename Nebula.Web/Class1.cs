@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Utilities.Serialization
+namespace Nebula.Web
 {
-    class JsonConvert
+    public class Class1
     {
     }
 }
