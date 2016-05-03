@@ -19,7 +19,7 @@ namespace OpenAPI
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-
+            config.Routes.Count;
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

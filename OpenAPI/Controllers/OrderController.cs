@@ -22,7 +22,7 @@ namespace OpenAPI.Controllers
         public HttpResponseMessage PostSubmit([FromBody]SubmitOrderParameter param)
         {
             logerror.Error("api/Order:NotImplementedException");
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpResponseMessage(HttpStatusCode.OK) {Content = new StringContent("订单提交成功") };
         }
     }
 
