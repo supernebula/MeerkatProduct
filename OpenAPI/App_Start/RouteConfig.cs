@@ -13,7 +13,7 @@ namespace OpenAPI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.Add(new ServiceDoRouteProvider());
+            routes.Add(new ServiceDoRoute());
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

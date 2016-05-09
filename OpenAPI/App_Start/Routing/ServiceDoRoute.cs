@@ -11,7 +11,7 @@ using System.Xml;
 
 namespace OpenAPI.Routing
 {
-    public class ServiceDoRouteProvider : RouteBase
+    public class ServiceDoRoute : RouteBase
     {
         public override RouteData GetRouteData(HttpContextBase httpContext)
         {

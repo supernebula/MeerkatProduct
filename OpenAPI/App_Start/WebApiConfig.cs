@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using OpenAPI.Routing;
 
 namespace OpenAPI
 {
@@ -19,7 +20,7 @@ namespace OpenAPI
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-            config.Routes.Count;
+            config.Routes.Add("ServiceApi", new ServiceDoHttpRoute());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

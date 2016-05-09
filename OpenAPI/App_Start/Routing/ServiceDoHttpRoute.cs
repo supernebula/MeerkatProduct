@@ -4,15 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Http.Routing;
-using System.Web.Mvc;
-using System.Web.Routing;
 using System.Xml;
 
 namespace OpenAPI.Routing
 {
-    class ServiceDoHttpRouteProvider : HttpRoute
+    class ServiceDoHttpRoute : HttpRoute
     {
         //
         // 摘要:
@@ -29,50 +27,43 @@ namespace OpenAPI.Routing
         //     如果匹配，则为该路由的 System.Web.Http.Routing.HttpRouteData；否则为 null。
         public override IHttpRouteData GetRouteData(string virtualPathRoot, HttpRequestMessage request)
         {
-            if (!request.RequestUri.PathAndQuery.StartsWith("service/do", StringComparison.CurrentCultureIgnoreCase))
+            if (!request.RequestUri.PathAndQuery.StartsWith("/api/service/do", StringComparison.CurrentCultureIgnoreCase))
                 return null;
-            Stream reqStream = request.Content.ReadAsStreamAsync().Result;
-            if (reqStream.CanSeek)
-                reqStream.Position = 0;
-            var content = new StreamReader(reqStream, Encoding.UTF8).ReadToEnd();
-            string intfaceName = null;
-            var document = new XmlDocument();
-            try
-            {
-                document.LoadXml(content);
-                var intfaceNode = document.SelectSingleNode("//Interface");
-                intfaceName = intfaceNode == null
-                    ? null
-                    : intfaceNode.InnerText == null ? null : intfaceNode.InnerText.Trim();
-            }
-            catch
-            {
+            //Stream reqStream = request.Content.ReadAsStreamAsync().Result;
+            //if (reqStream.CanSeek)
+            //    reqStream.Position = 0;
+            //var content = new StreamReader(reqStream, Encoding.UTF8).ReadToEnd();
+            //string intfaceName;
+            //var document = new XmlDocument();
+            //try
+            //{
+            //    document.LoadXml(content);
+            //    var intfaceNode = document.SelectSingleNode("//Interface");
+            //    intfaceName = intfaceNode == null
+            //        ? null
+            //        : intfaceNode.InnerText.Trim();
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
+
+            if (!request.Headers.Contains("Interface"))
                 return null;
-            }
+            var intfaceName = request.Headers.GetValues("Interface").First();
 
             if (string.IsNullOrWhiteSpace(intfaceName) || !intfaceName.Contains(".") || intfaceName.StartsWith(".") || intfaceName.EndsWith("."))
                 return null;
 
             var paths = intfaceName.Split('.');
-            if (paths.Length == 3)
+            if (paths.Length == 2)
             {
-
-                var data = new HttpRouteData(new HttpRoute()
-                {
-                    
-                });
-                data. 
+                var controller = paths[0];
+                var action = paths[1];
+                var httpRouteValueDictionary = new HttpRouteValueDictionary(new { controller, action, id = RouteParameter.Optional });
+                var data = new HttpRouteData(new HttpRoute("api/{controller}/{action}/{id}", httpRouteValueDictionary));
                 return data;
             }
-
-            if (paths.Length == 3)
-            {
-                var data = new RouteData(this, new MvcRouteHandler());
-                data.Values.Add("controller", paths[1]);
-                data.Values.Add("action", paths[2]);
-                return data;
-            }
-
             return null;
         }
 
@@ -90,9 +81,9 @@ namespace OpenAPI.Routing
         //
         // 返回结果:
         //     System.Web.Http.Routing.HttpVirtualPathData 实例或 null（如果无法生成 URI）。
-        public virtual IHttpVirtualPathData GetVirtualPath(HttpRequestMessage request, IDictionary<string, object> values)
+        public override IHttpVirtualPathData GetVirtualPath(HttpRequestMessage request, IDictionary<string, object> values)
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }
