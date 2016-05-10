@@ -10,7 +10,7 @@ namespace Nebula.First.OpenAPI.Controllers
     [Route("api/Example")]
     public class ExampleController : ApiController
     {
-        [Route("api/Example/Test")]
+        [Route("api/Example/PostTest")]
         public HttpResponseMessage PostTest()
         {
             var key = "string1";

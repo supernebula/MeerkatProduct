@@ -17,18 +17,21 @@ namespace Nebula.First.OpenAPI
             // 将 Web API 配置为仅使用不记名令牌身份验证。
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
             // Web API 路由
             config.MapHttpAttributeRoutes();
+
             config.Routes.Add("ServiceApi", new ServiceDoHttpRoute());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { id = RouteParameter.Optional },
+                constraints: new { controller = @"^(?!service$)" }
             );
 
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.UseDataContractJsonSerializer = true;
-            GlobalConfiguration.Configuration.Formatters.XmlFormatter.UseXmlSerializer = true;
+
+
+            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.UseDataContractJsonSerializer = true;
+            //GlobalConfiguration.Configuration.Formatters.XmlFormatter.UseXmlSerializer = true;
         }
     }
 }

@@ -17,24 +17,25 @@ namespace Nebula.First.OpenAPI.Routing
         {
             if (!httpContext.Request.Url.PathAndQuery.StartsWith("service/do", StringComparison.CurrentCultureIgnoreCase))
                 return null;
-            Stream reqStream = httpContext.Request.InputStream;
-            if (reqStream.CanSeek)
-                reqStream.Position = 0;
-            var content = new StreamReader(reqStream, Encoding.UTF8).ReadToEnd();
-            string intfaceName = null;
-            var document = new XmlDocument();
-            try
-            {
-                document.LoadXml(content);
-                var intfaceNode = document.SelectSingleNode("//Interface");
-                intfaceName = intfaceNode == null
-                    ? null
-                    : intfaceNode.InnerText == null ? null : intfaceNode.InnerText.Trim();
-            }
-            catch
-            {
-                return null;
-            }
+            //Stream reqStream = httpContext.Request.InputStream;
+            //if (reqStream.CanSeek)
+            //    reqStream.Position = 0;
+            //var content = new StreamReader(reqStream, Encoding.UTF8).ReadToEnd();
+            //string intfaceName = null;
+            //var document = new XmlDocument();
+            //try
+            //{
+            //    document.LoadXml(content);
+            //    var intfaceNode = document.SelectSingleNode("//Interface");
+            //    intfaceName = intfaceNode == null
+            //        ? null
+            //        : intfaceNode.InnerText == null ? null : intfaceNode.InnerText.Trim();
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
+            var intfaceName = httpContext.Request.Headers.GetValues("Interface").First();
 
             if (string.IsNullOrWhiteSpace(intfaceName) || !intfaceName.Contains(".") || intfaceName.StartsWith(".") || intfaceName.EndsWith("."))
                 return null;
@@ -47,15 +48,6 @@ namespace Nebula.First.OpenAPI.Routing
                 data.Values.Add("action", paths[2]);
                 return data;
             }
-
-            if (paths.Length == 3)
-            {
-                var data = new RouteData(this, new MvcRouteHandler());
-                data.Values.Add("controller", paths[1]);
-                data.Values.Add("action", paths[2]);
-                return data;
-            }
-
             return null;
         }
 

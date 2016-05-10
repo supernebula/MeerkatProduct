@@ -27,6 +27,8 @@ namespace Nebula.First.OpenAPI.Routing
         //     如果匹配，则为该路由的 System.Web.Http.Routing.HttpRouteData；否则为 null。
         public override IHttpRouteData GetRouteData(string virtualPathRoot, HttpRequestMessage request)
         {
+            var routes = GlobalConfiguration.Configuration.Routes;
+
             if (!request.RequestUri.PathAndQuery.StartsWith("/api/service/do", StringComparison.CurrentCultureIgnoreCase))
                 return null;
             //Stream reqStream = request.Content.ReadAsStreamAsync().Result;
@@ -60,30 +62,13 @@ namespace Nebula.First.OpenAPI.Routing
             {
                 var controller = paths[0];
                 var action = paths[1];
-                var httpRouteValueDictionary = new HttpRouteValueDictionary(new { controller, action, id = RouteParameter.Optional });
-                var data = new HttpRouteData(new HttpRoute("api/{controller}/{action}/{id}", httpRouteValueDictionary));
+                var defaults = new HttpRouteValueDictionary(new {  id = RouteParameter.Optional });
+                var constraints = new HttpRouteValueDictionary();
+                constraints.Add("httpMethod",  new HttpMethodConstraint(HttpMethod.Post));
+                var data = new HttpRouteData(new HttpRoute("api/service/do", defaults));
                 return data;
             }
             return null;
-        }
-
-
-        // 摘要:
-        //     尝试生成一个 URI，该 URI 表示基于 System.Web.Http.Routing.HttpRouteData 的当前值传入的值，并使用指定的 System.Web.Http.Routing.HttpRoute
-        //     生成新值。
-        //
-        // 参数:
-        //   request:
-        //     HTTP 请求消息。
-        //
-        //   values:
-        //     路由值。
-        //
-        // 返回结果:
-        //     System.Web.Http.Routing.HttpVirtualPathData 实例或 null（如果无法生成 URI）。
-        public override IHttpVirtualPathData GetVirtualPath(HttpRequestMessage request, IDictionary<string, object> values)
-        {
-            throw new NotImplementedException();
         }
     }
 }
