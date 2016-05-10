@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
+using Nebula.First.OpenAPI.Routing;
 using Newtonsoft.Json.Serialization;
 
 namespace Nebula.First.OpenAPI
@@ -19,12 +20,15 @@ namespace Nebula.First.OpenAPI
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-
+            config.Routes.Add("ServiceApi", new ServiceDoHttpRoute());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.UseDataContractJsonSerializer = true;
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.UseXmlSerializer = true;
         }
     }
 }

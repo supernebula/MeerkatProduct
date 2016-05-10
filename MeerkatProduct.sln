@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Memcached.Repository
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository", "Nebula.Redis.Repository\Nebula.Redis.Repository.csproj", "{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI", "Nebula.First.OpenAPI\Nebula.First.OpenAPI.csproj", "{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +128,10 @@ Global
 		{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
