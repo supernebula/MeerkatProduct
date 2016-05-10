@@ -20,7 +20,7 @@ namespace Nebula.First.OpenAPI
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
-            config.Routes.Add("ServiceApi", new ServiceDoHttpRoute());
+            //config.Routes.Add("ServiceApi", new ServiceDoHttpRoute());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
