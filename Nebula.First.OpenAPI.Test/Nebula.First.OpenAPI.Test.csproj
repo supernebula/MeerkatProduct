@@ -72,10 +72,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.First.OpenAPI\Nebula.First.OpenAPI.csproj">
-      <Project>{b59a9615-5625-493b-8eb6-fc390ef81bdc}</Project>
-      <Name>Nebula.First.OpenAPI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>

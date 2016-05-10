@@ -38,8 +38,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.WebSite", "Neb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.WebSite.Tests", "Nebula.First.WebSite.Tests\Nebula.First.WebSite.Tests.csproj", "{B7E279B7-F4FD-402B-898B-C981362FB420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI", "Nebula.First.OpenAPI\Nebula.First.OpenAPI.csproj", "{B59A9615-5625-493B-8EB6-FC390EF81BDC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI.Test", "Nebula.First.OpenAPI.Test\Nebula.First.OpenAPI.Test.csproj", "{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.EFRepository", "Nebula.First.EFRepository\Nebula.First.EFRepository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
@@ -100,10 +98,6 @@ Global
 		{B7E279B7-F4FD-402B-898B-C981362FB420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E279B7-F4FD-402B-898B-C981362FB420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E279B7-F4FD-402B-898B-C981362FB420}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B59A9615-5625-493B-8EB6-FC390EF81BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B59A9615-5625-493B-8EB6-FC390EF81BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B59A9615-5625-493B-8EB6-FC390EF81BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B59A9615-5625-493B-8EB6-FC390EF81BDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
