@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using OpenAPI.Models;
+using Nebula.First.OpenAPI.Models;
 
-namespace OpenAPI.Providers
+namespace Nebula.First.OpenAPI.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

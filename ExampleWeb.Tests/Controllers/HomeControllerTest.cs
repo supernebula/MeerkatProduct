@@ -6,10 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ExampleWeb;
-using ExampleWeb.Controllers;
+using Nebula.First.WebSite;
+using Nebula.First.WebSite.Controllers;
 
-namespace ExampleWeb.Tests.Controllers
+namespace Nebula.First.WebSite.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

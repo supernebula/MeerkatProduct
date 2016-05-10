@@ -7,10 +7,11 @@
     <ProjectGuid>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Repository</RootNamespace>
-    <AssemblyName>Nebula.Repository</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Nebula.First.EFRepository</RootNamespace>
+    <AssemblyName>Nebula.First.EFRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

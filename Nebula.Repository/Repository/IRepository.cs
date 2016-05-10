@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
-using Nebula.Repository.Model;
+using Nebula.First.EFRepository.Model;
 
-namespace Nebula.Repository.Repository
+namespace Nebula.First.EFRepository.Repository
 {
     public interface IRepository<T> where T : IPrimaryKey
     {

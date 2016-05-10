@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OpenAPI.Models
+namespace Nebula.First.OpenAPI.Models
 {
     // AccountController 操作返回的模型。
 

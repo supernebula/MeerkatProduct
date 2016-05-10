@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Diagnostics;
-using Nebula.Repository.Model;
+using Nebula.First.EFRepository.Model;
 using Nebula.Utilities.Expressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Utilities.Tests;

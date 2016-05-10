@@ -11,7 +11,7 @@ using System.Web;
 using System.Web.Mvc;
 using Moq;
 
-namespace ExampleWeb.Tests.TestStart
+namespace Nebula.First.WebSite.Tests.TestStart
 {
     public static class MvcContextMockHelper
     {

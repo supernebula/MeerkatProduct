@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
-using OpenAPI.Routing;
+using Nebula.First.OpenAPI.Routing;
 
-namespace OpenAPI
+namespace Nebula.First.OpenAPI
 {
     public static class WebApiConfig
     {

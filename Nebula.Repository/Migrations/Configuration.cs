@@ -1,18 +1,18 @@
-namespace Nebula.Repository.Migrations
+namespace Nebula.First.EFRepository.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Nebula.Repository.ProductDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Nebula.First.EFRepository.ProductDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Nebula.Repository.ProductDbContext context)
+        protected override void Seed(Nebula.First.EFRepository.ProductDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

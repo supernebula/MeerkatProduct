@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ExampleWeb
+namespace Nebula.First.WebSite
 {
     public class FilterConfig
     {

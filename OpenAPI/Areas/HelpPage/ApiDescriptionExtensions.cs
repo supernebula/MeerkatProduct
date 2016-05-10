@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace OpenAPI.Areas.HelpPage
+namespace Nebula.First.OpenAPI.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

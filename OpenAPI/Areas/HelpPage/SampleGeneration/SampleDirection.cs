@@ -1,4 +1,4 @@
-namespace OpenAPI.Areas.HelpPage
+namespace Nebula.First.OpenAPI.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

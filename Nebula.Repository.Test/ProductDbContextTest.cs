@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Repository;
-using Nebula.Repository.Model;
+using Nebula.First.EFRepository.Test;
+using Nebula.First.EFRepository.Model;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using System.Linq;
 using Nebula.Utilities.Expressions;
 using System.Collections.Generic;
 
-namespace Nebula.Repository.Test
+namespace Nebula.First.EFRepository.Test.Test
 {
     [TestClass]
     public class ProductDbContextTest

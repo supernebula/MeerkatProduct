@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace OpenAPI.Controllers
+namespace Nebula.First.OpenAPI.Controllers
 {
     [Route("api/Example")]
     public class ExampleController : ApiController

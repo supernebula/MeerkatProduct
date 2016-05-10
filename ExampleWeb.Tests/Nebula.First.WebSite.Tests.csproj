@@ -9,8 +9,8 @@
     <ProjectGuid>{B7E279B7-F4FD-402B-898B-C981362FB420}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExampleWeb.Tests</RootNamespace>
-    <AssemblyName>ExampleWeb.Tests</AssemblyName>
+    <RootNamespace>Nebula.First.WebSite.Tests</RootNamespace>
+    <AssemblyName>Nebula.First.WebSite.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -98,9 +98,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExampleWeb\ExampleWeb.csproj">
+    <ProjectReference Include="..\ExampleWeb\Nebula.First.WebSite.csproj">
       <Project>{E36ADB8C-32C2-42D8-BB72-81CAB0C54CCC}</Project>
-      <Name>ExampleWeb</Name>
+      <Name>Nebula.First.WebSite</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

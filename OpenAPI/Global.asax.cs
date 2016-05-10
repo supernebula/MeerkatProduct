@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace OpenAPI
+namespace Nebula.First.OpenAPI
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace OpenAPI.Areas.HelpPage.ModelDescriptions
+namespace Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

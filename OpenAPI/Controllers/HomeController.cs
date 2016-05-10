@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace OpenAPI.Controllers
+namespace Nebula.First.OpenAPI.Controllers
 {
     public class HomeController : Controller
     {

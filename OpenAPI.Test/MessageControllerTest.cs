@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenAPI.Controllers;
-using OpenAPI.Models.Product;
+using Nebula.First.OpenAPI.Controllers;
+using Nebula.First.OpenAPI.Models.Product;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using Nebula.Utilities.Hash;
 using Nebula.Utilities.Serialization;
 
-namespace OpenAPI.Test
+namespace Nebula.First.OpenAPI.Test
 {
     [TestClass]
     public class MessageControllerTest

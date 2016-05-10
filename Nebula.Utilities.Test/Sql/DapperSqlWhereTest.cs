@@ -2,7 +2,7 @@
 using Nebula.Utilities.Sql;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Repository;
+using Nebula.First.EFRepository;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 

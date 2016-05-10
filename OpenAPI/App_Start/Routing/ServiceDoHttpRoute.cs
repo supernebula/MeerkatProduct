@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Routing;
 using System.Xml;
 
-namespace OpenAPI.Routing
+namespace Nebula.First.OpenAPI.Routing
 {
     class ServiceDoHttpRoute : HttpRoute
     {

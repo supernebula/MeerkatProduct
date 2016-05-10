@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace ExampleWeb.Tests.TestStart
+namespace Nebula.First.WebSite.Tests.TestStart
 {
     public class MvcMockUtility
     {

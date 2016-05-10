@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace OpenAPI
+namespace Nebula.First.OpenAPI
 {
     public class FilterConfig
     {

@@ -6,9 +6,9 @@
     <ProjectGuid>{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Repository.Test</RootNamespace>
-    <AssemblyName>Nebula.Repository.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Nebula.First.EFRepository.Test</RootNamespace>
+    <AssemblyName>Nebula.First.EFRepository.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Repository\Nebula.Repository.csproj">
+    <ProjectReference Include="..\Nebula.Repository\Nebula.First.EFRepository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
-      <Name>Nebula.Repository</Name>
+      <Name>Nebula.First.EFRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>

@@ -1,4 +1,4 @@
-namespace Nebula.Repository.Migrations
+namespace Nebula.First.EFRepository.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace OpenAPI.Models.Product
+namespace Nebula.First.OpenAPI.Models.Product
 {
     /// <summary>
     /// 提交订单参数

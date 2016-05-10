@@ -1,4 +1,4 @@
-namespace OpenAPI.Areas.HelpPage.ModelDescriptions
+namespace Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

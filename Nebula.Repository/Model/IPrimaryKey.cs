@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Repository.Model
+namespace Nebula.First.EFRepository.Model
 {
     public interface IPrimaryKey
     {

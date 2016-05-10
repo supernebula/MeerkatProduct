@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using OpenAPI.Areas.HelpPage.ModelDescriptions;
-using OpenAPI.Areas.HelpPage.Models;
+using Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions;
+using Nebula.First.OpenAPI.Areas.HelpPage.Models;
 
-namespace OpenAPI.Areas.HelpPage.Controllers
+namespace Nebula.First.OpenAPI.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

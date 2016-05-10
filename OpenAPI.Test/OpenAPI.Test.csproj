@@ -6,8 +6,8 @@
     <ProjectGuid>{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenAPI.Test</RootNamespace>
-    <AssemblyName>OpenAPI.Test</AssemblyName>
+    <RootNamespace>Nebula.First.OpenAPI.Test</RootNamespace>
+    <AssemblyName>Nebula.First.OpenAPI.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -76,9 +76,9 @@
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OpenAPI\OpenAPI.csproj">
+    <ProjectReference Include="..\OpenAPI\Nebula.First.OpenAPI.csproj">
       <Project>{b59a9615-5625-493b-8eb6-fc390ef81bdc}</Project>
-      <Name>OpenAPI</Name>
+      <Name>Nebula.First.OpenAPI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

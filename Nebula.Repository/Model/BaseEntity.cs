@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Repository.Model
+namespace Nebula.First.EFRepository.Model
 {
     public abstract class BaseEntity : IEntity
     {

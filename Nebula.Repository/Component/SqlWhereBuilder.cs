@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Repository.Component
+namespace Nebula.First.EFRepository.Component
 {
     class SqlWhereBuilder
     {

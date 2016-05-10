@@ -1,4 +1,4 @@
-﻿using Nebula.Repository.Model;
+﻿using Nebula.First.EFRepository.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Repository.Map
+namespace Nebula.First.EFRepository.Map
 {
     class ProductMap : EntityTypeConfiguration<Product>
     {

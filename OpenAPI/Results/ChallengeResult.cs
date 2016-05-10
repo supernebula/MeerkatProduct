@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace OpenAPI.Results
+namespace Nebula.First.OpenAPI.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

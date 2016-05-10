@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Repository.Repository
+namespace Nebula.First.EFRepository.Repository
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using OpenAPI.Providers;
-using OpenAPI.Models;
+using Nebula.First.OpenAPI.Providers;
+using Nebula.First.OpenAPI.Models;
 
-namespace OpenAPI
+namespace Nebula.First.OpenAPI
 {
     public partial class Startup
     {

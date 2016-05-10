@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Nebula.Repository.Map;
-using Nebula.Repository.Model;
+using Nebula.First.EFRepository.Map;
+using Nebula.First.EFRepository.Model;
 
-namespace Nebula.Repository
+namespace Nebula.First.EFRepository
 {
     public class ProductDbContext : DbContext
     {

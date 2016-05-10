@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ExampleWeb
+namespace Nebula.First.WebSite
 {
     public class BundleConfig
     {

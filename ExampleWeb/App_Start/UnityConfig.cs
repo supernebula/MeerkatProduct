@@ -1,9 +1,9 @@
 using System;
-using ExampleWeb.Core;
+using Nebula.First.WebSite.Core;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 
-namespace ExampleWeb.App_Start
+namespace Nebula.First.WebSite.App_Start
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
