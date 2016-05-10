@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}</ProjectGuid>
+    <ProjectGuid>{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Utilities.Test</RootNamespace>
-    <AssemblyName>Nebula.Utilities.Test</AssemblyName>
+    <RootNamespace>Nebula.First.EFRepository.Test</RootNamespace>
+    <AssemblyName>Nebula.First.EFRepository.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -46,8 +46,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -57,24 +55,17 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Collection\BloomFilterTest.cs" />
-    <Compile Include="Expressions\DynamicExpressionTest.cs" />
-    <Compile Include="Math\RandomTest.cs" />
-    <Compile Include="Serialization\JavaScriptTest.cs" />
-    <Compile Include="Serialization\XmlConvertTest.cs" />
-    <Compile Include="Space\SpaceComplexityTest.cs" />
-    <Compile Include="Space\SpaceSizeTest.cs" />
-    <Compile Include="Sql\DapperSqlWhereTest.cs" />
-    <Compile Include="Sql\SqlBuilderTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ProductDbContextTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.First.EFRepository\Nebula.First.EFRepository.csproj">
@@ -86,11 +77,6 @@
       <Name>Nebula.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
