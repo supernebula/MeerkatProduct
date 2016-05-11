@@ -45,6 +45,10 @@
     <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.First.Compoment\Nebula.First.Compoment.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.First.Compoment</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.First.Storage\Nebula.First.Data.csproj">
       <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
       <Name>Nebula.First.Data</Name>
