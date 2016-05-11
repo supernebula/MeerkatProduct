@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nebula.First.Business.Interface;
 
 namespace Nebula.First.Business
 {
-    public class Class1
+    public class ProductService : IProductService
     {
     }
 }

@@ -56,7 +56,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI", "Neb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.Data", "Nebula.First.Storage\Nebula.First.Data.csproj", "{8E277B26-B7E0-4D89-B3C8-83ED819B744F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.QueryService", "Nebula.First.QueryService\Nebula.First.QueryService.csproj", "{3A834C79-05FE-4C07-A321-B6057C28F075}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.DataStorage", "Nebula.First.QueryService\Nebula.First.DataStorage.csproj", "{3A834C79-05FE-4C07-A321-B6057C28F075}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.MobileSite", "Nebula.First.MobileSite\Nebula.First.MobileSite.csproj", "{74814066-54CA-4D65-BD71-4BB0BF721210}"
 EndProject
