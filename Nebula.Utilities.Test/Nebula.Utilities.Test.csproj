@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Collection\BloomFilterTest.cs" />
     <Compile Include="Expressions\DynamicExpressionTest.cs" />
+    <Compile Include="Extension\RegexTest.cs" />
     <Compile Include="Math\RandomTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlConvertTest.cs" />
