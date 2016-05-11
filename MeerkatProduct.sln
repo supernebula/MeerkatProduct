@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Web", "Nebula.Web\Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.MongoDB.Repository", "Nebula.MongoDB.Repository\Nebula.MongoDB.Repository.csproj", "{471DA0B4-6C08-41B2-92A3-5F9E66B143A0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{6393B565-5C8B-49D4-A357-F56B681806DB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{6393B565-5C8B-49D4-A357-F56B681806DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{5E813404-0D6D-4BAF-A307-C988436C8804}"
 EndProject
@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.WebSite.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI.Test", "Nebula.First.OpenAPI.Test\Nebula.First.OpenAPI.Test.csproj", "{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.EFRepository", "Nebula.First.EFRepository\Nebula.First.EFRepository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.EntityFramework.Repository", "Nebula.First.EFRepository\Nebula.EntityFramework.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.EFRepository.Test", "Nebula.First.EFRepository.Test\Nebula.First.EFRepository.Test.csproj", "{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}"
 EndProject
@@ -53,6 +53,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository", "Nebula.Redis.Repository\Nebula.Redis.Repository.csproj", "{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.OpenAPI", "Nebula.First.OpenAPI\Nebula.First.OpenAPI.csproj", "{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.Data", "Nebula.First.Storage\Nebula.First.Data.csproj", "{8E277B26-B7E0-4D89-B3C8-83ED819B744F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.QueryService", "Nebula.First.QueryService\Nebula.First.QueryService.csproj", "{3A834C79-05FE-4C07-A321-B6057C28F075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.MobileSite", "Nebula.First.MobileSite\Nebula.First.MobileSite.csproj", "{74814066-54CA-4D65-BD71-4BB0BF721210}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.First.MobileSite.Tests", "Nebula.First.MobileSite.Tests\Nebula.First.MobileSite.Tests.csproj", "{BD220360-6E37-4435-B2DB-F516FF3CE6CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,6 +140,22 @@ Global
 		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E277B26-B7E0-4D89-B3C8-83ED819B744F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E277B26-B7E0-4D89-B3C8-83ED819B744F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E277B26-B7E0-4D89-B3C8-83ED819B744F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E277B26-B7E0-4D89-B3C8-83ED819B744F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A834C79-05FE-4C07-A321-B6057C28F075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A834C79-05FE-4C07-A321-B6057C28F075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A834C79-05FE-4C07-A321-B6057C28F075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A834C79-05FE-4C07-A321-B6057C28F075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74814066-54CA-4D65-BD71-4BB0BF721210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74814066-54CA-4D65-BD71-4BB0BF721210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74814066-54CA-4D65-BD71-4BB0BF721210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74814066-54CA-4D65-BD71-4BB0BF721210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD220360-6E37-4435-B2DB-F516FF3CE6CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD220360-6E37-4435-B2DB-F516FF3CE6CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD220360-6E37-4435-B2DB-F516FF3CE6CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD220360-6E37-4435-B2DB-F516FF3CE6CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,5 +177,8 @@ Global
 		{47FF7F27-1A70-4437-93D6-D53793C16DF4} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{82AF8C4A-4673-48F7-A5AC-18DB6EF0FFA7} = {5E813404-0D6D-4BAF-A307-C988436C8804}
 		{EA99243B-502D-4DFA-B8E7-B4EB80090A3C} = {5E813404-0D6D-4BAF-A307-C988436C8804}
+		{8E277B26-B7E0-4D89-B3C8-83ED819B744F} = {6393B565-5C8B-49D4-A357-F56B681806DB}
+		{3A834C79-05FE-4C07-A321-B6057C28F075} = {6393B565-5C8B-49D4-A357-F56B681806DB}
+		{BD220360-6E37-4435-B2DB-F516FF3CE6CB} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 	EndGlobalSection
 EndGlobal

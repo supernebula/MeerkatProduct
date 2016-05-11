@@ -68,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.First.EFRepository\Nebula.First.EFRepository.csproj">
+    <ProjectReference Include="..\Nebula.First.EFRepository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
-      <Name>Nebula.First.EFRepository</Name>
+      <Name>Nebula.EntityFramework.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
