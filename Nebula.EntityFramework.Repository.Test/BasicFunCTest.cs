@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Nebula.EntityFramework.Repository.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class BasicFuncTest
     {
         [TestMethod]
         public void TestMethod1()
