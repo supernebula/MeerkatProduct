@@ -315,19 +315,19 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.First.Business\Nebula.FirstEC.Business.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.Business\Nebula.FirstEC.Business.csproj">
       <Project>{a7bff6ef-2cd2-45b2-8832-b9eb315fe0be}</Project>
       <Name>Nebula.FirstEC.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.First.Compoment\Nebula.FirstEC.Compoment.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
       <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
       <Name>Nebula.FirstEC.Compoment</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.First.QueryService\Nebula.FirstEC.DataStorage.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.DataStorage\Nebula.FirstEC.DataStorage.csproj">
       <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
       <Name>Nebula.FirstEC.DataStorage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.First.Storage\Nebula.FirstEC.Data.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
       <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
       <Name>Nebula.FirstEC.Data</Name>
     </ProjectReference>

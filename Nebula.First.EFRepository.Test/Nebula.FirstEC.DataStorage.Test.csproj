@@ -6,8 +6,8 @@
     <ProjectGuid>{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.First.EFRepository.Test</RootNamespace>
-    <AssemblyName>Nebula.First.EFRepository.Test</AssemblyName>
+    <RootNamespace>Nebula.FirstEC.DataStorage.Test</RootNamespace>
+    <AssemblyName>Nebula.FirstEC.DataStorage.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -71,6 +71,14 @@
     <ProjectReference Include="..\Nebula.First.EFRepository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.EntityFramework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Compoment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.DataStorage\Nebula.FirstEC.DataStorage.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Nebula.FirstEC.DataStorage</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
