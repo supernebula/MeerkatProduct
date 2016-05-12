@@ -97,6 +97,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.FirstEC.WebSite\Nebula.FirstEC.WebSite.csproj">
+      <Project>{e36adb8c-32c2-42d8-bb72-81cab0c54ccc}</Project>
+      <Name>Nebula.FirstEC.WebSite</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
