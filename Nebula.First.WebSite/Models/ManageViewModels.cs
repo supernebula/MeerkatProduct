@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Nebula.First.WebSite.Models
+namespace Nebula.FirstEC.WebSite.Models
 {
     public class IndexViewModel
     {

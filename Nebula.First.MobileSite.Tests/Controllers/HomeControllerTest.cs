@@ -5,7 +5,7 @@ using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.First.MobileSite;
-using Nebula.First.MobileSite.Controllers;
+using Nebula.FirstEC.MobileSite.Controllers;
 
 namespace Nebula.First.MobileSite.Tests.Controllers
 {

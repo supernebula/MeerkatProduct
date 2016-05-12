@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.Business
+namespace Nebula.FirstEC.Business
 {
     public interface IProductService
     {

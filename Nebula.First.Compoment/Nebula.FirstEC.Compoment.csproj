@@ -7,8 +7,8 @@
     <ProjectGuid>{47FF7F27-1A70-4437-93D6-D53793C16DF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.First.Compoment</RootNamespace>
-    <AssemblyName>Nebula.First.Compoment</AssemblyName>
+    <RootNamespace>Nebula.FirstEC.Compoment</RootNamespace>
+    <AssemblyName>Nebula.FirstEC.Compoment</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.First.OpenAPI.Controllers;
-using Nebula.First.OpenAPI.Models.Product;
+using Nebula.FirstEC.OpenAPI.Controllers;
+using Nebula.FirstEC.OpenAPI.Models.Product;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;

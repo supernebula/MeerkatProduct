@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.First.Compoment;
-using Nebula.First.Data.EntityQueries;
+using Nebula.FirstEC.Compoment;
+using Nebula.FirstEC.Data.EntityQueries;
 
-namespace Nebula.First.DataStorage.EntityQueries
+namespace Nebula.FirstEC.DataStorage.EntityQueries
 {
     public class ProductEntityQuery : IProductEntityQuery
     {

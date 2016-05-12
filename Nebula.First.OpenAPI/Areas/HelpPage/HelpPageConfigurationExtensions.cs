@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions;
-using Nebula.First.OpenAPI.Areas.HelpPage.Models;
+using Nebula.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions;
+using Nebula.FirstEC.OpenAPI.Areas.HelpPage.Models;
 
-namespace Nebula.First.OpenAPI.Areas.HelpPage
+namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

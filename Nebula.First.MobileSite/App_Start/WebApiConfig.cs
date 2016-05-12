@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Nebula.First.MobileSite
+namespace Nebula.FirstEC.MobileSite
 {
     public static class WebApiConfig
     {

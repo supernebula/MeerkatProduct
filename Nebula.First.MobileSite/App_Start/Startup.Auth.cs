@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Nebula.First.MobileSite.Models;
+using Nebula.FirstEC.MobileSite.Models;
 
-namespace Nebula.First.MobileSite
+namespace Nebula.FirstEC.MobileSite
 {
     public partial class Startup
     {

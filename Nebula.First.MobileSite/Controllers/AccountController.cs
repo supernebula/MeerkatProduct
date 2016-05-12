@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Nebula.First.MobileSite.Models;
+using Nebula.FirstEC.MobileSite.Models;
 
-namespace Nebula.First.MobileSite.Controllers
+namespace Nebula.FirstEC.MobileSite.Controllers
 {
     [Authorize]
     public class AccountController : Controller

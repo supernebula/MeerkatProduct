@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.WebSite.Core
+namespace Nebula.FirstEC.WebSite.Core
 {
     public class Error : Exception
     {

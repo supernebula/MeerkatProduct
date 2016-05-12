@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Nebula.First.WebSite.Models;
+using Nebula.FirstEC.WebSite.Models;
 
-namespace Nebula.First.WebSite.Controllers
+namespace Nebula.FirstEC.WebSite.Controllers
 {
     [Authorize]
     public class ManageController : Controller

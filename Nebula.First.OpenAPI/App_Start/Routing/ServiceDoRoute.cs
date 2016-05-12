@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Xml;
 
-namespace Nebula.First.OpenAPI.Routing
+namespace Nebula.FirstEC.OpenAPI.Routing
 {
     public class ServiceDoRoute : RouteBase
     {

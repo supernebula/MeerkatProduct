@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
-using Nebula.First.OpenAPI.Routing;
+using Nebula.FirstEC.OpenAPI.Routing;
 using Newtonsoft.Json.Serialization;
 
-namespace Nebula.First.OpenAPI
+namespace Nebula.FirstEC.OpenAPI
 {
     public static class WebApiConfig
     {

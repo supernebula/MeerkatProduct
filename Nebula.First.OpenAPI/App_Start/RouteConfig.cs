@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Nebula.First.OpenAPI.Routing;
+using Nebula.FirstEC.OpenAPI.Routing;
 
-namespace Nebula.First.OpenAPI
+namespace Nebula.FirstEC.OpenAPI
 {
     public class RouteConfig
     {

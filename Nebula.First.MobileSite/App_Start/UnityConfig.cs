@@ -1,13 +1,11 @@
 using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Unity.WebApi;
-using Nebula.First.Business;
-using Nebula.First.Data;
-using Nebula.First.Data.EntityQueries;
-using Nebula.First.DataStorage;
-using Nebula.First.DataStorage.EntityQueries;
+using Nebula.FirstEC.Business;
+using Nebula.FirstEC.Data.EntityQueries;
+using Nebula.FirstEC.DataStorage.EntityQueries;
 
-namespace Nebula.First.MobileSite
+namespace Nebula.FirstEC.MobileSite
 {
     public static class UnityConfig
     {

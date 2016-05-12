@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions;
+using Nebula.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions;
 
-namespace Nebula.First.OpenAPI.Areas.HelpPage
+namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

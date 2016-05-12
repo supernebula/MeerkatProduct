@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Nebula.First.OpenAPI
+namespace Nebula.FirstEC.OpenAPI
 {
     public class BundleConfig
     {

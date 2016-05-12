@@ -5,10 +5,10 @@ using System.Web.Http;
 using System.Web.UI.WebControls;
 using log4net;
 using log4net.Config;
-using Nebula.First.OpenAPI.Models.Product;
+using Nebula.FirstEC.OpenAPI.Models.Product;
 
 [assembly: XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
-namespace Nebula.First.OpenAPI.Controllers
+namespace Nebula.FirstEC.OpenAPI.Controllers
 {
     /// <summary>
     /// 订单API

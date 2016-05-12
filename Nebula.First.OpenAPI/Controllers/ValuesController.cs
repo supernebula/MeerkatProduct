@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Nebula.First.OpenAPI.Controllers
+namespace Nebula.FirstEC.OpenAPI.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

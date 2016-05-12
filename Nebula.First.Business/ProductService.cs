@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.First.Business;
+using Nebula.FirstEC.Business;
 
-namespace Nebula.First.Business
+namespace Nebula.FirstEC.Business
 {
     public class ProductService : IProductService
     {

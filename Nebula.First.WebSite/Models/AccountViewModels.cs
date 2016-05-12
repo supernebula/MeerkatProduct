@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Nebula.First.WebSite.Models
+namespace Nebula.FirstEC.WebSite.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

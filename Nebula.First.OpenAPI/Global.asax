@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Nebula.First.OpenAPI.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Nebula.FirstEC.OpenAPI.WebApiApplication" Language="C#" %>

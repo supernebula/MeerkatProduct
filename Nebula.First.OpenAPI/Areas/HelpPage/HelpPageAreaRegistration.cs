@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Nebula.First.OpenAPI.Areas.HelpPage
+namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

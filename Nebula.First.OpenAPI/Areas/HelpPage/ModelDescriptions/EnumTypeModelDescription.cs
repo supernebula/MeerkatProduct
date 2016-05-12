@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions
+namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
 using log4net;
 
-namespace Nebula.First.WebSite.Core
+namespace Nebula.FirstEC.WebSite.Core
 {
     public class CustomExceptionHandler : ExceptionHandler
     {

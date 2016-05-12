@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Nebula.First.WebSite.Controllers
+namespace Nebula.FirstEC.WebSite.Controllers
 {
     public class HomeController : Controller
     {

@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Nebula.First.MobileSite.Models;
+using Nebula.FirstEC.MobileSite.Models;
 
-namespace Nebula.First.MobileSite
+namespace Nebula.FirstEC.MobileSite
 {
     public class EmailService : IIdentityMessageService
     {

@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Routing;
 
-namespace Nebula.First.OpenAPI.Controllers
+namespace Nebula.FirstEC.OpenAPI.Controllers
 {
     [Route("api/service/")]
     public class ServiceController : ApiController

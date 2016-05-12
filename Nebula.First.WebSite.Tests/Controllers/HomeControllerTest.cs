@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.First.WebSite;
-using Nebula.First.WebSite.Controllers;
+using Nebula.FirstEC.WebSite.Controllers;
 
 namespace Nebula.First.WebSite.Tests.Controllers
 {

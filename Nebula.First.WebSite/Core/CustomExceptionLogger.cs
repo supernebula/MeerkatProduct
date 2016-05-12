@@ -9,7 +9,7 @@ using System.Web.Http.ExceptionHandling;
 using System.Web.Services.Description;
 using log4net;
 
-namespace Nebula.First.WebSite.Core
+namespace Nebula.FirstEC.WebSite.Core
 {
     /// <summary>
     /// 全局错误日志记录， 可以多个

@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace Nebula.First.OpenAPI.Areas.HelpPage.ModelDescriptions
+namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

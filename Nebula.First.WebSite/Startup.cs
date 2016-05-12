@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Nebula.First.WebSite.Startup))]
-namespace Nebula.First.WebSite
+[assembly: OwinStartupAttribute(typeof(Nebula.FirstEC.WebSite.Startup))]
+namespace Nebula.FirstEC.WebSite
 {
     public partial class Startup
     {

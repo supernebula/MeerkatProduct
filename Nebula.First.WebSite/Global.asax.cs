@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Nebula.First.WebSite
+namespace Nebula.FirstEC.WebSite
 {
     public class MvcApplication : System.Web.HttpApplication
     {

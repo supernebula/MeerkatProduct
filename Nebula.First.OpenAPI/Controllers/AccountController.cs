@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Nebula.First.OpenAPI.Models;
-using Nebula.First.OpenAPI.Providers;
-using Nebula.First.OpenAPI.Results;
+using Nebula.FirstEC.OpenAPI.Models;
+using Nebula.FirstEC.OpenAPI.Providers;
+using Nebula.FirstEC.OpenAPI.Results;
 
-namespace Nebula.First.OpenAPI.Controllers
+namespace Nebula.FirstEC.OpenAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
