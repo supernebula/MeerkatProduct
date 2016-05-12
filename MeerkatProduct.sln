@@ -68,6 +68,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.RabbitMQ.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.EntityFramework.Repository", "Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.EntityFramework.Repository.Test", "Nebula.EntityFramework.Repository.Test\Nebula.EntityFramework.Repository.Test.csproj", "{ED3625FB-8C0F-451B-AD23-662066D95582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Memcached.Repository.Test", "Nebula.Memcached.Repository.Test\Nebula.Memcached.Repository.Test.csproj", "{617298CA-891B-4F39-9675-2DF3AAB93EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.MongoDB.Repository.Test", "Nebula.MongoDB.Repository.Test\Nebula.MongoDB.Repository.Test.csproj", "{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository.Test", "Nebula.Redis.Repository.Test\Nebula.Redis.Repository.Test.csproj", "{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +178,22 @@ Global
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3625FB-8C0F-451B-AD23-662066D95582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3625FB-8C0F-451B-AD23-662066D95582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3625FB-8C0F-451B-AD23-662066D95582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3625FB-8C0F-451B-AD23-662066D95582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617298CA-891B-4F39-9675-2DF3AAB93EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617298CA-891B-4F39-9675-2DF3AAB93EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617298CA-891B-4F39-9675-2DF3AAB93EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617298CA-891B-4F39-9675-2DF3AAB93EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -196,5 +220,9 @@ Global
 		{D4998922-900E-475C-B464-1CACAB01D1B9} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{C05BFC1F-81DF-4012-A568-C45E7651893C} = {64D5ABCD-EEC5-44C4-8543-012518D459FE}
 		{CD58A276-8A17-44FD-8764-09AD2E5403C4} = {5E813404-0D6D-4BAF-A307-C988436C8804}
+		{ED3625FB-8C0F-451B-AD23-662066D95582} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
+		{617298CA-891B-4F39-9675-2DF3AAB93EC1} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
+		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
+		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 	EndGlobalSection
 EndGlobal
