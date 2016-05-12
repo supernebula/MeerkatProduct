@@ -62,7 +62,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.OpenAPI.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.WebSite.Tests", "Nebula.FirstEC.WebSite.Tests\Nebula.FirstEC.WebSite.Tests.csproj", "{B7E279B7-F4FD-402B-898B-C981362FB420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.DataStorage.Test", "Nebula.First.EFRepository.Test\Nebula.FirstEC.DataStorage.Test.csproj", "{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.DataStorage.Test", "Nebula.FirstEC.DataStorage.Test\Nebula.FirstEC.DataStorage.Test.csproj", "{985CAA5C-61AE-4F73-BCB3-4564A0FF2689}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
