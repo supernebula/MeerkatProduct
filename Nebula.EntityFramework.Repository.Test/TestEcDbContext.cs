@@ -7,42 +7,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Nebula.EntityFramework.Repository.Test.Map;
 
-namespace Nebula.EntityFramework.Repository.Test.Repository
+namespace Nebula.EntityFramework.Repository.Test
 {
-    class TestProductDbContext : DbContext
+    public class TestEcDbContext : DbContext 
     {
-        private static TestProductDbContext _instance;
-
-        public static TestProductDbContext Instance
+        static TestEcDbContext()
         {
-            get
-            {
-                if (_instance == null)
-                    _instance = new TestProductDbContext();
-                return _instance;
-            }
+            Database.SetInitializer(new CreateDatabaseIfNotExists<TestEcDbContext>());
         }
-
-        static TestProductDbContext()
-        {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<TestProductDbContext>());
-        }
-        public TestProductDbContext() : base("name=testProductContext")
+        public TestEcDbContext() : base("name=testEcContext")
         {
             Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<TestProductMap> Pruducts { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
             modelBuilder.Configurations.Add(new TestProductMap());
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
-
         }
     }
 }

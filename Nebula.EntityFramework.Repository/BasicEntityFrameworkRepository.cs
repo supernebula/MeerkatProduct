@@ -22,13 +22,7 @@ namespace Nebula.EntityFramework.Repository
             Context = new TDbContext();
         }
 
-        protected DbSet<T> DbSet
-        {
-            get
-            {
-                return Context.Set<T>();
-            }
-        }
+        protected DbSet<T> DbSet => Context.Set<T>();
 
         public void Insert(T item)
         {
