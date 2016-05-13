@@ -8,7 +8,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using Nebula.First.EFRepository.Map;
 using Nebula.First.EFRepository.Model;
 
-namespace Nebula.First.EFRepository
+namespace Nebula.EntityFramework.Repository
 {
     public class ProductDbContext : DbContext
     {
