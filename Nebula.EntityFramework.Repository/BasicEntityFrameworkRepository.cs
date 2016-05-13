@@ -24,22 +24,24 @@ namespace Nebula.EntityFramework.Repository
 
         protected DbSet<T> DbSet => Context.Set<T>();
 
+        private int SaveChanges()
+        {
+            return Context.SaveChanges();
+        }
+
         public void Insert(T item)
         {
             DbSet.Add(item);
-            Context.SaveChanges();
         }
 
         public void InsertRange(IEnumerable<T> items)
         {
             DbSet.AddRange(items);
-            Context.SaveChanges();
         }
 
         public void Delete(T item)
         {
             DbSet.Remove(item);
-            Context.SaveChanges();
         }
 
         public T Fetch(Guid id)
