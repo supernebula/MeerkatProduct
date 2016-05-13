@@ -26,7 +26,7 @@ namespace Nebula.EntityFramework.Repository.Test.Entities
 
         public ProductStatusType Status { get; set; }
 
-        public IEnumerable<SpecValue> Specs { get; set; }
+        public List<SpecValue> Specs { get; set; }
 
         public int VisitTotal { get; set; }
 

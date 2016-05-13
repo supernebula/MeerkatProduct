@@ -13,20 +13,21 @@ namespace Nebula.EntityFramework.Repository
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TDbContext"></typeparam>
-    public class BasicEntityFrameworkRepository<T, TDbContext> : IBasicRepository<T> where TDbContext : DbContext, new() where T : class
+    public abstract class BasicEntityFrameworkRepository<T, TDbContext> : IBasicRepository<T> where TDbContext : DbContext, new() where T : class
     {
 
-        public TDbContext Context { get; }
+        public TDbContext _context { get; }
+
         public BasicEntityFrameworkRepository()
         {
-            Context = new TDbContext();
+            _context = new TDbContext();
         }
 
-        protected DbSet<T> DbSet => Context.Set<T>();
+        protected DbSet<T> DbSet => _context.Set<T>();
 
-        private int SaveChanges()
+        private int Save()
         {
-            return Context.SaveChanges();
+            return _context.SaveChanges();
         }
 
         public void Insert(T item)
@@ -86,8 +87,8 @@ namespace Nebula.EntityFramework.Repository
                 if (disposing)
                 {
                     // TODO: 释放托管状态(托管对象)。
-                    if (Context != null)
-                        Context.Dispose();
+                    if (_context != null)
+                        _context.Dispose();
                 }
 
                 // TODO: 释放未托管的资源(未托管的对象)并在以下内容中替代终结器。

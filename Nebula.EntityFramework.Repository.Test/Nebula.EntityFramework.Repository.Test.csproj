@@ -61,8 +61,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Entities\TestOrder.cs" />
     <Compile Include="Entities\TestProduct.cs" />
+    <Compile Include="Entities\TestUser.cs" />
+    <Compile Include="Map\TestOrderMap.cs" />
     <Compile Include="Map\TestProductMap.cs" />
+    <Compile Include="Map\TestUserMap.cs" />
     <Compile Include="Repositories\TestProductRepository.cs" />
     <Compile Include="TestEcDbContext.cs" />
     <Compile Include="ConcurrentTest.cs" />
