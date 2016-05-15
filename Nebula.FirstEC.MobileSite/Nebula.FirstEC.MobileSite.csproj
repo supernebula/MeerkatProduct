@@ -228,6 +228,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -304,6 +305,7 @@
   <ItemGroup>
     <Folder Include="ApiModels\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +317,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
+      <Name>Nebula.EntityFramework.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.FirstEC.Business\Nebula.FirstEC.Business.csproj">
       <Project>{a7bff6ef-2cd2-45b2-8832-b9eb315fe0be}</Project>
       <Name>Nebula.FirstEC.Business</Name>

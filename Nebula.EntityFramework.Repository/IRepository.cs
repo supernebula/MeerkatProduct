@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public interface IBasicRepository<T> : IDisposable where T : class
+    public interface IRepository<T>  where T : class
     {
         IQueryable<T> Query();
         void Insert(T item);

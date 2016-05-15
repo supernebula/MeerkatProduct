@@ -78,7 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.First.EFRepository\Nebula.First.EFRepository.csproj">
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.First.EFRepository</Name>
     </ProjectReference>
