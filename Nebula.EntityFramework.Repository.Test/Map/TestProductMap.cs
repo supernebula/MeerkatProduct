@@ -13,7 +13,7 @@ namespace Nebula.EntityFramework.Repository.Test.Map
         public TestProductMap()
         {
             this.ToTable("Product");
-            this.HasKey(e => e.ID);
+            this.HasKey(e => e.Id);
             this.Property(e => e.Title).IsRequired().HasMaxLength(100).HasColumnName("Name");
             this.Property(e => e.Description).IsOptional().HasMaxLength(8000);
             this.Property(e => e.SourceUri).HasMaxLength(500);

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.EFRepository.Component
+namespace Nebula.FirstEC.Compoment
 {
-    class SqlWhereBuilder
+    public interface IPrimaryKey
     {
+        Guid Id { get; set; }
     }
 }

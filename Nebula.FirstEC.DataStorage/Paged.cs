@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Nebula.Utilities;
 
-namespace Nebula.First.EFRepository.Repository
+namespace Nebula.FirstEC.DataStorage
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

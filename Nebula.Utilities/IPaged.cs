@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.EFRepository.Repository
+namespace Nebula.Utilities
 {
     public interface IPaged<T> : IPaged, IEnumerable<T>
     {

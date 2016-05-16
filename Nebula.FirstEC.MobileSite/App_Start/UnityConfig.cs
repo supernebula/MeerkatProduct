@@ -1,5 +1,9 @@
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Runtime.InteropServices;
 using Microsoft.Practices.Unity;
 using System.Web.Http;
+using Nebula.EntityFramework.Repository;
 using Unity.WebApi;
 using Nebula.FirstEC.Business;
 using Nebula.FirstEC.Data.EntityQueries;
@@ -17,6 +21,8 @@ namespace Nebula.FirstEC.MobileSite
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
+            container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
+            container.RegisterType(typeof(IDbContextFactory<>), typeof(EfDbContextFactory<>), new PerThreadLifetimeManager());
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IProductEntityQuery, ProductEntityQuery>();
 

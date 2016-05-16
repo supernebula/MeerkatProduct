@@ -67,40 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicEntityFrameworkRepository.cs" />
-    <Compile Include="Component\SqlWhereBuilder.cs" />
     <Compile Include="EFDbContextFactory.cs" />
-    <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Map\ProductMap.cs" />
-    <Compile Include="Migrations\201601081308395_Create-Table.cs" />
-    <Compile Include="Migrations\201601081308395_Create-Table.Designer.cs">
-      <DependentUpon>201601081308395_Create-Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601140519173_Update-table.cs" />
-    <Compile Include="Migrations\201601140519173_Update-table.Designer.cs">
-      <DependentUpon>201601140519173_Update-table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601150823266_Update-Table-Product2.cs" />
-    <Compile Include="Migrations\201601150823266_Update-Table-Product2.Designer.cs">
-      <DependentUpon>201601150823266_Update-Table-Product2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\BaseEntity.cs" />
-    <Compile Include="Model\Categary.cs" />
-    <Compile Include="Model\IEntity.cs" />
-    <Compile Include="Model\IMarkDelete.cs" />
-    <Compile Include="Model\IPrimaryKey.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\Spec.cs" />
-    <Compile Include="Model\SpecValue.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="ProductDbContext.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IPaged.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\Paged.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,15 +77,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601081308395_Create-Table.resx">
-      <DependentUpon>201601081308395_Create-Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601140519173_Update-table.resx">
-      <DependentUpon>201601140519173_Update-table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601150823266_Update-Table-Product2.resx">
-      <DependentUpon>201601150823266_Update-Table-Product2.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Compoment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Nebula.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

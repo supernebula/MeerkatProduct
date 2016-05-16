@@ -1,9 +1,12 @@
 ﻿using System;
-using Nebula.FirstEC.Compoment;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Nebula.EntityFramework.Repository.Test.Entities
+namespace Nebula.FirstEC.Compoment
 {
-    public class TestOrder : BaseEntity
+    public class Order : BaseEntity
     {
         public Guid UserId { get; set; }
         public Guid ProductId { get; set; }

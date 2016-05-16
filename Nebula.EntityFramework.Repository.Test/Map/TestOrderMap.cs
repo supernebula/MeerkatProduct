@@ -13,7 +13,7 @@ namespace Nebula.EntityFramework.Repository.Test.Map
         public TestOrderMap()
         {
             this.ToTable("TestOrder");
-            this.HasKey(e => e.ID);
+            this.HasKey(e => e.Id);
             this.Property(e => e.ProductId).IsRequired();
             this.Property(e => e.UserId).IsRequired();
             this.Property(e => e.Recipient).IsRequired().HasMaxLength(100).HasColumnName("Recipient");

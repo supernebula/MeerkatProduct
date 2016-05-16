@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public class Entity
+    public class Entity : IPrimaryKey, IMarkDelete
     {
         public Guid Id { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }
         public DateTime? DeleteTime { get; set; }
+
+        public bool MarkDelete { get; set; }
     }
 }

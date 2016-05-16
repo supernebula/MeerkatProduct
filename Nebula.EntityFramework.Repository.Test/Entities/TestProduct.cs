@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nebula.First.EFRepository.Model;
+﻿using System.Collections.Generic;
+using Nebula.FirstEC.Compoment;
 
 namespace Nebula.EntityFramework.Repository.Test.Entities
 {
@@ -39,6 +35,6 @@ namespace Nebula.EntityFramework.Repository.Test.Entities
 
         SellOut,
 
-        OutOfStock,
+        OutOfStock
     }
 }

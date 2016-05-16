@@ -5,8 +5,8 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using Nebula.Utilities;
 
 namespace Nebula.EntityFramework.Repository
 {
@@ -15,7 +15,7 @@ namespace Nebula.EntityFramework.Repository
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TDbContext"></typeparam>
-    public abstract class BasicEntityFrameworkRepository<T, TDbContext> : IRepository<T> where TDbContext : DbContext, new() where T : class
+    public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : DbContext, new() where T : class
     {
 
         private TDbContext _context;
@@ -32,15 +32,11 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        public BasicEntityFrameworkRepository()
-        {
-        }
-
         protected DbSet<T> DbSet => _context.Set<T>();
 
-        private  int Save()
+        private void Save()
         {
-            return Context.SaveChanges();
+            Context.SaveChanges();
         }
 
         public void Insert(T item)
@@ -58,9 +54,19 @@ namespace Nebula.EntityFramework.Repository
             DbSet.Remove(item);
         }
 
+        public void Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public T Fetch(Guid id)
         {
             return DbSet.Find(id);
+        }
+
+        public T Fetch(Expression<Func<T, bool>> predicate)
+        {
+            return DbSet.FirstOrDefault(predicate);
         }
 
         public async Task<T> FetchAsync(Guid id)
@@ -93,7 +99,12 @@ namespace Nebula.EntityFramework.Repository
             return DbSet.Any(predicate);
         }
 
-        public IEnumerable<T> Paged(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
+        public IPaged<T> Paged(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IPaged<T> Paged(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
         {
             throw new NotImplementedException();
 

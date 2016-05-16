@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public class EFDbContextFactory<TDbContext> : IDbContextFactory<TDbContext> where TDbContext : DbContext, new()
+    public class EfDbContextFactory<TContext> : IDbContextFactory<TContext> where TContext : DbContext
     {
-        private TDbContext _context;
-        public TDbContext Create()
+        private TContext _context;
+        public TContext Create()
         {
-            return _context == null ? Activator.CreateInstance<TDbContext>() : _context;
+            return _context ?? (_context = Activator.CreateInstance<TContext>());
         }
     }
 }

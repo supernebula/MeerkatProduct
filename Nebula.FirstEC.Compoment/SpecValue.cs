@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.EFRepository.Model
+namespace Nebula.FirstEC.Compoment
 {
-    public interface IMarkDelete
+    public class SpecValue : BaseEntity
     {
-        bool MarkDelete { get; set; }
+        public string Value { get; set; }
     }
 }

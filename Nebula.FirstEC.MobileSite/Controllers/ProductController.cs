@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Nebula.FirstEC.MobileSite.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         // GET: Product
         public ActionResult Index()

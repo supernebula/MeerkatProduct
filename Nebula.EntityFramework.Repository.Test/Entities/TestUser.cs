@@ -1,5 +1,4 @@
-﻿using System;
-using Nebula.First.EFRepository.Model;
+﻿using Nebula.FirstEC.Compoment;
 
 namespace Nebula.EntityFramework.Repository.Test.Entities
 {

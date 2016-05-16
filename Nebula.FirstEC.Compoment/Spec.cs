@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.EFRepository.Model
+namespace Nebula.FirstEC.Compoment
 {
-    public class Categary : BaseEntity
+    public class Spec : BaseEntity
     {
-
-        public Guid ParentID { get; set; }
-
         public string Title { get; set; }
 
-        public string Description { get; set; }
+        public string Remark { get; set; }
 
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public class Class1
+    public interface IMarkDelete
     {
+        bool MarkDelete { get; set; }
     }
 }

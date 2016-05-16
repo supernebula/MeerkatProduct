@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.First.EFRepository
+namespace Nebula.FirstEC.Compoment
 {
-    public class Class1
+    public interface IEntity : IPrimaryKey, IMarkDelete
     {
+        DateTime CreateDate { get; set; }
     }
 }
