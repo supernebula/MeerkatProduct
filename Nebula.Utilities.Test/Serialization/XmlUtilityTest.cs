@@ -40,7 +40,7 @@ namespace Nebula.Utilities.Test.Serialization
         }
     }
 
-
+    [XmlRoot("Member")]
     public class User
     {
         public Guid Id { get; set; }
@@ -49,6 +49,7 @@ namespace Nebula.Utilities.Test.Serialization
 
         public string Password { get; set; }
 
+        [XmlElement("GenderValue")]
         public GenderType Gender { get; set; }
 
         [XmlArray, XmlArrayItem("type")]
