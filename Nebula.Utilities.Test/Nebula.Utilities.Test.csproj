@@ -48,6 +48,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -69,7 +71,7 @@
     <Compile Include="Extension\RegexTest.cs" />
     <Compile Include="Math\RandomTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
-    <Compile Include="Serialization\XmlConvertTest.cs" />
+    <Compile Include="Serialization\XmlUtilityTest.cs" />
     <Compile Include="Space\SpaceComplexityTest.cs" />
     <Compile Include="Space\SpaceSizeTest.cs" />
     <Compile Include="Sql\DapperSqlWhereTest.cs" />

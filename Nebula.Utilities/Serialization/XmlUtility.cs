@@ -15,8 +15,8 @@ namespace Nebula.Utilities.Serialization
             T obj;
             using (StringReader reader = new StringReader(xml))
             {
-                var ser = new XmlSerializer(typeof(T));
-                obj = (T)ser.Deserialize(reader);
+                var serialize = new XmlSerializer(typeof(T));
+                obj = (T)serialize.Deserialize(reader);
             }
             return obj;
         }
@@ -35,7 +35,7 @@ namespace Nebula.Utilities.Serialization
             return str;
         }
 
-        public static string SerializeNoXmlNs(object obj)
+        public static string SerializeClean(object obj)
         {
             string result = null;
             var setting = new XmlWriterSettings();
