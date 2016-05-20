@@ -37,7 +37,7 @@ namespace Nebula.EntityFramework.Repository.Test
             userRepo.Insert(new FakeUser());
 
             UnitOfWorkObj.Commit();
-            UnitOfWorkObj.BeginTransaction();
+
 
             UnitOfWorkObj.Dispose();
 
