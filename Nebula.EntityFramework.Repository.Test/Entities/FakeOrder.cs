@@ -3,7 +3,7 @@ using Nebula.FirstEC.Compoment;
 
 namespace Nebula.EntityFramework.Repository.Test.Entities
 {
-    public class TestOrder : BaseEntity
+    public class FakeOrder : BaseEntity
     {
         public Guid UserId { get; set; }
         public Guid ProductId { get; set; }

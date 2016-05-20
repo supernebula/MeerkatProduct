@@ -4,7 +4,7 @@ using Nebula.FirstEC.Compoment;
 namespace Nebula.EntityFramework.Repository.Test.Entities
 {
 
-    public class TestProduct : BaseEntity
+    public class FakeProduct : BaseEntity
     {
         public string Title { get; set; }
 

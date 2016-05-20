@@ -61,17 +61,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Entities\TestOrder.cs" />
-    <Compile Include="Entities\TestProduct.cs" />
-    <Compile Include="Entities\TestUser.cs" />
-    <Compile Include="Map\TestOrderMap.cs" />
-    <Compile Include="Map\TestProductMap.cs" />
-    <Compile Include="Map\TestUserMap.cs" />
-    <Compile Include="Repositories\TestProductRepository.cs" />
-    <Compile Include="TestEcDbContext.cs" />
+    <Compile Include="Entities\FakeOrder.cs" />
+    <Compile Include="Entities\FakeProduct.cs" />
+    <Compile Include="Entities\FakeUser.cs" />
+    <Compile Include="Map\FakeOrderMap.cs" />
+    <Compile Include="Map\FakeProductMap.cs" />
+    <Compile Include="Map\FakeUserMap.cs" />
+    <Compile Include="Repositories\FakeOrderRepository.cs" />
+    <Compile Include="Repositories\FakeProductRepository.cs" />
+    <Compile Include="Core\FakeEcDbContext.cs" />
     <Compile Include="ConcurrentTest.cs" />
     <Compile Include="BasicFuncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FakeUserRepository.cs" />
     <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="TransactionTest.cs" />
     <Compile Include="SqlCommandTest.cs" />

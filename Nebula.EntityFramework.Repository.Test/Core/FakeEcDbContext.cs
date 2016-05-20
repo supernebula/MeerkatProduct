@@ -2,24 +2,24 @@
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Nebula.EntityFramework.Repository.Test.Map;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Nebula.EntityFramework.Repository.Test.Core
 {
-    public class TestEcDbContext : DbContext 
+    public class FakeEcDbContext : DbContext 
     {
 
-        static TestEcDbContext()
+        static FakeEcDbContext()
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<TestEcDbContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<FakeEcDbContext>());
         }
 
-        public TestEcDbContext() : base("name=testEcDbContext")
+        public FakeEcDbContext() : base("name=fakeEcDbContext")
         {
             Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new TestProductMap());
+            modelBuilder.Configurations.Add(new FakeProductMap());
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

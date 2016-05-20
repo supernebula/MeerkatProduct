@@ -8,9 +8,9 @@ using Nebula.EntityFramework.Repository.Test.Entities;
 
 namespace Nebula.EntityFramework.Repository.Test.Map
 {
-    public class TestProductMap : EntityTypeConfiguration<TestProduct>
+    public class FakeProductMap : EntityTypeConfiguration<FakeProduct>
     {
-        public TestProductMap()
+        public FakeProductMap()
         {
             this.ToTable("Product");
             this.HasKey(e => e.Id);

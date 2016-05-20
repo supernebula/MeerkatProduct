@@ -2,7 +2,7 @@
 
 namespace Nebula.EntityFramework.Repository.Test.Entities
 {
-    public class TestUser : BaseEntity
+    public class FakeUser : BaseEntity
     {
         public string Username { get; set; }
         public string Password { get; set; }

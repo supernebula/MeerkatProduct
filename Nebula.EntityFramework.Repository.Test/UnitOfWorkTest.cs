@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.EntityFramework.Repository.Test.Core;
 
 namespace Nebula.EntityFramework.Repository.Test
 {
@@ -11,14 +12,29 @@ namespace Nebula.EntityFramework.Repository.Test
     [TestClass]
     public class UnitOfWorkTest
     {
-        public UnitOfWorkTest()
+        public IUnitOfWork UnitOfWorkObj;
+
+        [TestInitialize]
+        public void Init()
         {
+            UnitOfWorkObj = new UnitOfWork<FakeEcDbContext>();
+        }
+
+        
+
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var 
             //
-            //TODO:  在此处添加构造函数逻辑
+            // TODO:  在此处添加测试逻辑
             //
         }
 
-        private TestContext testContextInstance;
+
+        #region template
+
+        private TestContext _testContextInstance;
 
         /// <summary>
         ///获取或设置测试上下文，该上下文提供
@@ -28,11 +44,11 @@ namespace Nebula.EntityFramework.Repository.Test
         {
             get
             {
-                return testContextInstance;
+                return _testContextInstance;
             }
             set
             {
-                testContextInstance = value;
+                _testContextInstance = value;
             }
         }
 
@@ -58,12 +74,6 @@ namespace Nebula.EntityFramework.Repository.Test
         //
         #endregion
 
-        [TestMethod]
-        public void TestMethod1()
-        {
-            //
-            // TODO:  在此处添加测试逻辑
-            //
-        }
+        #endregion
     }
 }
