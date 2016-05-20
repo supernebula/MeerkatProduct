@@ -12,7 +12,7 @@ namespace Nebula.Utilities.Test.Serialization
         [TestMethod,Description("XML反序列化")]
         public void DeSerializeTest()
         {
-            var xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><User xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><Id>C9ECF1D9-513D-489A-B259-5EAE472DFC8A</Id><Gender>None</Gender><CreateDate>2016-01-01T00:00:00</CreateDate></User>";
+            var xml = "<Member><Id>fef4eb92-a1d5-41d6-b6e3-8287bac7e5b8</Id><GenderValue>Female</GenderValue><Types><type>1</type><type>2</type></Types><CreateDate>2016-05-20T13:59:39.1364085+08:00</CreateDate></Member>";
             var obj = XmlUtility.DeSerialize<User>(xml);
             Trace.Write(obj);
             Assert.IsNotNull(obj);
@@ -63,5 +63,19 @@ namespace Nebula.Utilities.Test.Serialization
         None,
         Male,
         Female
+    }
+
+
+    public class Article
+    {
+        public Guid Id { get; set; }
+
+        public string Title { get; set; }
+
+        public string Content { get; set; }
+
+        public string[] Tags { get; set; }
+
+        public DateTime CreateDate { get; set; }
     }
 }
