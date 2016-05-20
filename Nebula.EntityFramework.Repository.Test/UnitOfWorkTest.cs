@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
+using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.EntityFramework.Repository.Test.Repositories;
 
 namespace Nebula.EntityFramework.Repository.Test
 {
@@ -23,9 +25,23 @@ namespace Nebula.EntityFramework.Repository.Test
         
 
         [TestMethod]
-        public void TestMethod1()
+        public void MuiltChangeTest()
         {
-            var 
+            var orderRepo = new FakeOrderRepository();
+            var productRepo = new FakeProductRepository();
+            var userRepo = new FakeUserRepository();
+
+            UnitOfWorkObj.BeginTransaction();
+            orderRepo.Insert(new FakeOrder());
+            productRepo.Insert(new FakeProduct());
+            userRepo.Insert(new FakeUser());
+
+            UnitOfWorkObj.Commit();
+            UnitOfWorkObj.BeginTransaction();
+
+            UnitOfWorkObj.Dispose();
+
+
             //
             // TODO:  在此处添加测试逻辑
             //
