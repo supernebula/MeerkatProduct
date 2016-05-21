@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Entities;
@@ -16,29 +17,34 @@ namespace Nebula.EntityFramework.Repository.Test
     {
         public IUnitOfWork UnitOfWorkObj;
 
+        //当前周期内共用唯一的DbContext
+        [ThreadStatic]
+        private static IDbContextFactory<FakeEcDbContext> _dbContextFactory;
+
         [TestInitialize]
         public void Init()
         {
-            UnitOfWorkObj = new UnitOfWork<FakeEcDbContext>();
+            _dbContextFactory = new FakeDbContextFactory<FakeEcDbContext>();
         }
 
         
 
-        [TestMethod]
+        [TestMethod,Description("工作单元的核心在于：逻辑从开始到结束（提交到数据库），使用同一个DbContext")]
         public void MuiltChangeTest()
         {
-            var orderRepo = new FakeOrderRepository();
-            var productRepo = new FakeProductRepository();
-            var userRepo = new FakeUserRepository();
+            var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
+            var orderRepo = new FakeOrderRepository()  {  DbContextFactory = _dbContextFactory };
+            var productRepo = new FakeProductRepository() { DbContextFactory = _dbContextFactory };
+            var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory };
 
-            UnitOfWorkObj.BeginTransaction();
+            unitOfWorkObj.BeginTransaction();
 
             orderRepo.Insert(new FakeOrder());
             productRepo.Insert(new FakeProduct());
             userRepo.Insert(new FakeUser());
 
-            UnitOfWorkObj.Commit();
-            UnitOfWorkObj.Dispose();
+            unitOfWorkObj.Commit();
+            unitOfWorkObj.Dispose();
         }
 
 

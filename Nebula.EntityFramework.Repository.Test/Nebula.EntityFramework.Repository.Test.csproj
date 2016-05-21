@@ -61,12 +61,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Core\FakeDbContextFactory.cs" />
     <Compile Include="Entities\FakeOrder.cs" />
     <Compile Include="Entities\FakeProduct.cs" />
     <Compile Include="Entities\FakeUser.cs" />
     <Compile Include="Map\FakeOrderMap.cs" />
     <Compile Include="Map\FakeProductMap.cs" />
     <Compile Include="Map\FakeUserMap.cs" />
+    <Compile Include="Migrations\201605210314597_Create-Table.cs" />
+    <Compile Include="Migrations\201605210314597_Create-Table.Designer.cs">
+      <DependentUpon>201605210314597_Create-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\FakeOrderRepository.cs" />
     <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Core\FakeEcDbContext.cs" />
@@ -83,7 +89,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\201605210314597_Create-Table.resx">
+      <DependentUpon>201605210314597_Create-Table.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
