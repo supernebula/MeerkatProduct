@@ -32,7 +32,7 @@ namespace Nebula.EntityFramework.Repository.Test
             var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
             var orderRepo = new FakeOrderRepository()  {  DbContextFactory = _dbContextFactory };
             var productRepo = new FakeProductRepository() { DbContextFactory = _dbContextFactory };
-            var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory };
+            var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory }; 
 
             unitOfWorkObj.BeginTransaction();
             try
