@@ -32,19 +32,13 @@ namespace Nebula.EntityFramework.Repository.Test
             var userRepo = new FakeUserRepository();
 
             UnitOfWorkObj.BeginTransaction();
+
             orderRepo.Insert(new FakeOrder());
             productRepo.Insert(new FakeProduct());
             userRepo.Insert(new FakeUser());
 
             UnitOfWorkObj.Commit();
-
-
             UnitOfWorkObj.Dispose();
-
-
-            //
-            // TODO:  在此处添加测试逻辑
-            //
         }
 
 
