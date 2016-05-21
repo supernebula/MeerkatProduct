@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Nebula.EntityFramework.Repository.Test.Core
 {
 
-    public class FakeDbContextFactory<TContext> : IDbContextFactory<TContext> where TContext : DbContext
+    public class FakeEfDbContextFactory<TContext> : IDbContextFactory<TContext> where TContext : DbContext
     {
         private TContext _context;
         public TContext Create()

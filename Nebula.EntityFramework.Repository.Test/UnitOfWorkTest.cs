@@ -17,19 +17,16 @@ namespace Nebula.EntityFramework.Repository.Test
     {
         public IUnitOfWork UnitOfWorkObj;
 
-        //当前周期内共用唯一的DbContext
         [ThreadStatic]
         private static IDbContextFactory<FakeEcDbContext> _dbContextFactory;
 
         [TestInitialize]
         public void Init()
         {
-            _dbContextFactory = new FakeDbContextFactory<FakeEcDbContext>();
+            _dbContextFactory = new FakeEfDbContextFactory<FakeEcDbContext>();
         }
 
-        
-
-        [TestMethod,Description("工作单元的核心在于：逻辑从开始到结束（提交到数据库），使用同一个DbContext")]
+        [TestMethod,Description("EntityFramework工作单元的核心在于：针对数据库的多个更新逻辑从开始到结束（提交到数据库），使用同一个DbContext")]
         public void MuiltChangeTest()
         {
             var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
@@ -38,13 +35,21 @@ namespace Nebula.EntityFramework.Repository.Test
             var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory };
 
             unitOfWorkObj.BeginTransaction();
-
-            orderRepo.Insert(new FakeOrder());
-            productRepo.Insert(new FakeProduct());
-            userRepo.Insert(new FakeUser());
-
-            unitOfWorkObj.Commit();
-            unitOfWorkObj.Dispose();
+            try
+            {
+                orderRepo.Insert(new FakeOrder());
+                productRepo.Insert(new FakeProduct());
+                userRepo.Insert(new FakeUser());
+                unitOfWorkObj.Commit();
+            }
+            catch (Exception ex)
+            {
+                unitOfWorkObj.RollBack();
+            }
+            finally
+            {
+                unitOfWorkObj.Dispose();
+            }
         }
 
 
