@@ -63,6 +63,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Core\FakeDbContextFactory.cs" />
+    <Compile Include="Entities\FakeArticle.cs" />
     <Compile Include="Entities\FakeOrder.cs" />
     <Compile Include="Entities\FakeProduct.cs" />
     <Compile Include="Entities\FakeUser.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="ConcurrentTest.cs" />
     <Compile Include="BasicFuncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FakeOriginalEfRepository.cs" />
     <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Repositories\FakeUserRepository.cs" />
     <Compile Include="UnitOfWorkTest.cs" />
