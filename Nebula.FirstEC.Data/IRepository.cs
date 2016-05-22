@@ -10,9 +10,9 @@ namespace Nebula.FirstEC.Data
     public interface IRepository<T> where T : IPrimaryKey
     {
         void Insert(T entity);
-        T Fetch(Guid id);
+        T Find(Guid id);
 
-        T Fetch(Expression<Func<T, bool>> predicate);
+        T Find(Expression<Func<T, bool>> predicate);
 
         IQueryable<T> Query();
 

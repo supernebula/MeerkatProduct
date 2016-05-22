@@ -1,4 +1,5 @@
-﻿using Nebula.Utilities;
+﻿using Nebula.EntityFramework.Repository;
+using Nebula.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,42 +20,37 @@ namespace Nebula.EntityFramework.Repository
 
         protected DbSet<T> DbSet => _context.Set<T>();
 
-        public void SaveChanges()
+        public int SaveChanges()
         {
-            _context.SaveChanges();
+            return _context.SaveChanges();
         }
 
-        public void Insert(T item)
+        public T Insert(T item)
         {
-            DbSet.Add(item);
+            return DbSet.Add(item);
         }
 
-        public void InsertRange(IEnumerable<T> items)
+        public IEnumerable<T> InsertRange(IEnumerable<T> items)
         {
-            DbSet.AddRange(items);
+            return DbSet.AddRange(items);
         }
 
-        public void Delete(T item)
+        public T Delete(T item)
         {
-            DbSet.Remove(item);
+            return DbSet.Remove(item);
         }
 
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Fetch(Guid id)
+        public T Find(Guid id)
         {
             return DbSet.Find(id);
         }
 
-        public T Fetch(Expression<Func<T, bool>> predicate)
+        public T Find(Expression<Func<T, bool>> predicate)
         {
             return DbSet.FirstOrDefault(predicate);
         }
 
-        public async Task<T> FetchAsync(Guid id)
+        public async Task<T> FindAsync(Guid id)
         {
             return await DbSet.FindAsync(id);
         }
@@ -89,11 +85,11 @@ namespace Nebula.EntityFramework.Repository
             throw new NotImplementedException();
         }
 
-        public IPaged<T> Paged(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
+        public IPaged<T> Paged(Expression<Func<T, bool>> predicate, Expression<Func<T, bool>> order, int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
-
-
+            var queryable = DbSet.Where(predicate).OrderBy(order).Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
+            var result = new Paged<T>(queryable.ToList(), pageIndex, pageSize);
+            return result;
         }
 
         public void Dispose()
