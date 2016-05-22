@@ -75,11 +75,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\FakeOrderRepository.cs" />
-    <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Core\FakeEcDbContext.cs" />
     <Compile Include="ConcurrentTest.cs" />
     <Compile Include="BasicFuncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Repositories\FakeUserRepository.cs" />
     <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="TransactionTest.cs" />
