@@ -80,6 +80,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Dapper.Repository", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.ServiceStackOrmLite.Repository", "Nebula.ServiceStackOrmLite.Repository\Nebula.ServiceStackOrmLite.Repository.csproj", "{61AED5B6-742E-4669-961A-F367092B9613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Common", "Nebula.Common\Nebula.Common.csproj", "{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -206,6 +208,10 @@ Global
 		{61AED5B6-742E-4669-961A-F367092B9613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61AED5B6-742E-4669-961A-F367092B9613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61AED5B6-742E-4669-961A-F367092B9613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -238,5 +244,6 @@ Global
 		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 		{26505B67-6CB9-4191-A72F-C5D88EF7C635} = {5E813404-0D6D-4BAF-A307-C988436C8804}
 		{61AED5B6-742E-4669-961A-F367092B9613} = {5E813404-0D6D-4BAF-A307-C988436C8804}
+		{FFD8CED2-AAD0-443D-9C53-943C7A2327EE} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 	EndGlobalSection
 EndGlobal
