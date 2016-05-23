@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace Nebula.EntityFramework.Repository
-{
-    public interface IUnitOfWork : IDisposable
-    {
-        bool IsCommited {get;}
+//namespace Nebula.EntityFramework.Repository
+//{
+//    public interface IUnitOfWork : IDisposable
+//    {
+//        bool IsCommited {get;}
 
-        void BeginTransaction();
+//        void BeginTransaction();
 
-        void Commit();
+//        void Commit();
 
-        void RollBack();
-    }
-}
+//        void RollBack();
+//    }
+//}

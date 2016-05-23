@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.Utilities;
+using Nebula.Common;
 
 namespace Nebula.FirstEC.DataStorage
 {

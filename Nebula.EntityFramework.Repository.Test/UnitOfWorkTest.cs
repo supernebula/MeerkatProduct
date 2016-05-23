@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.Common.Repository;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Entities;
 using Nebula.EntityFramework.Repository.Test.Repositories;

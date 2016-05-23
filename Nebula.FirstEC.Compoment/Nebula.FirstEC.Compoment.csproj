@@ -53,6 +53,10 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>

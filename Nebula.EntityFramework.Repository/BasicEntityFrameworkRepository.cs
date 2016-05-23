@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Nebula.Utilities;
+using Nebula.Common;
 
 namespace Nebula.EntityFramework.Repository
 {
