@@ -76,6 +76,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.MongoDB.Repository.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository.Test", "Nebula.Redis.Repository.Test\Nebula.Redis.Repository.Test.csproj", "{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Dapper.Repository", "Nebula.Dapper.Repository\Nebula.Dapper.Repository.csproj", "{26505B67-6CB9-4191-A72F-C5D88EF7C635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.ServiceStackOrmLite.Repository", "Nebula.ServiceStackOrmLite.Repository\Nebula.ServiceStackOrmLite.Repository.csproj", "{61AED5B6-742E-4669-961A-F367092B9613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -194,6 +198,14 @@ Global
 		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26505B67-6CB9-4191-A72F-C5D88EF7C635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26505B67-6CB9-4191-A72F-C5D88EF7C635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26505B67-6CB9-4191-A72F-C5D88EF7C635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26505B67-6CB9-4191-A72F-C5D88EF7C635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AED5B6-742E-4669-961A-F367092B9613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AED5B6-742E-4669-961A-F367092B9613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AED5B6-742E-4669-961A-F367092B9613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AED5B6-742E-4669-961A-F367092B9613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -224,5 +236,7 @@ Global
 		{617298CA-891B-4F39-9675-2DF3AAB93EC1} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 		{D5638C8D-3D06-439D-AAE4-0524DF6BAB93} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 		{97BF6A17-BA64-490B-8814-3EDE94E7BA9A} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
+		{26505B67-6CB9-4191-A72F-C5D88EF7C635} = {5E813404-0D6D-4BAF-A307-C988436C8804}
+		{61AED5B6-742E-4669-961A-F367092B9613} = {5E813404-0D6D-4BAF-A307-C988436C8804}
 	EndGlobalSection
 EndGlobal
