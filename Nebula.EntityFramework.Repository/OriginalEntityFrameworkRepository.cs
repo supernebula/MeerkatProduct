@@ -15,6 +15,7 @@ namespace Nebula.EntityFramework.Repository
         public OriginalEntityFrameworkRepository(TDbContext context)
         {
             _context = context;
+
         }
 
 
