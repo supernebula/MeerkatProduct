@@ -70,7 +70,7 @@ namespace Nebula.EntityFramework.Repository.Test
 
 
         [TestMethod, Description("实体查找测试")]
-        public void FindEntityTest()
+        public void FindEntityTest2()
         {
             var articleRepo = new FakeArticleOriginalEfRepository(new FakeEcDbContext());
             var article = articleRepo.FindAsync(_id);
