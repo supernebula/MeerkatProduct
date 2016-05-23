@@ -27,6 +27,7 @@ namespace Nebula.EntityFramework.Repository.Test
             {
                 var users = context.Set<FakeUser>().SqlQuery("dbo.GetUsers").ToList();
                 var userId = 1;
+                //带参数的存储过程
                 var users2 = context.Set<FakeUser>().SqlQuery("dbo.GetUsers @p0", userId).ToList();
             }
         }
