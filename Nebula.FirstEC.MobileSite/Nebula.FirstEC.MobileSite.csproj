@@ -337,6 +337,14 @@
       <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
       <Name>Nebula.FirstEC.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Nebula.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Web\Nebula.Web.csproj">
+      <Project>{23781fb0-e74b-4ea6-b078-3c86630c7733}</Project>
+      <Name>Nebula.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
