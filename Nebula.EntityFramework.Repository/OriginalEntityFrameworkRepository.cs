@@ -1,62 +1,44 @@
-﻿using Microsoft.Practices.Unity;
+﻿using Nebula.EntityFramework.Repository;
+using Nebula.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Nebula.Utilities;
 
 namespace Nebula.EntityFramework.Repository
 {
-    /// <summary>
-    /// 基础仓储
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="TDbContext"></typeparam>
-    public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : DbContext, new() where T : class, IPrimaryKey
+    public class OriginalEntityFrameworkRepository<T, TDbContext> : IDisposable where TDbContext : DbContext, new() where T : class, IPrimaryKey
     {
-
         private TDbContext _context;
-
-
-        [Dependency]
-        public IDbContextFactory<TDbContext> DbContextFactory { get; set; }
-
-        private DbContext Context
+        public OriginalEntityFrameworkRepository(TDbContext context)
         {
-            get
-            {
-                return _context = _context ?? DbContextFactory.Create();
-            }
+            _context = context;
+
         }
+
 
         protected DbSet<T> DbSet => _context.Set<T>();
 
-        private void Save()
+        public int SaveChanges()
         {
-            Context.SaveChanges();
+            return _context.SaveChanges();
         }
 
-        public void Insert(T item)
+        public T Insert(T item)
         {
-            DbSet.Add(item);
+            return DbSet.Add(item);
         }
 
-        public void InsertRange(IEnumerable<T> items)
+        public IEnumerable<T> InsertRange(IEnumerable<T> items)
         {
-            DbSet.AddRange(items);
+            return DbSet.AddRange(items);
         }
 
-        public void Delete(T item)
+        public T Delete(T item)
         {
-            DbSet.Remove(item);
-        }
-
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
+            return DbSet.Remove(item);
         }
 
         public T Find(Guid id)
@@ -104,11 +86,16 @@ namespace Nebula.EntityFramework.Repository
             throw new NotImplementedException();
         }
 
-        public IPaged<T> Paged(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
+        public IPaged<T> Paged(Expression<Func<T, bool>> predicate, Expression<Func<T, bool>> order, int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
+            var queryable = DbSet.Where(predicate).OrderBy(order).Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
+            var result = new Paged<T>(queryable.ToList(), pageIndex, pageSize);
+            return result;
+        }
 
-
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

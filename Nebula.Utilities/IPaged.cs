@@ -13,12 +13,12 @@ namespace Nebula.Utilities
 
     public interface IPaged
     {
-        int PageCount { get; set; }
-        int RecordCount { get; set; }
+        int PageCount { get; }
+        int RecordCount { get;}
 
-        int Index { get; set; }
+        int Index { get; }
 
-        int Size { get; set; }
+        int Size { get; }
 
     }
 }

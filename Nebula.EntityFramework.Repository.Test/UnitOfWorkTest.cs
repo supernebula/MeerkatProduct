@@ -26,7 +26,7 @@ namespace Nebula.EntityFramework.Repository.Test
             _dbContextFactory = new FakeEfDbContextFactory<FakeEcDbContext>();
         }
 
-        [TestMethod,Description("EntityFramework工作单元的核心在于：针对数据库的多个更新逻辑从开始到结束（提交到数据库），使用同一个DbContext")]
+        [TestMethod,Description("EntityFramework工作单元依赖于事务，关键在于：针对数据库的多个更新统一提交，使用同一个DbContext")]
         public void MuiltChangeTest()
         {
             var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
