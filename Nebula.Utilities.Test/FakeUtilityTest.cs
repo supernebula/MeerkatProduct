@@ -17,7 +17,7 @@ namespace Nebula.Utilities.Test
             var names = new List<string>();
             for (int i = 0; i < 100; i++)
             {
-                var name = FakeUtility.CreatePersonName(GenderType.Male);
+                var name = FakeUtility.CreatePersonName(GenderType.Female);
                 names.Add(name);
             }
             sw.Stop();
@@ -101,6 +101,45 @@ namespace Nebula.Utilities.Test
             foreach (var item in result)
             {
                 Trace.WriteLine(item.ToString("yyyy-MM-dd"));
+            }
+        }
+
+
+        [TestMethod]
+        public void CreatePersonHeightTest()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            var result = new List<float>();
+            for (int i = 0; i < 100; i++)
+            {
+                var value = FakeUtility.CreatePersonHeight();
+                result.Add(value);
+            }
+            sw.Stop();
+            Trace.WriteLine("耗时：" + sw.Elapsed);
+            foreach (var item in result)
+            {
+                Trace.WriteLine(item);
+            }
+        }
+
+        [TestMethod]
+        public void RandomBoolTest()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            var result = new List<bool>();
+            for (int i = 0; i < 100; i++)
+            {
+                var value = FakeUtility.RandomBool();
+                result.Add(value);
+            }
+            sw.Stop();
+            Trace.WriteLine("耗时：" + sw.Elapsed);
+            foreach (var item in result)
+            {
+                Trace.WriteLine(item);
             }
         }
     }
