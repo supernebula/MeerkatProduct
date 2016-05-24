@@ -128,7 +128,7 @@ namespace Nebula.Utilities.Sql
         {
             if (Conditions.Length == 0)
                 return String.Empty;
-            return $"{SqlFragment.WHERE}{Conditions}";
+            return $"{SqlSnippet.WHERE}{Conditions}";
         }
 
         public string ToConditionString()
@@ -149,11 +149,11 @@ namespace Nebula.Utilities.Sql
             switch (type)
             {
                 case WhereLogicType.And:
-                    return SqlFragment.AND;
+                    return SqlSnippet.AND;
                 case WhereLogicType.Or:
-                    return SqlFragment.OR;
+                    return SqlSnippet.OR;
                 default:
-                    return SqlFragment.AND;
+                    return SqlSnippet.AND;
             }
         }
     }

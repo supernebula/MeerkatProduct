@@ -9,7 +9,7 @@ namespace Nebula.Utilities.Sql
     /// <summary>
     /// Summary for the SqlFragment class
     /// </summary>
-    public static class SqlFragment
+    public static class SqlSnippet
     {
         public const string AND = " AND ";
         public const string AS = " AS ";

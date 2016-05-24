@@ -76,7 +76,7 @@
     <Compile Include="Sql\V1\DapperSqlWhere.cs" />
     <Compile Include="Sql\SqlWhereBuilder.cs" />
     <Compile Include="Sql\V1\~SqlWhereBuilder.cs" />
-    <Compile Include="Sql\SqlFragment.cs" />
+    <Compile Include="Sql\SqlSnippet.cs" />
     <Compile Include="Sql\WhereLogicType.cs" />
     <Compile Include="Tests\TimeMonitor.cs" />
   </ItemGroup>

@@ -68,7 +68,7 @@ namespace Nebula.Utilities.Sql.V1
         /// <returns></returns>
         public DapperSqlWhereBuilder Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
         {
-            return AddCondition(columnName + SqlFragment.LIKE + String.Format(ruleFormat, paramName), value, ConstraintType.Or);
+            return AddCondition(columnName + SqlSnippet.LIKE + String.Format(ruleFormat, paramName), value, ConstraintType.Or);
         }
 
         public DapperSqlWhereBuilder OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
@@ -139,7 +139,7 @@ namespace Nebula.Utilities.Sql.V1
         {
             if (cdtFragment.Length == 0)
                 return sqlMainStatement;
-            return String.Format("{0}{1}{2}", sqlMainStatement, SqlFragment.WHERE, cdtFragment.ToString());
+            return String.Format("{0}{1}{2}", sqlMainStatement, SqlSnippet.WHERE, cdtFragment.ToString());
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Nebula.Utilities.Sql.V1
         {
             if (cdtFragment.Length == 0)
                 return String.Empty;
-            return String.Format("{0}{1}", SqlFragment.WHERE, cdtFragment.ToString());
+            return String.Format("{0}{1}", SqlSnippet.WHERE, cdtFragment.ToString());
         }
 
         /// <summary>
@@ -178,13 +178,13 @@ namespace Nebula.Utilities.Sql.V1
             switch (type)
             {
                 case ConstraintType.Where:
-                    return SqlFragment.WHERE;
+                    return SqlSnippet.WHERE;
                 case ConstraintType.And:
-                    return SqlFragment.AND;
+                    return SqlSnippet.AND;
                 case ConstraintType.Or:
-                    return SqlFragment.OR;
+                    return SqlSnippet.OR;
                 default:
-                    return SqlFragment.AND;
+                    return SqlSnippet.AND;
             }
         }
     }
