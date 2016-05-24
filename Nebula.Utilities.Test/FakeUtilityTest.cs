@@ -17,7 +17,7 @@ namespace Nebula.Utilities.Test
             var names = new List<string>();
             for (int i = 0; i < 100; i++)
             {
-                var name = FakeUtility.CreatePersonName(GenderType.Female);
+                var name = FakeUtility.CreatePersonName(GenderType.Male);
                 names.Add(name);
             }
             sw.Stop();
