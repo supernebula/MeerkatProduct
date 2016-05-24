@@ -46,7 +46,7 @@ namespace Nebula.Utilities.Maths
         {
             var letters = new[] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
             Random random = seed == null ? new Random(Guid.NewGuid().GetHashCode()) : new Random(seed.Value);
-            var length =  random.Next(minLength, minLength);
+            var length =  random.Next(minLength, maxLength);
             string str = null;
             for (int i = 0; i < length; i++)
             {
