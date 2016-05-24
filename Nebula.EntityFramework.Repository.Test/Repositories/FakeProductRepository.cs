@@ -3,7 +3,7 @@ using Nebula.EntityFramework.Repository.Test.Entities;
 
 namespace Nebula.EntityFramework.Repository.Test.Repositories
 {
-    public class FakeOrderRepository : BasicEntityFrameworkRepository<FakeOrder, FakeEcDbContext>
+    public class FakeProductRepository : BasicEntityFrameworkRepository<FakeProduct, FakeEcDbContext>
     {
     }
 }
