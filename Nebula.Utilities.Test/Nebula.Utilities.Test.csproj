@@ -69,7 +69,7 @@
     <Compile Include="Collection\BloomFilterTest.cs" />
     <Compile Include="Expressions\DynamicExpressionTest.cs" />
     <Compile Include="Extension\RegexTest.cs" />
-    <Compile Include="Math\RandomTest.cs" />
+    <Compile Include="Maths\RandomTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlUtilityTest.cs" />
     <Compile Include="Space\SpaceComplexityTest.cs" />
@@ -78,8 +78,13 @@
     <Compile Include="Sql\SqlBuilderTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FakeUtilityTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.First.EFRepository</Name>

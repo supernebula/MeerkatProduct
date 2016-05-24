@@ -6,22 +6,14 @@ using System.Threading.Tasks;
 
 namespace Nebula.Utilities.Sql
 {
-
-    /// <summary>
-    /// Where, And, Or
-    /// </summary>
-    public enum ConstraintType
+    public enum WhereLogicType
     {
         /// <summary>
-        /// WHERE operator
-        /// </summary>
-        Where,
-        /// <summary>
-        /// AND operator
+        /// AND logic operator
         /// </summary>
         And,
         /// <summary>
-        /// OR Operator
+        /// OR logic operator
         /// </summary>
         Or
     }

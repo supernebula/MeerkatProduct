@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.Common.Repository;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Entities;
 using Nebula.EntityFramework.Repository.Test.Repositories;
@@ -16,35 +18,39 @@ namespace Nebula.EntityFramework.Repository.Test
     {
         public IUnitOfWork UnitOfWorkObj;
 
+        [ThreadStatic]
+        private static IDbContextFactory<FakeEcDbContext> _dbContextFactory;
+
         [TestInitialize]
         public void Init()
         {
-            UnitOfWorkObj = new UnitOfWork<FakeEcDbContext>();
+            _dbContextFactory = new FakeEfDbContextFactory<FakeEcDbContext>();
         }
 
-        
-
-        [TestMethod]
+        [TestMethod,Description("EntityFramework工作单元依赖于事务，关键在于：针对数据库的多个更新统一提交，使用同一个DbContext")]
         public void MuiltChangeTest()
         {
-            var orderRepo = new FakeOrderRepository();
-            var productRepo = new FakeProductRepository();
-            var userRepo = new FakeUserRepository();
+            var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
+            var orderRepo = new FakeOrderRepository()  {  DbContextFactory = _dbContextFactory };
+            var productRepo = new FakeProductRepository() { DbContextFactory = _dbContextFactory };
+            var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory }; 
 
-            UnitOfWorkObj.BeginTransaction();
-            orderRepo.Insert(new FakeOrder());
-            productRepo.Insert(new FakeProduct());
-            userRepo.Insert(new FakeUser());
-
-            UnitOfWorkObj.Commit();
-
-
-            UnitOfWorkObj.Dispose();
-
-
-            //
-            // TODO:  在此处添加测试逻辑
-            //
+            unitOfWorkObj.BeginTransaction();
+            try
+            {
+                orderRepo.Insert(new FakeOrder());
+                productRepo.Insert(new FakeProduct());
+                userRepo.Insert(new FakeUser());
+                unitOfWorkObj.Commit();
+            }
+            catch (Exception ex)
+            {
+                unitOfWorkObj.RollBack();
+            }
+            finally
+            {
+                unitOfWorkObj.Dispose();
+            }
         }
 
 

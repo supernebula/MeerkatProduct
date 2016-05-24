@@ -5,6 +5,7 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Nebula.EntityFramework.Repository;
 using Unity.WebApi;
+using Nebula.Common.Repository;
 using Nebula.FirstEC.Business;
 using Nebula.FirstEC.Data.EntityQueries;
 using Nebula.FirstEC.DataStorage.EntityQueries;

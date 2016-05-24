@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Utilities.Serialization;
 using System.Diagnostics;
+using Nebula.Common;
 
 namespace Nebula.Utilities.Test.Serialization
 {
@@ -58,12 +59,7 @@ namespace Nebula.Utilities.Test.Serialization
         public DateTime CreateDate { get; set; }
     }
 
-    public enum GenderType
-    {
-        None,
-        Male,
-        Female
-    }
+
 
 
     public class Article

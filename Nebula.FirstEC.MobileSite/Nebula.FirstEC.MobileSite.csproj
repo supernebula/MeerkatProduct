@@ -317,6 +317,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.EntityFramework.Repository</Name>
@@ -336,6 +340,14 @@
     <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
       <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
       <Name>Nebula.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Nebula.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Web\Nebula.Web.csproj">
+      <Project>{23781fb0-e74b-4ea6-b078-3c86630c7733}</Project>
+      <Name>Nebula.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Nebula.FirstEC.Compoment;
-using Nebula.Utilities;
+using Nebula.Common;
 
 namespace Nebula.FirstEC.Data
 {
     public interface IRepository<T> where T : IPrimaryKey
     {
         void Insert(T entity);
-        T Fetch(Guid id);
+        T Find(Guid id);
 
-        T Fetch(Expression<Func<T, bool>> predicate);
+        T Find(Expression<Func<T, bool>> predicate);
 
         IQueryable<T> Query();
 

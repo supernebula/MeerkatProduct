@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Utilities
+namespace Nebula.Common
 {
     public interface IPrimaryKey
     {

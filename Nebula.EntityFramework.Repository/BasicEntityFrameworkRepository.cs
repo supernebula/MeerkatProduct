@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Nebula.Utilities;
+using Nebula.Common;
 
 namespace Nebula.EntityFramework.Repository
 {
@@ -59,17 +59,17 @@ namespace Nebula.EntityFramework.Repository
             throw new NotImplementedException();
         }
 
-        public T Fetch(Guid id)
+        public T Find(Guid id)
         {
             return DbSet.Find(id);
         }
 
-        public T Fetch(Expression<Func<T, bool>> predicate)
+        public T Find(Expression<Func<T, bool>> predicate)
         {
             return DbSet.FirstOrDefault(predicate);
         }
 
-        public async Task<T> FetchAsync(Guid id)
+        public async Task<T> FindAsync(Guid id)
         {
             return await DbSet.FindAsync(id);
         }

@@ -44,7 +44,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -61,18 +62,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Core\FakeDbContextFactory.cs" />
+    <Compile Include="Entities\FakeArticle.cs" />
     <Compile Include="Entities\FakeOrder.cs" />
     <Compile Include="Entities\FakeProduct.cs" />
     <Compile Include="Entities\FakeUser.cs" />
     <Compile Include="Map\FakeOrderMap.cs" />
     <Compile Include="Map\FakeProductMap.cs" />
     <Compile Include="Map\FakeUserMap.cs" />
+    <Compile Include="Migrations\201605210314597_Create-Table.cs" />
+    <Compile Include="Migrations\201605210314597_Create-Table.Designer.cs">
+      <DependentUpon>201605210314597_Create-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\FakeOrderRepository.cs" />
-    <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Core\FakeEcDbContext.cs" />
     <Compile Include="ConcurrentTest.cs" />
     <Compile Include="BasicFuncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FakeOriginalEfRepository.cs" />
+    <Compile Include="Repositories\FakeProductRepository.cs" />
     <Compile Include="Repositories\FakeUserRepository.cs" />
     <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="TransactionTest.cs" />
@@ -83,9 +92,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\201605210314597_Create-Table.resx">
+      <DependentUpon>201605210314597_Create-Table.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.EntityFramework.Repository</Name>
@@ -98,6 +113,9 @@
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 
 namespace Nebula.Utilities.Sql
 {
+
+
     public class SqlWhereBuilder
     {
-
         class SqlParameterComparer : IEqualityComparer<SqlParameter>
         {
             public bool Equals(SqlParameter x, SqlParameter y)
@@ -18,205 +19,202 @@ namespace Nebula.Utilities.Sql
 
             public int GetHashCode(SqlParameter obj)
             {
-                return obj.ToString().GetHashCode();
+                return obj.ParameterName.GetHashCode();
             }
         }
 
-        string sqlMainStatement;
+        private StringBuilder Conditions { get; set; }
+        private List<SqlParameter> SqlParameters { get; set; }
 
-        StringBuilder cdtFragment;
-        List<SqlParameter> sqlParameters;
-        // List<string> cdtFragment;
-
-
-        public SqlWhereBuilder(string sqlMainStatement)
+        public SqlWhereBuilder()
         {
-            this.sqlMainStatement = sqlMainStatement;
-            this.sqlParameters = new List<SqlParameter>();
-            cdtFragment = new StringBuilder();
-
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sqlMainStatement">如：SELECT * FROM  [TableName]</param>
-        /// <returns></returns>
-        public static SqlWhereBuilder Create(string sqlMainStatement)
-        {
-            return new SqlWhereBuilder(sqlMainStatement);
+            Conditions = new StringBuilder();
+            SqlParameters = new List<SqlParameter>();
         }
 
-
-
-
-        #region SQL Where
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="condition">参数化SQL条件表达式</param>
-        /// <param name="paramName">SQL参数名</param>
-        /// <param name="value">参数值</param>
-        /// <returns></returns>
-        public SqlWhereBuilder And(string condition, string paramName, object value)
+        public static SqlWhereBuilder Create()
         {
-            return AddCondition(condition, paramName, value, ConstraintType.And);
+            return new SqlWhereBuilder();
         }
 
         /// <summary>
-        /// 
+        /// 追加Add条件表达式
         /// </summary>
-        /// <param name="condition">参数化SQL条件表达式</param>
-        /// <param name="paramName">SQL参数名</param>
-        /// <param name="value">参数值</param>
+        /// <param name="conditionFormat">条件表达式，如：[Number] Between @number1 AND  @number2 或 [Number] Between {0} AND  {1}</param>
+        /// <param name="paramName1">SqlParameter的参数名，如：@number1， <see cref="SqlParameter"/></param>
+        /// <param name="paramName2">SqlParameter的参数名，如：@number2， <see cref="SqlParameter"/></param>
+        /// <param name="paramValue1">SqlParameter的参数值1</param>
+        /// <param name="paramValue2">SqlParameter的参数值2</param>
         /// <returns></returns>
-        public SqlWhereBuilder Or(string condition, string paramName, object value)
+        public SqlWhereBuilder AndBetween(string conditionFormat, string paramName1, object paramValue1, string paramName2,  object paramValue2)
         {
-            return AddCondition(condition, paramName, value, ConstraintType.Or);
+            AppendCondition(WhereLogicType.And, conditionFormat, paramName1, paramValue1, paramName2, paramValue2);
+            return this;
         }
 
         /// <summary>
-        /// 
+        /// 追加Or条件表达式
         /// </summary>
-        /// <param name="columnName">列名</param>
-        /// <param name="paramName">SQL参数名</param>
-        /// <param name="value">参数值</param>
-        /// <param name="ruleFormat"></param>
-        /// <param name="type"></param>
+        /// <param name="conditionFormat">条件表达式，如：[Number] Between @number1 AND  @number2 或 [Number] Between {0} AND  {1}</param>
+        /// <param name="paramName1">SqlParameter的参数名，如：@number1， <see cref="SqlParameter"/></param>
+        /// <param name="paramName2">SqlParameter的参数名，如：@number2， <see cref="SqlParameter"/></param>
+        /// <param name="paramValue1">SqlParameter的参数值1</param>
+        /// <param name="paramValue2">SqlParameter的参数值2</param>
         /// <returns></returns>
-        public SqlWhereBuilder Like(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'", ConstraintType type = ConstraintType.And)
+        public SqlWhereBuilder OrBetween(string conditionFormat, string paramName1, object paramValue1, string paramName2, object paramValue2)
         {
-            return AddCondition(columnName + SqlFragment.LIKE + String.Format(ruleFormat, paramName), paramName, value, ConstraintType.Or);
+            AppendCondition(WhereLogicType.Or, conditionFormat, paramName1, paramValue1, paramName2, paramValue2);
+            return this;
         }
 
-        public SqlWhereBuilder OrLike(string columnName, string paramName, object value, string ruleFormat = "'%' + {0} + '%'")
+        /// <summary>
+        /// 追加Add条件表达式
+        /// </summary>
+        /// <param name="conditionFormat">条件表达式，如：[Id] = {0}</param>
+        /// <param name="paramName">SqlParameter的参数名，如：@id， <see cref="SqlParameter"/></param>
+        /// <param name="paramValue">SqlParameter的参数值</param>
+        /// <returns></returns>
+        public SqlWhereBuilder And(string conditionFormat, string paramName, object paramValue)
         {
-            return Like(columnName, paramName, value, ruleFormat, ConstraintType.Or);
+            AppendCondition(WhereLogicType.And, conditionFormat, paramName, paramValue);
+            return this;
         }
 
-        SqlWhereBuilder AddCondition(string condition, string paramName, object value, ConstraintType type)
+        /// <summary>
+        /// 追加Or条件表达式
+        /// </summary>
+        /// <param name="conditionFormat">条件表达式，如：[Id] = {0}</param>
+        /// <param name="paramName">SqlParameter的参数名，如：@id <see cref="SqlParameter"/></param>
+        /// <param name="paramValue">SqlParameter的参数值</param>
+        /// <returns></returns>
+        public SqlWhereBuilder Or(string conditionFormat, string paramName, object paramValue)
         {
-            condition = String.Format(condition, paramName);
-            if (value == null)
+            AppendCondition(WhereLogicType.Or, conditionFormat, paramName, paramValue);
+            return this;
+        }
+
+        /// <summary>
+        /// 追加逻辑条件表达式
+        /// </summary>
+        /// <param name="conditionFormat">条件表达式</param>
+        /// <param name="paramName">SqlParameter的参数名</param>
+        /// <param name="paramValue">SqlParameter的参数值</param>
+        /// <param name="logicType">逻辑运算符</param>
+        /// <returns></returns>
+        public SqlWhereBuilder AppendCondition(WhereLogicType logicType, string conditionFormat, string paramName, object paramValue)
+        {
+            var condition = string.Format(conditionFormat, paramName);
+            if (!IsValiditeParam(paramValue))
                 return this;
-            if ((value is string) && String.IsNullOrWhiteSpace(value.ToString()))
-                return this;
-            if (value is Array && ((Array)value).Length == 0)
-                return this;
-
-            if (cdtFragment.Length == 0)
-                cdtFragment.Append(condition);
+            if (Conditions.Length == 0)
+                Conditions.Append(condition);
             else
-                cdtFragment.Append(ConstraintFragment(type) + condition);
-
-            sqlParameters.Add(new SqlParameter(paramName, value));
+                Conditions.Append(LogicFragment(logicType) + condition);
+            SqlParameters.Add(new SqlParameter(paramName, paramValue));
             return this;
         }
 
-
-        public SqlWhereBuilder AddConditionExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression, ConstraintType type)
+        /// <summary>
+        /// 追加逻辑条件表达式
+        /// </summary>
+        /// <param name="conditionFormat">条件表达式</param>
+        /// <param name="paramName1">SqlParameter的参数名1</param>
+        /// <param name="paramValue1">SqlParameter的参数值1</param>
+        /// <param name="paramName2">SqlParameter的参数名2</param>
+        /// <param name="paramValue2">SqlParameter的参数值2</param>
+        /// <param name="logicType">逻辑运算符</param>
+        /// <returns></returns>
+        public SqlWhereBuilder AppendCondition(WhereLogicType logicType, string conditionFormat, string paramName1, object paramValue1, string paramName2, object paramValue2)
         {
-            var tempBuilder = new SqlWhereBuilder(null);
-            expression.Invoke(tempBuilder);
-            if (tempBuilder.cdtFragment.Length == 0)
+            var condition = string.Format(conditionFormat, paramName1, paramName2);
+            if (!IsValiditeParam(paramValue1) || !IsValiditeParam(paramValue2))
                 return this;
-            if (cdtFragment.Length > 0)
-                cdtFragment.Append(ConstraintFragment(type));
-            cdtFragment.Append("(" + tempBuilder.cdtFragment + ")");
-            sqlParameters.AddRange(tempBuilder.sqlParameters);
+            if (Conditions.Length == 0)
+                Conditions.Append(condition);
+            else
+                Conditions.Append(LogicFragment(logicType) + condition);
+            SqlParameters.Add(new SqlParameter(paramName1, paramValue1));
+            SqlParameters.Add(new SqlParameter(paramName2, paramValue2));
             return this;
         }
 
-        /// <summary>
-        /// append "Where, And, Or (expression statement)"
-        /// </summary>
-        /// <param name="expression"></param>
-        /// <returns></returns>
-        public SqlWhereBuilder AndExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
+        private bool IsValiditeParam(object paramValue)
         {
-
-            return AddConditionExpression(expression, ConstraintType.And);
+            if (paramValue == null)
+                return false;
+            if (paramValue is string && string.IsNullOrWhiteSpace(paramValue as string))
+                return false;
+            if (paramValue is Array && ((Array)paramValue).Length == 0)
+                return false;
+            return true;
         }
 
         /// <summary>
-        /// append "Where, And, Or (expression statement)"
+        /// 追加Add条件表达式
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        public SqlWhereBuilder OrExpression(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
+        public SqlWhereBuilder AndSub(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
         {
-            return AddConditionExpression(expression, ConstraintType.Or);
+            return AppendConditionSub(expression, WhereLogicType.And);
         }
 
-        #endregion
+        public SqlWhereBuilder OrSub(Func<SqlWhereBuilder, SqlWhereBuilder> expression)
+        {
+            return AppendConditionSub(expression, WhereLogicType.Or);
+        }
 
-        #region Order by
+        public SqlWhereBuilder AppendConditionSub(Func<SqlWhereBuilder, SqlWhereBuilder> expression, WhereLogicType type)
+        {
+            var tempBuilder = new SqlWhereBuilder();
+            expression.Invoke(tempBuilder);
+            if (tempBuilder.Conditions.Length == 0)
+                return this;
+            if (Conditions.Length > 0)
+                Conditions.Append(LogicFragment(type));
+            Conditions.Append("(" + tempBuilder.Conditions + ")");
+            SqlParameters.AddRange(tempBuilder.SqlParameters);
+            return this;
+        }
 
-        #endregion
 
         public List<SqlParameter> ToSqlParameters()
         {
-            return sqlParameters.Distinct(new SqlParameterComparer()).ToList();
+            return SqlParameters.Distinct(new SqlParameterComparer()).ToList();
         }
 
-        /// <summary>
-        /// return complete sql statement
-        /// </summary>
-        /// <returns></returns>
-        public string ToSqlString()
-        {
-            if (cdtFragment.Length == 0)
-                return sqlMainStatement;
-            return String.Format("{0}{1}{2}", sqlMainStatement, SqlFragment.WHERE, cdtFragment.ToString());
-        }
 
-        /// <summary>
-        /// return Where statement
-        /// </summary>
-        /// <returns></returns>
         public string ToWhereString()
         {
-            if (cdtFragment.Length == 0)
+            if (Conditions.Length == 0)
                 return String.Empty;
-            return String.Format("{0}{1}", SqlFragment.WHERE, cdtFragment.ToString());
+            return $"{SqlSnippet.WHERE}{Conditions}";
         }
 
-        /// <summary>
-        /// return only condition statement
-        /// </summary>
-        /// <returns></returns>
-        public string ToOnlyConditionString()
+        public string ToConditionString()
         {
-            if (cdtFragment.Length == 0)
+            if (Conditions.Length == 0)
                 return String.Empty;
-            return String.Format("{0}", cdtFragment.ToString());
+            return Conditions.ToString();
         }
 
-        /// <summary>
-        /// return complete sql statement
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
-            return ToSqlString();
+            return ToConditionString();
         }
 
-        string ConstraintFragment(ConstraintType type)
+
+        string LogicFragment(WhereLogicType type)
         {
             switch (type)
             {
-                case ConstraintType.Where:
-                    return SqlFragment.WHERE;
-                case ConstraintType.And:
-                    return SqlFragment.AND;
-                case ConstraintType.Or:
-                    return SqlFragment.OR;
+                case WhereLogicType.And:
+                    return SqlSnippet.AND;
+                case WhereLogicType.Or:
+                    return SqlSnippet.OR;
                 default:
-                    return SqlFragment.AND;
+                    return SqlSnippet.AND;
             }
         }
     }
-
-
-    
 }

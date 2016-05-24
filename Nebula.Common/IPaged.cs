@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Utilities
+namespace Nebula.Common
 {
     public interface IPaged<T> : IPaged, IEnumerable<T>
     {
@@ -13,12 +13,12 @@ namespace Nebula.Utilities
 
     public interface IPaged
     {
-        int PageCount { get; set; }
-        int RecordCount { get; set; }
+        int PageCount { get; }
+        int RecordCount { get; }
 
-        int Index { get; set; }
+        int Index { get; }
 
-        int Size { get; set; }
+        int Size { get; }
 
     }
 }
