@@ -2,6 +2,7 @@
 using Nebula.Utilities.Sql;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.Utilities.Sql.V1;
 
 namespace Nebula.Utilities.Test.Sql
 {
