@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
@@ -84,18 +86,31 @@ namespace Nebula.EntityFramework.Repository.Test
         }
 
 
-        private void QueryMethod(Guid id, string username, string mobile, int minPoints, int maxPoints, string minCreateDate)
+        [TestMethod]
+        public void SqlCommandConditionQueryTest()
+        {
+            var result = QueryMethod(Guid.NewGuid(), "zhangsan", "张三", "13422221111", 10, 99, DateTime.Now);
+        }
+
+
+        private List<FakeUser> QueryMethod(Guid? id, string username, string name, string mobile, int minPoints, int maxPoints, DateTime maxCreateDate)
         {
             var sqlWhere = SqlWhereBuilder.Create()
                 .And("[Id] = {0}", "@id", id)
-                .And("[Username] = @username", "@username", username)
-                .And("[Points] >= {0}", "@minPoints", minPoints)
-                .And("[Points] <= @maxPoints", "@maxPoints", maxPoints)
-                .And("[CreateDate] <= @minCreateDate", "@minCreateDate", minCreateDate);
-            using (var context = new FakeEcDbContext())
-            {
-                var num = context.Database.ExecuteSqlCommand("SELECT * FROM [FakeUser] " + sqlWhere.ToWhereString(), sqlWhere.ToSqlParameters());
-            }
+                .AndSub(e => e.And("[Username] = {0}", "@username", username).Or("[Name] = {0}", "@name", name))
+                .And("[Mobile] = {0}", "@mobile", mobile)
+                .AndBetween("[Points] NOT BETWEEN {0} AND {1}", "@minPoints", minPoints, "@maxPoints", maxPoints)
+                .AndSub(e => e.And("[Points] >= {0}", "@minPoints", minPoints).And("[Points] <= {0}", "@maxPoints", maxPoints))
+                .And("[CreateDate] <= @maxCreateDate", "@maxCreateDate", maxCreateDate);
+
+            var sql = "SELECT * FROM [FakeUser] " + sqlWhere.ToWhereString();
+            Trace.WriteLine(sql);
+            return null;
+            //using (var context = new FakeEcDbContext())
+            //{
+            //    var users = context.Database.SqlQuery<FakeUser>(sql, sqlWhere.ToSqlParameters()).ToList();
+            //    return users;
+            //}
         }
     }
 }
