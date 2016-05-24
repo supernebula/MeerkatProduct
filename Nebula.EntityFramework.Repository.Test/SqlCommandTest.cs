@@ -84,12 +84,12 @@ namespace Nebula.EntityFramework.Repository.Test
         }
 
 
-        private void queryMethod(Guid id, string username, string mobile, int minPoints, int maxPoints, string minCreateDate)
+        private void QueryMethod(Guid id, string username, string mobile, int minPoints, int maxPoints, string minCreateDate)
         {
             var sqlWhere = SqlWhereBuilder.Create()
-                .And("[Id] = @id", "@id", id)
+                .And("[Id] = {0}", "@id", id)
                 .And("[Username] = @username", "@username", username)
-                .And("[Points] >= @minPoints", "@minPoints", minPoints)
+                .And("[Points] >= {0}", "@minPoints", minPoints)
                 .And("[Points] <= @maxPoints", "@maxPoints", maxPoints)
                 .And("[CreateDate] <= @minCreateDate", "@minCreateDate", minCreateDate);
             using (var context = new FakeEcDbContext())
