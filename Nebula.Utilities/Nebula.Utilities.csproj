@@ -65,7 +65,9 @@
     <Compile Include="Extension\StringDesensitization.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Expressions\LambdaValidPredicateBuilder.cs" />
+    <Compile Include="FakeUtility.cs" />
     <Compile Include="Linq\LinqLambdaWhere.cs" />
+    <Compile Include="Maths\RandomUnitily.cs" />
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,11 +84,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
-    <Folder Include="Math\" />
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
