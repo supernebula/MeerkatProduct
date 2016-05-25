@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Nebula.Common;
 using Nebula.Utilities.Maths;
 
@@ -71,22 +72,22 @@ namespace Nebula.Utilities
             #endregion
 
             var names = gender == GenderType.Female ? femaleNames : maleNames;
-            var familyName = familyNames[RandomUnitily.Random(0, familyNames.Length)];
+            var index = RandomUnitily.Random(0, familyNames.Length);
+            var familyName = familyNames[index];
             var name = names[RandomUnitily.Random(0, names.Length)];
-            if (RandomBool())
+            if (index % 2 == 0)
                 name += names[RandomUnitily.Random(0, names.Length)];
             return familyName + name;
         }
 
         public static GenderType CreateGender()
         {
-            var index = RandomUnitily.Random(0,2);
-            if(index == 2)
-                return GenderType.Female;
-            else if(index == 1)
+            var index = RandomUnitily.Random(0,51);
+            if(index >= 0 && index <= 24)
                 return GenderType.Male;
-            else
-                return GenderType.None;
+            if (index >= 25 && index <= 49)
+                return GenderType.Female;
+            return GenderType.None;
         }
 
         public static float CreatePersonHeight()

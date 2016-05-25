@@ -86,6 +86,25 @@ namespace Nebula.Utilities.Test
         }
 
         [TestMethod]
+        public void CreateGenderTest()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            var result = new List<GenderType>();
+            for (int i = 0; i < 100; i++)
+            {
+                var value = FakeUtility.CreateGender();
+                result.Add(value);
+            }
+            sw.Stop();
+            Trace.WriteLine("耗时：" + sw.Elapsed);
+            foreach (var item in result)
+            {
+                Trace.WriteLine(item);
+            }
+        }
+
+        [TestMethod]
         public void CreateBirthdayTest()
         {
             Stopwatch sw = new Stopwatch();
