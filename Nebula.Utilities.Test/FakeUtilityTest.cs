@@ -161,5 +161,28 @@ namespace Nebula.Utilities.Test
                 Trace.WriteLine(item);
             }
         }
+
+
+        [TestMethod]
+        public void CreatePasswordTest()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            var result = new List<string>();
+            for (int i = 0; i < 100; i++)
+            {
+                var value = FakeUtility.CreatePassword();
+                result.Add(value);
+            }
+            sw.Stop();
+            Trace.WriteLine("耗时：" + sw.Elapsed);
+            foreach (var item in result)
+            {
+                Trace.WriteLine(item);
+            }
+        }
+
+
+        
     }
 }

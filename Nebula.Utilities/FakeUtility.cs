@@ -29,7 +29,20 @@ namespace Nebula.Utilities
 
         public static string CreateUsername(int minLength = 6,int maxLength = 12)
         {
-            return RamdomLetters(minLength,minLength);
+            return RamdomLetters(minLength, maxLength);
+        }
+
+        public static string CreatePassword(int length = 6)
+        {
+            if (length < 4)
+                length = 4;
+            if (length > 8)
+                length = 8;
+            var numLength = RandomUnitily.Random(length - 2, length);
+            var front = RandomUnitily.Random(100000, 999999).ToString().Substring(0, numLength);
+            if(length > numLength)
+                return front + RandomUnitily.RandomLetter(length - numLength);
+            return front;
         }
 
         private static string RamdomLetters(int minLength, int maxLength)

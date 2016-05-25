@@ -24,7 +24,6 @@ namespace Nebula.EntityFramework.Repository.Test.Map
 
             this.ToTable("Product");
             this.Property(e => e.Price).HasColumnName("Price").HasColumnAnnotation("商品价格", "value");
-            this.Property(e => e.CreateDate).HasPrecision(10);
             this.Ignore(e => e.Specs);
         }
 

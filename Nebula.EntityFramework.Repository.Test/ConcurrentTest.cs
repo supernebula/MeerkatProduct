@@ -1,7 +1,11 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nebula.EntityFramework.Repository.Test.Core;
+using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.EntityFramework.Repository.Test.Repositories;
+using Nebula.Utilities;
 
 namespace Nebula.EntityFramework.Repository.Test
 {
@@ -11,59 +15,111 @@ namespace Nebula.EntityFramework.Repository.Test
     [TestClass]
     public class ConcurrentTest
     {
-        public ConcurrentTest()
+
+        private EfDbContextFactory<FakeEcDbContext> _dbContextFactory;
+
+        [TestInitialize()]
+        public void MyTestInitialize()
         {
-            //
-            //TODO:  在此处添加构造函数逻辑
-            //
+            _dbContextFactory = new EfDbContextFactory<FakeEcDbContext>();
         }
 
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///获取或设置测试上下文，该上下文提供
-        ///有关当前测试运行及其功能的信息。
-        ///</summary>
-        public TestContext TestContext
+        public void MyTestCleanup()
         {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
+
+            
         }
 
-        #region 附加测试特性
-        //
-        // 编写测试时，可以使用以下附加特性: 
-        //
-        // 在运行类中的第一个测试之前使用 ClassInitialize 运行代码
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // 在类中的所有测试都已运行之后使用 ClassCleanup 运行代码
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // 在运行每个测试之前，使用 TestInitialize 来运行代码
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // 在每个测试运行完之后，使用 TestCleanup 来运行代码
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
+
 
         [TestMethod]
-        public void TestMethod1()
+        public void BatchInsertTest()
         {
-            //
-            // TODO:  在此处添加测试逻辑
-            //
+            var total = 100000;
+            var context = _dbContextFactory.Create();
+            var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
+            var sw = new Stopwatch();
+            sw.Start();
+
+            var users = CreateOneUser(10000);
+            var time1 = sw.ElapsedMilliseconds;
+            sw.Restart();
+            fakeUserRepo.InsertRange(users);
+            context.SaveChanges();
+            sw.Stop();
+            context.Dispose();
+
+            Trace.WriteLine("Create FakeUser " + total + ", 毫秒：" + sw.ElapsedMilliseconds);
+            Trace.WriteLine("Insert " + total + ", 毫秒：" + sw.ElapsedMilliseconds);
+        }
+
+
+        [TestMethod]
+        public void InsertOneTest()
+        {
+            var total = 100000;
+            var context = _dbContextFactory.Create();
+            var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
+            var sw = new Stopwatch();
+            sw.Start();
+
+            var user = CreateOneUser();
+            fakeUserRepo.Insert(user);
+            context.SaveChanges();
+            sw.Stop();
+            Trace.WriteLine("Insert " + total + ", 毫秒：" + sw.ElapsedMilliseconds);
+            context.Dispose();
+        }
+
+
+        private List<FakeUser> CreateOneUser(int total)
+        {
+            
+            var list = new List<FakeUser>();
+            if (total < 1)
+                return list;
+            for (int i = 0; i < total; i++)
+            {
+                var gender = FakeUtility.CreateGender();
+                var fakeUser = new FakeUser()
+                {
+                    Id = FakeUtility.CreateGuid(),
+                    RealName = FakeUtility.CreatePersonName(gender),
+                    Username = FakeUtility.CreateUsername(),
+                    Password = FakeUtility.CreatePassword(),
+                    Address = "XXXX路yy号",
+                    Mobile = FakeUtility.CreateMobile(),
+                    Email = FakeUtility.CreateEmail(),
+                    Points = FakeUtility.RandomInt(0, 100),
+                    Birthday = FakeUtility.CreateBirthday(),
+                    PersonHeight = FakeUtility.CreatePersonHeight(),
+                    CreateDate = DateTime.Now
+                };
+
+                list.Add(fakeUser);
+
+            }
+            return list;
+        }
+
+        private FakeUser CreateOneUser()
+        {
+            var gender = FakeUtility.CreateGender();
+            var fakeUser = new FakeUser()
+            {
+                Id = FakeUtility.CreateGuid(),
+                RealName = FakeUtility.CreatePersonName(gender),
+                Username = FakeUtility.CreateUsername(),
+                Password = FakeUtility.CreatePassword(),
+                Address = "XXXX路yy号",
+                Mobile = FakeUtility.CreateMobile(),
+                Email = FakeUtility.CreateEmail(),
+                Points = FakeUtility.RandomInt(0, 100),
+                Birthday = FakeUtility.CreateBirthday(),
+                PersonHeight = FakeUtility.CreatePersonHeight(),
+                CreateDate = DateTime.Now
+            };
+            return fakeUser;
         }
     }
 }

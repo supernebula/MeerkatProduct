@@ -20,6 +20,8 @@ namespace Nebula.EntityFramework.Repository.Test.Core
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new FakeProductMap());
+            modelBuilder.Configurations.Add(new FakeUserMap());
+            modelBuilder.Configurations.Add(new FakeOrderMap());
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

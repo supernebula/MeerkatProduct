@@ -69,7 +69,7 @@
     <Compile Include="Collection\BloomFilterTest.cs" />
     <Compile Include="Expressions\DynamicExpressionTest.cs" />
     <Compile Include="Extension\RegexTest.cs" />
-    <Compile Include="Maths\RandomTest.cs" />
+    <Compile Include="Maths\RandomUnitilyTest.cs" />
     <Compile Include="Serialization\JavaScriptTest.cs" />
     <Compile Include="Serialization\XmlUtilityTest.cs" />
     <Compile Include="Space\SpaceComplexityTest.cs" />

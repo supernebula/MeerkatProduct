@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Utilities.Maths;
@@ -6,7 +7,7 @@ using Nebula.Utilities.Maths;
 namespace Nebula.Utilities.Test.Maths
 {
     [TestClass]
-    public class RandomTest
+    public class RandomUnitilyTest
     {
         [TestMethod]
         public void TestMethod1()
@@ -46,6 +47,23 @@ namespace Nebula.Utilities.Test.Maths
                 Trace.WriteLine(":" + str.Length);
             }
             Assert.IsTrue(str != null && str.Length >= 8 && str.Length <= 15, "长度不不符合");
+        }
+
+
+        [TestMethod]
+        public void RealRandomest()
+        {
+            var list = new List<int>();
+            for (int i = 0; i < 10; i++)
+            {
+                var num = RandomUnitily.RealRandom(8, 15);
+                list.Add(num);
+            }
+
+            foreach (var item in list)
+            {
+                Trace.WriteLine(item);
+            }
         }
     }
 }

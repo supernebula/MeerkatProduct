@@ -18,6 +18,15 @@ namespace Nebula.EntityFramework.Repository
     public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : DbContext, new() where T : class, IPrimaryKey
     {
 
+        protected BasicEntityFrameworkRepository()
+        {
+        }
+
+        protected BasicEntityFrameworkRepository(IDbContextFactory<TDbContext> dbContextFactory)
+        {
+            DbContextFactory = dbContextFactory;
+        }
+
         private TDbContext _context;
 
 
@@ -32,7 +41,7 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        protected DbSet<T> DbSet => _context.Set<T>();
+        protected DbSet<T> DbSet => Context.Set<T>();
 
         private void Save()
         {
