@@ -68,6 +68,7 @@
     <Compile Include="FakeUtility.cs" />
     <Compile Include="Linq\LinqLambdaWhere.cs" />
     <Compile Include="Maths\RandomUnitily.cs" />
+    <Compile Include="Nature\EarthUtility.cs" />
     <Compile Include="Net\BaseHttpClient.cs" />
     <Compile Include="Net\BaseHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
