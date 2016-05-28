@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Nebula.Utilities.Linq
 {
@@ -16,20 +15,20 @@ namespace Nebula.Utilities.Linq
             return new LambdaWhere<T>();
         }
 
-        private List<KeyValuePair<ConstraintType, Func<T, bool>>> conditions;
+        private List<KeyValuePair<ConstraintType, Func<T, bool>>> _conditions;
 
         public int ValidCount
         {
             get
             {
-                return this.conditions.Count;
+                return this._conditions.Count;
             }
 
         }
 
         public LambdaWhere()
         {
-            conditions = new List<KeyValuePair<ConstraintType, Func<T, bool>>>();
+            _conditions = new List<KeyValuePair<ConstraintType, Func<T, bool>>>();
         }
 
         /// <summary>
@@ -112,7 +111,7 @@ namespace Nebula.Utilities.Linq
                     return this;
             }
 
-            this.conditions.Add(new KeyValuePair<ConstraintType, Func<T, bool>>(type, cdt));
+            this._conditions.Add(new KeyValuePair<ConstraintType, Func<T, bool>>(type, cdt));
             return this;
 
         }
@@ -140,13 +139,13 @@ namespace Nebula.Utilities.Linq
 
         public Func<T, bool> ToFunc()
         {
-            if (this.conditions.Count == 0)
+            if (this._conditions.Count == 0)
                 return e => { return true; };
 
             return e =>
             {
                 var result = true;
-                this.conditions.ForEach(f =>
+                this._conditions.ForEach(f =>
                 {
                     if (f.Key == ConstraintType.And)
                         result = f.Value(e) && result;

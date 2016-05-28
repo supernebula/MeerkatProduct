@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Nebula.Common
 {
-    public interface IPaged<T> : IPaged, IEnumerable<T>
+    public interface IPaged<out T> : IPaged, IEnumerable<T>
     {
     }
 

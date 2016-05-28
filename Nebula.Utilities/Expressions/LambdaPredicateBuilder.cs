@@ -12,7 +12,7 @@ namespace Nebula.Utilities.Expressions
     /// </summary>
     public class LambdaPredicateBuilder<T>
     {
-        private Expression<Func<T, bool>> left;
+        private Expression<Func<T, bool>> _left;
 
         private class DefaultExpression<T>
         {
@@ -31,7 +31,7 @@ namespace Nebula.Utilities.Expressions
         /// <returns></returns>
         public Expression<Func<T, bool>> And(Expression<Func<T, bool>> right)
         {
-            return Merge(left, right, Expression.AndAlso);
+            return Merge(_left, right, Expression.AndAlso);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Nebula.Utilities.Expressions
         /// <returns></returns>
         public Expression<Func<T, bool>> Or(Expression<Func<T, bool>> right)
         {
-            return Merge(left, right, Expression.OrElse);
+            return Merge(_left, right, Expression.OrElse);
         }
 
         /// <summary>
