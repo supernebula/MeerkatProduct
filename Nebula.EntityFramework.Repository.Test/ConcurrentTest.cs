@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Entities;
@@ -32,17 +34,36 @@ namespace Nebula.EntityFramework.Repository.Test
         }
 
 
+        public void TowThread()
+        {
+            var waiteTaskEvent = new AutoResetEvent(false);
+            var sw = new Stopwatch();
+            sw.Start();
+
+            var task1 = Task.Run(() => BatchInsertTest());
+            var task2 = Task.Run(() => SqlBatchInsertTest());
+            Task.WhenAll(task1, task2).ContinueWith((t) =>
+            {
+                sw.Stop();
+                Trace.WriteLine("Task Batch Sql & Insert , 毫秒：" + sw.ElapsedMilliseconds);
+                waiteTaskEvent.Set();
+            });
+
+            waiteTaskEvent.WaitOne();
+        }
+
+
 
         [TestMethod]
         public void BatchInsertTest()
         {
-            var total = 10000;
+            var total = 200000;
             var context = _dbContextFactory.Create();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
 
-            var users = CreateOneUser(10000);
+            var users = CreateOneUser(total);
             var time1 = sw.ElapsedMilliseconds;
             sw.Restart();
             fakeUserRepo.InsertRange(users);
@@ -58,13 +79,13 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod]
         public void SqlBatchInsertTest()
         {
-            var total = 10000;
+            var total = 200000;
             var context = _dbContextFactory.Create();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
 
-            var users = CreateOneUser(10000);
+            var users = CreateOneUser(total);
             var time1 = sw.ElapsedMilliseconds;
             sw.Restart();
 
