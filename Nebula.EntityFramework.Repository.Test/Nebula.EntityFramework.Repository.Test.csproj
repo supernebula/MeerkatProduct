@@ -87,6 +87,9 @@
       <DependentUpon>201605250942102_Update-Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NotImplementedFunc.cs" />
+    <Compile Include="QueryEntries\Parameters\UserQueryParameter.cs" />
+    <Compile Include="QueryEntries\UserQueryEntry.cs" />
     <Compile Include="Repositories\FakeOrderRepository.cs" />
     <Compile Include="Core\FakeEcDbContext.cs" />
     <Compile Include="ConcurrentTest.cs" />

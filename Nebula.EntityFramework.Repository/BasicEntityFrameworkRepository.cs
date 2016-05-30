@@ -41,7 +41,10 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
+
         protected DbSet<T> DbSet => Context.Set<T>();
+
+        public Database Database => Context.Database;
 
         private void Save()
         {
