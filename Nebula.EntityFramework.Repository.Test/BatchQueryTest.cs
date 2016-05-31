@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Repositories;
