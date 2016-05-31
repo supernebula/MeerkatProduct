@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nebula.Common;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public abstract class BaseEntity : IEntity
+    public abstract class BaseEntity : IEntity, IPrimaryKey, IMarkDelete
     {
         public Guid Id { get; set; }
 

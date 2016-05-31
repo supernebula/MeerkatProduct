@@ -1,9 +1,8 @@
 ﻿using System;
-using Nebula.Common;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public interface IEntity : IPrimaryKey, IMarkDelete
+    public interface IEntity
     {
         DateTime CreateDate { get; set; }
     }

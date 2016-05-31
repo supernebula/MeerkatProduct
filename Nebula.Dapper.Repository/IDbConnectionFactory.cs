@@ -2,8 +2,8 @@
 
 namespace Nebula.Dapper.Repository
 {
-    public interface IDbConnectionFactory<out TDbConnection> where TDbConnection : IDbConnection
+    public interface IDbConnectionFactory<out TDbContext> where TDbContext : DapperDbContext
     {
-        TDbConnection Create();
+        TDbContext Create();
     }
 }

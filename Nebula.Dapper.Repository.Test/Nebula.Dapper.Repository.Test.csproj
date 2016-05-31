@@ -35,7 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -45,13 +52,41 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="BasicFuncTest.cs" />
+    <Compile Include="FakeEcDbContext.cs" />
+    <Compile Include="FakeEcDbConnection.cs" />
+    <Compile Include="FakeUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BatchQueryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Dapper.Repository\Nebula.Dapper.Repository.csproj">
+      <Project>{26505b67-6cb9-4191-a72f-c5d88ef7c635}</Project>
+      <Name>Nebula.Dapper.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Compoment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Test.Model\Nebula.Test.Model.csproj">
+      <Project>{a626fa52-997d-4ba1-aab9-83f0dc742ac9}</Project>
+      <Name>Nebula.Test.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -61,7 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicDapperRepository.cs" />
-    <Compile Include="DbConnectionFactory.cs" />
+    <Compile Include="DapperDbContext.cs" />
+    <Compile Include="DbContextFactory.cs" />
     <Compile Include="IDbConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
