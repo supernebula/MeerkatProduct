@@ -6,8 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Entities;
 using Nebula.EntityFramework.Repository.Test.Repositories;
+using Nebula.Test.Model;
 using Nebula.Utilities;
 
 namespace Nebula.EntityFramework.Repository.Test
@@ -33,31 +33,10 @@ namespace Nebula.EntityFramework.Repository.Test
             
         }
 
-
-        public void TowThread()
-        {
-            var waiteTaskEvent = new AutoResetEvent(false);
-            var sw = new Stopwatch();
-            sw.Start();
-
-            var task1 = Task.Run(() => BatchInsertTest());
-            var task2 = Task.Run(() => SqlBatchInsertTest());
-            Task.WhenAll(task1, task2).ContinueWith((t) =>
-            {
-                sw.Stop();
-                Trace.WriteLine("Task Batch Sql & Insert , 毫秒：" + sw.ElapsedMilliseconds);
-                waiteTaskEvent.Set();
-            });
-
-            waiteTaskEvent.WaitOne();
-        }
-
-
-
         [TestMethod]
         public void BatchInsertTest()
         {
-            var total = 200000;
+            var total = 200;
             var context = _dbContextFactory.Create();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
@@ -79,7 +58,7 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod]
         public void SqlBatchInsertTest()
         {
-            var total = 200000;
+            var total = 200;
             var context = _dbContextFactory.Create();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();

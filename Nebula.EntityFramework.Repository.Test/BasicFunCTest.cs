@@ -3,17 +3,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.Entity.Infrastructure;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Repositories;
-using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.Test.Model;
 
 namespace Nebula.EntityFramework.Repository.Test
 {
     [TestClass]
     public class BasicFuncTest
     {
-        private Guid _id;
-        public void Init()
+        private static Guid _id;
+
+        [ClassInitialize]
+        public static void Init(TestContext context)
         {
-            _id = new Guid("C7365C4633084F9F8B0509F1220610F9");
+            _id = Guid.NewGuid();
         }
 
         [TestMethod,Description("实体插入测试")]

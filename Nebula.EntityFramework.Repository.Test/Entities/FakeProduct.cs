@@ -1,40 +1,40 @@
-﻿using System.Collections.Generic;
-using Nebula.FirstEC.Compoment;
+﻿//using System.Collections.Generic;
+//using Nebula.FirstEC.Compoment;
 
-namespace Nebula.EntityFramework.Repository.Test.Entities
-{
+//namespace Nebula.EntityFramework.Repository.Test.Entities
+//{
 
-    public class FakeProduct : BaseEntity
-    {
-        public string Title { get; set; }
+//    public class FakeProduct : BaseEntity
+//    {
+//        public string Title { get; set; }
 
-        public string Description { get; set; }
+//        public string Description { get; set; }
 
-        public double Price { get; set; }
+//        public double Price { get; set; }
 
-        public string Picture { get; set; }
+//        public string Picture { get; set; }
 
-        public string SourceUri { get; set; }
+//        public string SourceUri { get; set; }
 
-        public int Follows { get; set; }
+//        public int Follows { get; set; }
 
-        public string SourceSite { get; set; }
+//        public string SourceSite { get; set; }
 
-        public ProductStatusType Status { get; set; }
+//        public ProductStatusType Status { get; set; }
 
-        public List<SpecValue> Specs { get; set; }
+//        public List<SpecValue> Specs { get; set; }
 
-        public int VisitTotal { get; set; }
+//        public int VisitTotal { get; set; }
 
-    }
+//    }
 
 
-    public enum ProductStatusType
-    {
-        Normal,
+//    public enum ProductStatusType
+//    {
+//        Normal,
 
-        SellOut,
+//        SellOut,
 
-        OutOfStock
-    }
-}
+//        OutOfStock
+//    }
+//}

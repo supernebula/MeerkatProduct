@@ -1,5 +1,5 @@
 ﻿using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.Test.Model;
 
 namespace Nebula.EntityFramework.Repository.Test.Repositories
 {

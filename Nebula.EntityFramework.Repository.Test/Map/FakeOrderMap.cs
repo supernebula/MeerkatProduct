@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nebula.EntityFramework.Repository.Test.Entities;
+﻿using System.Data.Entity.ModelConfiguration;
+using Nebula.Test.Model;
 
 namespace Nebula.EntityFramework.Repository.Test.Map
 {

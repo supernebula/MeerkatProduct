@@ -2,9 +2,8 @@
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Linq.Expressions;
 using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.Test.Model;
 
 namespace Nebula.EntityFramework.Repository.Test.Repositories
 {

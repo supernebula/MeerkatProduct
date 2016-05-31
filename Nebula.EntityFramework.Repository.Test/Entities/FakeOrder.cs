@@ -1,20 +1,20 @@
-﻿using System;
-using Nebula.FirstEC.Compoment;
+﻿//using System;
+//using Nebula.FirstEC.Compoment;
 
-namespace Nebula.EntityFramework.Repository.Test.Entities
-{
-    public class FakeOrder : BaseEntity
-    {
-        public Guid UserId { get; set; }
-        public Guid ProductId { get; set; }
-        public string Recipient { get; set; }
+//namespace Nebula.EntityFramework.Repository.Test.Entities
+//{
+//    public class FakeOrder : BaseEntity
+//    {
+//        public Guid UserId { get; set; }
+//        public Guid ProductId { get; set; }
+//        public string Recipient { get; set; }
 
-        public double Amount { get; set; }
+//        public double Amount { get; set; }
 
-        public string Address { get; set; }
+//        public string Address { get; set; }
 
-        public int Number { get; set; }
+//        public int Number { get; set; }
 
-        public int Remark { get; set; }
-    }
-}
+//        public int Remark { get; set; }
+//    }
+//}

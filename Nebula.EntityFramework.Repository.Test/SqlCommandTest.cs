@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Entities;
+using Nebula.Test.Model;
 using Nebula.Utilities.Sql;
 
 namespace Nebula.EntityFramework.Repository.Test
