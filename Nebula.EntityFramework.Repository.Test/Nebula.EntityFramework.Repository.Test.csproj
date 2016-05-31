@@ -92,7 +92,7 @@
     <Compile Include="QueryEntries\UserQueryEntry.cs" />
     <Compile Include="Repositories\FakeOrderRepository.cs" />
     <Compile Include="Core\FakeEcDbContext.cs" />
-    <Compile Include="ConcurrentTest.cs" />
+    <Compile Include="BatchChangeTest.cs" />
     <Compile Include="BasicFuncTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\FakeOriginalEfRepository.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="TransactionTest.cs" />
     <Compile Include="SqlCommandTest.cs" />
+    <Compile Include="BatchQueryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

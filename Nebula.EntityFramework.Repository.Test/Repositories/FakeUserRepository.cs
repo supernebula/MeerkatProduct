@@ -1,5 +1,7 @@
-﻿using System.Data.Entity.Infrastructure;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Linq.Expressions;
 using Nebula.EntityFramework.Repository.Test.Core;
 using Nebula.EntityFramework.Repository.Test.Entities;
@@ -14,7 +16,7 @@ namespace Nebula.EntityFramework.Repository.Test.Repositories
 
         public FakeUserRepository(IDbContextFactory<FakeEcDbContext> dbContextFactory) : base(dbContextFactory)
         { }
-
+        
 
         public int InsertByCommand(FakeUser item)
         {
@@ -59,6 +61,24 @@ namespace Nebula.EntityFramework.Repository.Test.Repositories
                 , new SqlParameter("@Birthday", item.Birthday)
                 , new SqlParameter("@MarkDelete", item.MarkDelete)
                 , new SqlParameter("@CreateDate", item.CreateDate));
+        }
+
+
+        public List<FakeUser> Take(int num = 0)
+        {
+            if(num <= 0)
+                return DbSet.ToList();
+            return DbSet.Take(1000000).ToList();
+        }
+
+        public List<FakeUser> TakeByDbSql(int num = 0)
+        {
+            string sql = null;
+            if (num <= 0)
+                sql = "SELECT * FROM [FakeUser]";
+            else
+                sql = "SELECT TOP " + num + " * FROM [FakeUser]";
+            return Database.SqlQuery<FakeUser>(sql).ToList();
         }
     }
 }

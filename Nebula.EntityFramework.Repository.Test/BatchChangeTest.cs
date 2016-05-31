@@ -16,7 +16,7 @@ namespace Nebula.EntityFramework.Repository.Test
     /// ConcurrentTest 的摘要说明
     /// </summary>
     [TestClass]
-    public class ConcurrentTest
+    public class BatchChangeTest
     {
 
         private EfDbContextFactory<FakeEcDbContext> _dbContextFactory;
