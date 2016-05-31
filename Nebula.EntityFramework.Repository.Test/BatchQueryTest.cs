@@ -16,17 +16,17 @@ namespace Nebula.EntityFramework.Repository.Test
         {
             _dbContextFactory = new EfDbContextFactory<FakeEcDbContext>();
         }
-        [TestMethod]
+        //[TestMethod]
         public void QueryLargeTest()
         {
             var context = _dbContextFactory.Create();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
-            var result = fakeUserRepo.Take(10000);
+            var result = fakeUserRepo.Take(1000000);
             sw.Stop();
             context.Dispose();
-            Trace.WriteLine("QueryLarge " + result.Count + ", 毫秒：" + sw.ElapsedMilliseconds);
+            Trace.WriteLine("EF带跟踪 QueryLarge " + result.Count + ", 毫秒：" + sw.ElapsedMilliseconds);
         }
 
 
@@ -37,10 +37,10 @@ namespace Nebula.EntityFramework.Repository.Test
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
-            var result = fakeUserRepo.TakeByDbSql(10000);
+            var result = fakeUserRepo.TakeByDbSql(1000000);
             sw.Stop();
             context.Dispose();
-            Trace.WriteLine("SqlQueryLarge " + result.Count + ", 毫秒：" + sw.ElapsedMilliseconds);
+            Trace.WriteLine("EF无跟踪 SqlQueryLarge " + result.Count + ", 毫秒：" + sw.ElapsedMilliseconds);
         }
     }
 }
