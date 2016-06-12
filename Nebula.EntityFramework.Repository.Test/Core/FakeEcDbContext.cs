@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
-using Nebula.EntityFramework.Repository.Test.Map;
 
 namespace Nebula.EntityFramework.Repository.Test.Core
 {
@@ -20,9 +19,24 @@ namespace Nebula.EntityFramework.Repository.Test.Core
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //方法一
             //modelBuilder.Configurations.Add(new FakeProductMap());
             //modelBuilder.Configurations.Add(new FakeUserMap());
             //modelBuilder.Configurations.Add(new FakeOrderMap());
+            // Add more EntityMap...
+
+            //方法二
+            //var typesRegister =
+            //    Assembly.GetExecutingAssembly().GetTypes()
+            //        .Where(t => string.IsNullOrWhiteSpace(t.Namespace))
+            //        .Where( t => t.BaseType != null && t.BaseType.IsGenericType && t.BaseType.GetGenericTypeDefinition() == typeof (EntityTypeConfiguration<>));
+            //foreach (var type in typesRegister)
+            //{
+            //    dynamic configurationObj = Activator.CreateInstance(type);
+            //    modelBuilder.Configurations.Add(configurationObj);
+            //}
+
+            //方法三
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
