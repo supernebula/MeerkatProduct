@@ -319,6 +319,40 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
+      <Name>Nebula.EntityFramework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Business\Nebula.FirstEC.Business.csproj">
+      <Project>{a7bff6ef-2cd2-45b2-8832-b9eb315fe0be}</Project>
+      <Name>Nebula.FirstEC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Compoment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.DataStorage\Nebula.FirstEC.DataStorage.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Nebula.FirstEC.DataStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
+      <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
+      <Name>Nebula.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Nebula.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Web\Nebula.Web.csproj">
+      <Project>{23781fb0-e74b-4ea6-b078-3c86630c7733}</Project>
+      <Name>Nebula.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

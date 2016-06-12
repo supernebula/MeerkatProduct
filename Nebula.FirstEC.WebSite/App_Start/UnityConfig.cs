@@ -1,7 +1,15 @@
 using System;
+using System.Data.Entity.Infrastructure;
 using Nebula.FirstEC.WebSite.Core;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using Microsoft.Practices.Unity.Mvc;
+using Nebula.Common.Repository;
+using Nebula.EntityFramework.Repository;
+using Nebula.FirstEC.Data.EntityQueries;
+using Nebula.FirstEC.DataStorage.EntityQueries;
+using IProductService = Nebula.FirstEC.Business.IProductService;
+using ProductService = Nebula.FirstEC.Business.ProductService;
 
 namespace Nebula.FirstEC.WebSite.App_Start
 {
@@ -39,6 +47,11 @@ namespace Nebula.FirstEC.WebSite.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
+            container.LoadConfiguration();
+            container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
+            container.RegisterType(typeof(IDbContextFactory<>), typeof(EfDbContextFactory<>), new PerThreadLifetimeManager());
+            container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IProductEntityQuery, ProductEntityQuery>();
         }
     }
 }
