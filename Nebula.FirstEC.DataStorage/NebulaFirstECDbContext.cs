@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nebula.FirstEC.Compoment;
+using Nebula.FirstEC.Compoment.AggregateRoots;
 using Nebula.FirstEC.DataStorage.Map;
 
 namespace Nebula.FirstEC.DataStorage

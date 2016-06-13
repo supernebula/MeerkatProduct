@@ -19,7 +19,7 @@ namespace Nebula.EntityFramework.Repository.Test.Map
             this.Property(e => e.Points).IsRequired();
             this.Property(e => e.PersonHeight).IsRequired();
             this.Property(e => e.Birthday).IsRequired();
-            this.Property(e => e.CreateDate).IsRequired();
+            this.Property(e => e.CreateTime).IsRequired();
         }
     }
 }

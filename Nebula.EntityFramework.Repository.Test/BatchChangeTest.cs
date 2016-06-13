@@ -130,7 +130,7 @@ namespace Nebula.EntityFramework.Repository.Test
                     Points = FakeUtility.RandomInt(0, 100),
                     Birthday = FakeUtility.CreateBirthday(),
                     PersonHeight = FakeUtility.CreatePersonHeight(),
-                    CreateDate = DateTime.Now
+                    CreateTime = DateTime.Now
                 };
 
                 list.Add(fakeUser);
@@ -154,7 +154,7 @@ namespace Nebula.EntityFramework.Repository.Test
                 Points = FakeUtility.RandomInt(0, 100),
                 Birthday = FakeUtility.CreateBirthday(),
                 PersonHeight = FakeUtility.CreatePersonHeight(),
-                CreateDate = DateTime.Now
+                CreateTime = DateTime.Now
             };
             return fakeUser;
         }

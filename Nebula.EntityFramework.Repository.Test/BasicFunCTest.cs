@@ -29,7 +29,7 @@ namespace Nebula.EntityFramework.Repository.Test
                 Title = "文章标题1",
                 Content = "文章内容1",
                 Tag ="经济,医疗",
-                CreateDate = DateTime.Now,
+                CreateTime = DateTime.Now,
                 MarkDelete = false,
             };
             articleRepo.Insert(artcle);

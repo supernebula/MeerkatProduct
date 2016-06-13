@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.Compoment
+namespace Nebula.FirstEC.Compoment.Entities
 {
     public class Spec : BaseEntity
     {

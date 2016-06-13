@@ -16,7 +16,7 @@ namespace Nebula.EntityFramework.Repository.Test.Map
             this.Property(e => e.Amount).IsRequired();
             this.Property(e => e.Number).IsRequired();
             this.Property(e => e.Remark).IsOptional();
-            this.Property(e => e.CreateDate).IsRequired();
+            this.Property(e => e.CreateTime).IsRequired();
         }
     }
 }

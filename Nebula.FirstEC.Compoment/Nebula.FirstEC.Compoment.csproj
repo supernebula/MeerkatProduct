@@ -41,16 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Categary.cs" />
+    <Compile Include="AggregateRoots\Categary.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="Interface\IEntity.cs" />
-    <Compile Include="Interface\IMarkDelete.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IMarkDelete.cs" />
+    <Compile Include="AggregateRoots\Order.cs" />
+    <Compile Include="AggregateRoots\Product.cs" />
+    <Compile Include="Values\ProductStatusType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spec.cs" />
-    <Compile Include="SpecValue.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Entities\Spec.cs" />
+    <Compile Include="Entities\SpecValue.cs" />
+    <Compile Include="AggregateRoots\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">

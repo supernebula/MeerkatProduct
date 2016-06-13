@@ -8,7 +8,7 @@ using Nebula.Common;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public class Entity : IPrimaryKey, IMarkDelete
+    public abstract class Entity : IPrimaryKey, IMarkDelete
     {
         public Guid Id { get; set; }
         public DateTime CreateTime { get; set; }

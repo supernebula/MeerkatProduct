@@ -1,14 +1,18 @@
 ﻿using System.Collections.Generic;
-using Nebula.FirstEC.Compoment;
 using Nebula.FirstEC.Compoment.Entities;
+using Nebula.FirstEC.Compoment.Values;
 
-namespace Nebula.Test.Model
+namespace Nebula.FirstEC.Compoment.AggregateRoots
 {
-    public class FakeProduct : BaseEntity
+    public class Product : BaseEntity
     {
         public string Title { get; set; }
 
         public string Description { get; set; }
+
+        public decimal PurchasePrice { get; set; }
+
+        public decimal SellPrice { get; set; }
 
         public double Price { get; set; }
 
@@ -25,16 +29,7 @@ namespace Nebula.Test.Model
         public List<SpecValue> Specs { get; set; }
 
         public int VisitTotal { get; set; }
-
     }
 
 
-    public enum ProductStatusType
-    {
-        Normal,
-
-        SellOut,
-
-        OutOfStock
-    }
 }

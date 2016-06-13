@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Practices.Unity;
 using Nebula.FirstEC.Compoment;
+using Nebula.FirstEC.Compoment.AggregateRoots;
 using Nebula.FirstEC.Data.EntityQueries;
 
 namespace Nebula.FirstEC.MobileSite.ApiControllers

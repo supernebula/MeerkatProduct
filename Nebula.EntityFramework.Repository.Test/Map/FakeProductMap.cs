@@ -14,7 +14,7 @@ namespace Nebula.EntityFramework.Repository.Test.Map
             this.Property(e => e.SourceUri).HasMaxLength(500);
             this.Property(e => e.SourceSite).HasMaxLength(100);
             this.Property(e => e.Picture).HasMaxLength(500);
-            this.Property(e => e.CreateDate).IsRequired();
+            this.Property(e => e.CreateTime).IsRequired();
 
 
             this.ToTable("Product");

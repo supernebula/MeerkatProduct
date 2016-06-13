@@ -75,6 +75,10 @@
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
       <Name>Nebula.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nebula.Test.Model\Nebula.Test.Model.csproj">
+      <Project>{a626fa52-997d-4ba1-aab9-83f0dc742ac9}</Project>
+      <Name>Nebula.Test.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

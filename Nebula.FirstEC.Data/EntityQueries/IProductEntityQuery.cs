@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Nebula.FirstEC.Compoment;
+using Nebula.FirstEC.Compoment.AggregateRoots;
 
 namespace Nebula.FirstEC.Data.EntityQueries
 {
