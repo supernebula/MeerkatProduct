@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateRoots\ShoppingCart.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="AggregateRoots\Categary.cs" />
     <Compile Include="Entity.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Entities\Spec.cs" />
     <Compile Include="Entities\SpecValue.cs" />
     <Compile Include="AggregateRoots\User.cs" />
+    <Compile Include="Values\SpecItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
