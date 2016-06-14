@@ -58,7 +58,7 @@ namespace Nebula.EntityFramework.Repository.Test.Repositories
                 , new SqlParameter("@Points", item.Points)
                 , new SqlParameter("@PersonHeight", item.PersonHeight)
                 , new SqlParameter("@Birthday", item.Birthday)
-                , new SqlParameter("@MarkDelete", item.MarkDelete)
+                , new SqlParameter("@MarkDelete", item.SoftDelete)
                 , new SqlParameter("@CreateTime", item.CreateTime));
         }
 

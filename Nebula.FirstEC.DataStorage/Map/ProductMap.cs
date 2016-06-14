@@ -24,7 +24,7 @@ namespace Nebula.FirstEC.DataStorage.Map
 
 
             this.ToTable("Product");
-            this.Property(e => e.Price).HasColumnName("Price").HasColumnAnnotation("商品价格", "value");
+            this.Property(e => e.FixedPrice).HasColumnName("Price").HasColumnAnnotation("商品价格", "value");
             this.Property(e => e.CreateTime).HasPrecision(10);
             this.Ignore(e => e.Specs);
         }

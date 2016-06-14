@@ -30,7 +30,7 @@ namespace Nebula.EntityFramework.Repository.Test
                 Content = "文章内容1",
                 Tag ="经济,医疗",
                 CreateTime = DateTime.Now,
-                MarkDelete = false,
+                SoftDelete = false,
             };
             articleRepo.Insert(artcle);
             articleRepo.SaveChanges();

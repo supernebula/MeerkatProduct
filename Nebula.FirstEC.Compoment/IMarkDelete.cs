@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.FirstEC.Compoment
 {
-    public interface IMarkDelete
+    public interface ISoftDelete
     {
-        bool MarkDelete { get; set; }
+        bool SoftDelete { get; set; }
     }
 }

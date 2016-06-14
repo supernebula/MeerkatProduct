@@ -40,9 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateRoots\Tag.cs" />
     <Compile Include="AggregateRoots\ShoppingCart.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="AggregateRoots\Categary.cs" />
+    <Compile Include="Entities\CategarySpecRelation.cs" />
+    <Compile Include="Entities\CategaryTagRelation.cs" />
+    <Compile Include="Entities\InStock.cs" />
+    <Compile Include="Entities\InStockSpecRelation.cs" />
+    <Compile Include="Entities\ProductTagRelation.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IMarkDelete.cs" />
@@ -50,10 +56,9 @@
     <Compile Include="AggregateRoots\Product.cs" />
     <Compile Include="Values\ProductStatusType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Spec.cs" />
-    <Compile Include="Entities\SpecValue.cs" />
+    <Compile Include="AggregateRoots\Spec.cs" />
+    <Compile Include="Entities\ProductSpecRelation.cs" />
     <Compile Include="AggregateRoots\User.cs" />
-    <Compile Include="Values\SpecItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
