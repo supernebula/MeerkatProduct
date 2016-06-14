@@ -57,7 +57,6 @@
     <Compile Include="Values\ProductStatusType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AggregateRoots\Spec.cs" />
-    <Compile Include="Entities\ProductSpecRelation.cs" />
     <Compile Include="AggregateRoots\User.cs" />
   </ItemGroup>
   <ItemGroup>

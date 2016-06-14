@@ -22,7 +22,7 @@ namespace Nebula.Test.Model
 
         public ProductStatusType Status { get; set; }
 
-        public List<ProductSpecRelation> Specs { get; set; }
+        public List<InStockSpecRelation> Specs { get; set; }
 
         public int VisitTotal { get; set; }
 

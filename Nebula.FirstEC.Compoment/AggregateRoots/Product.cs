@@ -41,7 +41,7 @@ namespace Nebula.FirstEC.Compoment.AggregateRoots
 
         public List<ProductTagRelation> Tags { get; set; }
 
-        public List<ProductSpecRelation> Specs { get; set; }
+        public List<InStockSpecRelation> Specs { get; set; }
 
         public InStock InStock { get; set; }
 
