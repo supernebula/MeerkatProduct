@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Nebula.FirstEC.Compoment.AggregateRoots
+namespace Nebula.FirstEC.Domain.Models.AggregateRoots
 {
     public class Order : BaseEntity
     {

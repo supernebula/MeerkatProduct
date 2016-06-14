@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.FirstEC.Compoment.Values
+namespace Nebula.FirstEC.Domain.Models.Values
 {
     public enum ProductStatusType
     {

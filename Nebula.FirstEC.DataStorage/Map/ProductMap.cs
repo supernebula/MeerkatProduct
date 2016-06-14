@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Nebula.FirstEC.Compoment;
 using Nebula.FirstEC.Compoment.AggregateRoots;
 
-namespace Nebula.FirstEC.DataStorage.Map
+namespace Nebula.FirstEC.Data.Map
 {
     public class ProductMap : EntityTypeConfiguration<Product>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Nebula.Common;
 
-namespace Nebula.FirstEC.DataStorage
+namespace Nebula.FirstEC.Data
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

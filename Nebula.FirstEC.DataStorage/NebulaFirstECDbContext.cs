@@ -9,7 +9,7 @@ using Nebula.FirstEC.Compoment;
 using Nebula.FirstEC.Compoment.AggregateRoots;
 using Nebula.FirstEC.DataStorage.Map;
 
-namespace Nebula.FirstEC.DataStorage
+namespace Nebula.FirstEC.Data
 {
 
     public class NebulaFirstEcDbContext : DbContext

@@ -1,9 +1,9 @@
 ﻿using System;
 using Nebula.Common;
 
-namespace Nebula.FirstEC.Compoment
+namespace Nebula.FirstEC.Domain.Models
 {
-    public abstract class BaseEntity : IEntity, IPrimaryKey, ISoftDelete
+    public abstract class BaseEntity : IPrimaryKey, ISoftDelete
     {
         public Guid Id { get; set; }
 

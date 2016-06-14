@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nebula.EntityFramework.Repository;
-using Nebula.FirstEC.Compoment;
-using Nebula.FirstEC.Compoment.AggregateRoots;
-using Nebula.FirstEC.Data.Repositories;
+using Nebula.FirstEC.Domain;
+using Nebula.FirstEC.Domain.Models.AggregateRoots;
 
-namespace Nebula.FirstEC.DataStorage.Repositories
+namespace Nebula.FirstEC.Data.Repositories
 {
     public class ProductRepository : BasicEntityFrameworkRepository<Product, NebulaFirstEcDbContext>, IProductRepository
     {

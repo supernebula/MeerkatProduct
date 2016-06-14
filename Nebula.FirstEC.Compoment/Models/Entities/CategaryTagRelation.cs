@@ -1,7 +1,7 @@
 ﻿using System;
 using Nebula.Common;
 
-namespace Nebula.FirstEC.Compoment.Entities
+namespace Nebula.FirstEC.Domain.Models.Entities
 {
     public class CategaryTagRelation : IPrimaryKey
     {

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.FirstEC.Compoment;
-using Nebula.FirstEC.Compoment.AggregateRoots;
-using Nebula.FirstEC.Data.EntityQueries;
+using Nebula.FirstEC.Domain.Models.AggregateRoots;
 
-namespace Nebula.FirstEC.DataStorage.EntityQueries
+namespace Nebula.FirstEC.Data.EntityQueries
 {
-    public class ProductEntityQuery : IProductEntityQuery
+    public class ProductEntityQuery : IProductQuery
     {
         public List<Product> Search(string key)
         {

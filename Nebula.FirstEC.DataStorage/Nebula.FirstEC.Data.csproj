@@ -7,8 +7,8 @@
     <ProjectGuid>{3A834C79-05FE-4C07-A321-B6057C28F075}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.FirstEC.DataStorage</RootNamespace>
-    <AssemblyName>Nebula.FirstEC.DataStorage</AssemblyName>
+    <RootNamespace>Nebula.FirstEC.Data</RootNamespace>
+    <AssemblyName>Nebula.FirstEC.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,6 +54,7 @@
     <Compile Include="NebulaFirstECDbContext.cs" />
     <Compile Include="Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,13 +73,9 @@
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.EntityFramework.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Compoment.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Domain.csproj">
       <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
-      <Name>Nebula.FirstEC.Compoment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
-      <Project>{8e277b26-b7e0-4d89-b3c8-83ed819b744f}</Project>
-      <Name>Nebula.FirstEC.Data</Name>
+      <Name>Nebula.FirstEC.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>

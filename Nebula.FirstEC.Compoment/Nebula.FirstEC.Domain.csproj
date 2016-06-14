@@ -7,8 +7,8 @@
     <ProjectGuid>{47FF7F27-1A70-4437-93D6-D53793C16DF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.FirstEC.Compoment</RootNamespace>
-    <AssemblyName>Nebula.FirstEC.Compoment</AssemblyName>
+    <RootNamespace>Nebula.FirstEC.Domain</RootNamespace>
+    <AssemblyName>Nebula.FirstEC.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,24 +40,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggregateRoots\Tag.cs" />
-    <Compile Include="AggregateRoots\ShoppingCart.cs" />
-    <Compile Include="BaseEntity.cs" />
-    <Compile Include="AggregateRoots\Categary.cs" />
-    <Compile Include="Entities\CategarySpecRelation.cs" />
-    <Compile Include="Entities\CategaryTagRelation.cs" />
-    <Compile Include="Entities\InStock.cs" />
-    <Compile Include="Entities\InStockSpecRelation.cs" />
-    <Compile Include="Entities\ProductTagRelation.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="IMarkDelete.cs" />
-    <Compile Include="AggregateRoots\Order.cs" />
-    <Compile Include="AggregateRoots\Product.cs" />
-    <Compile Include="Values\ProductStatusType.cs" />
+    <Compile Include="Models\AggregateRoots\Tag.cs" />
+    <Compile Include="Models\AggregateRoots\ShoppingCart.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\AggregateRoots\Categary.cs" />
+    <Compile Include="Models\Entities\CategarySpecRelation.cs" />
+    <Compile Include="Models\Entities\CategaryTagRelation.cs" />
+    <Compile Include="Models\Entities\InStock.cs" />
+    <Compile Include="Models\Entities\InStockSpecRelation.cs" />
+    <Compile Include="Models\Entities\ProductTagRelation.cs" />
+    <Compile Include="Models\ISoftDelete.cs" />
+    <Compile Include="Models\AggregateRoots\Order.cs" />
+    <Compile Include="Models\AggregateRoots\Product.cs" />
+    <Compile Include="Models\Values\ProductStatusType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AggregateRoots\Spec.cs" />
-    <Compile Include="AggregateRoots\User.cs" />
+    <Compile Include="Models\AggregateRoots\Spec.cs" />
+    <Compile Include="Models\AggregateRoots\User.cs" />
+    <Compile Include="QueryEntries\ICategaryQuery.cs" />
+    <Compile Include="QueryEntries\ICategarySpecRelationQuery.cs" />
+    <Compile Include="QueryEntries\ICategaryTagRelationQuery.cs" />
+    <Compile Include="QueryEntries\IInStockQuery.cs" />
+    <Compile Include="QueryEntries\IInStockSpecRelationQuery.cs" />
+    <Compile Include="QueryEntries\IOrderQuery.cs" />
+    <Compile Include="QueryEntries\IProductQuery.cs" />
+    <Compile Include="QueryEntries\IProductTagRelationQuery.cs" />
+    <Compile Include="QueryEntries\IShoppingCartQuery.cs" />
+    <Compile Include="QueryEntries\ISpecQuery.cs" />
+    <Compile Include="QueryEntries\ITagQuery.cs" />
+    <Compile Include="QueryEntries\IUserQuery.cs" />
+    <Compile Include="Reponsitories\ICategaryReponsitory.cs" />
+    <Compile Include="Reponsitories\ICategarySpecRelationReponsitory.cs" />
+    <Compile Include="Reponsitories\ICategaryTagRelationReponsitory.cs" />
+    <Compile Include="Reponsitories\IInStockReponsitory.cs" />
+    <Compile Include="Reponsitories\IInStockSpecRelationReponsitory.cs" />
+    <Compile Include="Reponsitories\IOrderReponsitory.cs" />
+    <Compile Include="Reponsitories\IProductReponsitory.cs" />
+    <Compile Include="Reponsitories\IProductTagRelationReponsitory.cs" />
+    <Compile Include="Reponsitories\IShoppingCartReponsitory.cs" />
+    <Compile Include="Reponsitories\ISpecReponsitory.cs" />
+    <Compile Include="Reponsitories\ITagReponsitory.cs" />
+    <Compile Include="Reponsitories\IUserReponsitory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
@@ -68,6 +90,10 @@
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

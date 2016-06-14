@@ -8,7 +8,7 @@
 //using System.Collections.Generic;
 //using Nebula.FirstEC.Compoment;
 
-//namespace Nebula.FirstEC.DataStorage.Test
+//namespace Nebula.FirstEC.Data.Test
 //{
 //    [TestClass]
 //    public class ProductDbContextTest

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.FirstEC.Compoment.Entities;
-using Nebula.FirstEC.Compoment.Values;
+using Nebula.FirstEC.Domain.Models.Entities;
+using Nebula.FirstEC.Domain.Models.Values;
 
-namespace Nebula.FirstEC.Compoment.AggregateRoots
+namespace Nebula.FirstEC.Domain.Models.AggregateRoots
 {
     public class Product : BaseEntity
     {

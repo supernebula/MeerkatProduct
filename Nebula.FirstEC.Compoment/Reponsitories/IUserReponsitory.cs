@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.Compoment
+namespace Nebula.FirstEC.Domain.Reponsitories
 {
-    public interface ISoftDelete
+    class IUserReponsitory
     {
-        bool SoftDelete { get; set; }
     }
 }
