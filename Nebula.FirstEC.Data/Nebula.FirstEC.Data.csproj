@@ -68,10 +68,8 @@
     <Compile Include="Repositories\CategaryRepository.cs" />
     <Compile Include="Repositories\CategarySpecRelationRepository.cs" />
     <Compile Include="Repositories\CategaryTagRelationRepository.cs" />
-    <Compile Include="Repositories\ICategarySpecRelationRepository.cs" />
     <Compile Include="Repositories\InStockRepository.cs" />
     <Compile Include="Repositories\InStockSpecRelationRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\ProductTagRelationRepository.cs" />

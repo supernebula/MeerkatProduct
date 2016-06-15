@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Nebula.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Nebula.Common;
 
-namespace Nebula.FirstEC.Data.Repositories
+namespace Nebula.FirstEC.Domain.Repositories
 {
     public interface IRepository<T> where T : IPrimaryKey
     {

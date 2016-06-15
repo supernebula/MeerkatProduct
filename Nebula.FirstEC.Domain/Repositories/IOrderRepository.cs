@@ -2,7 +2,7 @@
 
 namespace Nebula.FirstEC.Domain.Repositories
 {
-    public interface ICategaryRepository : IRepository<Categary>
+    public interface IOrderRepository : IRepository<Order>
     {
     }
 }

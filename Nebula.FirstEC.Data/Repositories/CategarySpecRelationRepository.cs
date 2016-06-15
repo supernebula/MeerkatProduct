@@ -4,7 +4,7 @@ using Nebula.FirstEC.Domain.Repositories;
 
 namespace Nebula.FirstEC.Data.Repositories
 {
-    public class CategaryTagRelationRepository : BasicEntityFrameworkRepository<CategaryTagRelation, FirstEcDbContext>, ICategaryTagRelationRepository
+    public class CategarySpecRelationRepository : BasicEntityFrameworkRepository<CategarySpecRelation, FirstEcDbContext>, ICategarySpecRelationRepository
     {
     }
 

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Nebula.EntityFramework.Repository;
+using Nebula.FirstEC.Domain.Models.AggregateRoots;
+using Nebula.FirstEC.Domain.Repositories;
 
 namespace Nebula.FirstEC.Data.Repositories
 {
-    class ShoppingCartRepository
+    public class ShoppingCartRepository : BasicEntityFrameworkRepository<ShoppingCart, FirstEcDbContext>, IShoppingCartRepository
     {
+
     }
+
 }

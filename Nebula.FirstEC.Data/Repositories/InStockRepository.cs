@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Nebula.EntityFramework.Repository;
+using Nebula.FirstEC.Domain.Models.Entities;
+using Nebula.FirstEC.Domain.Repositories;
 
 namespace Nebula.FirstEC.Data.Repositories
 {
-    class InStockRepository
+    public class InStockRepository : BasicEntityFrameworkRepository<InStock, FirstEcDbContext>, IInStockRepository
     {
     }
+
 }
