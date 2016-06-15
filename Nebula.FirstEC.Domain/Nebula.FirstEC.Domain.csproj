@@ -67,18 +67,18 @@
     <Compile Include="QueryEntries\ISpecQuery.cs" />
     <Compile Include="QueryEntries\ITagQuery.cs" />
     <Compile Include="QueryEntries\IUserQuery.cs" />
-    <Compile Include="Reponsitories\ICategaryReponsitory.cs" />
-    <Compile Include="Reponsitories\ICategarySpecRelationReponsitory.cs" />
-    <Compile Include="Reponsitories\ICategaryTagRelationReponsitory.cs" />
-    <Compile Include="Reponsitories\IInStockReponsitory.cs" />
-    <Compile Include="Reponsitories\IInStockSpecRelationReponsitory.cs" />
-    <Compile Include="Reponsitories\IOrderReponsitory.cs" />
-    <Compile Include="Reponsitories\IProductReponsitory.cs" />
-    <Compile Include="Reponsitories\IProductTagRelationReponsitory.cs" />
-    <Compile Include="Reponsitories\IShoppingCartReponsitory.cs" />
-    <Compile Include="Reponsitories\ISpecReponsitory.cs" />
-    <Compile Include="Reponsitories\ITagReponsitory.cs" />
-    <Compile Include="Reponsitories\IUserReponsitory.cs" />
+    <Compile Include="Repositories\ICategaryRepository.cs" />
+    <Compile Include="Repositories\ICategarySpecRelationRepository.cs" />
+    <Compile Include="Repositories\ICategaryTagRelationRepository.cs" />
+    <Compile Include="Repositories\IInStockRepository.cs" />
+    <Compile Include="Repositories\IInStockSpecRelationRepository.cs" />
+    <Compile Include="Repositories\IOrderRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IProductTagRelationRepository.cs" />
+    <Compile Include="Repositories\IShoppingCartRepository.cs" />
+    <Compile Include="Repositories\ISpecRepository.cs" />
+    <Compile Include="Repositories\ITagRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">

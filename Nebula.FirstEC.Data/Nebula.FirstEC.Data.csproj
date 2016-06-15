@@ -62,11 +62,23 @@
     <Compile Include="Map\UserMap.cs" />
     <Compile Include="QueryEntries\ProductQuery.cs" />
     <Compile Include="Map\ProductMap.cs" />
-    <Compile Include="NebulaFirstECDbContext.cs" />
+    <Compile Include="FirstECDbContext.cs" />
     <Compile Include="Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategaryRepository.cs" />
+    <Compile Include="Repositories\CategarySpecRelationRepository.cs" />
+    <Compile Include="Repositories\CategaryTagRelationRepository.cs" />
+    <Compile Include="Repositories\ICategarySpecRelationRepository.cs" />
+    <Compile Include="Repositories\InStockRepository.cs" />
+    <Compile Include="Repositories\InStockSpecRelationRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProductTagRelationRepository.cs" />
+    <Compile Include="Repositories\ShoppingCartRepository.cs" />
+    <Compile Include="Repositories\SpecRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

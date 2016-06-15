@@ -8,7 +8,7 @@ using Unity.WebApi;
 using Nebula.Common.Repository;
 using Nebula.FirstEC.Data.QueryEntries;
 using Nebula.FirstEC.Domain.QueryEntries;
-using Nebula.FirstEC.Domain.Reponsitories;
+
 
 namespace Nebula.FirstEC.MobileSite
 {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.Domain.Reponsitories
+namespace Nebula.FirstEC.Data.Repositories
 {
-    public interface ICategarySpecRelationReponsitory
+    class OrderRepository
     {
     }
 }
