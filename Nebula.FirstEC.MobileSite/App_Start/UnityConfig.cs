@@ -6,9 +6,9 @@ using System.Web.Http;
 using Nebula.EntityFramework.Repository;
 using Unity.WebApi;
 using Nebula.Common.Repository;
-using Nebula.FirstEC.Business;
-using Nebula.FirstEC.Data.EntityQueries;
-using Nebula.FirstEC.DataStorage.EntityQueries;
+using Nebula.FirstEC.Data.QueryEntries;
+using Nebula.FirstEC.Domain.QueryEntries;
+using Nebula.FirstEC.Domain.Reponsitories;
 
 namespace Nebula.FirstEC.MobileSite
 {
@@ -22,10 +22,10 @@ namespace Nebula.FirstEC.MobileSite
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
-            container.RegisterType(typeof(IDbContextFactory<>), typeof(EfDbContextFactory<>), new PerThreadLifetimeManager());
-            container.RegisterType<IProductService, ProductService>();
-            container.RegisterType<IProductEntityQuery, ProductEntityQuery>();
+            //container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
+            //container.RegisterType(typeof(IDbContextFactory<>), typeof(EfDbContextFactory<>), new PerThreadLifetimeManager());
+
+            //container.RegisterType<IProductQuery, ProductEntityQuery>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

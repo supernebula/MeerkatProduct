@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Nebula.FirstEC.Compoment;
-using Nebula.FirstEC.Compoment.Entities;
 
 namespace Nebula.Test.Model
 {
@@ -22,7 +20,7 @@ namespace Nebula.Test.Model
 
         public ProductStatusType Status { get; set; }
 
-        public List<InStockSpecRelation> Specs { get; set; }
+        public List<string> Specs { get; set; }
 
         public int VisitTotal { get; set; }
 

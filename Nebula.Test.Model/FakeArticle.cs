@@ -1,5 +1,4 @@
-﻿using Nebula.FirstEC.Compoment;
-
+﻿
 namespace Nebula.Test.Model
 {
     public class FakeArticle : BaseEntity

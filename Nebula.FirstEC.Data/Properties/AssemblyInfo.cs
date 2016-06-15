@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Nebula.First.Storage")]
+[assembly: AssemblyTitle("Nebula.First.QueryService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Nebula.First.Storage")]
+[assembly: AssemblyProduct("Nebula.First.QueryService")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("8e277b26-b7e0-4d89-b3c8-83ed819b744f")]
+[assembly: Guid("3a834c79-05fe-4c07-a321-b6057c28f075")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

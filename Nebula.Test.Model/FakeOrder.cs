@@ -1,5 +1,4 @@
 ﻿using System;
-using Nebula.FirstEC.Compoment;
 
 namespace Nebula.Test.Model
 {

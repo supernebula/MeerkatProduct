@@ -64,10 +64,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Core\FakeDbContextFactory.cs" />
-    <Compile Include="Entities\FakeArticle.cs" />
-    <Compile Include="Entities\FakeOrder.cs" />
-    <Compile Include="Entities\FakeProduct.cs" />
-    <Compile Include="Entities\FakeUser.cs" />
     <Compile Include="Map\FakeOrderMap.cs" />
     <Compile Include="Map\FakeProductMap.cs" />
     <Compile Include="Map\FakeUserMap.cs" />
@@ -130,10 +126,6 @@
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.EntityFramework.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nebula.FirstEC.Compoment\Nebula.FirstEC.Domain.csproj">
-      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
-      <Name>Nebula.FirstEC.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Test.Model\Nebula.Test.Model.csproj">
       <Project>{a626fa52-997d-4ba1-aab9-83f0dc742ac9}</Project>

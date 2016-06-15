@@ -1,6 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Nebula.Common.Repository;
