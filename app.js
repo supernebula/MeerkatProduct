@@ -1,4 +1,5 @@
-﻿var co = require("co");
+// JavaScript source code
+var co = require("co");
 console.dir(co);
 
 
