@@ -1,9 +1,10 @@
-using System.Data.Entity.Infrastructure;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Nebula.Common.Repository;
 using Nebula.EntityFramework.Repository;
 using Unity.Mvc5;
+using Nebula.FirstEC.Domain.Repositories;
+using Nebula.FirstEC.Data.Repositories;
 
 namespace Nebula.FirstEC.WebSite
 {
@@ -18,9 +19,9 @@ namespace Nebula.FirstEC.WebSite
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
-            container.RegisterType(typeof(IDbContextFactory<>), typeof(EfDbContextFactory<>), new PerThreadLifetimeManager());
-            //container.RegisterType<IProductService, ProductService>();
-            //container.RegisterType<IProductEntityQuery, ProductEntityQuery>();
+            container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IProductRepository, ProductRepository>();
+            // Register more type IRepository....
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
