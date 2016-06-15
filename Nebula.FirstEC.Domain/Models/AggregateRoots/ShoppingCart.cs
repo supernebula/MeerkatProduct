@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Nebula.FirstEC.Domain.Models.AggregateRoots
 {
@@ -10,8 +11,6 @@ namespace Nebula.FirstEC.Domain.Models.AggregateRoots
 
         public string ProductName { get; set; }
 
-        public object Color { get; set; }
-
-        public string PackageType { get; set; }
+        public string Specs { get; set; }
     }
 }

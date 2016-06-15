@@ -49,6 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Map\CategaryMap.cs" />
+    <Compile Include="Map\CategarySpecRelationMap.cs" />
+    <Compile Include="Map\CategaryTagRelationMap.cs" />
+    <Compile Include="Map\InStockMap.cs" />
+    <Compile Include="Map\InStockSpecRelationMap.cs" />
+    <Compile Include="Map\OrderMap.cs" />
+    <Compile Include="Map\ProductTagRelationMap.cs" />
+    <Compile Include="Map\ShoppingCartMap.cs" />
+    <Compile Include="Map\SpecMap.cs" />
+    <Compile Include="Map\TagMap.cs" />
+    <Compile Include="Map\UserMap.cs" />
     <Compile Include="QueryEntries\ProductQuery.cs" />
     <Compile Include="Map\ProductMap.cs" />
     <Compile Include="NebulaFirstECDbContext.cs" />
