@@ -16,6 +16,14 @@ namespace Nebula.FirstEC.WebSite
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
+            //ºËÐÄ×é¼þ IUnitOfWork
+            //Session
+            //Logger
+            //Commonbus
+            //Data£ºquery¡¢repository
+            //Audit :safe\visit\performance\exception, filter
+
+
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork<>), new PerThreadLifetimeManager());
