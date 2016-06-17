@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Code.Test.Interface;
 
-namespace Code.Test.Model
+namespace Code.Test.Implement
 {
     public class ProductService : IProductService
     {
-        public Guid Id { get; set; }
-
-        public ProductService()
-        {
-            Id = Guid.NewGuid();
-        }
-
         public int Insert(object item)
         {
             return 1;
@@ -23,14 +17,15 @@ namespace Code.Test.Model
             return new List<object>();
         }
 
-        ~ProductService()
+
+        public int Update(object item)
         {
-            Trace.WriteLine("Finalize:" + Id.GetHashCode());
+            return 1;
         }
 
-        public void Dispose()
+        public object Find(Guid id)
         {
-            Trace.WriteLine("Dispose:" + Id.GetHashCode());
+            return default(object);
         }
     }
 }

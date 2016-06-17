@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
+using Code.Test.Implement;
+using Code.Test.Interface;
 using Code.Test.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Practices.Unity;
@@ -10,12 +13,28 @@ using Microsoft.Practices.Unity;
 namespace Code.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class DependencyInjectionByReflectionTest
     {
+
+        public void ReflectionUnityTest()
+        {
+
+            //finds all interface with in specity namespaces
+            var types =Assembly.GetExecutingAssembly().GetTypes();
+            types.ToList().ForEach(e => e.GetInterface(""));
+
+            //load assembly
+
+            //finds all implement of interface with in assembly
+
+
+
+        }
+
 
 
         [TestMethod]
-        public void UnityTest()
+        public void HandCodeUnityTest()
         {
             IUnityContainer container = new UnityContainer();
             container.RegisterType<IProductService, ProductService>();
@@ -24,28 +43,12 @@ namespace Code.Test
             for (int i = 0; i < 1000; i++)
             {
                 var product = container.Resolve<IProductService>();
-                
-                var id = product.Id;
-                if(i % 100 == 0)
-                    Trace.WriteLine("");
-                Trace.Write(i + ":" + id.GetHashCode() + "|");
-                Assert.IsFalse(ids.Any(e => e == product.Id), "hash重复，失败");
-                ids.Add(id);
-                
             }
             ids = null;
             container.Dispose();
             container = null;
 
             Trace.WriteLine("Game over--------------------------------------");
-
-
-
-            GC.Collect();
-            GC.Collect();
-            GC.Collect();
-            GC.Collect();
-            GC.Collect();
             GC.Collect();
 
             Thread.Sleep(10000);

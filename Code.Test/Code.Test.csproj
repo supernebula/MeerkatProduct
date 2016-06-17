@@ -66,9 +66,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Model\IProductService.cs" />
-    <Compile Include="Model\ProductService.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Implement\TagService.cs" />
+    <Compile Include="Interface\IProductService.cs" />
+    <Compile Include="Implement\ProductService.cs" />
+    <Compile Include="Interface\ITagService.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="DependencyInjectionByReflectionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
