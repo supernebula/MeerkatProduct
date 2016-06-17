@@ -19,7 +19,13 @@ namespace Code.Test
         [TestMethod]
         public void ReflectionUnityTest()
         {
-            
+            var entryAss = Assembly.GetEntryAssembly();
+            AssemblyName[] ass1;
+            if (entryAss != null)
+                ass1 = Assembly.GetEntryAssembly().GetReferencedAssemblies();
+
+
+
             var interfNspace = "Nebula.FirstEC.Domain.Repositories";
             var implNspace = "Nebula.FirstEC.Data.Repositories";
             
