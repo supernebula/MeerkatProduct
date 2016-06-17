@@ -7,6 +7,7 @@ using System.Threading;
 using Code.Test.Implement;
 using Code.Test.Interface;
 using Code.Test.Model;
+using Microsoft.Practices.ObjectBuilder2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Practices.Unity;
 
@@ -15,19 +16,43 @@ namespace Code.Test
     [TestClass]
     public class DependencyInjectionByReflectionTest
     {
-
+        [TestMethod]
         public void ReflectionUnityTest()
         {
+            
+            var interfNspace = "Nebula.FirstEC.Domain.Repositories";
+            var implNspace = "Nebula.FirstEC.Data.Repositories";
+            
+            //load assembly
+            List<Type> types;
+            //types =Assembly.GetExecutingAssembly().GetTypes().ToList(); 
+            types = new List<Type>();
+            var assemblies = new List<Assembly>();
+            assemblies.Add(Assembly.Load("Nebula.FirstEC.Data"));
+            assemblies.Add(Assembly.Load("Nebula.FirstEC.Domain"));
+            System.AppDomain.CurrentDomain.GetAssemblies().ToList().ForEach(assem =>
+            {
+                types.AddRange(assem.GetTypes());
+            });
 
             //finds all interface with in specity namespaces
-            var types =Assembly.GetExecutingAssembly().GetTypes();
-            types.ToList().ForEach(e => e.GetInterface(""));
-
-            //load assembly
+            var interfaces = types.Where(t => t.IsPublic && t.IsInterface && t.Namespace == interfNspace).ToList();
+            Trace.WriteLine("Interface Total:" + interfaces.Count);
+            interfaces.ForEach(e => Trace.WriteLine(e.Name));
 
             //finds all implement of interface with in assembly
+            var implClasses = types.Where(t => t.IsClass && t.IsPublic && t.Namespace == implNspace && t.GetInterfaces().Length > 0).ToList();
 
+            var interfImplmap = new List<KeyValuePair<Type, Type>>();
+            interfaces.ForEach(i =>
+            {
+                var @class = implClasses.FirstOrDefault(t => t.GetInterfaces().Select(e => e.FullName).Contains(i.FullName));
+                if(@class != null)
+                    interfImplmap.Add(new KeyValuePair<Type, Type>(i, @class));
+            });
 
+            Trace.WriteLine("Interface-ImplementClass Total:" + interfImplmap.Count);
+            interfImplmap.ForEach(e => Trace.WriteLine(e.Key.FullName + " - " + e.Value.FullName));
 
         }
 

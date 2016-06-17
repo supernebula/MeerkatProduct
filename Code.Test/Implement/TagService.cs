@@ -26,7 +26,7 @@ namespace Code.Test.Implement
 
         public int Update(object tag)
         {
-            throw 1;
+            return 1;
         }
     }
 }

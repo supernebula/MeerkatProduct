@@ -77,6 +77,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Nebula.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Domain\Nebula.FirstEC.Domain.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Code.Test.Interface;
+using Code.Test.Model;
 
 namespace Code.Test.Implement
 {
@@ -26,6 +27,11 @@ namespace Code.Test.Implement
         public object Find(Guid id)
         {
             return default(object);
+        }
+
+        IEnumerable<Product> IProductService.Query(string key)
+        {
+            throw new NotImplementedException();
         }
     }
 }
