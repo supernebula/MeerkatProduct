@@ -66,6 +66,7 @@
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Expressions\LambdaValidPredicateBuilder.cs" />
     <Compile Include="FakeUtility.cs" />
+    <Compile Include="IoCUtility.cs" />
     <Compile Include="Linq\LinqLambdaWhere.cs" />
     <Compile Include="Maths\RandomUnitily.cs" />
     <Compile Include="Nature\EarthUtility.cs" />
