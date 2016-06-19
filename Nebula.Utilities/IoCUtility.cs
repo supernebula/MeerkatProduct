@@ -21,8 +21,10 @@ namespace Nebula.Utilities
                 throw new NullReferenceException(nameof(interfaceNamespace));
             if (string.IsNullOrWhiteSpace(classNamespace))
                 throw new NullReferenceException(nameof(classNamespace));
-            if (assemblies.Length == 0)
+            if (assemblies == null)
                 throw new ArgumentNullException(nameof(assemblies));
+            if (assemblies.Length == 0)
+                throw new ArgumentException(nameof(assemblies) + ".Length is 0");
 
             //load assembly
             List<Type> types = new List<Type>();
@@ -43,12 +45,6 @@ namespace Nebula.Utilities
                 if (@class != null)
                     interfClassPairs.Add(new InterfaceClassPair { InterfaceType = i, ClassType = @class });
             });
-
-#if DEBUG
-            Debug.WriteLine("Interface Total:" + interfaces.Count);
-            Debug.WriteLine("Interface-ImplementClass Total:" + interfClassPairs.Count);
-            interfClassPairs.ForEach(e => Debug.WriteLine(e.InterfaceType.FullName + " - " + e.ClassType.FullName));
-#endif
             return interfClassPairs;
         }
     }

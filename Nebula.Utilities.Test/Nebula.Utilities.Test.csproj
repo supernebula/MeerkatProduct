@@ -79,6 +79,7 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FakeUtilityTest.cs" />
+    <Compile Include="IoCUtilityTes.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
@@ -88,6 +89,14 @@
     <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
       <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
       <Name>Nebula.First.EFRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Nebula.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Domain\Nebula.FirstEC.Domain.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
