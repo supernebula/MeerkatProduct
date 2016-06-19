@@ -172,6 +172,14 @@
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Nebula.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Domain\Nebula.FirstEC.Domain.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Nebula.FirstEC.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Nebula.Utilities</Name>
