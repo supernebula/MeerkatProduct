@@ -4,28 +4,27 @@ using System.IO;
 using System.Text;
 using System.Web;
 using log4net;
-using log4net.Config;
-using log4net.Core;
 
 namespace Nebula.Web.Modules
 {
     public class AuditHttpModule : IHttpModule
     {
-        private ILogger _logger;
+        private ILog _log;
         private DateTime _startTime;
         private DateTime _endTime;
         private readonly Stopwatch _stopwatch;
+        private string _logInfo;
 
         public AuditHttpModule()
         {
-            _logger = LoggerManager.GetLogger("","");
+            _log = LogManager.GetLogger("AuditHttpModule");
             _stopwatch = new Stopwatch();
         }
 
         public void Init(HttpApplication context)
         {
-            context.BeginRequest += new EventHandler(ApplicationBeginRequest);
-            context.EndRequest += new EventHandler(ApplicationEndRequest);
+            context.BeginRequest += ApplicationBeginRequest;
+            context.EndRequest += ApplicationEndRequest;
         }
 
         public void ApplicationBeginRequest(object sender, EventArgs e)
@@ -42,15 +41,16 @@ namespace Nebula.Web.Modules
 
             _startTime = DateTime.Now;
             _stopwatch.Start();
-            _logger.Log();
+            _logInfo = $"Method:{method}  UserHostIP:{userHostAddress}  RequestUrl:{rawUrl}  ContentType:{contentType}\r\nRrquestRaw:\r\n{raw}";
         }
 
         public void ApplicationEndRequest(object sender, EventArgs e)
         {
-
             _stopwatch.Stop();
             var elapsed = _stopwatch.ElapsedMilliseconds;
             _endTime = DateTime.Now;
+            _logInfo = $"StartTime:{_startTime.ToString("yyyy-MM-dd hh:mm:ss:fff")}  EndTime:{_endTime.ToString("yyyy-MM-dd hh:mm:ss:fff")}   TotalMillisecond:{elapsed}\r\n" + _logInfo;
+            _log.Info(_logInfo);
         }
 
         public void Dispose()

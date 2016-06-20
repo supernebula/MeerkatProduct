@@ -16,12 +16,12 @@ namespace Nebula.FirstEC.OpenAPI.Controllers
     [Route("api/Order")]
     public class OrderController : ApiController
     {
-        ILog logerror = log4net.LogManager.GetLogger("logerror");
+        ILog log = log4net.LogManager.GetLogger("logerror");
 
         // POST: api/Order/
         public HttpResponseMessage PostSubmit([FromBody]SubmitOrderParameter param)
         {
-            logerror.Error("api/Order:NotImplementedException");
+            log.Error("api/Order:NotImplementedException");
             return new HttpResponseMessage(HttpStatusCode.OK) {Content = new StringContent("订单提交成功") };
         }
     }
