@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Web;
 using log4net;
@@ -14,7 +15,7 @@ namespace Nebula.Web.Modules
 
         public AuditHttpModule()
         {
-            _log = LogManager.GetLogger("AuditHttpModule");
+            _log = LogManager.GetLogger("loginfo");
         }
 
         public void Init(HttpApplication context)
@@ -52,8 +53,9 @@ namespace Nebula.Web.Modules
 
             _logInfo = $"StartTime:{httpApplication.Context.Timestamp.ToString("yyyy-MM-dd hh:mm:ss:fff")}   TotalMillisecond:{elapsed}\r\n" + _logInfo;
             _log.Info(_logInfo);
+            
             httpApplication.Response.Write("</br>" + _logInfo);
-            httpApplication.Response.Write("</br>");
+            httpApplication.Response.Write("</br> HttpStatusCode:" + httpApplication.Response.StatusCode);
         }
 
         public void Dispose()
