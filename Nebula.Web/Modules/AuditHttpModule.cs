@@ -3,14 +3,24 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Web;
+using log4net;
+using log4net.Config;
+using log4net.Core;
 
 namespace Nebula.Web.Modules
 {
     public class AuditHttpModule : IHttpModule
     {
+        private ILogger _logger;
         private DateTime _startTime;
         private DateTime _endTime;
-        private Stopwatch _stopwatch;
+        private readonly Stopwatch _stopwatch;
+
+        public AuditHttpModule()
+        {
+            _logger = LoggerManager.GetLogger("","");
+            _stopwatch = new Stopwatch();
+        }
 
         public void Init(HttpApplication context)
         {
@@ -31,8 +41,8 @@ namespace Nebula.Web.Modules
             var userHostAddress = request.UserHostAddress;
 
             _startTime = DateTime.Now;
-            _stopwatch = new Stopwatch();
             _stopwatch.Start();
+            _logger.Log();
         }
 
         public void ApplicationEndRequest(object sender, EventArgs e)
