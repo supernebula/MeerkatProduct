@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Nebula.Web.Filters;
 
 namespace Nebula.FirstEC.WebSite
 {
@@ -11,7 +12,7 @@ namespace Nebula.FirstEC.WebSite
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection collection)
         {
-
+            collection.Add(new WebExceptionFilterAttribute());
         }
     }
 }

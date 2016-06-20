@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net;
-using System.Net.Http;
 using System.Text;
 using System.Web;
 using System.Web.SessionState;
@@ -30,6 +28,7 @@ namespace Nebula.Web.Modules
             var httpApplication = (HttpApplication) sender;
             httpApplication.Response.Write("这是来自自定义HttpModule中有BeginRequest");
             var request = httpApplication.Request;
+            request.Headers.Add("requestId", Guid.NewGuid().ToString());
             var rawUrl = request.RawUrl;
             var method = request.HttpMethod;
             if (request.InputStream.CanSeek)

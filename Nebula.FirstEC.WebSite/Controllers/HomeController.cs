@@ -13,7 +13,7 @@ namespace Nebula.FirstEC.WebSite.Controllers
         public ActionResult Index()
         {
             Thread.Sleep(100);
-            //throw new HttpException("测试异常");
+            throw new HttpException("测试异常");
             return Content("Hello World!");
         }
     }
