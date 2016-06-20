@@ -4,11 +4,12 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web;
+using System.Web.SessionState;
 using log4net;
 
 namespace Nebula.Web.Modules
 {
-    public class AuditHttpModule : IHttpModule
+    public class AuditHttpModule : IHttpModule, IRequiresSessionState
     {
         private ILog _log;
         private string _logInfo;
