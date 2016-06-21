@@ -2,21 +2,12 @@
 using System.IO;
 using System.Text;
 using System.Web;
-using System.Web.SessionState;
 using log4net;
 
 namespace Nebula.Web.Modules
 {
-    public class AuditHttpModule : IHttpModule, IRequiresSessionState
+    public class AuditHttpModule : IHttpModule
     {
-        private ILog _log;
-        private string _logInfo;
-
-        public AuditHttpModule()
-        {
-            _log = LogManager.GetLogger("loginfo");
-        }
-
         public void Init(HttpApplication context)
         {
             context.BeginRequest += ApplicationBeginRequest;
@@ -37,24 +28,25 @@ namespace Nebula.Web.Modules
             var contentType = request.ContentType;
             var userHostAddress = request.UserHostAddress;
 
-            _logInfo = $"Method:{method}  UserHostIP:{userHostAddress}  RequestUrl:{rawUrl}  ContentType:{contentType}\r\nRrquestRaw:\r\n{raw}";
-            httpApplication.Response.Write("</br>" + _logInfo);
+            var logInfo = $"Method:{method}  UserHostIP:{userHostAddress}  RequestUrl:{rawUrl}  ContentType:{contentType}\r\nRrquestRaw:\r\n{raw}";
+            httpApplication.Response.Write("</br>" + logInfo);
             httpApplication.Response.Write("</br>Reqeust Timestamp:" + httpApplication.Context.Timestamp);
             httpApplication.Response.Write("</br>");
         }
 
         public void ApplicationEndRequest(object sender, EventArgs e)
         {
+            var log = LogManager.GetLogger("loginfo");
             var httpApplication = (HttpApplication)sender;
             httpApplication.Response.Write("这是来自自定义HttpModule中有EndRequest");
             var start = new TimeSpan(httpApplication.Context.Timestamp.Ticks);
             var end = new TimeSpan(DateTime.Now.Ticks);
             var elapsed = end.Subtract(start).Milliseconds;
 
-            _logInfo = $"StartTime:{httpApplication.Context.Timestamp.ToString("yyyy-MM-dd hh:mm:ss:fff")}   TotalMillisecond:{elapsed}\r\n" + _logInfo;
-            _log.Info(_logInfo);
+            var logInfo = $"StartTime:{httpApplication.Context.Timestamp.ToString("yyyy-MM-dd hh:mm:ss:fff")}   TotalMillisecond:{elapsed}\r\n";
+            log.Info(logInfo);
             
-            httpApplication.Response.Write("</br>" + _logInfo);
+            httpApplication.Response.Write("</br>" + logInfo);
             httpApplication.Response.Write("</br> HttpStatusCode:" + httpApplication.Response.StatusCode);
         }
 
