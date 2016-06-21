@@ -44,8 +44,11 @@ namespace Nebula.Web.Modules
             var elapsed = end.Subtract(start).Milliseconds;
 
             var logInfo = $"StartTime:{httpApplication.Context.Timestamp.ToString("yyyy-MM-dd hh:mm:ss:fff")}   TotalMillisecond:{elapsed}\r\n";
-            log.Info(logInfo);
-            
+
+            if (log.IsInfoEnabled)
+                log.Info(logInfo);
+
+
             httpApplication.Response.Write("</br>" + logInfo);
             httpApplication.Response.Write("</br> HttpStatusCode:" + httpApplication.Response.StatusCode);
         }
