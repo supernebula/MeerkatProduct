@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
+    <Compile Include="Commands\ProductCreateCommand.cs" />
+    <Compile Include="Cqrs\CommandBus.cs" />
+    <Compile Include="Cqrs\CommandHandlerFactory.cs" />
     <Compile Include="Models\AggregateRoots\Tag.cs" />
     <Compile Include="Models\AggregateRoots\ShoppingCart.cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -91,10 +95,7 @@
       <Name>Nebula.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CommandHandlers\" />
-    <Folder Include="Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

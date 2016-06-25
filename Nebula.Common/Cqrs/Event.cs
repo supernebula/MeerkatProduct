@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.Common.Cqrs
 {
-    interface IComandBus
+    public class Event
     {
     }
 }

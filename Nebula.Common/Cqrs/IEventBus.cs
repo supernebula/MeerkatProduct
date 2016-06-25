@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.Common.Cqrs
 {
-    public interface ICommandHandlerFactory
+    public interface IEventBus
     {
-        ICommandHandler<T> GetHandler<T>() where T : Command, new();
+        void Publish<T>(T @event) where T : Event;
     }
 }

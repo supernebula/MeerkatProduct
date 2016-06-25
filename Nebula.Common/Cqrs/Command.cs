@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Nebula.Common.Cqrs
 {
-    class Command
+    public class Command
     {
+        public Command()
+        { }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Web.Cqrs
+namespace Nebula.Common.Cqrs
 {
-    public class CommandBus
+    public interface ICommandHandler<T> where T : Command, new()
     {
+        void Execute(T command);
     }
 }
