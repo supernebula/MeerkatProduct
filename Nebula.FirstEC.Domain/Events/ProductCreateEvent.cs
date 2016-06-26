@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nebula.Common.Cqrs;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.FirstEC.Domain.Events
 {
-    public interface ICommandHandler<in T> where T : Command
+    public class ProductCreateEvent : Event
     {
-        void Execute(T command);
     }
 }

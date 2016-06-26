@@ -10,7 +10,7 @@ namespace Nebula.FirstEC.Domain.Cqrs
     public class CommandBus : ICommandBus
     {
         public ICommandHandlerFactory CommandHandlerFactory { get; set; }
-        public void Send<T>(T command) where T : Command, new()
+        public void Send<T>(T command) where T : Command
         {
             var commandHandler = CommandHandlerFactory.GetHandler<T>();
             try

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.Common.Cqrs
 {
-    public class Command : ICommand
+    public interface IEventHandlerFactory
     {
-        public Guid Id { get; private set; }
-
-        //public int Version { get; private set; }
+        IEnumerable<IEventHandler<T>> GetHandler<T>() where T : Event;
     }
 }

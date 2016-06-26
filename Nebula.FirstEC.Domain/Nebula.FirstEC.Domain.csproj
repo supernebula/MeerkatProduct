@@ -44,6 +44,10 @@
     <Compile Include="Commands\ProductCreateCommand.cs" />
     <Compile Include="Cqrs\CommandBus.cs" />
     <Compile Include="Cqrs\CommandHandlerFactory.cs" />
+    <Compile Include="Cqrs\EventBus.cs" />
+    <Compile Include="Cqrs\EventHandlerFactory.cs" />
+    <Compile Include="EventHandlers\ProductCreateEventHandler.cs" />
+    <Compile Include="Events\ProductCreateEvent.cs" />
     <Compile Include="Models\AggregateRoots\Tag.cs" />
     <Compile Include="Models\AggregateRoots\ShoppingCart.cs" />
     <Compile Include="Models\BaseEntity.cs" />

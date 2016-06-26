@@ -42,11 +42,14 @@
   <ItemGroup>
     <Compile Include="Cqrs\Command.cs" />
     <Compile Include="Cqrs\Event.cs" />
+    <Compile Include="Cqrs\ICommand.cs" />
     <Compile Include="Cqrs\ICommandBus.cs" />
     <Compile Include="Cqrs\ICommandHandler.cs" />
     <Compile Include="Cqrs\ICommandHandlerFactory.cs" />
+    <Compile Include="Cqrs\IEvent.cs" />
     <Compile Include="Cqrs\IEventBus.cs" />
     <Compile Include="Cqrs\IEventHandler.cs" />
+    <Compile Include="Cqrs\IEventHandlerFactory.cs" />
     <Compile Include="GenderType.cs" />
     <Compile Include="IPaged.cs" />
     <Compile Include="IPrimaryKey.cs" />

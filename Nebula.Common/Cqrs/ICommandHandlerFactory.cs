@@ -8,6 +8,6 @@ namespace Nebula.Common.Cqrs
 {
     public interface ICommandHandlerFactory
     {
-        ICommandHandler<T> GetHandler<T>() where T : Command, new();
+        ICommandHandler<T> GetHandler<T>() where T : Command;
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nebula.Common.Cqrs
 {
-    public class Event
+    public class Event : IEvent
     {
+        public Guid Id { get; private set; }
     }
 }
