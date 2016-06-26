@@ -20,12 +20,9 @@ namespace Nebula.FirstEC.Domain.Cqrs
         {
             var assemblies = Assembly.GetExecutingAssembly();
             var types =
-                assemblies.GetTypes()
+                assemblies.GetExportedTypes()
                     .Where(
-                        t =>
-                            t.IsPublic &&
-                            t.GetInterfaces()
-                                .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEventHandler<>)))
+                        t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEventHandler<>)))
                     .Where(t => t.GetInterfaces().Any(i => i.GetGenericArguments().Any(a => a == typeof(T))));
             return types.ToList();
         }
