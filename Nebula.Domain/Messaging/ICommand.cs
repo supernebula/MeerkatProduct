@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.Domain.Messaging
 {
-    public interface ICommandHandlerFactory
+    public interface ICommand
     {
-        ICommandHandler<T> GetHandler<T>() where T : Command;
+        Guid Id { get; }
     }
 }

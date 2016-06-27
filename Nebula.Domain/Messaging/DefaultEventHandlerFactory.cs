@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Nebula.Common.Cqrs;
+using Nebula.Domain.Events;
 
-namespace Nebula.FirstEC.Domain.Cqrs
+namespace Nebula.Domain.Messaging
 {
-    public class EventHandlerFactory : IEventHandlerFactory
+    public class DefaultEventHandlerFactory : IEventHandlerFactory
     {
         public IEnumerable<IEventHandler<T>> GetHandler<T>() where T : Event
         {

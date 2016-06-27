@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.Domain.Configuration
 {
-    public interface IEvent
+    public interface IEventHandlerActivator
     {
-        Guid Id { get;}
     }
 }

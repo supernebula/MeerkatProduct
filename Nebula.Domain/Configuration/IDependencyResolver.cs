@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.Domain.Configuration
 {
-    public interface IEventBus
+    public interface IDependencyResolver
     {
-        void Publish<T>(T @event) where T : Event;
+        object GetInstance(Type type);
     }
 }

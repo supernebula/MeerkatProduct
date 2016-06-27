@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nebula.Common.Cqrs;
+using Nebula.Domain.Messaging;
 using Nebula.FirstEC.Domain.Events;
 
 namespace Nebula.FirstEC.Domain.EventHandlers

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.FirstEC.Domain.Reponsitories
 {
-    public interface ICommand
+    public interface ISpecReponsitory
     {
-        Guid Id { get; }
     }
 }
