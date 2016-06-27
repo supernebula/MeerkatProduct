@@ -9,7 +9,16 @@ namespace Nebula.Domain.Messaging
 {
     public class DefaultCommandHandlerFactory : ICommandHandlerFactory
     {
-        public ICommandHandlerActivator CommandHandlerActivator;
+        public ICommandHandlerActivator CommandHandlerActivator { get; set; }
+
+        public DefaultCommandHandlerFactory() : this(null)
+        {
+        }
+
+        public DefaultCommandHandlerFactory(ICommandHandlerActivator activator)
+        {
+            CommandHandlerActivator = activator;
+        }
 
         public ICommandHandler<T> GetHandler<T>() where T :  Command
         {

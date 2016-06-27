@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Configuration\CommandHandlerTypeProvider.cs" />
     <Compile Include="Configuration\DependencyResolver.cs" />
+    <Compile Include="Configuration\IComponentProvider.cs" />
     <Compile Include="Configuration\IDependencyResolver.cs" />
     <Compile Include="Configuration\ICommandHandlerActivator.cs" />
     <Compile Include="Configuration\IEventHandlerActivator.cs" />

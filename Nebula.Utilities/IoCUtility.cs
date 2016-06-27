@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using Nebula.Common;
 
 namespace Nebula.Utilities
 {
-    public struct InterfaceClassPair
-    {
-        public Type InterfaceType { get; set; }
-
-        public Type ClassType { get; set; }
-    }
-
     public class IoCUtility
     {
         public static List<InterfaceClassPair> GetInterfaceAndClass(string interfaceNamespace, string classNamespace, params Assembly[] assemblies)
