@@ -45,16 +45,16 @@ namespace Nebula.Domain.Configuration
             _eventHandlerTypeProviderThunk = () => new DefaultEventHandlerTypeProvider();
         }
 
-        public EventHandlerDependencyRegister(IDependencyMapProvider commandHandlerTypeProvider, params Assembly[] assemblies) : this(null, commandHandlerTypeProvider, assemblies)
-        {
-            _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-        }
+        //public EventHandlerDependencyRegister(IDependencyMapProvider commandHandlerTypeProvider, params Assembly[] assemblies) : this(null, commandHandlerTypeProvider, assemblies)
+        //{
+        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
+        //}
 
-        public EventHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
-        {
-            _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-            _eventHandlerTypeProviderThunk = () => new DefaultEventHandlerTypeProvider();
-        }
+        //public EventHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
+        //{
+        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
+        //    _eventHandlerTypeProviderThunk = () => new DefaultEventHandlerTypeProvider();
+        //}
 
         public void Register()
         {

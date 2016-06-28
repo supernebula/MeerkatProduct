@@ -43,16 +43,11 @@ namespace Nebula.Domain.Configuration
             _commandHandlerTypeProviderThunk = () => new DefaultCommandHandlerTypeProvider();
         }
 
-        public CommandHandlerDependencyRegister(IDependencyMapProvider commandHandlerTypeProvider, params Assembly[] assemblies) : this(null, commandHandlerTypeProvider, assemblies)
-        {
-            _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-        }
-
-        public CommandHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
-        {
-            _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-            _commandHandlerTypeProviderThunk = () => new DefaultCommandHandlerTypeProvider();
-        }
+        //public CommandHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
+        //{
+        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
+        //    _commandHandlerTypeProviderThunk = () => new DefaultCommandHandlerTypeProvider();
+        //}
 
         public void Register()
         {

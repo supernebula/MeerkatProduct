@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Configuration\AppConfiguration.cs" />
+    <Compile Include="Configuration\DependencyConfiguration.cs" />
     <Compile Include="Configuration\CommandHandlerDependencyRegister.cs" />
     <Compile Include="Configuration\DependencyResolver.cs" />
     <Compile Include="Configuration\EventHandlerDependencyRegister.cs" />
