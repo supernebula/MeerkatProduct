@@ -55,6 +55,16 @@ namespace Nebula.Domain.Configuration
             var maps = _commandHandlerTypeProviderThunk().GetDependencyMap(_assembliesThunk()).ToList();
             maps.ForEach(e => container.RegisterType(e.InterfaceType, e.ClassType, new PerResolveLifetimeManager()));
         }
+
+        public void RegisterCommandBus()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegisterEventBus()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
