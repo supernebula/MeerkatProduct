@@ -43,7 +43,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Configuration\CommandHandlerTypeProvider.cs" />
     <Compile Include="Configuration\DependencyResolver.cs" />
-    <Compile Include="Configuration\IComponentProvider.cs" />
+    <Compile Include="Configuration\IDependencyMapProvider.cs" />
     <Compile Include="Configuration\IDependencyResolver.cs" />
     <Compile Include="Configuration\ICommandHandlerActivator.cs" />
     <Compile Include="Configuration\IEventHandlerActivator.cs" />
@@ -64,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
