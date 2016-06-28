@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using Unity.Mvc5;
 
 namespace Nebula.Domain.Configuration
 {
@@ -12,32 +13,13 @@ namespace Nebula.Domain.Configuration
 
         public DependencyConfiguration DependencyConfiguration { get; private set; }
 
-        private static AppConfiguration _current;
+        private static AppConfiguration _current = new AppConfiguration();
 
-        public static AppConfiguration Current
-        {
-            get
-            {
-                if (_current == null)
-                {
-                    _current = new AppConfiguration();
-                    _current.Init();
-                }
-                return _current;
-            }
-        }
+        public static AppConfiguration Current => _current;
 
         public AppConfiguration()
         {
-            IUnityContainer unityContainer = new UnityContainer();
-            DependencyConfiguration = new DependencyConfiguration(unityContainer);
-            DependencyConfiguration.Init();
+            DependencyConfiguration = new DependencyConfiguration();
         }
-
-        public void Init()
-        {
-
-        }
-
     }
 }
