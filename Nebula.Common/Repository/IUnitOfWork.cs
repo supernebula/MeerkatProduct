@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace Nebula.Common.Repository
 {
@@ -6,7 +7,7 @@ namespace Nebula.Common.Repository
     {
         bool IsCommited { get; }
 
-        void BeginTransaction();
+        IDbTransaction BeginTransaction();
 
         void Commit();
 

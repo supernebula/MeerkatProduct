@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using System;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Nebula.Common.Repository;
@@ -17,6 +18,7 @@ namespace Nebula.EntityFramework.Repository
         [Dependency]
         public IDbContextFactory<TDbContext> DbContextFactory { get; set; } 
 
+
         private DbContext Context
         {
             get
@@ -25,9 +27,10 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        public void BeginTransaction()
+        public IDbTransaction BeginTransaction()
         {
             _transaction = _context.Database.BeginTransaction();
+            return _transaction;
         }
 
 
