@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Web.Mvc;
 using Nebula.Domain.Events;
 using Nebula.Domain.Configuration;
-using Nebula.Domain.Events;
 
 namespace Nebula.Domain.Messaging
 {
@@ -25,7 +22,7 @@ namespace Nebula.Domain.Messaging
             EventHandlerActivator = activator;
         }
 
-        public IEventHandler<T> GetHandler<T>() where T : Event
+        public IEnumerable<IEventHandler<T>> GetHandler<T>() where T : Event
         {
             return EventHandlerActivator.Create<T>();
         }
@@ -46,11 +43,9 @@ namespace Nebula.Domain.Messaging
                 _resolverThunk = () => resolver;
             }
 
-            public IEventHandler<T> Create<T>() where T : Event
+            public IEnumerable<IEventHandler<T>> Create<T>() where T : Event
             {
-                var result = (IEventHandler<T>)_resolverThunk().GetService(typeof(IEventHandler<T>));
-                if (result == null)
-                    throw new NullReferenceException("未找到实现该接口的类，检查是否依赖注册：" + nameof(IEventHandler<T>));
+                var result = (IEnumerable<IEventHandler<T>>)_resolverThunk().GetServices(typeof(IEventHandler<T>));
                 return result;
             }
         }

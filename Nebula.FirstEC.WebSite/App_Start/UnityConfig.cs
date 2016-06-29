@@ -2,6 +2,7 @@ using System.Web.Mvc;
 using System.Reflection;
 using Microsoft.Practices.Unity;
 using Nebula.Domain.Configuration;
+using Nebula.Domain.Messaging;
 using Nebula.FirstEC.Domain.QueryEntries;
 using Unity.Mvc5;
 using Nebula.Utilities;
@@ -18,8 +19,8 @@ namespace Nebula.FirstEC.WebSite
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
-            DependencyConfiguration.RegisterCommandBus("Nebula.FirstEC.Domain");
-            DependencyConfiguration.RegisterEventdBus("Nebula.FirstEC.Domain");
+            DependencyConfiguration.RegisterCommandBus<CommandBus>();
+            DependencyConfiguration.RegisterEventBus<EventBus>();
             DependencyConfiguration.RegisterMessagingComponents("Nebula.FirstEC.Domain");
             DependencyConfiguration.RegisterRepository("Nebula.FirstEC.Domain.Repositories", "Nebula.FirstEC.Data.Repositories", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");
             DependencyConfiguration.RegisterQueryEntry("Nebula.FirstEC.Domain.QueryEntries", "Nebula.FirstEC.Data.QueryEntries", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");

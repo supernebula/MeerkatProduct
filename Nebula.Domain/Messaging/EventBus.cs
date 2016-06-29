@@ -7,8 +7,8 @@ namespace Nebula.Domain.Messaging
         public IEventHandlerFactory EventHandlerFactory { get; set; }
         public void Publish<T>(T @event) where T : Event
         {
-            var eventHandlers = EventHandlerFactory.GetHandler<T>();
-            foreach (var handler in eventHandlers)
+            var handlers = EventHandlerFactory.GetHandler<T>();
+            foreach (var handler in handlers)
             {
                 handler.Handle(@event);
             }
