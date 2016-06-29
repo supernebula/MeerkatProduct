@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
+using Nebula.Domain.Messaging;
 using Nebula.Utilities;
 using Unity.Mvc5;
 
@@ -13,10 +14,6 @@ namespace Nebula.Domain.Configuration
     {
         public IDependencyResolver DependencyResolver { get; }
         public IUnityContainer UnityContainer { get; }
-
-        private IDependencyRegister _commandHandlerDependencyRegister;
-
-        private IDependencyRegister _eventHandlerDependencyRegister;
 
         public DependencyConfiguration()
         {
@@ -30,38 +27,74 @@ namespace Nebula.Domain.Configuration
             DependencyResolver = dependencyResolver;
         }
 
-        public T Resolver<T>()
+        public T Resolve<T>()
         {
             return UnityContainer.Resolve<T>();
         }
 
-        public void RegisterMessagingComponent(params string[] assemblies)
+        public ICommandBus ResolveCommandBus
         {
-            if(assemblies.Length == 0)
-                throw new ArgumentOutOfRangeException(nameof(assemblies) + "数组为空");
-            var asses = new List<Assembly>();
-            assemblies.ToList().ForEach(e => asses.Add(Assembly.Load(e)));
-            RegisterMessagingComponent(assemblies);
+            get
+            {
+                var commandBus = Resolve<ICommandBus>();
+                if(commandBus == null)
+                    throw new NullReferenceException("未注册" + nameof(ICommandBus) + "的实现类");
+                return commandBus;
+            }
         }
 
-        public void RegisterMessagingComponent(params Assembly[] assemblies)
+        public IEventBus ResolveEventdBus
+        {
+            get
+            {
+                var eventBus = Resolve<IEventBus>();
+                if (eventBus == null)
+                    throw new NullReferenceException("未注册" + nameof(IEventBus) + "的实现类");
+                return eventBus;
+            }
+        }
+
+        public void RegisterCommandBus(params string[] assemblyNames)
+        {
+            RegisterCommandBus(LoadAssembly(assemblyNames));
+        }
+
+        public void RegisterCommandBus(params Assembly[] assemblies)
+        {
+            var eventHandlerDependencyRegister = new EventHandlerDependencyRegister(UnityContainer, assemblies);
+            eventHandlerDependencyRegister.Register();
+        }
+
+        public void RegisterEventBus(params string[] assemblyNames)
+        {
+            RegisterEventBus(LoadAssembly(assemblyNames));
+        }
+
+        public void RegisterEventBus(params Assembly[] assemblies)
+        {
+            var eventBusDependencyRegister = new EventBusDependencyRegister(UnityContainer, assemblies);
+            eventBusDependencyRegister.Register();
+        }
+
+
+        public void RegisterMessagingComponents(params string[] assemblyNames)
+        {
+            RegisterMessagingComponents(LoadAssembly(assemblyNames));
+        }
+
+        public void RegisterMessagingComponents(params Assembly[] assemblies)
         {
             if (assemblies.Length == 0)
                 throw new ArgumentOutOfRangeException(nameof(assemblies) + "数组为空");
-            _commandHandlerDependencyRegister = new CommandHandlerDependencyRegister(UnityContainer, assemblies);
-            _commandHandlerDependencyRegister.Register();
-            _eventHandlerDependencyRegister = new EventHandlerDependencyRegister(UnityContainer, assemblies);
-            _eventHandlerDependencyRegister.Register();
+            var commandHandlerDependencyRegister = new CommandHandlerDependencyRegister(UnityContainer, assemblies);
+            commandHandlerDependencyRegister.Register();
+            var eventHandlerDependencyRegister = new EventHandlerDependencyRegister(UnityContainer, assemblies);
+            eventHandlerDependencyRegister.Register();
         }
 
-        public void RegisterRepository(string interfaceNamespace, string classNamespace, params string[] assamblies)
+        public void RegisterRepository(string interfaceNamespace, string classNamespace, params string[] assamblyNames)
         {
-            if (assamblies.Length == 0)
-                throw new ArgumentOutOfRangeException(nameof(assamblies) + "数组为空");
-
-            var asses = new List<Assembly>();
-            assamblies.ToList().ForEach(e => asses.Add(Assembly.Load(e)));
-            RegisterRepository(interfaceNamespace, classNamespace, assamblies);
+            RegisterRepository(interfaceNamespace, classNamespace, LoadAssembly(assamblyNames));
         }
 
         public void RegisterRepository(string interfaceNamespace, string classNamespace, params Assembly[] assemblies)
@@ -77,18 +110,13 @@ namespace Nebula.Domain.Configuration
             interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.InterfaceType, p.ClassType, new PerThreadLifetimeManager()));
         }
 
-        public void RegisterQueryEntry(string interfaceNamespace, string classNamespace, params string[] assemblies)
+        public void RegisterQueryEntry(string interfaceNamespace, string classNamespace, params string[] assamblyNames)
         {
             if (string.IsNullOrWhiteSpace(interfaceNamespace))
                 throw new ArgumentNullException(nameof(interfaceNamespace));
             if (string.IsNullOrWhiteSpace(classNamespace))
                 throw new ArgumentNullException(nameof(classNamespace));
-            if (assemblies.Length == 0)
-                throw new ArgumentOutOfRangeException(nameof(assemblies) + "数组为空");
-
-            var asses = new List<Assembly>();
-            assemblies.ToList().ForEach(e => asses.Add(Assembly.Load(e)));
-            RegisterRepository(interfaceNamespace, classNamespace, assemblies);
+            RegisterRepository(interfaceNamespace, classNamespace, LoadAssembly(assamblyNames));
         }
 
         public void RegisterQueryEntry(string interfaceNamespace, string classNamespace, params Assembly[] assemblies)
@@ -102,6 +130,15 @@ namespace Nebula.Domain.Configuration
 
             var interfaceClassPaires = IoCUtility.GetInterfaceAndClass(interfaceNamespace, classNamespace, assemblies);
             interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.InterfaceType, p.ClassType, new PerThreadLifetimeManager()));
+        }
+
+        public Assembly[] LoadAssembly(params string[] assemblyNames)
+        {
+            if (assemblyNames.Length == 0)
+                throw new ArgumentOutOfRangeException(nameof(assemblyNames) + "数组为空");
+            var assemblies = new List<Assembly>();
+            assemblyNames.ToList().ForEach(e => assemblies.Add(Assembly.Load(e)));
+            return assemblies.ToArray();
         }
     }
 }

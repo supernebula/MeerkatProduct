@@ -18,7 +18,7 @@ namespace Nebula.FirstEC.WebSite
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
-            DependencyConfiguration.RegisterMessagingComponent("Nebula.FirstEC.Domain");
+            DependencyConfiguration.RegisterMessagingComponents("Nebula.FirstEC.Domain");
             DependencyConfiguration.RegisterRepository("Nebula.FirstEC.Domain.Repositories", "Nebula.FirstEC.Data.Repositories", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");
             DependencyConfiguration.RegisterQueryEntry("Nebula.FirstEC.Domain.QueryEntries", "Nebula.FirstEC.Data.QueryEntries", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");
             // e.g. container.RegisterType<ITestService, TestService>();
