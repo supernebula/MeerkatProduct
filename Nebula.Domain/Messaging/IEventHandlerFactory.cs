@@ -5,6 +5,6 @@ namespace Nebula.Domain.Messaging
 {
     public interface IEventHandlerFactory
     {
-        IEnumerable<IEventHandler<T>> GetHandler<T>() where T : Event;
+        IEventHandler<T> GetHandler<T>() where T : Event;
     }
 }

@@ -26,23 +26,7 @@ namespace Nebula.Domain.Messaging
 
         public ICommandHandler<T> GetHandler<T>() where T :  Command
         {
-            CommandHandlerActivator.Create<T>();
-
-            var type = GetHandlerType<T>().FirstOrDefault();
-            if (type == null)
-                return null;
-            return (ICommandHandler<T>)Activator.CreateInstance(type);
-        }
-
-        public List<Type> GetHandlerType<T>()
-        {
-            var assemblies = Assembly.GetExecutingAssembly();
-            var types =
-                assemblies.GetExportedTypes()
-                    .Where(
-                        t =>  t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof (ICommandHandler<>)))
-                    .Where(t => t.GetInterfaces().Any(i => i.GetGenericArguments().Any(a => a == typeof (T))));
-            return types.ToList();
+            return CommandHandlerActivator.Create<T>();
         }
 
         public class DefaultCommandHandlerActivator : ICommandHandlerActivator

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Nebula.Domain.Events;
+using Nebula.Domain.Messaging;
 
 namespace Nebula.Domain.Configuration
 {
     public interface IEventHandlerActivator
     {
+        IEventHandler<T> Create<T>() where T : Event;
     }
 }

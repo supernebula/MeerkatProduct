@@ -14,10 +14,12 @@ namespace Nebula.FirstEC.WebSite
 
         public static void RegisterComponents()
         {
-			//var container = new UnityContainer();
+            //var container = new UnityContainer();
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
+            DependencyConfiguration.RegisterCommandBus("Nebula.FirstEC.Domain");
+            DependencyConfiguration.RegisterEventdBus("Nebula.FirstEC.Domain");
             DependencyConfiguration.RegisterMessagingComponents("Nebula.FirstEC.Domain");
             DependencyConfiguration.RegisterRepository("Nebula.FirstEC.Domain.Repositories", "Nebula.FirstEC.Data.Repositories", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");
             DependencyConfiguration.RegisterQueryEntry("Nebula.FirstEC.Domain.QueryEntries", "Nebula.FirstEC.Data.QueryEntries", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");

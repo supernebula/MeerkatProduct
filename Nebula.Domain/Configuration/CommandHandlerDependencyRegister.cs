@@ -43,27 +43,15 @@ namespace Nebula.Domain.Configuration
             _commandHandlerTypeProviderThunk = () => new DefaultCommandHandlerTypeProvider();
         }
 
-        //public CommandHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
-        //{
-        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-        //    _commandHandlerTypeProviderThunk = () => new DefaultCommandHandlerTypeProvider();
-        //}
-
-        public void Register()
+        public void Register(LifetimeManager lifetimeManager = null)
         {
-            var container = _containerThunk();
             var maps = _commandHandlerTypeProviderThunk().GetDependencyMap(_assembliesThunk()).ToList();
-            maps.ForEach(e => container.RegisterType(e.InterfaceType, e.ClassType, new PerResolveLifetimeManager()));
+            maps.ForEach(e => _containerThunk().RegisterType(e.InterfaceType, e.ClassType, lifetimeManager ?? new PerResolveLifetimeManager()));
         }
 
-        public void RegisterCommandBus()
+        public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)
         {
-            throw new NotImplementedException();
-        }
-
-        public void RegisterEventBus()
-        {
-            throw new NotImplementedException();
+            _containerThunk().RegisterType(from, to, lifetimeManager ?? new PerResolveLifetimeManager());
         }
     }
 

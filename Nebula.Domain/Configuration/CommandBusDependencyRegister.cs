@@ -28,29 +28,44 @@ namespace Nebula.Domain.Configuration
 
         private readonly Func<IDependencyMapProvider> _commandBusTypeProviderThunk;
         private readonly Func<IUnityContainer> _containerThunk;
-        private readonly Func<Assembly> _assemblyThunk;
+        private readonly Func<Assembly[]> _assembliesThunk;
 
-        public CommandBusDependencyRegister(IUnityContainer unityContainer, IDependencyMapProvider commandBusTypeProvider, Assembly assembly)
+        public CommandBusDependencyRegister(IUnityContainer unityContainer, IDependencyMapProvider commandBusTypeProvider, params Assembly[] assemblies)
         {
             if (unityContainer != null)
                 _containerThunk = () => unityContainer;
             if (_commandBusTypeProviderThunk != null)
                 _commandBusTypeProviderThunk = () => commandBusTypeProvider;
-            _assemblyThunk = () => assembly;
+            if(assemblies != null)
+                _assembliesThunk = () => assemblies;
         }
 
-        public CommandBusDependencyRegister(IUnityContainer unityContainer, Assembly assembly) : this(unityContainer, null, assembly)
+        public CommandBusDependencyRegister(IUnityContainer unityContainer, params Assembly[] assemblies) : this(unityContainer, null, assemblies)
         {
             _commandBusTypeProviderThunk = () => new DefaultCommandBusTypeProvider();
         }
 
-        public void Register()
+        public CommandBusDependencyRegister(IUnityContainer unityContainer)
         {
-            var commandBusMap = _commandBusTypeProviderThunk().GetDependencyMap(_assemblyThunk()).FirstOrDefault();
+            if (unityContainer != null)
+                _containerThunk = () => unityContainer;
+            _commandBusTypeProviderThunk = () => new DefaultCommandBusTypeProvider();
+        }
+
+        public void Register(LifetimeManager lifetimeManager = null)
+        {
+            var commandBusMap = _commandBusTypeProviderThunk().GetDependencyMap(_assembliesThunk()).FirstOrDefault();
             if(commandBusMap == default(InterfaceClassPair))
                 throw new NotImplementedException("没有找到" + nameof(ICommandBus) + "的实现");
             _containerThunk()
-                .RegisterType(commandBusMap.InterfaceType, commandBusMap.ClassType, new PerResolveLifetimeManager());
+                .RegisterType(commandBusMap.InterfaceType, commandBusMap.ClassType, lifetimeManager ?? new PerThreadLifetimeManager());
+        }
+       
+
+        public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)
+        {
+            _containerThunk()
+               .RegisterType(from, to, lifetimeManager ?? new PerThreadLifetimeManager());
         }
     }
 }

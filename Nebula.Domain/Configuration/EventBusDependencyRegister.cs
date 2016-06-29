@@ -32,8 +32,9 @@ namespace Nebula.Domain.Configuration
 
         public EventBusDependencyRegister(IUnityContainer unityContainer, IDependencyMapProvider commandBusTypeProvider, params Assembly[] assemblies)
         {
-            if (unityContainer != null)
-                _containerThunk = () => unityContainer;
+            if (unityContainer == null)
+                throw new ArgumentNullException(nameof(unityContainer));
+            _containerThunk = () => unityContainer;
             if (_commandBusTypeProviderThunk != null)
                 _commandBusTypeProviderThunk = () => commandBusTypeProvider;
             _assembliesThunk = () => assemblies;
@@ -44,13 +45,26 @@ namespace Nebula.Domain.Configuration
             _commandBusTypeProviderThunk = () => new DefaultEventBusTypeProvider();
         }
 
-        public void Register()
+        public EventBusDependencyRegister(IUnityContainer unityContainer)
+        {
+            if (unityContainer == null)
+                throw new ArgumentNullException(nameof(unityContainer));
+            _containerThunk = () => unityContainer;
+            _commandBusTypeProviderThunk = () => new DefaultEventBusTypeProvider();
+        }
+
+        public void Register(LifetimeManager lifetimeManager = null)
         {
             var commandBusMap = _commandBusTypeProviderThunk().GetDependencyMap(_assembliesThunk()).FirstOrDefault();
             if (commandBusMap == default(InterfaceClassPair))
                 throw new NotImplementedException("没有找到" + nameof(IEventBus) + "的实现");
             _containerThunk()
-                .RegisterType(commandBusMap.InterfaceType, commandBusMap.ClassType, new PerResolveLifetimeManager());
+                .RegisterType(commandBusMap.InterfaceType, commandBusMap.ClassType, lifetimeManager ?? new PerResolveLifetimeManager());
+        }
+
+        public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)
+        {
+            _containerThunk().RegisterType(from, to, lifetimeManager ?? new PerResolveLifetimeManager());
         }
     }
 }

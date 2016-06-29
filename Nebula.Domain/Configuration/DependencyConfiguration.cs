@@ -54,6 +54,12 @@ namespace Nebula.Domain.Configuration
             }
         }
 
+        public void RegisterCommandBus<T>() where T : ICommandBus
+        {
+            var commandBusDependencyRegister = new CommandBusDependencyRegister(UnityContainer);
+            commandBusDependencyRegister.Register(typeof(ICommandBus), typeof(T));
+        }
+
         public void RegisterCommandBus(params string[] assemblyNames)
         {
             RegisterCommandBus(LoadAssembly(assemblyNames));
@@ -61,8 +67,14 @@ namespace Nebula.Domain.Configuration
 
         public void RegisterCommandBus(params Assembly[] assemblies)
         {
-            var eventHandlerDependencyRegister = new EventHandlerDependencyRegister(UnityContainer, assemblies);
+            var eventHandlerDependencyRegister = new CommandBusDependencyRegister(UnityContainer, assemblies);
             eventHandlerDependencyRegister.Register();
+        }
+
+        public void RegisterEventBus<T>() where T : IEventBus
+        {
+            var eventBusDependencyRegister = new EventBusDependencyRegister(UnityContainer);
+            eventBusDependencyRegister.Register(typeof(IEventBus), typeof(T));
         }
 
         public void RegisterEventBus(params string[] assemblyNames)

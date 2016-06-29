@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Nebula.Common;
 using Nebula.Domain.Messaging;
@@ -45,22 +43,17 @@ namespace Nebula.Domain.Configuration
             _eventHandlerTypeProviderThunk = () => new DefaultEventHandlerTypeProvider();
         }
 
-        //public EventHandlerDependencyRegister(IDependencyMapProvider commandHandlerTypeProvider, params Assembly[] assemblies) : this(null, commandHandlerTypeProvider, assemblies)
-        //{
-        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-        //}
 
-        //public EventHandlerDependencyRegister(params Assembly[] assemblies) : this(null, null, assemblies)
-        //{
-        //    _containerThunk = () => DependencyConfiguration.Current.UnityContainer;
-        //    _eventHandlerTypeProviderThunk = () => new DefaultEventHandlerTypeProvider();
-        //}
-
-        public void Register()
+        public void Register(LifetimeManager lifetimeManager = null)
         {
-            var container = _containerThunk();
             var maps = _eventHandlerTypeProviderThunk().GetDependencyMap(_assembliesThunk()).ToList();
-            maps.ForEach(e => container.RegisterType(e.InterfaceType, e.ClassType, new PerResolveLifetimeManager()));
+            maps.ForEach(e => _containerThunk().RegisterType(e.InterfaceType, e.ClassType, lifetimeManager ?? new PerResolveLifetimeManager()));
+        }
+
+
+        public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)
+        {
+            _containerThunk().RegisterType(from, to, lifetimeManager ?? new PerResolveLifetimeManager());
         }
     }
 }
