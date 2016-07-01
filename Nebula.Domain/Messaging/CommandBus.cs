@@ -25,6 +25,7 @@ namespace Nebula.Domain.Messaging
             var commandHandler = CommandHandlerFactory.GetHandler<T>();
             try
             {
+
                 //translation.open()
                 commandHandler.Execute(command);
             }

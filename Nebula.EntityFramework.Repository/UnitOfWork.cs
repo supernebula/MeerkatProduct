@@ -30,7 +30,6 @@ namespace Nebula.EntityFramework.Repository
         public IDbTransaction BeginTransaction()
         {
             _transaction = _context.Database.BeginTransaction();
-            return _transaction;
         }
 
 
