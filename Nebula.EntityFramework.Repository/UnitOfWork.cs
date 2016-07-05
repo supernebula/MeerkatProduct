@@ -27,9 +27,9 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        public IDbTransaction BeginTransaction()
+        public void BeginTransaction(IsolationLevel isolationLevel)
         {
-            _transaction = _context.Database.BeginTransaction();
+            _transaction = _context.Database.BeginTransaction(isolationLevel);
         }
 
 
