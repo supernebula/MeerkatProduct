@@ -22,7 +22,7 @@ namespace Nebula.EntityFramework.Repository
         private DbContext Context
         {
             get
-            {
+            { 
                 return _context = _context ?? DbContextFactory.Create();
             }
         }

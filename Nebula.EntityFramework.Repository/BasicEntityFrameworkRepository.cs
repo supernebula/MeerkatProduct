@@ -19,7 +19,7 @@ namespace Nebula.EntityFramework.Repository
     {
 
         protected BasicEntityFrameworkRepository()
-        {
+        { 
         }
 
         protected BasicEntityFrameworkRepository(IDbContextFactory<TDbContext> dbContextFactory)
