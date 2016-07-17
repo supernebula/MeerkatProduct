@@ -9,16 +9,21 @@ namespace Nebula.EntityFramework.Repository
 {
     public class UnitOfWork<TDbContext> : IUnitOfWork where TDbContext : DbContext
     {
-        private DbContext _context;
+        
         private DbContextTransaction _transaction;
 
         private bool _isCommited;
         public bool IsCommited => _isCommited;
 
         [Dependency]
-        public IDbContextFactory<TDbContext> DbContextFactory { get; set; } 
+        public IDbContextFactory<TDbContext> DbContextFactory { get; set; }
+
+        [Dependency]
+        IEfDbContextLazySingleFactory DbContextLazySingleFactory { get; set; }
 
 
+
+        private DbContext _context;
         private DbContext Context
         {
             get
@@ -27,9 +32,19 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
+        private Lazy<DbContext> _lazyContext;
+        private Lazy<DbContext> LazyContext
+        {
+            get
+            {
+                return _lazyContext = _lazyContext ?? DbContextLazySingleFactory.CurrentLazy();
+            }
+        }
+
         public void BeginTransaction(IsolationLevel isolationLevel)
         {
             _transaction = _context.Database.BeginTransaction(isolationLevel);
+            _lazyContext.LazyDo(context => _transaction = context.Database.BeginTransaction(isolationLevel));
         }
 
 
