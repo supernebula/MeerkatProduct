@@ -13,6 +13,8 @@ namespace Nebula.EntityFramework.Repository
         TDbContext Current<TDbContext>() where TDbContext : DbContext, new();
 
         Lazy<DbContext> CurrentLazy();
+
+        void LazyDoForDbContentCreated(Action<DbContext> action);
     }
 
 
@@ -42,22 +44,23 @@ namespace Nebula.EntityFramework.Repository
 
             item = new TDbContext();
             _dbContexts.Add(item.GetType(), item);
-            OnDbContextReturning(item);
+            OnDbContextCreated(item);
             return (TDbContext)item;
         }
 
-        public void OnDbContextReturning(DbContext dbContext)
+        public void OnDbContextCreated(DbContext dbContext)
         {
-            throw new NotImplementedException();
+            DbContextCreatedEvent?.Invoke(dbContext);
+        }
+
+
+        public delegate void OnDbContentCreated(DbContext dbContext);
+        private event OnDbContentCreated DbContextCreatedEvent;
+
+        public void LazyDoForDbContentCreated(Action<DbContext> action)
+        {
+            DbContextCreatedEvent += new OnDbContentCreated(action);
         }
     }
 
-    public static class LazyExtension
-    {
-        public static void LazyDo(this Lazy<DbContext> lazy, Action<DbContext> action)
-        {
-            action.Invoke(lazy.Value);
-        }
-
-    }
 }

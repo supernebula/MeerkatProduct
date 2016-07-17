@@ -43,8 +43,8 @@ namespace Nebula.EntityFramework.Repository
 
         public void BeginTransaction(IsolationLevel isolationLevel)
         {
-            _transaction = _context.Database.BeginTransaction(isolationLevel);
-            _lazyContext.LazyDo(context => _transaction = context.Database.BeginTransaction(isolationLevel));
+            //_transaction = _context.Database.BeginTransaction(isolationLevel);
+            DbContextLazySingleFactory.LazyDoForDbContentCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
         }
 
 
