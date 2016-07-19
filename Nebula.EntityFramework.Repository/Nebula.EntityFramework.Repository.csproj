@@ -69,6 +69,7 @@
     <Compile Include="BasicEntityFrameworkRepository.cs" />
     <Compile Include="EFDbContextFactory.cs" />
     <Compile Include="EfDbContextSingleFactory.cs" />
+    <Compile Include="DbContextProxy.cs" />
     <Compile Include="OriginalEntityFrameworkRepository.cs" />
     <Compile Include="Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

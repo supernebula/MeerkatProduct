@@ -62,6 +62,12 @@ namespace Nebula.EntityFramework.Repository
             Context.SaveChanges();
         }
 
+        public void TestProxy()
+        {
+            var mayBeProxy = DbSet.Create();
+        }
+
+
         public void Insert(T item)
         {
             DbSet.Add(item);

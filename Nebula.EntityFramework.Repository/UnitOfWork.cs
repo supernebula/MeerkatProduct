@@ -15,36 +15,18 @@ namespace Nebula.EntityFramework.Repository
         private bool _isCommited;
         public bool IsCommited => _isCommited;
 
-        [Dependency]
-        public IDbContextFactory<TDbContext> DbContextFactory { get; set; }
+        private readonly DbContextProxy _dbContextProxy;
 
-        [Dependency]
-        IEfDbContextLazySingleFactory DbContextLazySingleFactory { get; set; }
-
-
-
-        private DbContext _context;
-        private DbContext Context
+        public UnitOfWork()
         {
-            get
-            { 
-                return _context = _context ?? DbContextFactory.Create();
-            }
+            _dbContextProxy = new DbContextProxy();
         }
 
-        private Lazy<DbContext> _lazyContext;
-        private Lazy<DbContext> LazyContext
-        {
-            get
-            {
-                return _lazyContext = _lazyContext ?? DbContextLazySingleFactory.CurrentLazy();
-            }
-        }
+       
 
         public void BeginTransaction(IsolationLevel isolationLevel)
         {
-            //_transaction = _context.Database.BeginTransaction(isolationLevel);
-            DbContextLazySingleFactory.LazyDoForDbContentCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
+            _dbContextProxy.WaitUntilDbContextCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
         }
 
 
@@ -52,27 +34,42 @@ namespace Nebula.EntityFramework.Repository
         {
             try
             {
-                if (_transaction == null)
-                    throw new NullReferenceException(nameof(_transaction));
-                _context.SaveChanges();
-                _transaction.Commit();
-                _isCommited = true;
+                _dbContextProxy.WaitUntilDbContextCreated(context =>
+                {
+                    if (_transaction == null)
+                        throw new NullReferenceException(nameof(_transaction));
+                    context.SaveChanges();
+                    _transaction.Commit();
+                    _isCommited = true;
+                });
+
             }
             catch (Exception)
             {
-                _transaction.Rollback();
+                _dbContextProxy.WaitUntilDbContextCreated(context =>
+                {
+                    _transaction.Rollback();
+                });
             }
         }
 
         public void Dispose()
         {
-            _transaction.Dispose();
-            _context.Dispose();
+            _dbContextProxy.WaitUntilDbContextCreated(context =>
+            {
+                _transaction.Dispose();
+                context.Dispose();
+            });
+
         }
 
         public void RollBack()
         {
-            _transaction.Rollback();
+            _dbContextProxy.WaitUntilDbContextCreated(context =>
+            {
+                _transaction.Rollback();
+            });
+            
         }
     }
 }
