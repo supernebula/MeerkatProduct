@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.FirstEC.Domain.QueryEntries
 {
-    public interface ICategaryQuery
+    public interface ICategaryQuery : IQueryEntry
     {
     }
 }

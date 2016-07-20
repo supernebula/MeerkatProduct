@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.Domain.QueryEntries
+namespace Nebula.FirstEC.Domain
 {
-    public interface ICategarySpecRelationQuery : IQueryEntry
+    public class NebulaFirstEcDomainModule
     {
     }
 }

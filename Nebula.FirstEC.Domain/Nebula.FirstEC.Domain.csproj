@@ -56,6 +56,7 @@
     <Compile Include="Models\AggregateRoots\Order.cs" />
     <Compile Include="Models\AggregateRoots\Product.cs" />
     <Compile Include="Models\Values\ProductStatusType.cs" />
+    <Compile Include="NebulaFirstECDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\AggregateRoots\Spec.cs" />
     <Compile Include="Models\AggregateRoots\User.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="QueryEntries\IOrderQuery.cs" />
     <Compile Include="QueryEntries\IProductQuery.cs" />
     <Compile Include="QueryEntries\IProductTagRelationQuery.cs" />
+    <Compile Include="QueryEntries\IQueryEntry.cs" />
     <Compile Include="QueryEntries\IShoppingCartQuery.cs" />
     <Compile Include="QueryEntries\ISpecQuery.cs" />
     <Compile Include="QueryEntries\ITagQuery.cs" />

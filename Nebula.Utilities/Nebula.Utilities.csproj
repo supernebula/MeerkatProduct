@@ -53,9 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppModule.cs" />
     <Compile Include="Cache\ExtendMemoryCache.cs" />
     <Compile Include="Collection\BloomFilter.cs" />
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
+    <Compile Include="Modules\DependModuleAttribute.cs" />
     <Compile Include="Expressions\DefaultConstantValidtor.cs" />
     <Compile Include="Expressions\ExpressionConstantValidator.cs" />
     <Compile Include="Expressions\IConstantValidtor.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Tests\TimeMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="IO\" />
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
