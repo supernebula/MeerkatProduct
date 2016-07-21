@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Nebula.Utilities.Modules;
 
 namespace Nebula.Utilities
 {
@@ -15,12 +14,26 @@ namespace Nebula.Utilities
 
         public bool IsAppModule(Type type)
         {
-            throw new NotImplementedException();
+            return type.IsPublic && type.IsClass && typeof (AppModule).IsAssignableFrom(type);
         }
 
         public List<Type> FindDependModuleTypes(Type moduleType)
         {
-            throw new NotImplementedException();
+            if(moduleType == null)
+                throw new ArgumentNullException(nameof(moduleType));
+            if(!IsAppModule(moduleType))
+                throw new ArgumentException($"参数{nameof(moduleType)}的类型{moduleType.FullName}不是{nameof(AppModule)}或其派生类");
+
+            var list = new List<Type>();
+            if(!moduleType.IsDefined(typeof(DependOnAttribute), true))
+                return list;
+            var attributes = moduleType.GetCustomAttributes(typeof(DependOnAttribute), true).Cast<DependOnAttribute>();
+            
+            foreach (var attr in attributes)
+            {
+                list.AddRange(attr.DependedModuleTypes);
+            }
+            return list;
         }
     }
 }

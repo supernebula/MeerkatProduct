@@ -89,6 +89,7 @@
     <Compile Include="Tests\TimeMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Ioc\" />
     <Folder Include="IO\" />
     <Folder Include="Security\" />
   </ItemGroup>

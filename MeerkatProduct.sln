@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1B0B30AF-E41A-4719-AC85-97DB64FC8135}"
 EndProject
@@ -72,7 +72,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Data", "Nebu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Domain", "Nebula.FirstEC.Domain\Nebula.FirstEC.Domain.csproj", "{47FF7F27-1A70-4437-93D6-D53793C16DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.WebSite", "Nebula.FirstEC.WebSite\Nebula.FirstEC.WebSite.csproj", "{5D052A4B-C284-4107-96A1-D168C71FA160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Website", "Nebula.FirstEC.WebSite\Nebula.FirstEC.Website.csproj", "{5D052A4B-C284-4107-96A1-D168C71FA160}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Domain", "Nebula.Domain\Nebula.Domain.csproj", "{A4BA2B31-88D4-443E-8540-1751494D8577}"
 EndProject

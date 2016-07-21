@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Nebula.Utilities;
 
-namespace Nebula.FirstEC.Domain
+namespace Nebula.FirstEC.Data
 {
-    public class NebulaFirstEcDomainModule : AppModule
+    public class NebulaFirstEcDataModule : AppModule
     {
     }
 }
