@@ -12,7 +12,7 @@ namespace Nebula.Domain.Configuration
     {
         public class DefaultCommandHandlerTypeProvider : IDependencyMapProvider
         {
-            public IEnumerable<InterfaceClassPair> GetDependencyMap(params Assembly[] assemblies)
+            public IEnumerable<InterfaceImplPair> GetDependencyMap(params Assembly[] assemblies)
             {
                 if (assemblies.Any(e => e != null))
                     throw new ArgumentException(nameof(assemblies) + "项均为null， 至少指定一个Assembly");
@@ -20,7 +20,7 @@ namespace Nebula.Domain.Configuration
                 assemblies.ToList().ForEach(a => types.AddRange(a.GetExportedTypes()));
                 var result = types
                     .Where(t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICommandHandler<>)))
-                    .Select(t => new InterfaceClassPair { InterfaceType = t.GetInterfaces().First(i => i.GetGenericTypeDefinition() == typeof(ICommandHandler<>)), ClassType = t });
+                    .Select(t => new InterfaceImplPair { Interface = t.GetInterfaces().First(i => i.GetGenericTypeDefinition() == typeof(ICommandHandler<>)), Impl = t });
                 return result.ToList();
             }
         }
@@ -46,7 +46,7 @@ namespace Nebula.Domain.Configuration
         public void Register(LifetimeManager lifetimeManager = null)
         {
             var maps = _commandHandlerTypeProviderThunk().GetDependencyMap(_assembliesThunk()).ToList();
-            maps.ForEach(e => _containerThunk().RegisterType(e.InterfaceType, e.ClassType, lifetimeManager ?? new PerResolveLifetimeManager()));
+            maps.ForEach(e => _containerThunk().RegisterType(e.Interface, e.Impl, lifetimeManager ?? new PerResolveLifetimeManager()));
         }
 
         public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)

@@ -13,7 +13,7 @@ namespace Nebula.Domain.Configuration
 
         public class DefaultEventBusTypeProvider : IDependencyMapProvider
         {
-            public IEnumerable<InterfaceClassPair> GetDependencyMap(params Assembly[] assemblies)
+            public IEnumerable<InterfaceImplPair> GetDependencyMap(params Assembly[] assemblies)
             {
                 if (assemblies.Any(e => e != null))
                     throw new ArgumentException(nameof(assemblies) + "项均为null， 至少指定一个Assembly");
@@ -21,7 +21,7 @@ namespace Nebula.Domain.Configuration
                 assemblies.ToList().ForEach(a => types.AddRange(a.GetExportedTypes()));
                 var result = types
                     .Where(t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEventBus)))
-                    .Select(t => new InterfaceClassPair { InterfaceType = t.GetInterfaces().First(i => i.GetGenericTypeDefinition() == typeof(IEventBus)), ClassType = t });
+                    .Select(t => new InterfaceImplPair { Interface = t.GetInterfaces().First(i => i.GetGenericTypeDefinition() == typeof(IEventBus)), Impl = t });
                 return result.ToList();
             }
         }
@@ -56,10 +56,10 @@ namespace Nebula.Domain.Configuration
         public void Register(LifetimeManager lifetimeManager = null)
         {
             var commandBusMap = _commandBusTypeProviderThunk().GetDependencyMap(_assembliesThunk()).FirstOrDefault();
-            if (commandBusMap == default(InterfaceClassPair))
+            if (commandBusMap == default(InterfaceImplPair))
                 throw new NotImplementedException("没有找到" + nameof(IEventBus) + "的实现");
             _containerThunk()
-                .RegisterType(commandBusMap.InterfaceType, commandBusMap.ClassType, lifetimeManager ?? new PerResolveLifetimeManager());
+                .RegisterType(commandBusMap.Interface, commandBusMap.Impl, lifetimeManager ?? new PerResolveLifetimeManager());
         }
 
         public void Register(Type from, Type to, LifetimeManager lifetimeManager = null)

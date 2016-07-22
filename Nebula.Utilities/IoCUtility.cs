@@ -8,7 +8,7 @@ namespace Nebula.Utilities
 {
     public class IoCUtility
     {
-        public static List<InterfaceClassPair> GetInterfaceAndClass(string interfaceNamespace, string classNamespace, params Assembly[] assemblies)
+        public static List<InterfaceImplPair> GetInterfaceAndClass(string interfaceNamespace, string classNamespace, params Assembly[] assemblies)
         {
             if (string.IsNullOrWhiteSpace(interfaceNamespace))
                 throw new NullReferenceException(nameof(interfaceNamespace));
@@ -36,12 +36,12 @@ namespace Nebula.Utilities
             //var impls = types.Where(t => t.IsClass && t.IsPublic && t.Namespace == classNamespace && t.GetInterfaces().Length > 0).ToList();
             var impls = FindTypeOfNamespace(classNamespace, false, assemblies).Where(t => t.IsClass && t.IsPublic && t.Namespace == classNamespace && t.GetInterfaces().Length > 0).ToList();
 
-            var interfClassPairs = new List<InterfaceClassPair>();
+            var interfClassPairs = new List<InterfaceImplPair>();
             interfaces.ForEach(i =>
             {
                 var @class = impls.FirstOrDefault(t => t.GetInterfaces().Select(e => e.FullName).Contains(i.FullName));
                 if (@class != null)
-                    interfClassPairs.Add(new InterfaceClassPair { InterfaceType = i, ClassType = @class });
+                    interfClassPairs.Add(new InterfaceImplPair { Interface = i, Impl = @class });
             });
             return interfClassPairs;
         }

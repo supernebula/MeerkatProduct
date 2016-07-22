@@ -2,35 +2,35 @@
 
 namespace Nebula.Common
 {
-    public struct InterfaceClassPair
+    public struct InterfaceImplPair
     {
-        public bool Equals(InterfaceClassPair other)
+        public bool Equals(InterfaceImplPair other)
         {
             return this == other;
         }
 
         public override bool Equals(object other)
         {
-            return other is InterfaceClassPair && this == (InterfaceClassPair)other;
+            return other is InterfaceImplPair && this == (InterfaceImplPair)other;
         }
 
         public override int GetHashCode()
         {
-            return (InterfaceType?.GetHashCode() ?? 0) ^ (ClassType?.GetHashCode() ?? 0);
+            return (Interface?.GetHashCode() ?? 0) ^ (Impl?.GetHashCode() ?? 0);
         }
 
-        public Type InterfaceType { get; set; }
+        public Type Interface { get; set; }
 
-        public Type ClassType { get; set; }
+        public Type Impl { get; set; }
 
-        public static bool operator ==(InterfaceClassPair value1, InterfaceClassPair value2)
+        public static bool operator ==(InterfaceImplPair value1, InterfaceImplPair value2)
         {
-            return value1.InterfaceType == value2.InterfaceType && value1.ClassType == value2.ClassType;
+            return value1.Interface == value2.Interface && value1.Impl == value2.Impl;
         }
 
-        public static bool operator !=(InterfaceClassPair value1, InterfaceClassPair value2)
+        public static bool operator !=(InterfaceImplPair value1, InterfaceImplPair value2)
         {
-            return value1.InterfaceType != value2.InterfaceType || value1.ClassType != value2.ClassType;
+            return value1.Interface != value2.Interface || value1.Impl != value2.Impl;
         }
     }
 }

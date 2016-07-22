@@ -18,7 +18,7 @@ namespace Nebula.Utilities.Test
                     , Assembly.Load("Nebula.FirstEC.Data")
                 );
             
-            interfaceClassPaires.ForEach(p => Trace.WriteLine(p.InterfaceType.FullName + "\r\n : " + p.ClassType.FullName));
+            interfaceClassPaires.ForEach(p => Trace.WriteLine(p.Interface.FullName + "\r\n : " + p.Impl.FullName));
         }
     }
 }

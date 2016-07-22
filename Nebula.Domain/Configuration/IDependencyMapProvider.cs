@@ -6,6 +6,6 @@ namespace Nebula.Domain.Configuration
 {
     public interface IDependencyMapProvider
     {
-        IEnumerable<InterfaceClassPair> GetDependencyMap(params Assembly[] assemblies);
+        IEnumerable<InterfaceImplPair> GetDependencyMap(params Assembly[] assemblies);
     }
 }

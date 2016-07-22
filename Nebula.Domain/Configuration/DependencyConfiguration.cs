@@ -125,7 +125,7 @@ namespace Nebula.Domain.Configuration
                 throw new ArgumentOutOfRangeException(nameof(assemblies) + "数组为空");
 
             var interfaceClassPaires = IoCUtility.GetInterfaceAndClass( interfaceNamespace, classNamespace, assemblies);
-            interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.InterfaceType, p.ClassType, new PerThreadLifetimeManager()));
+            interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.Interface, p.Impl, new PerThreadLifetimeManager()));
         }
 
         public void RegisterQueryEntry(string interfaceNamespace, string classNamespace, params string[] assamblyNames)
@@ -147,7 +147,7 @@ namespace Nebula.Domain.Configuration
                 throw new ArgumentOutOfRangeException(nameof(assemblies) + "数组为空");
 
             var interfaceClassPaires = IoCUtility.GetInterfaceAndClass(interfaceNamespace, classNamespace, assemblies);
-            interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.InterfaceType, p.ClassType, new PerThreadLifetimeManager()));
+            interfaceClassPaires.ForEach(p => UnityContainer.RegisterType(p.Interface, p.Impl, new PerThreadLifetimeManager()));
         }
 
         public Assembly[] LoadAssembly(params string[] assemblyNames)
