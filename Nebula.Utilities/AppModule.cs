@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Nebula.Utilities.Ioc;
 using Nebula.Utilities.Modules;
 
 namespace Nebula.Utilities
 {
     public abstract class AppModule
     {
+        public IIoCManager IoCManager;
+
         public virtual void Initailize()
         {
-
         }
 
         public bool IsAppModule(Type type)

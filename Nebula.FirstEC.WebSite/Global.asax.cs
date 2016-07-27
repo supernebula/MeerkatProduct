@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using log4net;
 using log4net.Config;
+using Nebula.FirstEC.Website;
 
 namespace Nebula.FirstEC.WebSite
 {
@@ -19,6 +20,9 @@ namespace Nebula.FirstEC.WebSite
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var startupModule = new NebulaFirstEcWebsiteModule();
+            startupModule.Initailize();
         }
     }
 }

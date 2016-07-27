@@ -14,18 +14,16 @@ namespace Nebula.FirstEC.Data
     public class NebulaFirstEcDataModule : AppModule
     {
         private IConventionalDependencyRegister _dependencyRegister;
-        private IUnityContainer _container;
 
         public NebulaFirstEcDataModule()
         {
             _dependencyRegister = new DataConventionalDependencyRegister();
-            //_container = AppConfiguration.Container;
+
         }
 
         public override void Initailize()
         {
-            _dependencyRegister.Register(_container, Assembly.GetExecutingAssembly());
-            
+            _dependencyRegister.Register(IoCManager.Container, Assembly.GetExecutingAssembly());
             base.Initailize();
         }
     }
