@@ -5,8 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Nebula.Common;
+using Nebula.Domain.Ioc;
 using Nebula.FirstEC.Domain.QueryEntries;
-using Nebula.Utilities.Ioc;
 
 namespace Nebula.FirstEC.Domain.Configuration
 {
@@ -19,8 +19,12 @@ namespace Nebula.FirstEC.Domain.Configuration
             var interfaceImpls = new List<InterfaceImplPair>();
             if (impls.Count == 0)
                 return interfaceImpls;
-            impls.ForEach(t => t.GetInterfaces().Any(i => i.IsGenericType && in));
-            throw new NotImplementedException();
+            impls.ForEach(t =>
+            {
+                var @interface = t.GetInterfaces().SingleOrDefault(i => i.IsGenericType && typeof(IQueryEntry).IsAssignableFrom(i));
+                interfaceImpls.Add(new InterfaceImplPair(){ Interface = @interface, Impl = t});
+            });
+            return interfaceImpls;
         }
     }
 }

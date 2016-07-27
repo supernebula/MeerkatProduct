@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Reflection;
+using Nebula.Domain.Modules;
 using Nebula.FirstEC.Data;
 using Nebula.FirstEC.Domain;
-using Nebula.Utilities;
-using Nebula.Utilities.Modules;
 
 namespace Nebula.FirstEC.Website
 {

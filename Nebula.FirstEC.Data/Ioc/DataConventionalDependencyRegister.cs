@@ -4,8 +4,8 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Practices.Unity;
 using Nebula.Common;
+using Nebula.Domain.Ioc;
 using Nebula.FirstEC.Domain.QueryEntries;
-using Nebula.Utilities.Ioc;
 
 namespace Nebula.FirstEC.Data.Ioc
 {

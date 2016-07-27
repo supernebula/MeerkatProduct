@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Nebula.FirstEC.Data.Ioc;
 using Nebula.Utilities;
-using Nebula.Utilities.Ioc;
+using Nebula.Domain.Ioc;
+using Nebula.Domain.Modules;
 
 namespace Nebula.FirstEC.Data
 {
     public class NebulaFirstEcDataModule : AppModule
     {
-        private IConventionalDependencyRegister _dependencyRegister;
+        private readonly IConventionalDependencyRegister _dependencyRegister;
 
         public NebulaFirstEcDataModule()
         {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Utilities.Modules
+namespace Nebula.Domain.Modules
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class DependOnAttribute : Attribute

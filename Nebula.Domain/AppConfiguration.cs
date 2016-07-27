@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Utilities.Ioc;
+using Nebula.Domain.Ioc;
 
 namespace Nebula.Domain
 {
