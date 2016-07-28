@@ -58,6 +58,13 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Configuration\DomainConventionalDependencyRegister.cs" />
+    <Compile Include="Models\AggregateRoots\Screening.cs" />
+    <Compile Include="Models\Entitys\Actor.cs" />
+    <Compile Include="Models\AggregateRoots\ScreeningRoom.cs" />
+    <Compile Include="Models\AggregateRoots\Movie.cs" />
+    <Compile Include="Models\Entitys\Seat.cs" />
+    <Compile Include="Models\Values\SeatType.cs" />
+    <Compile Include="Models\Values\SpaceDimensionType.cs" />
     <Compile Include="NebulaCinemaDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +73,6 @@
     <Folder Include="Commands\" />
     <Folder Include="EventHandlers\" />
     <Folder Include="Events\" />
-    <Folder Include="Models\" />
     <Folder Include="QueryEntries\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
