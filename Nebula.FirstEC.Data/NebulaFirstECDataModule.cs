@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
+﻿using System.Reflection;
 using Nebula.FirstEC.Data.Ioc;
-using Nebula.Utilities;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
+using Nebula.FirstEC.Domain;
 
 namespace Nebula.FirstEC.Data
 {
+    [DependOn(typeof(NebulaFirstEcDomainModule))]
     public class NebulaFirstEcDataModule : AppModule
     {
-        private readonly IConventionalDependencyRegister _dependencyRegister;
+        private readonly IConventionalDependencyRegister _dataDependencyRegister;
 
         public NebulaFirstEcDataModule()
         {
-            _dependencyRegister = new DataConventionalDependencyRegister();
+            _dataDependencyRegister = new DataConventionalDependencyRegister();
 
         }
 
         public override void Initailize()
         {
-            _dependencyRegister.Register(IoCManager.Container, Assembly.GetExecutingAssembly());
+            _dataDependencyRegister.Register(IoCManager.Container, Assembly.GetExecutingAssembly());
             base.Initailize();
         }
     }

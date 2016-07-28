@@ -6,6 +6,7 @@ using Microsoft.Practices.Unity;
 using Nebula.Common;
 using Nebula.Domain.Ioc;
 using Nebula.FirstEC.Domain.QueryEntries;
+using Nebula.FirstEC.Domain.Repositories;
 
 namespace Nebula.FirstEC.Data.Ioc
 {
@@ -13,18 +14,41 @@ namespace Nebula.FirstEC.Data.Ioc
     {
         public void Register(IUnityContainer container, Assembly assembly)
         {
-            Func<Type, bool> filter = (type) => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(IQueryEntry).IsAssignableFrom(type);
+            var queryInterfaceImpls = FindQueryEntry(assembly);
+            queryInterfaceImpls.ForEach(p => container.RegisterType(p.Interface, p.Impl, new PerResolveLifetimeManager()));
+            var repositoryInterfaceImpls = FindRepository(assembly);
+            repositoryInterfaceImpls.ForEach(p => container.RegisterType(p.Interface, p.Impl, new PerResolveLifetimeManager()));
+        }
+
+
+        private List<InterfaceImplPair> FindQueryEntry(Assembly assembly)
+        {
+            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(IQueryEntry).IsAssignableFrom(type);
             var impls = assembly.GetTypes().Where(filter).ToList();
             var interfaceImpls = new List<InterfaceImplPair>();
             if (impls.Count == 0)
-                return;
+                return interfaceImpls;
             impls.ForEach(t =>
             {
-                var interfaceType = t.GetInterfaces().FirstOrDefault(i => i.IsGenericType && typeof(IQueryEntry).IsAssignableFrom(i));
-                if(interfaceType != null)
-                    interfaceImpls.Add(new InterfaceImplPair() { Interface = interfaceType, Impl = t});
+                var @interface = t.GetInterfaces().SingleOrDefault(i => i.IsGenericType && typeof(IQueryEntry).IsAssignableFrom(i));
+                interfaceImpls.Add(new InterfaceImplPair() { Interface = @interface, Impl = t });
             });
-            interfaceImpls.ForEach(p => container.RegisterType(p.Interface, p.Impl, new PerResolveLifetimeManager()));
+            return interfaceImpls;
+        }
+
+        private List<InterfaceImplPair> FindRepository(Assembly assembly)
+        {
+            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(IRepository<>).IsAssignableFrom(type);
+            var impls = assembly.GetTypes().Where(filter).ToList();
+            var interfaceImpls = new List<InterfaceImplPair>();
+            if (impls.Count == 0)
+                return interfaceImpls;
+            impls.ForEach(t =>
+            {
+                var @interface = t.GetInterfaces().SingleOrDefault(i => i.IsGenericType && typeof(IRepository<>).IsAssignableFrom(i));
+                interfaceImpls.Add(new InterfaceImplPair() { Interface = @interface, Impl = t });
+            });
+            return interfaceImpls;
         }
     }
 }

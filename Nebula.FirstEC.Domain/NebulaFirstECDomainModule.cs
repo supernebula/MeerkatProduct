@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Reflection;
+using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
+using Nebula.FirstEC.Domain.Configuration;
 
 
 namespace Nebula.FirstEC.Domain
 {
     public class NebulaFirstEcDomainModule : AppModule
     {
-        private readonly IConventionalDependencyRegister _dependencyRegister;
+        private readonly IConventionalDependencyRegister _domainDependencyRegister;
 
-        public NebulaFirstEcDataModule()
+        public NebulaFirstEcDomainModule()
         {
-            _dependencyRegister = new DataConventionalDependencyRegister();
+            _domainDependencyRegister = new DomainConventionalDependencyRegister();
 
         }
 
         public override void Initailize()
         {
-            _dependencyRegister.Register(IoCManager.Container, Assembly.GetExecutingAssembly());
+            _domainDependencyRegister.Register(IoCManager.Container, Assembly.GetExecutingAssembly());
             base.Initailize();
         }
     }
