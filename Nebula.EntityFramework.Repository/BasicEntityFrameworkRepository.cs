@@ -41,15 +41,12 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        [Dependency]
-        public IEfDbContextSingleFactory DbContextSingleFactory { get; set; }
+        //[Dependency]
+        //public IEfDbContextSingleFactory DbContextSingleFactory { get; set; }
 
         private DbContext Context2
         {
-            get
-            {
-                return _context = _context ?? DbContextSingleFactory.Current<TDbContext>();
-            }
+            get { return _context = _context ?? DbContextFactory.Create(); }
         }
 
 

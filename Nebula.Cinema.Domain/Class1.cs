@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common
+namespace Nebula.Cinema.Domain
 {
-    public interface IDbContextSingleFactory
+    public class Class1
     {
-        //TDbContext Instance<TDbContext> { get; }
     }
 }

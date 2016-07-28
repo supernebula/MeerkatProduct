@@ -38,6 +38,12 @@ namespace Nebula.Domain.Configuration
             commandBusDependencyRegister.Register(typeof(ICommandBus), typeof(T));
         }
 
+        //public void RegisterCommandBus<T>() where T : ICommandBus
+        //{
+        //    var commandBusDependencyRegister = new CommandBusDependencyRegister(UnityContainer);
+        //    commandBusDependencyRegister.Register(typeof(ICommandBus), typeof(T));
+        //}
+
         public ICommandBus ResolveCommandBus
         {
             get
@@ -60,11 +66,7 @@ namespace Nebula.Domain.Configuration
             }
         }
 
-        public void RegisterCommandBus<T>() where T : ICommandBus
-        {
-            var commandBusDependencyRegister = new CommandBusDependencyRegister(UnityContainer);
-            commandBusDependencyRegister.Register(typeof(ICommandBus), typeof(T));
-        }
+
 
         public void RegisterCommandBus(params string[] assemblyNames)
         {

@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Website", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Domain", "Nebula.Domain\Nebula.Domain.csproj", "{A4BA2B31-88D4-443E-8540-1751494D8577}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Domain", "Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj", "{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -194,6 +196,10 @@ Global
 		{A4BA2B31-88D4-443E-8540-1751494D8577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4BA2B31-88D4-443E-8540-1751494D8577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4BA2B31-88D4-443E-8540-1751494D8577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -225,5 +231,6 @@ Global
 		{3A834C79-05FE-4C07-A321-B6057C28F075} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{47FF7F27-1A70-4437-93D6-D53793C16DF4} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{A4BA2B31-88D4-443E-8540-1751494D8577} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
+		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 	EndGlobalSection
 EndGlobal
