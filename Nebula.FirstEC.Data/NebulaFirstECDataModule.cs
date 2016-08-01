@@ -14,7 +14,6 @@ namespace Nebula.FirstEC.Data
         public NebulaFirstEcDataModule()
         {
             _dataDependencyRegister = new DataConventionalDependencyRegister();
-
         }
 
         public override void Initailize()

@@ -13,7 +13,7 @@ namespace Nebula.FirstEC.WebSite
     
     public class MvcApplication : System.Web.HttpApplication
     {
-        public NebulaFirstEcWebsiteModule webModule;
+        
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -22,8 +22,6 @@ namespace Nebula.FirstEC.WebSite
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            webModule = new NebulaFirstEcWebsiteModule();
-            webModule.Initailize();
         }
     }
 }

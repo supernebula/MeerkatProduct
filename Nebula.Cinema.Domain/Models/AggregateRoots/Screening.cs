@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nebula.Cinema.Domain.Models.Values;
 
 namespace Nebula.Cinema.Domain.Models.AggregateRoots
 {
@@ -14,7 +15,6 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
 
         public DateTime EndTime { get; set; }
 
-
         public Guid ScreeningRoomId { get; set; }
 
         public Guid MovieId { get; set; }
@@ -22,5 +22,8 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         public double Price { get; set; }
 
         public double SellPrice { get; set; }
+
+
+        public SpaceDimensionType SpaceType { get; set; }
     }
 }

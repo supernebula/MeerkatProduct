@@ -10,10 +10,16 @@ namespace Nebula.Domain.Modules
     /// </summary>
     public abstract class AppModule
     {
+
         /// <summary>
         /// 管理依赖注入
         /// </summary>
         public IIoCManager IoCManager;
+
+        protected AppModule()
+        {
+            IoCManager = AppConfiguration.Current.IoCManager;
+        }
 
         public virtual void Initailize()
         {

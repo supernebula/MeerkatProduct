@@ -11,6 +11,12 @@ namespace Nebula.FirstEC.Website
     {
         public override void Initailize()
         {
+            InitDependModule();
+            base.Initailize();
+        }
+
+        private void InitDependModule()
+        {
             var moduleTypes = this.FindDependModuleTypes(typeof(NebulaFirstEcWebsiteModule));
             foreach (var type in moduleTypes)
             {
@@ -18,7 +24,6 @@ namespace Nebula.FirstEC.Website
                 var moduleObj = (AppModule)constructorInfo.Invoke(new object[] { });
                 moduleObj.Initailize();
             }
-            base.Initailize();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Nebula.Cinema.Domain.Configuration;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
 

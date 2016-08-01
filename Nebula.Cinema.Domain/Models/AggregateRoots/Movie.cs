@@ -33,9 +33,12 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
 
         public List<string> Tags { get; set; }
 
+        /// <summary>
+        /// 评分
+        /// </summary>
         public float Ratings { get; set; }
 
-
+        public string Language { get; set; }
 
 
 

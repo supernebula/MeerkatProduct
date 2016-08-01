@@ -17,5 +17,7 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         public SpaceDimensionType SpaceDimension { get; set; }
 
         public List<Seat> Seats { get; set; }
+
+        public SpaceDimensionType SpaceType { get; set; }
     }
 }
