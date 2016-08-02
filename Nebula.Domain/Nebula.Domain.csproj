@@ -91,7 +91,7 @@
     <Compile Include="AppConfiguration.cs" />
     <Compile Include="Modules\AppModule.cs" />
     <Compile Include="Commands\Command.cs" />
-    <Compile Include="Configuration\AppConfiguration.cs" />
+    <Compile Include="Configuration\~AppConfiguration.cs" />
     <Compile Include="Configuration\CommandBusDependencyRegister.cs" />
     <Compile Include="Configuration\CommandHandlerDependencyRegister.cs" />
     <Compile Include="Configuration\DependencyConfiguration.cs" />

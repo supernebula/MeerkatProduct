@@ -6,6 +6,7 @@ using Microsoft.Practices.Unity;
 using Nebula.Common;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Messaging;
+using Nebula.FirstEC.Domain.CommandHandlers;
 
 namespace Nebula.FirstEC.Domain.Modules
 {
@@ -22,14 +23,15 @@ namespace Nebula.FirstEC.Domain.Modules
 
         private List<InterfaceImplPair> FindCommandHandler(Assembly assembly)
         {
-            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(ICommandHandler<>).IsAssignableFrom(type);
-            var impls = assembly.GetTypes().Where(filter).ToList();
+            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICommandHandler<>));
+            var allTypes = assembly.GetTypes();
+            var impls = allTypes.Where(filter).ToList();
             var interfaceImpls = new List<InterfaceImplPair>();
             if (impls.Count == 0)
                 return interfaceImpls;
             impls.ForEach(t =>
             {
-                var @interfaces = t.GetInterfaces().Where(i => i.IsGenericType && typeof(ICommandHandler<>).IsAssignableFrom(i)).ToList();
+                var @interfaces = t.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICommandHandler<>)).ToList();
                 interfaceImpls.AddRange(@interfaces.Select(@interface => new InterfaceImplPair() {Interface = @interface, Impl = t}));
             });
             return interfaceImpls;
@@ -37,14 +39,14 @@ namespace Nebula.FirstEC.Domain.Modules
 
         private List<InterfaceImplPair> FindEventHandler(Assembly assembly)
         {
-            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(IEventHandler<>).IsAssignableFrom(type);
+            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEventHandler<>));
             var impls = assembly.GetTypes().Where(filter).ToList();
             var interfaceImpls = new List<InterfaceImplPair>();
             if (impls.Count == 0)
                 return interfaceImpls;
             impls.ForEach(t =>
             {
-                var @interfaces = t.GetInterfaces().Where(i => i.IsGenericType && typeof(IEventHandler<>).IsAssignableFrom(i)).ToList();
+                var @interfaces = t.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEventHandler<>)).ToList();
                 interfaceImpls.AddRange(@interfaces.Select(@interface => new InterfaceImplPair() { Interface = @interface, Impl = t }));
             });
             return interfaceImpls;
