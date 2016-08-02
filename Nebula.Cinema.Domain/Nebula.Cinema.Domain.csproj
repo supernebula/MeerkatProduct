@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandlers\MovieCommandHandler.cs" />
+    <Compile Include="Commands\MovieCreateCommand.cs" />
     <Compile Include="Modules\DomainConventionalDependencyRegister.cs" />
     <Compile Include="Models\AggregateRoots\Screening.cs" />
     <Compile Include="Models\Entitys\Actor.cs" />
@@ -68,8 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
-    <Folder Include="Commands\" />
     <Folder Include="EventHandlers\" />
     <Folder Include="Events\" />
     <Folder Include="QueryEntries\" />

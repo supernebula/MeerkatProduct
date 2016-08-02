@@ -6,7 +6,7 @@ using Nebula.FirstEC.Domain;
 
 namespace Nebula.FirstEC.Website
 {
-    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule))]
+    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule), typeof(NebulaFirstEcDomainModule))]
     public class NebulaFirstEcWebsiteModule : AppModule
     {
         public override void Initailize()
