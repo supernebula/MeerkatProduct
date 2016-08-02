@@ -56,8 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Configuration\DomainConventionalDependencyRegister.cs" />
+    <Compile Include="Modules\DomainConventionalDependencyRegister.cs" />
     <Compile Include="Models\AggregateRoots\Screening.cs" />
     <Compile Include="Models\Entitys\Actor.cs" />
     <Compile Include="Models\AggregateRoots\ScreeningRoom.cs" />

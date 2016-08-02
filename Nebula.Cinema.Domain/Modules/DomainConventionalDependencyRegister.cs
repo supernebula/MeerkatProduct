@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Nebula.Common;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Messaging;
 
-namespace Nebula.FirstEC.Domain.Configuration
+namespace Nebula.Cinema.Domain.Modules
 {
     public class DomainConventionalDependencyRegister : IConventionalDependencyRegister
     {
@@ -30,7 +32,7 @@ namespace Nebula.FirstEC.Domain.Configuration
             impls.ForEach(t =>
             {
                 var @interfaces = t.GetInterfaces().Where(i => i.IsGenericType && typeof(ICommandHandler<>).IsAssignableFrom(i)).ToList();
-                interfaceImpls.AddRange(@interfaces.Select(@interface => new InterfaceImplPair() {Interface = @interface, Impl = t}));
+                interfaceImpls.AddRange(@interfaces.Select(@interface => new InterfaceImplPair() { Interface = @interface, Impl = t }));
             });
             return interfaceImpls;
         }
@@ -50,4 +52,6 @@ namespace Nebula.FirstEC.Domain.Configuration
             return interfaceImpls;
         }
     }
+
+
 }

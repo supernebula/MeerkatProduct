@@ -2,7 +2,7 @@
 using System.Reflection;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
-using Nebula.FirstEC.Domain.Configuration;
+using Nebula.FirstEC.Domain.Modules;
 
 
 namespace Nebula.FirstEC.Domain

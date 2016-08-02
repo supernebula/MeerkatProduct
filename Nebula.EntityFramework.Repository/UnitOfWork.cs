@@ -22,9 +22,11 @@ namespace Nebula.EntityFramework.Repository
             _dbContextProxy = new DbContextProxy();
         }
 
-       
+        public IDbContextFactory<TDbContext> DbContextFactory;
 
-        public void BeginTransaction(IsolationLevel isolationLevel)
+
+
+        public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
         {
             _dbContextProxy.WaitUntilDbContextCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
         }

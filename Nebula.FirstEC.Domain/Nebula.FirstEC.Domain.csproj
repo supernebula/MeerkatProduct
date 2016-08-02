@@ -58,9 +58,9 @@
   <ItemGroup>
     <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
     <Compile Include="Commands\ProductCreateCommand.cs" />
-    <Compile Include="Configuration\DomainConventionalDependencyRegister.cs" />
-    <Compile Include="Configuration\DomainIocImplProvider.cs" />
-    <Compile Include="Configuration\DomainIocRegister.cs" />
+    <Compile Include="Modules\DomainConventionalDependencyRegister.cs" />
+    <Compile Include="Modules\~DomainIocImplProvider.cs" />
+    <Compile Include="Modules\~DomainIocRegister.cs" />
     <Compile Include="EventHandlers\ProductCreateEventHandler.cs" />
     <Compile Include="Events\ProductCreateEvent.cs" />
     <Compile Include="Models\AggregateRoots\Tag.cs" />
