@@ -73,10 +73,6 @@
     <Compile Include="Cache\ExtendMemoryCache.cs" />
     <Compile Include="Collection\BloomFilter.cs" />
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
-    <Compile Include="Ioc~\DefaultIoCManager~.cs" />
-    <Compile Include="Ioc~\IConventionalDependencyRegister~.cs" />
-    <Compile Include="Ioc~\IIoCManager~.cs" />
-    <Compile Include="Ioc~\IocImplProvider~.cs" />
     <Compile Include="Modules\DependModuleAttribute~.cs" />
     <Compile Include="Expressions\DefaultConstantValidtor.cs" />
     <Compile Include="Expressions\ExpressionConstantValidator.cs" />
@@ -109,6 +105,7 @@
     <Compile Include="Tests\TimeMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Ioc~\" />
     <Folder Include="IO\" />
     <Folder Include="Security\" />
   </ItemGroup>
