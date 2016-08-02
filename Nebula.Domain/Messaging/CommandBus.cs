@@ -1,20 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nebula.Common.Cqrs;
+using Nebula.Common.Repository;
+using Nebula.Domain.Commands;
 
-namespace Nebula.FirstEC.Domain.Cqrs
+namespace Nebula.Domain.Messaging
 {
     public class CommandBus : ICommandBus
     {
         public ICommandHandlerFactory CommandHandlerFactory { get; set; }
-        public void Send<T>(T command) where T : Command, new()
+
+        public IUnitOfWork UnitOfWork { get; set; }
+
+        public CommandBus()
+        {
+        }
+
+        public CommandBus(IUnitOfWork unitOfWork, ICommandHandlerFactory commandHandlerFactory)
+        {
+            UnitOfWork = unitOfWork;
+            CommandHandlerFactory = commandHandlerFactory;
+        }
+
+        public void Send<T>(T command) where T : Command
         {
             var commandHandler = CommandHandlerFactory.GetHandler<T>();
             try
             {
+
                 //translation.open()
                 commandHandler.Execute(command);
             }

@@ -19,7 +19,7 @@ namespace Nebula.EntityFramework.Repository
     {
 
         protected BasicEntityFrameworkRepository()
-        {
+        { 
         }
 
         protected BasicEntityFrameworkRepository(IDbContextFactory<TDbContext> dbContextFactory)
@@ -41,6 +41,14 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
+        //[Dependency]
+        //public IEfDbContextSingleFactory DbContextSingleFactory { get; set; }
+
+        private DbContext Context2
+        {
+            get { return _context = _context ?? DbContextFactory.Create(); }
+        }
+
 
         public DbSet<T> DbSet => Context.Set<T>();
 
@@ -50,6 +58,12 @@ namespace Nebula.EntityFramework.Repository
         {
             Context.SaveChanges();
         }
+
+        public void TestProxy()
+        {
+            var mayBeProxy = DbSet.Create();
+        }
+
 
         public void Insert(T item)
         {

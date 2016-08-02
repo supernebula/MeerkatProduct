@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.FirstEC.WebSite\Nebula.FirstEC.WebSite.csproj">
-      <Project>{e36adb8c-32c2-42d8-bb72-81cab0c54ccc}</Project>
+      <Project>{5d052a4b-c284-4107-96a1-d168c71fa160}</Project>
       <Name>Nebula.FirstEC.WebSite</Name>
     </ProjectReference>
   </ItemGroup>

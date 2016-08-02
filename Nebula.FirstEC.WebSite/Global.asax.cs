@@ -6,12 +6,14 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using log4net;
 using log4net.Config;
+using Nebula.FirstEC.Website;
 
 namespace Nebula.FirstEC.WebSite
 {
     
     public class MvcApplication : System.Web.HttpApplication
     {
+        
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -19,6 +21,7 @@ namespace Nebula.FirstEC.WebSite
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
     }
 }

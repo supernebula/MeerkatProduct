@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.Cinema.Domain.Models.Values
 {
-    public interface ICommandHandler<T> where T : Command, new()
+    public enum SeatType
     {
-        void Execute(T command);
+        NormalSeat = 0,
+
+        LoveSeat = 1
     }
 }

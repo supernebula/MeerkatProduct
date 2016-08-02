@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.FirstEC.Domain.Reponsitories
 {
-    public interface ICommandBus
+    public interface IUserReponsitory
     {
-        void Send<T>(T command) where T : Command, new();
     }
 }

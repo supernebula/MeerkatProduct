@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.FirstEC.Domain.QueryEntries
 {
-    public interface IShoppingCartQuery
+    public interface IShoppingCartQuery : IQueryEntry
     {
     }
 }

@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.FirstEC.WebSite</RootNamespace>
-    <AssemblyName>Nebula.FirstEC.WebSite</AssemblyName>
+    <RootNamespace>Nebula.FirstEC.Website</RootNamespace>
+    <AssemblyName>Nebula.FirstEC.Website</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -162,6 +162,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ModuleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\NebulaFirstEcWebsiteModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +197,14 @@
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
+      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
+      <Name>Nebula.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj">
       <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
       <Name>Nebula.FirstEC.Data</Name>

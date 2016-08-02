@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.FirstEC.Domain.Reponsitories
 {
-    public interface IEventBus
+    public interface ITagReponsitory
     {
-        void Publish<T>(T @event) where T : Event;
     }
 }

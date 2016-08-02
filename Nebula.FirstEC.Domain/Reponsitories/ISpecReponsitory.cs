@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.FirstEC.Domain.Reponsitories
 {
-    public class Event
+    public interface ISpecReponsitory
     {
     }
 }

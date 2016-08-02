@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Common.Cqrs
+namespace Nebula.Common
 {
-    public class Command
+    public interface IDbContextSingleFactory
     {
-        public Command()
-        { }
+        //TDbContext Instance<TDbContext> { get; }
     }
 }

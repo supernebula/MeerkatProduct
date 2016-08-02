@@ -40,14 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cqrs\Command.cs" />
-    <Compile Include="Cqrs\Event.cs" />
-    <Compile Include="Cqrs\ICommandBus.cs" />
-    <Compile Include="Cqrs\ICommandHandler.cs" />
-    <Compile Include="Cqrs\ICommandHandlerFactory.cs" />
-    <Compile Include="Cqrs\IEventBus.cs" />
-    <Compile Include="Cqrs\IEventHandler.cs" />
     <Compile Include="GenderType.cs" />
+    <Compile Include="IDbContextSingleFactory.cs" />
+    <Compile Include="InterfaceClassPair.cs" />
     <Compile Include="IPaged.cs" />
     <Compile Include="IPrimaryKey.cs" />
     <Compile Include="ISoftDelete.cs" />
