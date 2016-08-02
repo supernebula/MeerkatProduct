@@ -3,10 +3,11 @@ using System.Reflection;
 using Nebula.Domain.Modules;
 using Nebula.FirstEC.Data;
 using Nebula.FirstEC.Domain;
+using Nebula.Cinema.Domain;
 
 namespace Nebula.FirstEC.Website
 {
-    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule), typeof(NebulaFirstEcDomainModule))]
+    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule), typeof(NebulaCinemaDomainModule))]
     public class NebulaFirstEcWebsiteModule : AppModule
     {
         public override void Initailize()

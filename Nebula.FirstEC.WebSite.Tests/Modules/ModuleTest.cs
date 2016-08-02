@@ -22,9 +22,10 @@ namespace Nebula.First.WebSite.Tests.Modules
             var webModule = new NebulaFirstEcWebsiteModule();
             webModule.Initailize();
             var registrations2 = AppConfiguration.Current.Container.Registrations.Count();
-            Trace.WriteLine($"注册前：{0}，注册后{1}");
+            Trace.WriteLine($"注册前：{registrations1}，注册后{registrations2}");
 
             var handler = AppConfiguration.Current.Container.Resolve<ICommandHandler<MovieCreateCommand>>();
+            Trace.WriteLine(handler.GetType().FullName);
         }
     }
 }

@@ -197,6 +197,10 @@
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">
+      <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
+      <Name>Nebula.Cinema.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
       <Name>Nebula.Common</Name>
