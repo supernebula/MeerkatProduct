@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
     <Compile Include="Commands\ProductCreateCommand.cs" />
     <Compile Include="Cqrs\CommandBus.cs" />
