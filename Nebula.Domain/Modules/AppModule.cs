@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Nebula.Domain.Ioc;
+using System.Reflection;
 
 namespace Nebula.Domain.Modules
 {
@@ -47,6 +48,17 @@ namespace Nebula.Domain.Modules
                 list.AddRange(attr.DependedModuleTypes);
             }
             return list;
+        }
+
+        protected void InitDependModule<T>() where T :  AppModule, new()
+        {
+            var moduleTypes = this.FindDependModuleTypes(typeof(T));
+            foreach (var type in moduleTypes)
+            {
+                var constructorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public, null, CallingConventions.HasThis, new Type[] { }, null);
+                var moduleObj = (AppModule)constructorInfo.Invoke(new object[] { });
+                moduleObj.Initailize();
+            }
         }
     }
 }

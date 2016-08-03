@@ -12,19 +12,19 @@ namespace Nebula.FirstEC.Website
     {
         public override void Initailize()
         {
-            InitDependModule();
+            InitDependModule<NebulaFirstEcWebsiteModule>();
             base.Initailize();
         }
 
-        private void InitDependModule()
-        {
-            var moduleTypes = this.FindDependModuleTypes(typeof(NebulaFirstEcWebsiteModule));
-            foreach (var type in moduleTypes)
-            {
-                var constructorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public, null, CallingConventions.HasThis, new Type[] { }, null);
-                var moduleObj = (AppModule)constructorInfo.Invoke(new object[] { });
-                moduleObj.Initailize();
-            }
-        }
+        //private void InitDependModule()
+        //{
+        //    var moduleTypes = this.FindDependModuleTypes(typeof(NebulaFirstEcWebsiteModule));
+        //    foreach (var type in moduleTypes)
+        //    {
+        //        var constructorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public, null, CallingConventions.HasThis, new Type[] { }, null);
+        //        var moduleObj = (AppModule)constructorInfo.Invoke(new object[] { });
+        //        moduleObj.Initailize();
+        //    }
+        //}
     }
 }
