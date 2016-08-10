@@ -58,6 +58,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,10 +71,12 @@
     <Compile Include="EFDbContextFactory.cs" />
     <Compile Include="EfDbContextSingleFactory.cs" />
     <Compile Include="DbContextProxy.cs" />
+    <Compile Include="NamedDbContext.cs" />
     <Compile Include="OriginalEntityFrameworkRepository.cs" />
     <Compile Include="Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

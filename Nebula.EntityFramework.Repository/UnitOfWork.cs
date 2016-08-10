@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -7,7 +8,7 @@ using Nebula.Common.Repository;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public class UnitOfWork<TDbContext> : IUnitOfWork where TDbContext : DbContext
+    public class UnitOfWork<TDbContext> : IUnitOfWork where TDbContext : NamedDbContext
     {
         
         private DbContextTransaction _transaction;
@@ -17,19 +18,42 @@ namespace Nebula.EntityFramework.Repository
 
         private readonly DbContextProxy _dbContextProxy;
 
+        private Dictionary<string, TDbContext> ActiveDbContexts { get; set; }
+
+        private IUnitOfWorkOptions _unitOfWorkOptions;
+
+        private delegate void OnDbContentCreated(TDbContext dbContext);
+        private event OnDbContentCreated DbContextCreatedEvent;
+
         public UnitOfWork()
         {
             _dbContextProxy = new DbContextProxy();
+            ActiveDbContexts = new Dictionary<string, TDbContext>();
+            DbContextCreatedEvent +=
+                context => ActiveDbContexts.Add(context.GetType().FullName + "#" + context.Name, context);
         }
+
+
 
         public IDbContextFactory<TDbContext> DbContextFactory;
 
-
-
-        public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        public void BeginTransaction(IUnitOfWorkOptions unitOfWorkOptions)
         {
-            _dbContextProxy.WaitUntilDbContextCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
+            _unitOfWorkOptions = unitOfWorkOptions;
+            if(_unitOfWorkOptions.IsolationLevel != null)
+                DbContextCreatedEvent += context => context.Database.BeginTransaction(_unitOfWorkOptions.IsolationLevel.Value);
+
+            _dbContextProxy.WaitUntilDbContextCreated(context =>
+            {
+                if (_unitOfWorkOptions.IsolationLevel != null)
+                    _transaction = context.Database.BeginTransaction(_unitOfWorkOptions.IsolationLevel.Value);
+            });
         }
+
+        //public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        //{
+        //    _dbContextProxy.WaitUntilDbContextCreated(context => _transaction = context.Database.BeginTransaction(isolationLevel));
+        //}
 
 
         public void Commit()
