@@ -7,5 +7,6 @@ namespace Nebula.EntityFramework.Repository
         Dictionary<string, NamedDbContext> ActiveDbContexts { get; }
 
         void AddDbContext(string name, NamedDbContext dbContext);
+        NamedDbContext GetDbContext(string name);
     }
 }

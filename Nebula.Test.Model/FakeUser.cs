@@ -1,5 +1,6 @@
 ﻿using System;
 using Nebula.Common;
+using Nebula.Utilities;
 
 namespace Nebula.Test.Model
 {
@@ -17,6 +18,25 @@ namespace Nebula.Test.Model
         public float PersonHeight { get; set; }
 
         public DateTime Birthday { get; set; }
+
+        public static FakeUser Fake()
+        {
+            return new FakeUser()
+            {
+                Id = Guid.NewGuid(),
+                Username = FakeUtility.CreateUsername(6, 12),
+                Password = FakeUtility.CreatePassword(6),
+                RealName = FakeUtility.CreatePersonName(GenderType.None),
+                Gender = (GenderType)FakeUtility.RandomInt(0, 2),
+                Mobile = FakeUtility.CreateMobile(),
+                Email = FakeUtility.CreateEmail(),
+                Address = "测试地址",
+                Points = FakeUtility.RandomInt(1, 200),
+                PersonHeight = FakeUtility.CreatePersonHeight(),
+                Birthday = FakeUtility.CreateBirthday(1980),
+                CreateTime = DateTime.Now
+            };
+        }
 
     }
 }

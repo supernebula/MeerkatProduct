@@ -16,6 +16,7 @@ namespace Nebula.EntityFramework.Repository.Test.Core
 
         public FakeEcDbContext() : base("name=fakeEcDbContext")
         {
+            Name = GetType().FullName + "#fakeEcDbContext";
             Configuration.LazyLoadingEnabled = false;
         }
 

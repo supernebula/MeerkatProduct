@@ -38,14 +38,15 @@ namespace Nebula.EntityFramework.Repository.Test
             unitOfWorkObj.BeginTransaction(new UnitOfWorkOptions());
             try
             {
-                orderRepo.Insert(new FakeOrder());
-                productRepo.Insert(new FakeProduct());
-                userRepo.Insert(new FakeUser());
+                //orderRepo.Insert(FakeOrder.Fake());
+                //productRepo.Insert(FakeProduct.Fake());
+                userRepo.Insert(FakeUser.Fake());
                 unitOfWorkObj.Commit();
             }
             catch (Exception ex)
             {
                 unitOfWorkObj.RollBack();
+                Assert.Fail("发生异常：" + ex.Message);
             }
             finally
             {

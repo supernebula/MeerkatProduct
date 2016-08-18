@@ -23,21 +23,26 @@ namespace Nebula.EntityFramework.Repository
             ActiveDbContexts = new Dictionary<string, NamedDbContext>();
             Transactions = new Dictionary<string, DbContextTransaction>();
         }
+        private delegate void OnDbContextAdded(NamedDbContext context);
+
+        private OnDbContextAdded DbContextAddedEvent;
 
         public virtual void BeginTransaction(IUnitOfWorkOptions unitOfWorkOptions)
         {
-            if (unitOfWorkOptions.IsolationLevel == null)
-                unitOfWorkOptions.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
-
-            UnitOfWorkOptions = unitOfWorkOptions;
-            if (UnitOfWorkOptions.IsolationLevel != null)
+            DbContextAddedEvent += context =>
             {
-                foreach (var context in ActiveDbContexts.Values)
+                if (unitOfWorkOptions.IsolationLevel == null)
+                    unitOfWorkOptions.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
+
+                UnitOfWorkOptions = unitOfWorkOptions;
+                if (UnitOfWorkOptions.IsolationLevel != null)
                 {
-                    var transaction = context.Database.BeginTransaction(UnitOfWorkOptions.IsolationLevel.Value);
-                    Transactions.Add(context.Name, transaction);
+                    var tran = context.Database.BeginTransaction(UnitOfWorkOptions.IsolationLevel.Value);
+                    Transactions.Add(context.Name, tran);
                 }
-            }
+            };
+
+
         }
 
         public virtual void Commit()
@@ -56,11 +61,7 @@ namespace Nebula.EntityFramework.Repository
             catch (Exception ex)
             {
                 //logger.Error(ex, "UnitOfWork Commit Error");
-                foreach (var tran in Transactions.Values)
-                {
-                    tran.Rollback();
-                }
-
+                throw ex;
             }
         }
 
@@ -77,7 +78,25 @@ namespace Nebula.EntityFramework.Repository
 
         public virtual void AddDbContext(string name, NamedDbContext dbContext)
         {
+            if (ActiveDbContexts.ContainsKey(name))
+                return;
+
             ActiveDbContexts.Add(name, dbContext);
+            DbContextAddedEvent(dbContext);
+        }
+
+        public virtual NamedDbContext GetDbContext(string name)
+        {
+            if (!ActiveDbContexts.ContainsKey(name))
+                return null;
+            foreach (var key in ActiveDbContexts.Keys)
+            {
+                if (key.StartsWith(name + "#"))
+                    return ActiveDbContexts[key];
+            }
+            NamedDbContext context;
+            ActiveDbContexts.TryGetValue(name, out context);
+            return context;
         }
     }
 }

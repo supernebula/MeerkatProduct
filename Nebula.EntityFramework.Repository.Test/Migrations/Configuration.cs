@@ -9,7 +9,8 @@ namespace Nebula.EntityFramework.Repository.Test.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Nebula.EntityFramework.Repository.Test.Core.FakeEcDbContext context)

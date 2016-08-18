@@ -3,8 +3,8 @@ namespace Nebula.Common
 {
     public enum GenderType
     {
-        None,
-        Male,
-        Female
+        None = 0,
+        Male = 1,
+        Female = 2
     }
 }

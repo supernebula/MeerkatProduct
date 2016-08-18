@@ -16,8 +16,14 @@ namespace Nebula.EntityFramework.Repository
 
         public TDbContext Create<TDbContext>() where TDbContext : NamedDbContext
         {
-            var context = Activator.CreateInstance<TDbContext>();
-            UnitOfWork.AddDbContext(context.Name, context);
+            var context = (TDbContext)UnitOfWork.GetDbContext(typeof(TDbContext).FullName);
+            if (context == null)
+            {
+                context = Activator.CreateInstance<TDbContext>();
+                UnitOfWork.AddDbContext(context.Name, context);
+            }
+            
+
             return context;
         }
 

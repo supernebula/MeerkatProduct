@@ -1,4 +1,6 @@
 ﻿using System;
+using Nebula.Utilities;
+using Nebula.Common;
 
 namespace Nebula.Test.Model
 {
@@ -15,5 +17,19 @@ namespace Nebula.Test.Model
         public int Number { get; set; }
 
         public int Remark { get; set; }
+
+        public static FakeOrder Fake()
+        {
+            return new FakeOrder() {
+                Id = Guid.NewGuid(),
+                UserId = Guid.NewGuid(),
+                ProductId = Guid.NewGuid(),
+                Recipient = FakeUtility.CreatePersonName(GenderType.None),
+                Amount = FakeUtility.RandomDouble(10, 1000),
+                Address = "测试地址",
+                Number = FakeUtility.RandomInt(1, 10),
+                CreateTime = DateTime.Now
+            };
+        }
     }
 }
