@@ -17,12 +17,12 @@ namespace Nebula.EntityFramework.Repository.Test
         public IUnitOfWork UnitOfWorkObj;
 
         [ThreadStatic]
-        private static IDbContextFactory<FakeEcDbContext> _dbContextFactory;
+        private static IDbContextFactory _dbContextFactory;
 
         [TestInitialize]
         public void Init()
         {
-            _dbContextFactory = new FakeEfDbContextFactory<FakeEcDbContext>();
+            _dbContextFactory = new DefualtDbContextFactory();
         }
 
         [TestMethod,Description("EntityFramework工作单元依赖于事务，关键在于：针对数据库的多个更新统一提交，使用同一个DbContext")]
@@ -30,7 +30,7 @@ namespace Nebula.EntityFramework.Repository.Test
         {
             var unitOfWorkObj = new UnitOfWork();//{ DbContextFactory = _dbContextFactory };
 
-            var unitOfWorkDbContextFactory = new UnitOfWorkDbContextFactory() { UnitOfWork = unitOfWorkObj };
+            var unitOfWorkDbContextFactory = new DefualtDbContextFactory() { UnitOfWork = unitOfWorkObj };
             var orderRepo = new FakeOrderRepository()  {  DbContextFactory = unitOfWorkDbContextFactory };
             var productRepo = new FakeProductRepository() { DbContextFactory = unitOfWorkDbContextFactory };
             var userRepo = new FakeUserRepository() { DbContextFactory = unitOfWorkDbContextFactory }; 

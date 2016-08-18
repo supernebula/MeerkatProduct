@@ -13,7 +13,7 @@ namespace Nebula.EntityFramework.Repository.Test.Repositories
         {
         }
 
-        public FakeUserRepository(IDbContextFactory<FakeEcDbContext> dbContextFactory) : base(dbContextFactory)
+        public FakeUserRepository(IDbContextFactory dbContextFactory) : base(dbContextFactory)
         { }
         
 

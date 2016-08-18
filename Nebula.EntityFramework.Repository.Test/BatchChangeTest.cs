@@ -17,12 +17,12 @@ namespace Nebula.EntityFramework.Repository.Test
     public class BatchChangeTest
     {
 
-        private EfDbContextFactory<FakeEcDbContext> _dbContextFactory;
+        private DefualtDbContextFactory _dbContextFactory;
 
         [TestInitialize()]
         public void MyTestInitialize()
         {
-            _dbContextFactory = new EfDbContextFactory<FakeEcDbContext>();
+            _dbContextFactory = new DefualtDbContextFactory();
         }
 
         public void MyTestCleanup()
@@ -35,7 +35,7 @@ namespace Nebula.EntityFramework.Repository.Test
         public void BatchInsertTest()
         {
             var total = 200;
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
@@ -57,7 +57,7 @@ namespace Nebula.EntityFramework.Repository.Test
         public void SqlBatchInsertTest()
         {
             var total = 200;
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
@@ -78,7 +78,7 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod]
         public void InsertOneTest()
         {
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
@@ -94,7 +94,7 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod]
         public void SqlInsertOneTest()
         {
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();

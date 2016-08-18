@@ -5,7 +5,7 @@ using Nebula.Common.Repository;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public class UnitOfWorkDbContextFactory : IDbContextFactory
+    public class DefualtDbContextFactory : IDbContextFactory
     {
         [Dependency]
         public IActiveUnitOfWork UnitOfWork

@@ -8,17 +8,17 @@ namespace Nebula.EntityFramework.Repository.Test
     [TestClass]
     public class BatchQueryTest
     {
-        private EfDbContextFactory<FakeEcDbContext> _dbContextFactory;
+        private DefualtDbContextFactory _dbContextFactory;
 
         [TestInitialize()]
         public void MyTestInitialize()
         {
-            _dbContextFactory = new EfDbContextFactory<FakeEcDbContext>();
+            _dbContextFactory = new DefualtDbContextFactory();
         }
         //[TestMethod]
         public void QueryLargeTest()
         {
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
@@ -32,7 +32,7 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod]
         public void SqlQueryLargeTest()
         {
-            var context = _dbContextFactory.Create();
+            var context = _dbContextFactory.Create<FakeEcDbContext>();
             var fakeUserRepo = new FakeUserRepository(_dbContextFactory);
             var sw = new Stopwatch();
             sw.Start();
