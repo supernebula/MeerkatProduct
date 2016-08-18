@@ -1,11 +1,12 @@
-﻿using System.Data.Entity;
+﻿using Nebula.EntityFramework.Repository;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
 
 namespace Nebula.FirstEC.Data
 {
 
-    public class FirstEcDbContext : DbContext
+    public class FirstEcDbContext : NamedDbContext
     {
         static FirstEcDbContext()
         {

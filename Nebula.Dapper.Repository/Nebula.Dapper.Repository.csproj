@@ -51,6 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,12 +69,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
       <Name>Nebula.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+      <Project>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</Project>
+      <Name>Nebula.EntityFramework.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

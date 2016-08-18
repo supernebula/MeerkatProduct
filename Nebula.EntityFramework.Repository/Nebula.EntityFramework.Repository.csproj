@@ -71,11 +71,15 @@
     <Compile Include="EFDbContextFactory.cs" />
     <Compile Include="EfDbContextSingleFactory.cs" />
     <Compile Include="DbContextProxy.cs" />
+    <Compile Include="IActiveUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkDbContextFactory.cs" />
     <Compile Include="NamedDbContext.cs" />
     <Compile Include="OriginalEntityFrameworkRepository.cs" />
     <Compile Include="Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkBase.cs" />
+    <Compile Include="UnitOfWorkDbContextFactory.cs" />
     <Compile Include="UnitOfWorkOptions.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,8 +3,12 @@ using Nebula.Common;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public class NamedDbContext : DbContext, INamed
+    public abstract class NamedDbContext : DbContext, INamed
     {
+        protected NamedDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+        }
+
         public string Name { get;set; }
     }
 }

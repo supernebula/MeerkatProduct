@@ -28,12 +28,14 @@ namespace Nebula.EntityFramework.Repository.Test
         [TestMethod,Description("EntityFramework工作单元依赖于事务，关键在于：针对数据库的多个更新统一提交，使用同一个DbContext")]
         public void MuiltChangeTest()
         {
-            var unitOfWorkObj = new UnitOfWork<FakeEcDbContext>() { DbContextFactory = _dbContextFactory };
+            var unitOfWorkObj = new UnitOfWork();//{ DbContextFactory = _dbContextFactory };
+            var dbContext = new FakeEcDbContext();
+            unitOfWorkObj.ActiveDbContexts.Add(dbContext.Name, dbContext);
             var orderRepo = new FakeOrderRepository()  {  DbContextFactory = _dbContextFactory };
             var productRepo = new FakeProductRepository() { DbContextFactory = _dbContextFactory };
             var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory }; 
 
-            unitOfWorkObj.BeginTransaction();
+            unitOfWorkObj.BeginTransaction(new UnitOfWorkOptions());
             try
             {
                 orderRepo.Insert(new FakeOrder());

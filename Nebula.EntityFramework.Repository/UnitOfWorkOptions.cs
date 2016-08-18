@@ -2,7 +2,7 @@
 
 namespace Nebula.EntityFramework.Repository
 {
-    class UnitOfWorkOptions : IUnitOfWorkOptions
+    public class UnitOfWorkOptions : IUnitOfWorkOptions
     {
         public System.Data.IsolationLevel? IsolationLevel { get; set; }
 

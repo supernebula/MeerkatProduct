@@ -7,7 +7,9 @@ namespace Nebula.Common.Repository
     {
         bool IsCommited { get; }
 
-        void BeginTransaction(IsolationLevel isolationLevel);
+        bool IsDisposed { get; }
+
+        void BeginTransaction(IUnitOfWorkOptions options);
 
         void Commit();
 
