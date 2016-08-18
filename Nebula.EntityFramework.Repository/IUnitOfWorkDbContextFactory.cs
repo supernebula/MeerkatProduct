@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nebula.EntityFramework.Repository
 {
-    public interface IUnitOfWorkDbContextFactory
+    public interface IDbContextFactory
     {
         TDbContext Create<TDbContext>() where TDbContext : NamedDbContext;
     }

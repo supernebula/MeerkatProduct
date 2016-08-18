@@ -29,11 +29,11 @@ namespace Nebula.EntityFramework.Repository.Test
         public void MuiltChangeTest()
         {
             var unitOfWorkObj = new UnitOfWork();//{ DbContextFactory = _dbContextFactory };
-            var dbContext = new FakeEcDbContext();
-            unitOfWorkObj.ActiveDbContexts.Add(dbContext.Name, dbContext);
-            var orderRepo = new FakeOrderRepository()  {  DbContextFactory = _dbContextFactory };
-            var productRepo = new FakeProductRepository() { DbContextFactory = _dbContextFactory };
-            var userRepo = new FakeUserRepository() { DbContextFactory = _dbContextFactory }; 
+
+            var unitOfWorkDbContextFactory = new UnitOfWorkDbContextFactory() { UnitOfWork = unitOfWorkObj };
+            var orderRepo = new FakeOrderRepository()  {  DbContextFactory = unitOfWorkDbContextFactory };
+            var productRepo = new FakeProductRepository() { DbContextFactory = unitOfWorkDbContextFactory };
+            var userRepo = new FakeUserRepository() { DbContextFactory = unitOfWorkDbContextFactory }; 
 
             unitOfWorkObj.BeginTransaction(new UnitOfWorkOptions());
             try

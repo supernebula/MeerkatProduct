@@ -15,14 +15,14 @@ namespace Nebula.EntityFramework.Repository
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TDbContext"></typeparam>
-    public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : DbContext, new() where T : class, IPrimaryKey
+    public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : NamedDbContext, new() where T : class, IPrimaryKey
     {
 
         protected BasicEntityFrameworkRepository()
         { 
         }
 
-        protected BasicEntityFrameworkRepository(IDbContextFactory<TDbContext> dbContextFactory)
+        protected BasicEntityFrameworkRepository(IDbContextFactory dbContextFactory)
         {
             DbContextFactory = dbContextFactory;
         }
@@ -31,13 +31,13 @@ namespace Nebula.EntityFramework.Repository
 
 
         [Dependency]
-        public IDbContextFactory<TDbContext> DbContextFactory { get; set; }
+        public IDbContextFactory DbContextFactory { get; set; }
 
-        private DbContext Context
+        private NamedDbContext Context
         {
             get
             {
-                return _context = _context ?? DbContextFactory.Create();
+                return _context = _context ?? DbContextFactory.Create<TDbContext>();
             }
         }
 
@@ -46,7 +46,7 @@ namespace Nebula.EntityFramework.Repository
 
         private DbContext Context2
         {
-            get { return _context = _context ?? DbContextFactory.Create(); }
+            get { return _context = _context ?? DbContextFactory.Create<TDbContext>(); }
         }
 
 
