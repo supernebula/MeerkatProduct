@@ -25,11 +25,11 @@ namespace Nebula.EntityFramework.Repository
         }
         private delegate void OnDbContextAdded(NamedDbContext context);
 
-        private OnDbContextAdded DbContextAddedEvent;
+        private OnDbContextAdded _dbContextAddedEvent;
 
         public virtual void BeginTransaction(IUnitOfWorkOptions unitOfWorkOptions)
         {
-            DbContextAddedEvent += context =>
+            _dbContextAddedEvent += context =>
             {
                 if (unitOfWorkOptions.IsolationLevel == null)
                     unitOfWorkOptions.IsolationLevel = System.Data.IsolationLevel.ReadCommitted;
@@ -82,18 +82,13 @@ namespace Nebula.EntityFramework.Repository
                 return;
 
             ActiveDbContexts.Add(name, dbContext);
-            DbContextAddedEvent(dbContext);
+            _dbContextAddedEvent(dbContext);
         }
 
         public virtual NamedDbContext GetDbContext(string name)
         {
             if (!ActiveDbContexts.ContainsKey(name))
                 return null;
-            foreach (var key in ActiveDbContexts.Keys)
-            {
-                if (key.StartsWith(name + "#"))
-                    return ActiveDbContexts[key];
-            }
             NamedDbContext context;
             ActiveDbContexts.TryGetValue(name, out context);
             return context;

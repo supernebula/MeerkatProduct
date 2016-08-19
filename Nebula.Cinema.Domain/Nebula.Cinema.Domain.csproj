@@ -58,6 +58,14 @@
   <ItemGroup>
     <Compile Include="CommandHandlers\MovieCommandHandler.cs" />
     <Compile Include="Commands\MovieCreateCommand.cs" />
+    <Compile Include="Commands\MovieDeleteCommand.cs" />
+    <Compile Include="Commands\MovieUpdateCommand.cs" />
+    <Compile Include="Commands\ScreeningCreateCommand.cs" />
+    <Compile Include="Commands\ScreeningDeleteCommand.cs" />
+    <Compile Include="Commands\ScreeningRoomCreateCommand.cs" />
+    <Compile Include="Commands\ScreeningRoomDeleteCommand.cs" />
+    <Compile Include="Commands\ScreeningRoomUpdateCommand.cs" />
+    <Compile Include="Commands\ScreeningUpdateCommand.cs" />
     <Compile Include="Modules\DomainConventionalDependencyRegister.cs" />
     <Compile Include="Models\AggregateRoots\Screening.cs" />
     <Compile Include="Models\Entitys\Actor.cs" />
