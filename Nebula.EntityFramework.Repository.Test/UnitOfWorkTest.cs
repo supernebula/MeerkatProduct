@@ -39,7 +39,7 @@ namespace Nebula.EntityFramework.Repository.Test
             try
             {
                 //orderRepo.Insert(FakeOrder.Fake());
-                //productRepo.Insert(FakeProduct.Fake());
+                productRepo.Insert(FakeProduct.Fake());
                 userRepo.Insert(FakeUser.Fake());
                 unitOfWorkObj.Commit();
             }
