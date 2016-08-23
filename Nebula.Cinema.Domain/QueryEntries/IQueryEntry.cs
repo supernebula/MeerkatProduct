@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cinema.Website.Areas.Manager.Models
+namespace Nebula.Cinema.Domain.QueryEntries
 {
-    class ScreeningRoomView
+    public interface IQueryEntry
     {
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Nebula.Cinema.Domain.Modules;
+﻿using System.Reflection;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
 
@@ -16,7 +10,7 @@ namespace Nebula.Cinema.Domain
 
         public NebulaCinemaDomainModule()
         {
-            _domainDependencyRegister = new DomainConventionalDependencyRegister();
+            _domainDependencyRegister = new DefualtDomainConventionalDependencyRegister();
 
         }
 

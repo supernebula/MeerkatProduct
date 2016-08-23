@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfiguration.cs" />
+    <Compile Include="Ioc\DefualtDomainConventionalDependencyRegister.cs" />
     <Compile Include="Modules\AppModule.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Configuration\~AppConfiguration.cs" />

@@ -203,9 +203,9 @@
     <Compile Include="Areas\Manager\Controllers\ScreeningController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningRoomController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
-    <Compile Include="Areas\Manager\Models\MovieView.cs" />
-    <Compile Include="Areas\Manager\Models\ScreeningRoomView.cs" />
-    <Compile Include="Areas\Manager\Models\ScreeningView.cs" />
+    <Compile Include="Areas\Manager\Models\MovieDto.cs" />
+    <Compile Include="Areas\Manager\Models\ScreeningRoomDto.cs" />
+    <Compile Include="Areas\Manager\Models\ScreeningDto.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -233,6 +233,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Manager\Views\web.config" />
+    <Content Include="Areas\Manager\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -285,7 +287,6 @@
     <Folder Include="Areas\Manager\Views\Movie\" />
     <Folder Include="Areas\Manager\Views\ScreeningRoom\" />
     <Folder Include="Areas\Manager\Views\Screening\" />
-    <Folder Include="Areas\Manager\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
