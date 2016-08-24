@@ -2,7 +2,6 @@
 using System.Reflection;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
-using Nebula.FirstEC.Domain.Modules;
 
 
 namespace Nebula.FirstEC.Domain
@@ -13,7 +12,7 @@ namespace Nebula.FirstEC.Domain
 
         public NebulaFirstEcDomainModule()
         {
-            _domainDependencyRegister = new DomainConventionalDependencyRegister();
+            _domainDependencyRegister = new DefualtDomainConventionalDependencyRegister();
 
         }
 

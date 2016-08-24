@@ -5,13 +5,10 @@ using System.Reflection;
 using Microsoft.Practices.Unity;
 using Nebula.Common;
 using Nebula.Domain.Data;
-using Nebula.Domain.Ioc;
-using Nebula.FirstEC.Domain.QueryEntries;
-using Nebula.FirstEC.Domain.Repositories;
 
-namespace Nebula.FirstEC.Data.Ioc
+namespace Nebula.Domain.Ioc
 {
-    public class DataConventionalDependencyRegister : IConventionalDependencyRegister
+    public class DefualtDataConventionalDependencyRegister : IConventionalDependencyRegister
     {
         public void Register(IUnityContainer container, Assembly assembly)
         {

@@ -1,4 +1,5 @@
-﻿using Nebula.FirstEC.Domain.Models.Entities;
+﻿using Nebula.Domain.Data;
+using Nebula.FirstEC.Domain.Models.Entities;
 
 namespace Nebula.FirstEC.Domain.Repositories
 {

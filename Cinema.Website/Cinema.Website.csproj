@@ -235,6 +235,10 @@
     <Content Include="Areas\Manager\Views\web.config" />
     <Content Include="Areas\Manager\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Manager\Views\Movie\Index.cshtml" />
+    <Content Include="Areas\Manager\Views\Movie\Details.cshtml" />
+    <Content Include="Areas\Manager\Views\Movie\Create.cshtml" />
+    <Content Include="Areas\Manager\Views\Movie\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -284,7 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Manager\Views\Movie\" />
     <Folder Include="Areas\Manager\Views\ScreeningRoom\" />
     <Folder Include="Areas\Manager\Views\Screening\" />
   </ItemGroup>

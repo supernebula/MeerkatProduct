@@ -59,7 +59,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
     <Compile Include="Commands\ProductCreateCommand.cs" />
-    <Compile Include="Modules\DomainConventionalDependencyRegister.cs" />
+    <Compile Include="Modules\~DomainConventionalDependencyRegister.cs" />
     <Compile Include="Modules\~DomainIocImplProvider.cs" />
     <Compile Include="Modules\~DomainIocRegister.cs" />
     <Compile Include="EventHandlers\ProductCreateEventHandler.cs" />
@@ -88,7 +88,7 @@
     <Compile Include="QueryEntries\IOrderQuery.cs" />
     <Compile Include="QueryEntries\IProductQuery.cs" />
     <Compile Include="QueryEntries\IProductTagRelationQuery.cs" />
-    <Compile Include="QueryEntries\IQueryEntry.cs" />
+    <Compile Include="QueryEntries\~IQueryEntry.cs" />
     <Compile Include="QueryEntries\IShoppingCartQuery.cs" />
     <Compile Include="QueryEntries\ISpecQuery.cs" />
     <Compile Include="QueryEntries\ITagQuery.cs" />
@@ -101,7 +101,7 @@
     <Compile Include="Repositories\IOrderRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />
     <Compile Include="Repositories\IProductTagRelationRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\~IRepository.cs" />
     <Compile Include="Repositories\IShoppingCartRepository.cs" />
     <Compile Include="Repositories\ISpecRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />

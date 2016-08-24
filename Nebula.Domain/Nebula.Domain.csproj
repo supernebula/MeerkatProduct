@@ -89,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfiguration.cs" />
+    <Compile Include="Data\IQueryEntry.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Ioc\DefualtDataConventionalDependencyRegister.cs" />
     <Compile Include="Ioc\DefualtDomainConventionalDependencyRegister.cs" />
     <Compile Include="Modules\AppModule.cs" />
     <Compile Include="Commands\Command.cs" />
