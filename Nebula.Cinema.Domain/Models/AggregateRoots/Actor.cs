@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Cinema.Domain.Models.Entitys
+namespace Nebula.Cinema.Domain.Models.AggregateRoots
 {
     public class Actor
     {

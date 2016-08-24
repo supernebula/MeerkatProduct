@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Cinema.Domain.QueryEntries
+namespace Nebula.Cinema.Domain.QueryEntries.Parameters
 {
-    public interface IQueryEntry
+    public class MovieQueryParameter
     {
     }
 }

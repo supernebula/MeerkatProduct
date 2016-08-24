@@ -68,7 +68,7 @@
     <Compile Include="Commands\ScreeningUpdateCommand.cs" />
     <Compile Include="Modules\~DomainConventionalDependencyRegister.cs" />
     <Compile Include="Models\AggregateRoots\Screening.cs" />
-    <Compile Include="Models\Entitys\Actor.cs" />
+    <Compile Include="Models\AggregateRoots\Actor.cs" />
     <Compile Include="Models\AggregateRoots\ScreeningRoom.cs" />
     <Compile Include="Models\AggregateRoots\Movie.cs" />
     <Compile Include="Models\Entitys\Seat.cs" />
@@ -76,8 +76,15 @@
     <Compile Include="Models\Values\SpaceDimensionType.cs" />
     <Compile Include="NebulaCinemaDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryEntries\IActorQueryEntry.cs" />
     <Compile Include="QueryEntries\IMovieQueryEntry.cs" />
-    <Compile Include="QueryEntries\IQueryEntry.cs" />
+    <Compile Include="QueryEntries\IScreeningQueryEntry.cs" />
+    <Compile Include="QueryEntries\IScreeningRoomQueryEntry.cs" />
+    <Compile Include="QueryEntries\ISeatQueryEntry.cs" />
+    <Compile Include="QueryEntries\Parameters\ActorQueryParameter.cs" />
+    <Compile Include="QueryEntries\Parameters\MovieQueryParameter.cs" />
+    <Compile Include="QueryEntries\Parameters\ScreeningQueryParameter.cs" />
+    <Compile Include="QueryEntries\Parameters\ScreeningRoomQueryParameter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EventHandlers\" />
