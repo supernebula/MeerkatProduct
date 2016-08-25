@@ -17,7 +17,7 @@
     <AssemblyName>Cinema.Website</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -81,6 +81,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -203,7 +219,8 @@
     <Compile Include="Areas\Manager\Controllers\ScreeningController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningRoomController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
-    <Compile Include="Areas\Manager\Models\MovieDto.cs" />
+    <Compile Include="Areas\Manager\Models\MovieCreateDto.cs" />
+    <Compile Include="Areas\Manager\Models\MovieViewDto.cs" />
     <Compile Include="Areas\Manager\Models\ScreeningRoomDto.cs" />
     <Compile Include="Areas\Manager\Models\ScreeningDto.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -237,8 +254,8 @@
     <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manager\Views\Movie\Index.cshtml" />
     <Content Include="Areas\Manager\Views\Movie\Details.cshtml" />
-    <Content Include="Areas\Manager\Views\Movie\Create.cshtml" />
     <Content Include="Areas\Manager\Views\Movie\Edit.cshtml" />
+    <Content Include="Areas\Manager\Views\Movie\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -304,6 +321,14 @@
       <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
       <Name>Nebula.Cinema.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
+      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
+      <Name>Nebula.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -323,7 +348,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17375</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:17375/</IISUrl>
+          <IISUrl>http://localhost:90/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

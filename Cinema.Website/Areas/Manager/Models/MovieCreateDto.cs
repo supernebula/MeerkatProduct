@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Nebula.Cinema.Domain.Models.Values;
 
-namespace Nebula.Cinema.Domain.Models.AggregateRoots
+namespace Cinema.Website.Areas.Manager.Models
 {
-    public class Movie
+    public class MovieCreateDto
     {
         /// <summary>
         /// 编号
@@ -14,22 +15,30 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         /// <summary>
         /// 名称
         /// </summary>
+        [Required]
+        [Display(Name = "名称")]
         public string Name { get; set; }
 
         /// <summary>
         /// 外语名称
         /// </summary>
+        [Required]
+        [Display(Name = "外语名称")]
         public string ForeignName { get; set; }
 
         /// <summary>
         /// 发行日期
         /// </summary>
-        public string ReleaseDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "发行日期")]
+        public DateTime ReleaseDate { get; set; }
 
         /// <summary>
         /// 时间长度
         /// </summary>
-        public string Minutes { get; set; }
+        [Required]
+        public int Minutes { get; set; }
 
         /// <summary>
         /// 发行地区
@@ -44,7 +53,7 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         /// <summary>
         /// 演员
         /// </summary>
-        public List<Actor> Actors { get; set; }
+        public List<Guid> ActorIds { get; set; }
 
         /// <summary>
         /// 封面图片地址
@@ -80,9 +89,5 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         /// 语言
         /// </summary>
         public string Language { get; set; }
-
-
-
-
     }
 }
