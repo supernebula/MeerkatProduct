@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Nebula.Common;
+﻿using System.Collections.Generic;
 
-namespace Nebula.FirstEC.Data
+namespace Nebula.Common
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

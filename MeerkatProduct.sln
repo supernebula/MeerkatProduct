@@ -84,6 +84,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Website", "Cinema.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Website.Tests", "Cinema.Website.Tests\Cinema.Website.Tests.csproj", "{EB5BF687-5229-4833-8F28-BCA1068BE5E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Data", "Nebula.Cinema.Data\Nebula.Cinema.Data.csproj", "{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -218,6 +220,10 @@ Global
 		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -251,5 +257,6 @@ Global
 		{A4BA2B31-88D4-443E-8540-1751494D8577} = {1B0B30AF-E41A-4719-AC85-97DB64FC8135}
 		{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{71EE394E-791B-4F9D-ADB4-FBB0B36B2DC2} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
+		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 	EndGlobalSection
 EndGlobal
