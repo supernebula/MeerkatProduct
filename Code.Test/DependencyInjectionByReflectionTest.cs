@@ -77,7 +77,7 @@ namespace Code.Test
             Trace.WriteLine("Game over--------------------------------------");
             GC.Collect();
 
-            Thread.Sleep(10000);
+            //Thread.Sleep(10000);
 
         }
     }
