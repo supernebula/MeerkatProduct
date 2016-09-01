@@ -1,7 +1,7 @@
 ﻿
 namespace Nebula.EntityFramework.Repository
 {
-    public class UnitOfWork : UnitOfWorkBase
+    public class EfUnitOfWork : UnitOfWorkBase
     {
     }
 }

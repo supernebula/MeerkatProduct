@@ -75,7 +75,7 @@
     <Compile Include="Models\Entitys\Seat.cs" />
     <Compile Include="Models\Values\SeatType.cs" />
     <Compile Include="Models\Values\SpaceDimensionType.cs" />
-    <Compile Include="NebulaCinemaDomainModule.cs" />
+    <Compile Include="CinemaDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryEntries\IActorQueryEntry.cs" />
     <Compile Include="QueryEntries\IMovieQueryEntry.cs" />

@@ -7,7 +7,7 @@ using Nebula.Cinema.Domain;
 
 namespace Nebula.FirstEC.Website
 {
-    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule), typeof(NebulaCinemaDomainModule))]
+    [DependOn(typeof(NebulaFirstEcDataModule), typeof(NebulaFirstEcDomainModule), typeof(CinemaDomainModule))]
     public class NebulaFirstEcWebsiteModule : AppModule
     {
         public override void Initailize()

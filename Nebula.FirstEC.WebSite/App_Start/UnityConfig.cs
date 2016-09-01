@@ -26,7 +26,7 @@ namespace Nebula.FirstEC.WebSite
             //DependencyConfiguration.RegisterQueryEntry("Nebula.FirstEC.Domain.QueryEntries", "Nebula.FirstEC.Data.QueryEntries", "Nebula.FirstEC.Domain", "Nebula.FirstEC.Data");
             //// e.g. container.RegisterType<ITestService, TestService>();
 
-            ////DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
             //DependencyResolver.SetResolver(DependencyConfiguration.DependencyResolver);
         }
     }

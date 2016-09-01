@@ -150,6 +150,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -213,8 +217,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\ModuleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Manager\Controllers\MovieController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningRoomController.cs" />
@@ -223,6 +229,7 @@
     <Compile Include="Areas\Manager\Models\MovieViewDto.cs" />
     <Compile Include="Areas\Manager\Models\ScreeningRoomDto.cs" />
     <Compile Include="Areas\Manager\Models\ScreeningDto.cs" />
+    <Compile Include="CinemaWebsiteModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -317,6 +324,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nebula.Cinema.Data\Nebula.Cinema.Data.csproj">
+      <Project>{4663f279-3833-4e3f-82a8-a5c4cda62da0}</Project>
+      <Name>Nebula.Cinema.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">
       <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
       <Name>Nebula.Cinema.Domain</Name>
@@ -328,6 +339,10 @@
     <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
       <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
       <Name>Nebula.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
+      <Name>Nebula.EntityFramework.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

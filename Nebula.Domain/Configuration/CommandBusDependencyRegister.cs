@@ -8,7 +8,7 @@ using Nebula.Domain.Messaging;
 
 namespace Nebula.Domain.Configuration
 {
-    class CommandBusDependencyRegister : IDependencyRegister
+    public class CommandBusDependencyRegister : IDependencyRegister
     {
 
         public class DefaultCommandBusTypeProvider : IDependencyMapProvider

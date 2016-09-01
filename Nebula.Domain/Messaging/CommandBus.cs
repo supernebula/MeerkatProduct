@@ -37,5 +37,10 @@ namespace Nebula.Domain.Messaging
             }
             
         }
+
+        public void SendAsync<T>(T command) where T : Command
+        {
+            throw new NotImplementedException();
+        }
     }
 }

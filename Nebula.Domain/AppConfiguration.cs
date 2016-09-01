@@ -51,5 +51,19 @@ namespace Nebula.Domain
 
 
         }
+
+        public AppConfiguration Use<TFrom, TTo>(LifetimeManager life) where TTo : TFrom
+        {
+            throw new NotImplementedException();
+            Container.RegisterType<TFrom, TTo>(life);
+            return this;
+        }
+
+        public AppConfiguration Use(Type from, Type to, LifetimeManager life)
+        {
+            throw new NotImplementedException();
+            return this;
+        }
+
     }
 }

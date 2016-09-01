@@ -4,11 +4,11 @@ using Nebula.Domain.Modules;
 
 namespace Nebula.Cinema.Domain
 {
-    public class NebulaCinemaDomainModule : AppModule
+    public class CinemaDomainModule : AppModule
     {
         private readonly IConventionalDependencyRegister _domainDependencyRegister;
 
-        public NebulaCinemaDomainModule()
+        public CinemaDomainModule()
         {
             _domainDependencyRegister = new DefualtDomainConventionalDependencyRegister();
 

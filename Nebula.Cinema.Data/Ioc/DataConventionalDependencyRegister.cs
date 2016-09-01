@@ -7,7 +7,7 @@ using Nebula.Common;
 using Nebula.Domain.Data;
 using Nebula.Domain.Ioc;
 
-namespace Nebula.FirstEC.Data.Ioc
+namespace Nebula.Cinema.Data.Ioc
 {
     public class DataConventionalDependencyRegister : IConventionalDependencyRegister
     {
