@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebula.Common.Repository;
-using Nebula.EntityFramework.Repository.Test.Core;
+using Nebula.Domain.Data;
 using Nebula.EntityFramework.Repository.Test.Repositories;
 using Nebula.Test.Model;
 

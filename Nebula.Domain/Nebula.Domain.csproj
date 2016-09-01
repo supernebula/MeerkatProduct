@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -91,6 +92,7 @@
     <Compile Include="AppConfiguration.cs" />
     <Compile Include="Data\IQueryEntry.cs" />
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\UnitOfWorkOptions.cs" />
     <Compile Include="Ioc\DefualtDataConventionalDependencyRegister.cs" />
     <Compile Include="Ioc\DefualtDomainConventionalDependencyRegister.cs" />
     <Compile Include="IUserSession.cs" />

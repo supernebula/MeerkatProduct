@@ -20,6 +20,6 @@ namespace Nebula.Cinema.Domain.QueryEntries
 
         IPaged<Actor> RetrievePaged(ActorQueryParameter param);
 
-        IPaged<Actor> RetrievePagedAsync(ActorQueryParameter param);
+        Task<IPaged<Actor>> RetrievePagedAsync(ActorQueryParameter param);
     }
 }

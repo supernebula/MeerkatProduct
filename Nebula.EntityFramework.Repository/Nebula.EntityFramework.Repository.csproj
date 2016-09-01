@@ -80,7 +80,7 @@
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="UnitOfWorkBase.cs" />
     <Compile Include="UnitOfWorkDbContextFactory.cs" />
-    <Compile Include="UnitOfWorkOptions.cs" />
+    <Compile Include="~UnitOfWorkOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

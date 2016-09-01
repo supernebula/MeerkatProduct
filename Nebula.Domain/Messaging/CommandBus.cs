@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Data;
+using Microsoft.Practices.Unity;
 using Nebula.Common.Repository;
 using Nebula.Domain.Commands;
+using Nebula.Domain.Data;
 
 namespace Nebula.Domain.Messaging
 {
     public class CommandBus : ICommandBus
     {
+        [Dependency]
         public ICommandHandlerFactory CommandHandlerFactory { get; set; }
 
+        [Dependency]
         public IUnitOfWork UnitOfWork { get; set; }
 
         public CommandBus()
@@ -25,14 +30,16 @@ namespace Nebula.Domain.Messaging
             var commandHandler = CommandHandlerFactory.GetHandler<T>();
             try
             {
-
+                UnitOfWork.BeginTransaction(new UnitOfWorkOptions() { IsolationLevel = IsolationLevel.ReadCommitted });
                 //translation.open()
                 commandHandler.Execute(command);
+                UnitOfWork.Commit();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //log(ex)
                 //db.RollBack()
+                UnitOfWork.RollBack();
                 throw;
             }
             

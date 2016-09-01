@@ -86,11 +86,15 @@
     <Compile Include="QueryEntries\Parameters\MovieQueryParameter.cs" />
     <Compile Include="QueryEntries\Parameters\ScreeningQueryParameter.cs" />
     <Compile Include="QueryEntries\Parameters\ScreeningRoomQueryParameter.cs" />
+    <Compile Include="Repositories\IActorRepository.cs" />
+    <Compile Include="Repositories\IMovieRepository.cs" />
+    <Compile Include="Repositories\IScreeningRepository.cs" />
+    <Compile Include="Repositories\IScreeningRoomRepository.cs" />
+    <Compile Include="Repositories\ISeatRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EventHandlers\" />
     <Folder Include="Events\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">

@@ -15,6 +15,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
         [Dependency]
         public IMovieQueryEntry MovieQueryEntry { get; set; }
 
+        [Dependency]
         public ICommandBus CommandBus { get; set; }
 
         // GET: Manager/Movie

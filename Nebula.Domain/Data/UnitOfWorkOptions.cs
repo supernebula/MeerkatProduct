@@ -1,6 +1,6 @@
 ﻿using Nebula.Common.Repository;
 
-namespace Nebula.EntityFramework.Repository
+namespace Nebula.Domain.Data
 {
     public class UnitOfWorkOptions : IUnitOfWorkOptions
     {

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Nebula.Common;
 
 namespace Nebula.Cinema.Domain.Models.AggregateRoots
 {
-    public class Actor
+    public class Actor : IPrimaryKey
     {
         public Guid Id { get; set; }
 

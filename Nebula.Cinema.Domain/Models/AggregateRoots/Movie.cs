@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Nebula.Cinema.Domain.Models.Values;
+using Nebula.Common;
 
 namespace Nebula.Cinema.Domain.Models.AggregateRoots
 {
-    public class Movie
+    public class Movie : IPrimaryKey
     {
         /// <summary>
         /// 编号

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Nebula.Cinema.Domain.Models.Entitys;
 using Nebula.Cinema.Domain.Models.Values;
+using Nebula.Common;
 
 namespace Nebula.Cinema.Domain.Models.AggregateRoots
 {
-    public class ScreeningRoom
+    public class ScreeningRoom : IPrimaryKey
     {
         public Guid Id { get; set; }
 

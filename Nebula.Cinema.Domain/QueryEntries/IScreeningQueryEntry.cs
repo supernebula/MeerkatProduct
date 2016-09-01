@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Nebula.Cinema.Domain.Models.AggregateRoots;
 using Nebula.Cinema.Domain.QueryEntries.Parameters;
@@ -22,6 +20,6 @@ namespace Nebula.Cinema.Domain.QueryEntries
 
         IPaged<Screening> RetrievePaged(ScreeningQueryParameter param);
 
-        IPaged<Screening> RetrievePagedAsync(ScreeningQueryParameter param);
+        Task<IPaged<Screening>> RetrievePagedAsync(ScreeningQueryParameter param);
     }
 }

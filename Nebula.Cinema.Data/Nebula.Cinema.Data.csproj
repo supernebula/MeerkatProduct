@@ -74,11 +74,15 @@
     <Compile Include="Map\Seat.cs" />
     <Compile Include="CinemaDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ActorRepository.cs" />
+    <Compile Include="Repositories\MovieRepository.cs" />
+    <Compile Include="Repositories\ScreeningRepository.cs" />
+    <Compile Include="Repositories\ScreeningRoomRepository.cs" />
+    <Compile Include="Repositories\SeatRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="QueryEntries\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">
