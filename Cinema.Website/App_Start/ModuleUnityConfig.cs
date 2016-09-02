@@ -13,21 +13,16 @@ namespace Cinema.Website
     {
         public static void RegisterModuleComponents()
         {
-            AppConfiguration.Current.InitModule<CinemaWebsiteModule>();
-            RegisterComponents();
-        }
-
-        public static void RegisterComponents()
-        {
-            //var container = new UnityContainer();
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
-            // e.g. container.RegisterType<ITestService, TestService>();
+            AppConfiguration.Current.InitModuleFrom<CinemaWebsiteModule>();
+            AppConfiguration.Current.Container.RegisterType<IDbContextFactory, DefualtDbContextFactory>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<IActiveUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<IActiveUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<ICommandBus, CommandBus>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<IUserSession, UserSession>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<ICommandHandlerFactory, DefaultCommandHandlerFactory>(new PerThreadLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(AppConfiguration.Current.Container));
-            AppConfiguration.Current.Container.RegisterType<ICommandBus, CommandBus>(new PerThreadLifetimeManager());
-            AppConfiguration.Current.Container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());
-            AppConfiguration.Current.Container.RegisterType<IUserSession, UserSession>(new PerThreadLifetimeManager());
         }
     }
 }

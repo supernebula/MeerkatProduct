@@ -44,9 +44,9 @@ namespace Nebula.Domain
             }
         }
 
-        public void InitModule<TEntry>() where TEntry : AppModule, new()
+        public void InitModuleFrom<TModule>() where TModule : AppModule, new()
         {
-            (new TEntry()).Initailize();
+            (new TModule()).Initailize();
         }
 
         public AppConfiguration()
