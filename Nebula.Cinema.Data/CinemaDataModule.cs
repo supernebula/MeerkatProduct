@@ -1,10 +1,12 @@
 ﻿using System.Reflection;
 using Nebula.Cinema.Data.Ioc;
+using Nebula.Cinema.Domain;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
 
 namespace Nebula.Cinema.Data
 {
+    [DependOn(typeof(CinemaDomainModule))]
     public class CinemaDataModule : AppModule
     {
         private readonly IConventionalDependencyRegister _dataDependencyRegister;

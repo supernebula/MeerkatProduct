@@ -29,7 +29,7 @@ namespace Nebula.Cinema.Data.Ioc
                 return interfaceImpls;
             impls.ForEach(t =>
             {
-                var @interface = t.GetInterfaces().SingleOrDefault(i => i.IsGenericType && typeof(IQueryEntry).IsAssignableFrom(i));
+                var @interface = t.GetInterfaces().SingleOrDefault(i => i != typeof(IQueryEntry) && typeof(IQueryEntry).IsAssignableFrom(i));
                 interfaceImpls.Add(new InterfaceImplPair() { Interface = @interface, Impl = t });
             });
             return interfaceImpls;
@@ -37,14 +37,14 @@ namespace Nebula.Cinema.Data.Ioc
 
         private List<InterfaceImplPair> FindRepository(Assembly assembly)
         {
-            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && typeof(IRepository<>).IsAssignableFrom(type);
+            Func<Type, bool> filter = type => type.IsPublic && !type.IsAbstract && type.IsClass && type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IRepository<>));
             var impls = assembly.GetTypes().Where(filter).ToList();
             var interfaceImpls = new List<InterfaceImplPair>();
             if (impls.Count == 0)
                 return interfaceImpls;
             impls.ForEach(t =>
             {
-                var @interface = t.GetInterfaces().SingleOrDefault(i => i.IsGenericType && typeof(IRepository<>).IsAssignableFrom(i));
+                var @interface = t.GetInterfaces().SingleOrDefault(i => i.GetInterfaces().Any(i2 => i2.IsGenericType && i2.GetGenericTypeDefinition() == typeof(IRepository<>)));
                 interfaceImpls.Add(new InterfaceImplPair() { Interface = @interface, Impl = t });
             });
             return interfaceImpls;

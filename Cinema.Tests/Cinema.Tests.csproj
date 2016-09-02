@@ -124,9 +124,17 @@
       <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
       <Name>Nebula.Cinema.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Nebula.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
       <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
       <Name>Nebula.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+      <Project>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</Project>
+      <Name>Nebula.EntityFramework.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
