@@ -8,8 +8,7 @@ namespace Cinema.Website
     {
         protected void Application_Start()
         {
-            ModuleConfig.RegisterModules();
-            UnityConfig.RegisterComponents();
+            ModuleUnityConfig.RegisterModuleComponents();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Nebula.Domain.Ioc;
+using Nebula.Domain.Modules;
 
 namespace Nebula.Domain
 {
@@ -44,6 +41,11 @@ namespace Nebula.Domain
                     _current = new AppConfiguration();
                 return _current;
             }
+        }
+
+        public void InitModule<TEntry>() where TEntry : AppModule, new()
+        {
+            (new TEntry()).Initailize();
         }
 
         public AppConfiguration()

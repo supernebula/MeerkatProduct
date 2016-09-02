@@ -82,13 +82,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Website", "Cinema.Website\Cinema.Website.csproj", "{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Website.Tests", "Cinema.Website.Tests\Cinema.Website.Tests.csproj", "{EB5BF687-5229-4833-8F28-BCA1068BE5E7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Data", "Nebula.Cinema.Data\Nebula.Cinema.Data.csproj", "{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test.Cinema", "Test.Cinema", "{779497D8-07F0-465D-A0A5-D2B2E2F8D077}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Data.Test", "Nebula.Cinema.Data.Test\Nebula.Cinema.Data.Test.csproj", "{0E552D76-C48C-4B30-B7D6-06A750329E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Tests", "Cinema.Tests\Cinema.Tests.csproj", "{EB5BF687-5229-4833-8F28-BCA1068BE5E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -220,10 +220,6 @@ Global
 		{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -232,6 +228,10 @@ Global
 		{0E552D76-C48C-4B30-B7D6-06A750329E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E552D76-C48C-4B30-B7D6-06A750329E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E552D76-C48C-4B30-B7D6-06A750329E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5BF687-5229-4833-8F28-BCA1068BE5E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -267,5 +267,6 @@ Global
 		{71EE394E-791B-4F9D-ADB4-FBB0B36B2DC2} = {896D1BC2-0CB3-44BF-A835-92F4240FCA0E}
 		{4663F279-3833-4E3F-82A8-A5C4CDA62DA0} = {6393B565-5C8B-49D4-A357-F56B681806DB}
 		{0E552D76-C48C-4B30-B7D6-06A750329E79} = {779497D8-07F0-465D-A0A5-D2B2E2F8D077}
+		{EB5BF687-5229-4833-8F28-BCA1068BE5E7} = {779497D8-07F0-465D-A0A5-D2B2E2F8D077}
 	EndGlobalSection
 EndGlobal

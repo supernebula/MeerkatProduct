@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Cinema.Website;
 using Cinema.Website.Controllers;
 
-namespace Cinema.Website.Tests.Controllers
+namespace Cinema.Tests.Web.Controllers
 {
     [TestClass]
     public class HomeControllerTest

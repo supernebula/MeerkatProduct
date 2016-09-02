@@ -41,8 +41,6 @@ namespace Nebula.EntityFramework.Repository
                     Transactions.Add(context.Name, tran);
                 }
             };
-
-
         }
 
         public virtual void Commit()
@@ -80,7 +78,6 @@ namespace Nebula.EntityFramework.Repository
         {
             if (ActiveDbContexts.ContainsKey(name))
                 return;
-
             ActiveDbContexts.Add(name, dbContext);
             _dbContextAddedEvent(dbContext);
         }
