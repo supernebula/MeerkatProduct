@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Microsoft.Practices.Unity;
 using Nebula.Domain.Events;
 using Nebula.Domain.Configuration;
 
@@ -33,20 +34,21 @@ namespace Nebula.Domain.Messaging
 
             public DefaultEventHandlerActivator()
             {
-                _resolverThunk = () => AppConfiguration.Current.DependencyConfiguration.DependencyResolver;
+                //_resolverThunk = () => AppConfiguration.Current.DependencyConfiguration.DependencyResolver;
             }
 
-            public DefaultEventHandlerActivator(IDependencyResolver resolver)
-            {
-                if (resolver == null)
-                    throw new ArgumentNullException(nameof(resolver));
-                _resolverThunk = () => resolver;
-            }
+            //public DefaultEventHandlerActivator(IDependencyResolver resolver)
+            //{
+            //    if (resolver == null)
+            //        throw new ArgumentNullException(nameof(resolver));
+            //    _resolverThunk = () => resolver;
+            //}
 
             public IEnumerable<IEventHandler<T>> Create<T>() where T : Event
             {
-                var result = (IEnumerable<IEventHandler<T>>)_resolverThunk().GetServices(typeof(IEventHandler<T>));
-                return result;
+                //var result = AppConfiguration.Current.Container.Resolve<IEventHandler<T>>();
+                ////var result = (IEnumerable<IEventHandler<T>>)_resolverThunk().GetServices(typeof(IEventHandler<T>));
+                //return result;
             }
         }
     }

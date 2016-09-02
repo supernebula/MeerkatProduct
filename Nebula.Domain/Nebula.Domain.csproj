@@ -116,7 +116,7 @@
     <Compile Include="Messaging\CommandBus.cs" />
     <Compile Include="Messaging\DefaultCommandHandlerFactory.cs" />
     <Compile Include="Messaging\EventBus.cs" />
-    <Compile Include="Messaging\~DefaultEventHandlerFactory.cs" />
+    <Compile Include="Messaging\DefaultEventHandlerFactory.cs" />
     <Compile Include="Messaging\ICommand.cs" />
     <Compile Include="Messaging\ICommandBus.cs" />
     <Compile Include="Messaging\ICommandHandler.cs" />
