@@ -6,6 +6,7 @@ using Microsoft.Practices.Unity;
 using System.Diagnostics;
 using Nebula.Cinema.Data.Repositories;
 using Nebula.Common.Repository;
+using Nebula.Domain.Messaging;
 using Nebula.EntityFramework.Repository;
 
 namespace Cinema.Tests.Data
@@ -21,6 +22,8 @@ namespace Cinema.Tests.Data
 
         public static IUnitOfWork UnitOfWork { get; set; }
 
+        public static ICommandBus CommandBus { get; set; }
+
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
@@ -29,6 +32,7 @@ namespace Cinema.Tests.Data
             MovieRepository = AppConfiguration.Current.Container.Resolve<IMovieRepository>();
             ActiveUnitOfWork = AppConfiguration.Current.Container.Resolve<IActiveUnitOfWork>();
             UnitOfWork = AppConfiguration.Current.Container.Resolve<IUnitOfWork>();
+            CommandBus = AppConfiguration.Current.Container.Resolve<ICommandBus>();
         }
 
         [TestInitialize]
@@ -40,8 +44,9 @@ namespace Cinema.Tests.Data
         [TestMethod]
         public void TestMethod1()
         {
-            Trace.WriteLine("MovieQueryEntry" + MovieQueryEntry.GetType().FullName);
-            Trace.WriteLine("MovieRepository" + MovieRepository.GetType().FullName);
+            Trace.WriteLine("MovieQueryEntry:" + MovieQueryEntry.GetType().FullName);
+            Trace.WriteLine("MovieRepository:" + MovieRepository.GetType().FullName);
+            Trace.WriteLine("CommandBus:" + CommandBus.GetType().FullName);
             Trace.WriteLine("IActiveUnitOfWork = IUnitOfWork :" + (ActiveUnitOfWork == UnitOfWork));
         }
     }

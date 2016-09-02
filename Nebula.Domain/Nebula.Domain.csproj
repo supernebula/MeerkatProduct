@@ -114,7 +114,7 @@
     <Compile Include="Ioc\IIoCManager.cs" />
     <Compile Include="Ioc\IocImplProvider.cs" />
     <Compile Include="Messaging\CommandBus.cs" />
-    <Compile Include="Messaging\~DefaultCommandHandlerFactory.cs" />
+    <Compile Include="Messaging\DefaultCommandHandlerFactory.cs" />
     <Compile Include="Messaging\EventBus.cs" />
     <Compile Include="Messaging\~DefaultEventHandlerFactory.cs" />
     <Compile Include="Messaging\ICommand.cs" />

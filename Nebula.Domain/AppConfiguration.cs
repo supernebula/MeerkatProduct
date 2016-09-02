@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
+using Unity.Mvc5;
 
 namespace Nebula.Domain
 {
