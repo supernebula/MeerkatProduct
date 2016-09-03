@@ -1,6 +1,4 @@
-﻿using Nebula.EntityFramework.Repository;
-using Nebula.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,7 +10,7 @@ namespace Nebula.EntityFramework.Repository
 {
     public class OriginalEntityFrameworkRepository<T, TDbContext> : IDisposable where TDbContext : DbContext, new() where T : class, IPrimaryKey
     {
-        private TDbContext _context;
+        private readonly TDbContext _context;
         public OriginalEntityFrameworkRepository(TDbContext context)
         {
             _context = context;

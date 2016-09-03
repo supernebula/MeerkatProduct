@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using AutoMapper;
+using Nebula.Cinema.Domain.Models.AggregateRoots;
 using Nebula.Cinema.Domain.Models.Values;
 
 namespace Cinema.Website.Areas.Manager.Models
@@ -89,5 +91,28 @@ namespace Cinema.Website.Areas.Manager.Models
         /// 语言
         /// </summary>
         public string Language { get; set; }
+
+        static MovieCreateDto()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<Movie, MovieCreateDto>());
+        }
+
+        public static MovieCreateDto Map(Movie value)
+        {
+            return Mapper.Map<MovieCreateDto>(value);
+        }
+    }
+
+    public static partial class MovieDtoExtension
+    {
+        public static MovieCreateDto ConvertCreateDto(this Movie value)
+        {
+            return MovieCreateDto.Map(value);
+        }
+
+        public static IEnumerable<MovieCreateDto> ConvertCreateDto(this IEnumerable<Movie> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

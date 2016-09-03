@@ -11,7 +11,7 @@ namespace Cinema.Tests
     {
         public static void Init()
         {
-            AppConfiguration.Current.InitModule<CinemaWebsiteModule>();
+            AppConfiguration.Current.InitModuleFrom<CinemaWebsiteModule>();
             AppConfiguration.Current.Container.RegisterType<IDbContextFactory, DefualtDbContextFactory>(new PerThreadLifetimeManager());
             AppConfiguration.Current.Container.RegisterType<IActiveUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());
             AppConfiguration.Current.Container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerThreadLifetimeManager());

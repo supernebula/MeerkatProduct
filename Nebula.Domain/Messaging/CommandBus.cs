@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Nebula.Common.Repository;
 using Nebula.Domain.Commands;
@@ -42,12 +43,25 @@ namespace Nebula.Domain.Messaging
                 UnitOfWork.RollBack();
                 throw;
             }
-            
         }
 
-        public void SendAsync<T>(T command) where T : Command
+        public async Task SendAsync<T>(T command) where T : Command
         {
-            throw new NotImplementedException();
+            var commandHandler = CommandHandlerFactory.GetHandler<T>();
+            try
+            {
+                UnitOfWork.BeginTransaction(new UnitOfWorkOptions() { IsolationLevel = IsolationLevel.ReadCommitted });
+                //translation.open()
+                await commandHandler.ExecuteAsync(command);
+                UnitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                //log(ex)
+                //db.RollBack()
+                UnitOfWork.RollBack();
+                throw;
+            }
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Cinema.Website.Areas.Manager.Models
         }
     }
 
-    public static class MovieDtoExtension
+    public static partial class MovieDtoExtension
     {
         public static MovieViewDto ConvertDto(this Movie value)
         {

@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
 using Cinema.Website.Areas.Manager.Models;
+using Nebula.Cinema.Domain.Commands;
 using Nebula.Cinema.Domain.QueryEntries;
 using Nebula.Cinema.Domain.QueryEntries.Parameters;
+using Nebula.Cinema.Domain.Repositories;
 using Nebula.Domain.Messaging;
 
 namespace Cinema.Website.Areas.Manager.Controllers
@@ -26,9 +28,11 @@ namespace Cinema.Website.Areas.Manager.Controllers
         }
 
         // GET: Manager/Movie/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(Guid id)
         {
-            return View();
+            var item = await MovieQueryEntry.FetchAsync(id);
+            var dto = item.ConvertDto();
+            return View(dto);
         }
 
         // GET: Manager/Movie/Create
@@ -39,12 +43,14 @@ namespace Cinema.Website.Areas.Manager.Controllers
 
         // POST: Manager/Movie/Create
         [HttpPost]
-        public ActionResult Create(MovieCreateDto value)
+        public async Task<ActionResult> Create(MovieCreateDto value)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                await CommandBus.SendAsync(new MovieCreateCommand()
+                {
+                    
+                });
                 return RedirectToAction("Index");
             }
             catch
@@ -54,40 +60,48 @@ namespace Cinema.Website.Areas.Manager.Controllers
         }
 
         // GET: Manager/Movie/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(Guid id)
         {
-            return View();
+            var item = await MovieQueryEntry.FetchAsync(id);
+            var dto = item.ConvertCreateDto();
+            return View(dto);
         }
 
         // POST: Manager/Movie/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, MovieCreateDto value)
+        public async Task<ActionResult> Edit(int id, MovieCreateDto value)
         {
             try
             {
-                // TODO: Add update logic here
+                await CommandBus.SendAsync(new MovieUpdateCommand()
+                {
+
+                });
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(value);
             }
         }
 
 
         // GET: Manager/Movie/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<Guid> Delete(Guid id)
         {
             try
             {
-                // TODO: Add delete logic here
+                await CommandBus.SendAsync(new MovieDeleteCommand()
+                {
 
-                return RedirectToAction("Index");
+                });
+
+                return id;
             }
             catch
             {
-                return View();
+                return Guid.Empty;
             }
         }
     }
