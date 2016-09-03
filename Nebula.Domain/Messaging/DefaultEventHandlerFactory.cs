@@ -30,12 +30,12 @@ namespace Nebula.Domain.Messaging
 
         public class DefaultEventHandlerActivator : IEventHandlerActivator
         {
-            private readonly Func<IDependencyResolver> _resolverThunk;
+            //private readonly Func<IDependencyResolver> _resolverThunk;
 
-            public DefaultEventHandlerActivator()
-            {
-                //_resolverThunk = () => AppConfiguration.Current.DependencyConfiguration.DependencyResolver;
-            }
+            //public DefaultEventHandlerActivator()
+            //{
+            //    _resolverThunk = () => AppConfiguration.Current.DependencyConfiguration.DependencyResolver;
+            //}
 
             //public DefaultEventHandlerActivator(IDependencyResolver resolver)
             //{
@@ -46,9 +46,8 @@ namespace Nebula.Domain.Messaging
 
             public IEnumerable<IEventHandler<T>> Create<T>() where T : Event
             {
-                //var result = AppConfiguration.Current.Container.Resolve<IEventHandler<T>>();
-                ////var result = (IEnumerable<IEventHandler<T>>)_resolverThunk().GetServices(typeof(IEventHandler<T>));
-                //return result;
+                var result = AppConfiguration.Current.Container.ResolveAll<IEventHandler<T>>(new ResolverOverride[0]);
+                return result;
             }
         }
     }

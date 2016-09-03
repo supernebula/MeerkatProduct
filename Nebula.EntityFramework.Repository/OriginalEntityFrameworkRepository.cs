@@ -14,9 +14,7 @@ namespace Nebula.EntityFramework.Repository
         public OriginalEntityFrameworkRepository(TDbContext context)
         {
             _context = context;
-
         }
-
 
         protected DbSet<T> DbSet => _context.Set<T>();
 
@@ -72,7 +70,7 @@ namespace Nebula.EntityFramework.Repository
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            //启用实体跟踪
         }
 
         public bool Any(Expression<Func<T, bool>> predicate)
@@ -82,7 +80,9 @@ namespace Nebula.EntityFramework.Repository
 
         public IPaged<T> Paged(int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
+            var queryable = DbSet.Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
+            var result = new Paged<T>(queryable.ToList(), pageIndex, pageSize);
+            return result;
         }
 
         public IPaged<T> Paged(Expression<Func<T, bool>> predicate, Expression<Func<T, bool>> order, int pageIndex, int pageSize)
