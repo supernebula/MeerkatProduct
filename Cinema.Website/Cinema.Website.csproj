@@ -220,6 +220,7 @@
     <Compile Include="App_Start\ModuleUnityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Manager\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Manager\Controllers\MovieController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningController.cs" />
     <Compile Include="Areas\Manager\Controllers\ScreeningRoomController.cs" />
@@ -262,6 +263,7 @@
     <Content Include="Areas\Manager\Views\Movie\Details.cshtml" />
     <Content Include="Areas\Manager\Views\Movie\Edit.cshtml" />
     <Content Include="Areas\Manager\Views\Movie\Create.cshtml" />
+    <Content Include="Areas\Manager\Views\Default\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

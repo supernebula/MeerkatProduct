@@ -17,7 +17,7 @@ namespace Cinema.Website.Areas.Manager
             context.MapRoute(
                 "Manager_default",
                 "Manager/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Default", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

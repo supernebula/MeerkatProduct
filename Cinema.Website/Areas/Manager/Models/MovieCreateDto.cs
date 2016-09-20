@@ -95,17 +95,28 @@ namespace Cinema.Website.Areas.Manager.Models
         static MovieCreateDto()
         {
             Mapper.Initialize(cfg => cfg.CreateMap<Movie, MovieCreateDto>());
+            Mapper.Initialize(cfg => cfg.CreateMap<MovieCreateDto, Movie>());
         }
 
         public static MovieCreateDto Map(Movie value)
         {
             return Mapper.Map<MovieCreateDto>(value);
         }
+
+        public static Movie Map(MovieCreateDto value)
+        {
+            return Mapper.Map<Movie>(value);
+        }
     }
 
     public static partial class MovieDtoExtension
     {
         public static MovieCreateDto ConvertCreateDto(this Movie value)
+        {
+            return MovieCreateDto.Map(value);
+        }
+
+        public static Movie Convert(this MovieCreateDto value)
         {
             return MovieCreateDto.Map(value);
         }

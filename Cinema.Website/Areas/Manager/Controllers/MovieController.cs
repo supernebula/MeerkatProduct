@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
@@ -7,7 +6,6 @@ using Cinema.Website.Areas.Manager.Models;
 using Nebula.Cinema.Domain.Commands;
 using Nebula.Cinema.Domain.QueryEntries;
 using Nebula.Cinema.Domain.QueryEntries.Parameters;
-using Nebula.Cinema.Domain.Repositories;
 using Nebula.Domain.Messaging;
 
 namespace Cinema.Website.Areas.Manager.Controllers
@@ -49,7 +47,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
             {
                 await CommandBus.SendAsync(new MovieCreateCommand()
                 {
-                    
+                    AggregateRoot = value.Convert()
                 });
                 return RedirectToAction("Index");
             }
@@ -75,7 +73,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
             {
                 await CommandBus.SendAsync(new MovieUpdateCommand()
                 {
-
+                    AggregateRoot = value.Convert()
                 });
 
                 return RedirectToAction("Index");
@@ -94,7 +92,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
             {
                 await CommandBus.SendAsync(new MovieDeleteCommand()
                 {
-
+                    AggregateRootId = id
                 });
 
                 return id;
