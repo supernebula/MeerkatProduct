@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
-using Nebula.Common;
-using Nebula.Common.Repository;
 
 namespace Nebula.EntityFramework.Repository
 {

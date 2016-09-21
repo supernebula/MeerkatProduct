@@ -23,7 +23,7 @@ namespace Nebula.Domain.Data
 
         IEnumerable<T> Retrieve(Expression<Func<T, bool>> predicate);
 
-        Task<IEnumerable<T> >RetrieveAsync(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> RetrieveAsync(Expression<Func<T, bool>> predicate);
 
         void Update(T item);
 
@@ -33,7 +33,11 @@ namespace Nebula.Domain.Data
 
         IPaged<T> Paged(int index, int size);
 
+        Task<IPaged<T>> PagedAsync(int pageIndex, int pageSize);
+
         IPaged<T> Paged(Expression<Func<T, bool>> predicate, int index, int size);
+
+        Task<IPaged<T>> PagedAsync(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize);
 
     }
 }

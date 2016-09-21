@@ -18,8 +18,8 @@ namespace Nebula.Cinema.Domain.QueryEntries
 
         Task<List<Movie>> RetrieveAsync(MovieQueryParameter param);
 
-        IPaged<Movie> RetrievePaged(MovieQueryParameter param);
+        IPaged<Movie> Paged(MovieQueryParameter param);
 
-        Task<IPaged<Movie>> RetrievePagedAsync(MovieQueryParameter param);
+        Task<IPaged<Movie>> PagedAsync(MovieQueryParameter param);
     }
 }
