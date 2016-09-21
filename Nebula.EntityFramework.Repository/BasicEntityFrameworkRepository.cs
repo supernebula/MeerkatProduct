@@ -90,6 +90,8 @@ namespace Nebula.EntityFramework.Repository
             return DbSet.Find(id);
         }
 
+
+
         public T Find(Expression<Func<T, bool>> predicate)
         {
             return DbSet.FirstOrDefault(predicate);
