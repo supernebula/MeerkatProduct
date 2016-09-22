@@ -10,8 +10,8 @@ namespace Nebula.Common
 
     public interface IPaged
     {
-        int PageCount { get; }
-        int RecordCount { get; }
+        int PageTotal { get; }
+        int RecordTotal { get; }
 
         int Index { get; }
 

@@ -25,7 +25,7 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         /// <summary>
         /// 发行日期
         /// </summary>
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         /// <summary>
         /// 时间长度

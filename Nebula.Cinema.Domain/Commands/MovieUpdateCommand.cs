@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Nebula.Cinema.Domain.Models.AggregateRoots;
 using Nebula.Domain.Commands;
 
 namespace Nebula.Cinema.Domain.Commands
 {
     public class MovieUpdateCommand : Command
     {
+        public Movie AggregateRoot { get; set; }
     }
 }

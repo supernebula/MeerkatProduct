@@ -4,9 +4,9 @@ namespace Nebula.Common
 {
     public class Paged<T> : List<T>, IPaged<T>
     {
-        public int PageCount { set; get; }
+        public int PageTotal { set; get; }
 
-        public int RecordCount { set; get; }
+        public int RecordTotal { set; get; }
 
         public int Index { set; get; }
 

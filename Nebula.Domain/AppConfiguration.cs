@@ -2,7 +2,6 @@
 using Microsoft.Practices.Unity;
 using Nebula.Domain.Ioc;
 using Nebula.Domain.Modules;
-using Unity.Mvc5;
 
 namespace Nebula.Domain
 {
@@ -16,55 +15,34 @@ namespace Nebula.Domain
             get
             {
                 if(_currentIoCManager == null)
-                    _currentIoCManager = new DefaultIoCManager(this.Container);
+                    _currentIoCManager = new DefaultIoCManager(Container);
                 return _currentIoCManager;
             }
         }
 
         private IUnityContainer _container;
 
-        public IUnityContainer Container
-        {
-            get
-            {
-                if (_container == null)
-                    _container = new UnityContainer();
-                return _container;
-            }
-        }
+        public IUnityContainer Container => _container ?? (_container = new UnityContainer());
 
         private static AppConfiguration _current;
-        public static AppConfiguration Current
-        {
-            get
-            {
-                if (_current == null)
-                    _current = new AppConfiguration();
-                return _current;
-            }
-        }
+        public static AppConfiguration Current => _current ?? (_current = new AppConfiguration());
 
         public void InitModuleFrom<TModule>() where TModule : AppModule, new()
         {
             (new TModule()).Initailize();
         }
 
-        public AppConfiguration()
-        {
-
-
-        }
-
         public AppConfiguration Use<TFrom, TTo>(LifetimeManager life) where TTo : TFrom
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             Container.RegisterType<TFrom, TTo>(life);
             return this;
         }
 
         public AppConfiguration Use(Type from, Type to, LifetimeManager life)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            Container.RegisterType(from, to, life);
             return this;
         }
 

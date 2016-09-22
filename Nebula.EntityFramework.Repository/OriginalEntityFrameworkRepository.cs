@@ -80,15 +80,17 @@ namespace Nebula.EntityFramework.Repository
 
         public IPaged<T> Paged(int pageIndex, int pageSize)
         {
+            var total = DbSet.Count();
             var queryable = DbSet.Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
-            var result = new Paged<T>(queryable.ToList(), pageIndex, pageSize);
+            var result = new Paged<T>(queryable.ToList(), total, pageIndex, pageSize);
             return result;
         }
 
         public IPaged<T> Paged(Expression<Func<T, bool>> predicate, Expression<Func<T, bool>> order, int pageIndex, int pageSize)
         {
+            var total = DbSet.Where(predicate).OrderBy(order).Count();
             var queryable = DbSet.Where(predicate).OrderBy(order).Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
-            var result = new Paged<T>(queryable.ToList(), pageIndex, pageSize);
+            var result = new Paged<T>(queryable.ToList(), total, pageIndex, pageSize);
             return result;
         }
 

@@ -73,6 +73,11 @@
     <Compile Include="Map\ScreeningRoomMap.cs" />
     <Compile Include="Map\Seat.cs" />
     <Compile Include="CinemaDataModule.cs" />
+    <Compile Include="Migrations\201609220224248_Create-Database.cs" />
+    <Compile Include="Migrations\201609220224248_Create-Database.Designer.cs">
+      <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryEntries\ActorQueryEntry.cs" />
     <Compile Include="QueryEntries\MovieQueryEntry.cs" />
@@ -86,7 +91,9 @@
     <Compile Include="Repositories\SeatRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\201609220224248_Create-Database.resx">
+      <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">

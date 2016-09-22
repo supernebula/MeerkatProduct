@@ -25,7 +25,7 @@ namespace Nebula.EntityFramework.Repository
         }
         private delegate void OnDbContextAdded(NamedDbContext context);
 
-        private OnDbContextAdded _dbContextAddedEvent;
+        private OnDbContextAdded _dbContextAddedEvent = (context) => { };
 
         public virtual void BeginTransaction(IUnitOfWorkOptions unitOfWorkOptions)
         {

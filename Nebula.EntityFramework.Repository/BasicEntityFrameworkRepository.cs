@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -17,18 +16,7 @@ namespace Nebula.EntityFramework.Repository
     /// <typeparam name="TDbContext"></typeparam>
     public abstract class BasicEntityFrameworkRepository<T, TDbContext> where TDbContext : NamedDbContext, new() where T : class, IPrimaryKey
     {
-
-        protected BasicEntityFrameworkRepository()
-        { 
-        }
-
-        protected BasicEntityFrameworkRepository(IDbContextFactory dbContextFactory)
-        {
-            DbContextFactory = dbContextFactory;
-        }
-
         private TDbContext _context;
-
 
         [Dependency]
         public IDbContextFactory DbContextFactory { get; set; }
@@ -41,29 +29,18 @@ namespace Nebula.EntityFramework.Repository
             }
         }
 
-        //[Dependency]
-        //public IEfDbContextSingleFactory DbContextSingleFactory { get; set; }
-
-        private DbContext Context2
-        {
-            get { return _context = _context ?? DbContextFactory.Create<TDbContext>(); }
-        }
-
-
         public DbSet<T> DbSet => Context.Set<T>();
 
         public Database Database => Context.Database;
 
-        private void Save()
-        {
-            Context.SaveChanges();
+        protected BasicEntityFrameworkRepository()
+        { 
         }
 
-        public void TestProxy()
+        protected BasicEntityFrameworkRepository(IDbContextFactory dbContextFactory)
         {
-            var mayBeProxy = DbSet.Create();
+            DbContextFactory = dbContextFactory;
         }
-
 
         public void Insert(T item)
         {
@@ -82,23 +59,36 @@ namespace Nebula.EntityFramework.Repository
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var item = Find(id);
+            Delete(item);
+        }
+
+        public void Save()
+        {
+            //wait for Context.SaveChange(),  item is being tracked object
         }
 
         public T Find(Guid id)
         {
             return DbSet.Find(id);
         }
+        public async Task<T> FindAsync(Guid id)
+        {
+            return await DbSet.FindAsync(id);
+        }
+
 
         public T Find(Expression<Func<T, bool>> predicate)
         {
             return DbSet.FirstOrDefault(predicate);
         }
 
-        public async Task<T> FindAsync(Guid id)
+        public async Task<T> FindAsync(Expression<Func<T, bool>> predicate)
         {
-            return await DbSet.FindAsync(id);
+            return await DbSet.Where(predicate).FirstOrDefaultAsync();
         }
+
+
 
         public IQueryable<T> Query()
         {
@@ -112,12 +102,12 @@ namespace Nebula.EntityFramework.Repository
 
         public async Task<IEnumerable<T>> RetrieveAsync(Expression<Func<T, bool>> predicate)
         {
-            return await Task.Run(() => DbSet.Where(predicate));
+            return await DbSet.Where(predicate).ToListAsync();
         }
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            //wait for Context.SaveChange(),  item is being tracked object
         }
 
         public bool Any(Expression<Func<T, bool>> predicate)
@@ -127,14 +117,34 @@ namespace Nebula.EntityFramework.Repository
 
         public IPaged<T> Paged(int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
+            var total = DbSet.Count();
+            var list = DbSet.OrderBy(e => e.Id).Skip(pageIndex*(pageSize - 1)).Take(pageSize).ToList();
+            var paged = new Paged<T>(list, total, pageIndex, pageSize);
+            return paged;
+        }
+
+        public async Task<IPaged<T>> PagedAsync(int pageIndex, int pageSize)
+        {
+            var total = await DbSet.CountAsync();
+            var list = await DbSet.OrderBy(e => e.Id).Skip(pageIndex * (pageSize - 1)).Take(pageSize).ToListAsync();
+            var paged = new Paged<T>(list, total, pageIndex, pageSize);
+            return paged;
         }
 
         public IPaged<T> Paged(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
+            var total = DbSet.Count(predicate);
+            var list = DbSet.OrderBy(e => e.Id).Skip(pageIndex * (pageSize - 1)).Take(pageSize).ToList();
+            var paged = new Paged<T>(list, total, pageIndex, pageSize);
+            return paged;
+        }
 
-
+        public async Task<IPaged<T>> PagedAsync(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
+        {
+            var total = await DbSet.CountAsync(predicate);
+            var list = await DbSet.Where(predicate).OrderBy(e => e.Id).Skip(pageIndex * (pageSize - 1)).Take(pageSize).ToListAsync();
+            var paged = new Paged<T>(list, total, pageIndex, pageSize);
+            return paged;
         }
     }
 }
