@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Nebula.Common.Repository;
 using Nebula.Domain;
+using Nebula.Domain.Configuration;
 using Nebula.Domain.Messaging;
 using Nebula.EntityFramework.Repository;
 using Unity.Mvc5;
@@ -21,6 +22,7 @@ namespace Cinema.Website
             AppConfiguration.Current.Container.RegisterType<ICommandBus, CommandBus>(new PerThreadLifetimeManager());
             AppConfiguration.Current.Container.RegisterType<IUserSession, UserSession>(new PerThreadLifetimeManager());
             AppConfiguration.Current.Container.RegisterType<ICommandHandlerFactory, DefaultCommandHandlerFactory>(new PerThreadLifetimeManager());
+            AppConfiguration.Current.Container.RegisterType<ICommandHandlerActivator, DefaultCommandHandlerFactory.DefaultCommandHandlerActivator>(new PerThreadLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(AppConfiguration.Current.Container));
         }

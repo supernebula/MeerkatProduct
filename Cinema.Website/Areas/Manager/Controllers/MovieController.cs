@@ -21,7 +21,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
         // GET: Manager/Movie
         public async Task<ActionResult> Index(MovieQueryParameter param)
         {
-            var pagedList = await MovieQueryEntry.PagedAsync(param);
+            var pagedList = await MovieQueryEntry.PagedAsync(e => true, 1, 10);
             return View(pagedList.ConvertDto());
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
@@ -30,7 +31,7 @@ namespace Nebula.Cinema.Data.QueryEntries
         public List<Movie> Retrieve(MovieQueryParameter param)
         {
             throw new NotImplementedException();
-            
+
             //Func<Movie, bool> predicate = (m) => true;
             //if (!string.IsNullOrWhiteSpace(param.Name))
             //{
@@ -42,7 +43,7 @@ namespace Nebula.Cinema.Data.QueryEntries
             //    var predicate2 = predicate;
             //    predicate = (m) => predicate2(m) && m.Name.Contains(param.Name);
             //}
-            //MovieRepository.Retrieve(e => e)
+            //MovieRepository.Retrieve(predicate)
         }
 
         public Task<List<Movie>> RetrieveAsync(MovieQueryParameter param)
@@ -50,14 +51,24 @@ namespace Nebula.Cinema.Data.QueryEntries
             throw new NotImplementedException();
         }
 
-        public IPaged<Movie> Paged(MovieQueryParameter param)
+        public IPaged<Movie> Paged(int index, int size)
         {
-            throw new NotImplementedException();
+            return MovieRepository.Paged(index, size);
         }
 
-        public Task<IPaged<Movie>> PagedAsync(MovieQueryParameter param)
+        public async Task<IPaged<Movie>> PagedAsync(int index, int size)
         {
-            throw new NotImplementedException();
+            return await MovieRepository.PagedAsync(index, size);
+        }
+
+        public IPaged<Movie> Paged(Expression<Func<Movie, bool>> predicate, int index, int size)
+        {
+            return MovieRepository.Paged(predicate, index, size);
+        }
+
+        public async Task<IPaged<Movie>> PagedAsync(Expression<Func<Movie, bool>> predicate, int pageIndex, int pageSize)
+        {
+            return await MovieRepository.PagedAsync(predicate, pageIndex, pageSize);
         }
     }
 }

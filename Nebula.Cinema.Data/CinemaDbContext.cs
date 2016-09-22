@@ -15,6 +15,7 @@ namespace Nebula.Cinema.Data
         public CinemaDbContext() : base("name=CinemaConnectionString")
         {
             Configuration.LazyLoadingEnabled = false;
+            Name = "cinemaDbContext";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
