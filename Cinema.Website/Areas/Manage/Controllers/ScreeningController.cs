@@ -4,29 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Cinema.Website.Areas.Manager.Controllers
+namespace Cinema.Website.Areas.Manage.Controllers
 {
-    public class ScreeningRoomController : Controller
+    public class ScreeningController : Controller
     {
-        // GET: Manager/ScreeningRoom
+        // GET: Manage/Screening
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Manager/ScreeningRoom/Details/5
+        // GET: Manage/Screening/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Manager/ScreeningRoom/Create
+        // GET: Manage/Screening/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Manager/ScreeningRoom/Create
+        // POST: Manage/Screening/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +42,13 @@ namespace Cinema.Website.Areas.Manager.Controllers
             }
         }
 
-        // GET: Manager/ScreeningRoom/Edit/5
+        // GET: Manage/Screening/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Manager/ScreeningRoom/Edit/5
+        // POST: Manage/Screening/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +64,13 @@ namespace Cinema.Website.Areas.Manager.Controllers
             }
         }
 
-        // GET: Manager/ScreeningRoom/Delete/5
+        // GET: Manage/Screening/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Manager/ScreeningRoom/Delete/5
+        // POST: Manage/Screening/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

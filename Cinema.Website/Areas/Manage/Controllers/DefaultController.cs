@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Cinema.Website.Areas.Manager.Controllers
+namespace Cinema.Website.Areas.Manage.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Manager/Default
+        // GET: Manage/Default
         public ActionResult Index()
         {
             return View();

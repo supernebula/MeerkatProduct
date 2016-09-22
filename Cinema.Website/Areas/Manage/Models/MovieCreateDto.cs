@@ -5,7 +5,7 @@ using AutoMapper;
 using Nebula.Cinema.Domain.Models.AggregateRoots;
 using Nebula.Cinema.Domain.Models.Values;
 
-namespace Cinema.Website.Areas.Manager.Models
+namespace Cinema.Website.Areas.Manage.Models
 {
     public class MovieCreateDto
     {

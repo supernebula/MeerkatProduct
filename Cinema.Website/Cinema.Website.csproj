@@ -220,15 +220,15 @@
     <Compile Include="App_Start\ModuleUnityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Manager\Controllers\DefaultController.cs" />
-    <Compile Include="Areas\Manager\Controllers\MovieController.cs" />
-    <Compile Include="Areas\Manager\Controllers\ScreeningController.cs" />
-    <Compile Include="Areas\Manager\Controllers\ScreeningRoomController.cs" />
-    <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
-    <Compile Include="Areas\Manager\Models\MovieCreateDto.cs" />
-    <Compile Include="Areas\Manager\Models\MovieViewDto.cs" />
-    <Compile Include="Areas\Manager\Models\ScreeningRoomDto.cs" />
-    <Compile Include="Areas\Manager\Models\ScreeningDto.cs" />
+    <Compile Include="Areas\Manage\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Manage\Controllers\MovieController.cs" />
+    <Compile Include="Areas\Manage\Controllers\ScreeningController.cs" />
+    <Compile Include="Areas\Manage\Controllers\ScreeningRoomController.cs" />
+    <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
+    <Compile Include="Areas\Manage\Models\MovieCreateDto.cs" />
+    <Compile Include="Areas\Manage\Models\MovieViewDto.cs" />
+    <Compile Include="Areas\Manage\Models\ScreeningRoomDto.cs" />
+    <Compile Include="Areas\Manage\Models\ScreeningDto.cs" />
     <Compile Include="CinemaWebsiteModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -256,14 +256,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Manager\Views\web.config" />
-    <Content Include="Areas\Manager\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Manager\Views\Movie\Index.cshtml" />
-    <Content Include="Areas\Manager\Views\Movie\Details.cshtml" />
-    <Content Include="Areas\Manager\Views\Movie\Edit.cshtml" />
-    <Content Include="Areas\Manager\Views\Movie\Create.cshtml" />
-    <Content Include="Areas\Manager\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\web.config" />
+    <Content Include="Areas\Manage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Manage\Views\Movie\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Movie\Details.cshtml" />
+    <Content Include="Areas\Manage\Views\Movie\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Movie\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Default\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -313,8 +313,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Manager\Views\ScreeningRoom\" />
-    <Folder Include="Areas\Manager\Views\Screening\" />
+    <Folder Include="Areas\Manage\Views\ScreeningRoom\" />
+    <Folder Include="Areas\Manage\Views\Screening\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

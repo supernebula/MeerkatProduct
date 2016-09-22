@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
-using Cinema.Website.Areas.Manager.Models;
+using Cinema.Website.Areas.Manage.Models;
 using Nebula.Cinema.Domain.Commands;
 using Nebula.Cinema.Domain.QueryEntries;
 using Nebula.Cinema.Domain.QueryEntries.Parameters;
 using Nebula.Domain.Messaging;
 
-namespace Cinema.Website.Areas.Manager.Controllers
+namespace Cinema.Website.Areas.Manage.Controllers
 {
     public class MovieController : Controller
     {
@@ -18,14 +18,14 @@ namespace Cinema.Website.Areas.Manager.Controllers
         [Dependency]
         public ICommandBus CommandBus { get; set; }
 
-        // GET: Manager/Movie
+        // GET: Manage/Movie
         public async Task<ActionResult> Index(MovieQueryParameter param)
         {
             var pagedList = await MovieQueryEntry.PagedAsync(e => true, 1, 10);
             return View(pagedList.ConvertDto());
         }
 
-        // GET: Manager/Movie/Details/5
+        // GET: Manage/Movie/Details/5
         public async Task<ActionResult> Details(Guid id)
         {
             var item = await MovieQueryEntry.FetchAsync(id);
@@ -33,13 +33,13 @@ namespace Cinema.Website.Areas.Manager.Controllers
             return View(dto);
         }
 
-        // GET: Manager/Movie/Create
+        // GET: Manage/Movie/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Manager/Movie/Create
+        // POST: Manage/Movie/Create
         [HttpPost]
         public async Task<ActionResult> Create(MovieCreateDto value)
         {
@@ -57,7 +57,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
             }
         }
 
-        // GET: Manager/Movie/Edit/5
+        // GET: Manage/Movie/Edit/5
         public async Task<ActionResult> Edit(Guid id)
         {
             var item = await MovieQueryEntry.FetchAsync(id);
@@ -65,7 +65,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
             return View(dto);
         }
 
-        // POST: Manager/Movie/Edit/5
+        // POST: Manage/Movie/Edit/5
         [HttpPost]
         public async Task<ActionResult> Edit(int id, MovieCreateDto value)
         {
@@ -85,7 +85,7 @@ namespace Cinema.Website.Areas.Manager.Controllers
         }
 
 
-        // GET: Manager/Movie/Delete/5
+        // GET: Manage/Movie/Delete/5
         public async Task<Guid> Delete(Guid id)
         {
             try

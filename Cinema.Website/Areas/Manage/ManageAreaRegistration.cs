@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace Cinema.Website.Areas.Manager
+namespace Cinema.Website.Areas.Manage
 {
-    public class ManagerAreaRegistration : AreaRegistration 
+    public class ManageAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Manager";
+                return "Manage";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Manager_default",
-                "Manager/{controller}/{action}/{id}",
+                "Manage_default",
+                "Manage/{controller}/{action}/{id}",
                 new { controller = "Default", action = "Index", id = UrlParameter.Optional }
             );
         }
