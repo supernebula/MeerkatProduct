@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Nebula.Cinema.Domain.Models.AggregateRoots;
 using Nebula.Cinema.Domain.Models.Values;
@@ -56,7 +57,7 @@ namespace Cinema.Website.Areas.Manage.Models
 
         public static IEnumerable<MovieViewDto> ConvertDto(this IEnumerable<Movie> value)
         {
-            throw new NotImplementedException();
+            return value.Select(e => e.ConvertDto());
         }
     }
 }
