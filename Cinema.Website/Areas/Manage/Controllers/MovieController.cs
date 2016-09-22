@@ -43,18 +43,13 @@ namespace Cinema.Website.Areas.Manage.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(MovieCreateDto value)
         {
-            try
+            if (!TryValidateModel(value))
+                return View(value);
+            await CommandBus.SendAsync(new MovieCreateCommand()
             {
-                await CommandBus.SendAsync(new MovieCreateCommand()
-                {
-                    AggregateRoot = value.Convert()
-                });
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                AggregateRoot = value.Convert()
+            });
+            return RedirectToAction("Index");
         }
 
         // GET: Manage/Movie/Edit/5
@@ -69,19 +64,14 @@ namespace Cinema.Website.Areas.Manage.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(int id, MovieCreateDto value)
         {
-            try
-            {
-                await CommandBus.SendAsync(new MovieUpdateCommand()
-                {
-                    AggregateRoot = value.Convert()
-                });
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+            if (!TryValidateModel(value))
                 return View(value);
-            }
+            await CommandBus.SendAsync(new MovieUpdateCommand()
+            {
+                AggregateRoot = value.Convert()
+            });
+
+            return RedirectToAction("Index");
         }
 
 

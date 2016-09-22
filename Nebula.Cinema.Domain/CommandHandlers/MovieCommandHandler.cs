@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
 using Nebula.Cinema.Domain.Commands;
 using Nebula.Cinema.Domain.Repositories;
 using Nebula.Domain.Messaging;
@@ -7,11 +9,12 @@ namespace Nebula.Cinema.Domain.CommandHandlers
 {
     public class MovieCommandHandler : ICommandHandler<MovieCreateCommand>, ICommandHandler<MovieUpdateCommand>, ICommandHandler<MovieDeleteCommand>
     {
-
+        [Dependency]
         public IMovieRepository MovieRepository { get; set; }
 
         public void Execute(MovieCreateCommand command)
         {
+            command.AggregateRoot.Id = Guid.NewGuid();
             MovieRepository.Insert(command.AggregateRoot);
         }
 
@@ -27,7 +30,8 @@ namespace Nebula.Cinema.Domain.CommandHandlers
 
         public Task ExecuteAsync(MovieCreateCommand command)
         {
-             MovieRepository.Insert(command.AggregateRoot);
+            command.AggregateRoot.Id = Guid.NewGuid();
+            MovieRepository.Insert(command.AggregateRoot);
             return Task.FromResult(1);
         }
 

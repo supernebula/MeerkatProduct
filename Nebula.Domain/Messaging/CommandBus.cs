@@ -36,12 +36,12 @@ namespace Nebula.Domain.Messaging
                 commandHandler.Execute(command);
                 UnitOfWork.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //log(ex)
                 //db.RollBack()
                 UnitOfWork.RollBack();
-                throw;
+                throw ex;
             }
         }
 
@@ -55,12 +55,12 @@ namespace Nebula.Domain.Messaging
                 await commandHandler.ExecuteAsync(command);
                 UnitOfWork.Commit();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //log(ex)
                 //db.RollBack()
                 UnitOfWork.RollBack();
-                throw;
+                throw ex;
             }
         }
     }
