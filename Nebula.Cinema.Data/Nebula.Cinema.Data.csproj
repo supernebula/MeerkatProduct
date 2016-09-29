@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201609220224248_Create-Database.Designer.cs">
       <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609250304388_Update-Field.cs" />
+    <Compile Include="Migrations\201609250304388_Update-Field.Designer.cs">
+      <DependentUpon>201609250304388_Update-Field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryEntries\ActorQueryEntry.cs" />
@@ -93,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609220224248_Create-Database.resx">
       <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609250304388_Update-Field.resx">
+      <DependentUpon>201609250304388_Update-Field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

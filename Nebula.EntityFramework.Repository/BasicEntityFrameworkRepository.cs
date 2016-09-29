@@ -142,7 +142,7 @@ namespace Nebula.EntityFramework.Repository
         public async Task<IPaged<T>> PagedAsync(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize)
         {
             var total = await DbSet.CountAsync(predicate);
-            var list = await DbSet.Where(predicate).OrderBy(e => e.Id).Skip(pageIndex * (pageSize - 1)).Take(pageSize).ToListAsync();
+            var list = await DbSet.Where(predicate).OrderBy(e => e.Id).Skip(pageIndex * (pageIndex - 1)).Take(pageSize).ToListAsync();
             var paged = new Paged<T>(list, total, pageIndex, pageSize);
             return paged;
         }

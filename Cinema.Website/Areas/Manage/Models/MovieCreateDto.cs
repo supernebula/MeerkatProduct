@@ -95,7 +95,7 @@ namespace Cinema.Website.Areas.Manage.Models
         static MovieCreateDto()
         {
             Mapper.Initialize(cfg => cfg.CreateMap<Movie, MovieCreateDto>());
-            Mapper.Initialize(cfg => cfg.CreateMap<MovieCreateDto, Movie>());
+            //Mapper.Initialize(cfg => cfg.CreateMap<MovieCreateDto, Movie>());
         }
 
         public static MovieCreateDto Map(Movie value)

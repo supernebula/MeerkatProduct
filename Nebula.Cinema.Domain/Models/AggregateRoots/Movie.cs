@@ -30,7 +30,7 @@ namespace Nebula.Cinema.Domain.Models.AggregateRoots
         /// <summary>
         /// 时间长度
         /// </summary>
-        public string Minutes { get; set; }
+        public int Minutes { get; set; }
 
         /// <summary>
         /// 发行地区

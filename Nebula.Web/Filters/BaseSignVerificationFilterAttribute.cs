@@ -9,7 +9,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using Nebula.Utilities.Hash;
 
-namespace Nebula.Web.Attributes
+namespace Nebula.Web.Filters
 {
     public abstract class BaseSignVerificationAttribute : ActionFilterAttribute
     {
