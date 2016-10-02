@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Nebula.Web.Filters;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Cinema.Website
@@ -7,7 +8,7 @@ namespace Cinema.Website
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new LogExceptionAttribute());
         }
     }
 }
