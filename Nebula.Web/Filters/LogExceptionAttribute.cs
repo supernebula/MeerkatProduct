@@ -13,7 +13,7 @@ namespace Nebula.Web.Filters
        
         public override void OnException(ExceptionContext filterContext)
         {
-            ILog log = LogManager.GetLogger("global");
+            ILog log = LogManager.GetLogger("logerror");
             log.Error(filterContext.Exception.Message, filterContext.Exception);
 
             if (!filterContext.ExceptionHandled)
