@@ -1,19 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EB5BF687-5229-4833-8F28-BCA1068BE5E7}</ProjectGuid>
+    <ProjectGuid>{A4BA2B31-88D4-443E-8540-1751494D8577}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cinema.Tests</RootNamespace>
-    <AssemblyName>Cinema.Tests</AssemblyName>
+    <RootNamespace>Evol.Domain</RootNamespace>
+    <AssemblyName>Evol.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -50,96 +46,107 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>False</Private>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppStart.cs" />
-    <Compile Include="Data\MovieDataTest.cs" />
+    <Compile Include="AppConfiguration.cs" />
+    <Compile Include="Data\IQueryEntry.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\UnitOfWorkOptions.cs" />
+    <Compile Include="Ioc\DefualtDataConventionalDependencyRegister.cs" />
+    <Compile Include="Ioc\DefualtDomainConventionalDependencyRegister.cs" />
+    <Compile Include="IUserSession.cs" />
+    <Compile Include="Modules\AppModule.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Configuration\~AppConfiguration.cs" />
+    <Compile Include="Configuration\CommandBusDependencyRegister.cs" />
+    <Compile Include="Configuration\CommandHandlerDependencyRegister.cs" />
+    <Compile Include="Configuration\DependencyConfiguration.cs" />
+    <Compile Include="Configuration\EventBusDependencyRegister.cs" />
+    <Compile Include="Configuration\EventHandlerDependencyRegister.cs" />
+    <Compile Include="Configuration\IDependencyMapProvider.cs" />
+    <Compile Include="Configuration\IDependencyRegister.cs" />
+    <Compile Include="Configuration\ICommandHandlerActivator.cs" />
+    <Compile Include="Configuration\IEventHandlerActivator.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Ioc\DefaultIoCManager.cs" />
+    <Compile Include="Ioc\IConventionalDependencyRegister.cs" />
+    <Compile Include="Ioc\IIoCManager.cs" />
+    <Compile Include="Ioc\IocImplProvider.cs" />
+    <Compile Include="Messaging\CommandBus.cs" />
+    <Compile Include="Messaging\DefaultCommandHandlerFactory.cs" />
+    <Compile Include="Messaging\EventBus.cs" />
+    <Compile Include="Messaging\DefaultEventHandlerFactory.cs" />
+    <Compile Include="Messaging\ICommand.cs" />
+    <Compile Include="Messaging\ICommandBus.cs" />
+    <Compile Include="Messaging\ICommandHandler.cs" />
+    <Compile Include="Messaging\ICommandHandlerFactory.cs" />
+    <Compile Include="Messaging\IEvent.cs" />
+    <Compile Include="Messaging\IEventBus.cs" />
+    <Compile Include="Messaging\IEventHandler.cs" />
+    <Compile Include="Messaging\IEventHandlerFactory.cs" />
+    <Compile Include="Modules\DependModuleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web\Controllers\HomeControllerTest.cs" />
+    <Compile Include="UserSession.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.config" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cinema.Website\Cinema.Website.csproj">
-      <Project>{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}</Project>
-      <Name>Cinema.Website</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Evol.Cinema.Data\Evol.Cinema.Data.csproj">
-      <Project>{4663f279-3833-4e3f-82a8-a5c4cda62da0}</Project>
-      <Name>Evol.Cinema.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Evol.Cinema.Domain\Evol.Cinema.Domain.csproj">
-      <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
-      <Name>Evol.Cinema.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Evol.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
       <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Evol.Domain\Evol.Domain.csproj">
-      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
-      <Name>Evol.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Evol.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj">
-      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
-      <Name>Evol.EntityFramework.Repository</Name>
+    <ProjectReference Include="..\Nebula.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
