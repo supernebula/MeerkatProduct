@@ -6,8 +6,8 @@
     <ProjectGuid>{1FE823B0-CB5E-40D1-8B9F-D36F691F66DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Dapper.Repository.Test</RootNamespace>
-    <AssemblyName>Nebula.Dapper.Repository.Test</AssemblyName>
+    <RootNamespace>Evol.Dapper.Repository.Test</RootNamespace>
+    <AssemblyName>Evol.Dapper.Repository.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -67,17 +67,17 @@
     <Compile Include="BatchQueryTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Dapper.Repository\Nebula.Dapper.Repository.csproj">
+    <ProjectReference Include="..\Nebula.Dapper.Repository\Evol.Dapper.Repository.csproj">
       <Project>{26505b67-6cb9-4191-a72f-c5d88ef7c635}</Project>
-      <Name>Nebula.Dapper.Repository</Name>
+      <Name>Evol.Dapper.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Test.Model\Nebula.Test.Model.csproj">
+    <ProjectReference Include="..\Nebula.Test.Model\Evol.Test.Model.csproj">
       <Project>{a626fa52-997d-4ba1-aab9-83f0dc742ac9}</Project>
-      <Name>Nebula.Test.Model</Name>
+      <Name>Evol.Test.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
-﻿using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Domain.Data;
+﻿using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Domain.Data;
 
-namespace Nebula.Cinema.Domain.Repositories
+namespace Evol.Cinema.Domain.Repositories
 {
     public interface IMovieRepository : IRepository<Movie>
     {

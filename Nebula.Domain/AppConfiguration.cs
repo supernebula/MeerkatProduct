@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
-using Nebula.Domain.Ioc;
-using Nebula.Domain.Modules;
+using Evol.Domain.Ioc;
+using Evol.Domain.Modules;
 
-namespace Nebula.Domain
+namespace Evol.Domain
 {
     public class AppConfiguration
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using Microsoft.Practices.ObjectBuilder2;
-using Nebula.Common.Repository;
+using Evol.Common.Repository;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public abstract class UnitOfWorkBase : IUnitOfWork, IActiveUnitOfWork
     {

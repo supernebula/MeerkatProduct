@@ -1,5 +1,5 @@
 ﻿
-//namespace Nebula.FirstEC.Domain.QueryEntries
+//namespace Evol.FirstEC.Domain.QueryEntries
 //{
 //    public interface IQueryEntry
 //    {

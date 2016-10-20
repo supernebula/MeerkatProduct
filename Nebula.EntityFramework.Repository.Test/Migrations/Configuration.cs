@@ -1,11 +1,11 @@
-namespace Nebula.EntityFramework.Repository.Test.Migrations
+namespace Evol.EntityFramework.Repository.Test.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Nebula.EntityFramework.Repository.Test.Core.FakeEcDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Evol.EntityFramework.Repository.Test.Core.FakeEcDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Nebula.EntityFramework.Repository.Test.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Nebula.EntityFramework.Repository.Test.Core.FakeEcDbContext context)
+        protected override void Seed(Evol.EntityFramework.Repository.Test.Core.FakeEcDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

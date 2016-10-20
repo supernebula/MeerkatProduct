@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.RabbitMQ
+namespace Evol.FirstEC.RabbitMQ
 {
     public class Class1
     {

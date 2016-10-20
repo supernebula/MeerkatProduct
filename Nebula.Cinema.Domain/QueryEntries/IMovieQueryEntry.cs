@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Cinema.Domain.QueryEntries.Parameters;
-using Nebula.Common;
-using Nebula.Domain.Data;
+using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Cinema.Domain.QueryEntries.Parameters;
+using Evol.Common;
+using Evol.Domain.Data;
 
-namespace Nebula.Cinema.Domain.QueryEntries
+namespace Evol.Cinema.Domain.QueryEntries
 {
     public interface IMovieQueryEntry : IQueryEntry
     {

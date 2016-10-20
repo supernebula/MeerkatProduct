@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     [TestClass]
     public class TransactionTest

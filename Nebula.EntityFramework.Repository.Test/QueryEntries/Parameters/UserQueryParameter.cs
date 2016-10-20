@@ -1,6 +1,6 @@
-﻿using Nebula.Common;
+﻿using Evol.Common;
 
-namespace Nebula.EntityFramework.Repository.Test.QueryEntries.Parameters
+namespace Evol.EntityFramework.Repository.Test.QueryEntries.Parameters
 {
     public class UserQueryParameter
     {

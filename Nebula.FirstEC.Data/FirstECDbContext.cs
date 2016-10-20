@@ -1,9 +1,9 @@
-﻿using Nebula.EntityFramework.Repository;
+﻿using Evol.EntityFramework.Repository;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
 
-namespace Nebula.FirstEC.Data
+namespace Evol.FirstEC.Data
 {
 
     public class FirstEcDbContext : NamedDbContext

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Nebula.Utilities.Collection
+namespace Evol.Utilities.Collection
 {
     /// <summary>
     /// 布隆过滤器

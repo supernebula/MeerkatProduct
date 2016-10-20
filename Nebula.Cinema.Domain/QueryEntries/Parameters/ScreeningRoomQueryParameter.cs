@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Cinema.Domain.QueryEntries.Parameters
+namespace Evol.Cinema.Domain.QueryEntries.Parameters
 {
     public class ScreeningRoomQueryParameter
     {

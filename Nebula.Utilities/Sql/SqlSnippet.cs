@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Utilities.Sql
+namespace Evol.Utilities.Sql
 { 
     /// <summary>
     /// Summary for the SqlFragment class

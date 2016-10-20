@@ -1,10 +1,10 @@
 ﻿using System;
-using Nebula.Utilities.Sql;
+using Evol.Utilities.Sql;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Utilities.Sql.V1;
+using Evol.Utilities.Sql.V1;
 
-namespace Nebula.Utilities.Test.Sql
+namespace Evol.Utilities.Test.Sql
 {
     [TestClass]
     public class DapperSqlWhereTest

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Practices.Unity;
-using Nebula.Common;
-using Nebula.Domain.Data;
-using Nebula.Domain.Ioc;
+using Evol.Common;
+using Evol.Domain.Data;
+using Evol.Domain.Ioc;
 
-namespace Nebula.FirstEC.Data.Ioc
+namespace Evol.FirstEC.Data.Ioc
 {
     public class DataConventionalDependencyRegister : IConventionalDependencyRegister
     {

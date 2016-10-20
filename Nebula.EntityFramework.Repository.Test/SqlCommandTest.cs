@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.Test.Model;
-using Nebula.Utilities.Sql;
+using Evol.EntityFramework.Repository.Test.Core;
+using Evol.Test.Model;
+using Evol.Utilities.Sql;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     [TestClass]
     public class SqlCommandTest

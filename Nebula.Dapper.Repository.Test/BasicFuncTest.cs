@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Dapper.Repository.Test
+namespace Evol.Dapper.Repository.Test
 {
     [TestClass]
     public class BasicFuncTest

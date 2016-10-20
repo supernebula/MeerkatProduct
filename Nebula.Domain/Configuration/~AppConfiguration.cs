@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     //public class AppConfiguration
     //{

@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Utilities.Test
+namespace Evol.Utilities.Test
 {
     [TestClass]
     public class IoCUtilityTes
@@ -12,10 +12,10 @@ namespace Nebula.Utilities.Test
         public void GetInterfaceAndClassFromAssemblyTest()
         {
             var interfaceClassPaires = IoCUtility.GetInterfaceAndClass(
-                    "Nebula.FirstEC.Domain.Repositories"
-                    , "Nebula.FirstEC.Data.Repositories"
-                    , Assembly.Load("Nebula.FirstEC.Domain")
-                    , Assembly.Load("Nebula.FirstEC.Data")
+                    "Evol.FirstEC.Domain.Repositories"
+                    , "Evol.FirstEC.Data.Repositories"
+                    , Assembly.Load("Evol.FirstEC.Domain")
+                    , Assembly.Load("Evol.FirstEC.Data")
                 );
             
             interfaceClassPaires.ForEach(p => Trace.WriteLine(p.Interface.FullName + "\r\n : " + p.Impl.FullName));

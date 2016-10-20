@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public abstract class NamedDbContext : DbContext, INamed
     {

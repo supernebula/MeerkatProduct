@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Utilities.Test.Space
+namespace Evol.Utilities.Test.Space
 {
     [TestClass]
     public class SpaceSizeTest

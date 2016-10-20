@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Nebula.Common
+namespace Evol.Common
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

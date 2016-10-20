@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 
-namespace Nebula.Domain.Ioc
+namespace Evol.Domain.Ioc
 {
     public interface IIoCManager
     {

@@ -4,11 +4,11 @@
 //using System.Reflection;
 //using System.Text;
 //using System.Threading.Tasks;
-//using Nebula.Common;
-//using Nebula.Domain.Ioc;
-//using Nebula.FirstEC.Domain.QueryEntries;
+//using Evol.Common;
+//using Evol.Domain.Ioc;
+//using Evol.FirstEC.Domain.QueryEntries;
 
-//namespace Nebula.FirstEC.Domain.Configuration
+//namespace Evol.FirstEC.Domain.Configuration
 //{
 //    public class DomainIocImplProvider : IIocImplProvider
 //    {

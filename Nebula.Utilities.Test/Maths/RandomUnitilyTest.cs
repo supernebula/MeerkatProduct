@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Utilities.Maths;
+using Evol.Utilities.Maths;
 
-namespace Nebula.Utilities.Test.Maths
+namespace Evol.Utilities.Test.Maths
 {
     [TestClass]
     public class RandomUnitilyTest

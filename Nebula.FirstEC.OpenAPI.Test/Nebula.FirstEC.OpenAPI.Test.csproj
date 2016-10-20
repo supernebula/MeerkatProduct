@@ -6,8 +6,8 @@
     <ProjectGuid>{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.First.OpenAPI.Test</RootNamespace>
-    <AssemblyName>Nebula.First.OpenAPI.Test</AssemblyName>
+    <RootNamespace>Evol.First.OpenAPI.Test</RootNamespace>
+    <AssemblyName>Evol.First.OpenAPI.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -73,13 +73,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.FirstEC.OpenAPI\Nebula.FirstEC.OpenAPI.csproj">
+    <ProjectReference Include="..\Nebula.FirstEC.OpenAPI\Evol.FirstEC.OpenAPI.csproj">
       <Project>{3036d02c-da69-4aa1-bf19-0a189d58cb2d}</Project>
-      <Name>Nebula.FirstEC.OpenAPI</Name>
+      <Name>Evol.FirstEC.OpenAPI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+    <ProjectReference Include="..\Nebula.Utilities\Evol.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
-      <Name>Nebula.Utilities</Name>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

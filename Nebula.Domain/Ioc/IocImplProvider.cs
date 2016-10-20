@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Domain.Ioc
+namespace Evol.Domain.Ioc
 {
     public interface IIocImplProvider
     {

@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using System.Xml.Schema;
 
-namespace Nebula.FirstEC.OpenAPI.Models
+namespace Evol.FirstEC.OpenAPI.Models
 {
     public abstract class BaseSecurityParameter
     {

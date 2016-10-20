@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.FirstEC.Domain.Models.AggregateRoots
+namespace Evol.FirstEC.Domain.Models.AggregateRoots
 {
     public class User : BaseEntity
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Common
+namespace Evol.Common
 {
     public enum GenderType
     {

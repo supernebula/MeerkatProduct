@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Cinema.Domain.QueryEntries;
-using Nebula.Cinema.Domain.Repositories;
-using Nebula.Domain;
+using Evol.Cinema.Domain.QueryEntries;
+using Evol.Cinema.Domain.Repositories;
+using Evol.Domain;
 using Microsoft.Practices.Unity;
 using System.Diagnostics;
-using Nebula.Cinema.Data.Repositories;
-using Nebula.Common.Repository;
-using Nebula.Domain.Messaging;
-using Nebula.EntityFramework.Repository;
+using Evol.Cinema.Data.Repositories;
+using Evol.Common.Repository;
+using Evol.Domain.Messaging;
+using Evol.EntityFramework.Repository;
 
 namespace Cinema.Tests.Data
 {

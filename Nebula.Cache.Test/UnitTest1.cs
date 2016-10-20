@@ -2,7 +2,7 @@
 using Enyim.Caching.Configuration;
 using Enyim.Caching.Memcached;
 
-namespace Nebula.Cache.Test
+namespace Evol.Cache.Test
 {
     public static class MemcachedHelper
     {

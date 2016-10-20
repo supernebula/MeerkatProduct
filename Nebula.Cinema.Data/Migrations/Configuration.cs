@@ -1,18 +1,18 @@
-namespace Nebula.Cinema.Data.Migrations
+namespace Evol.Cinema.Data.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Nebula.Cinema.Data.CinemaDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Evol.Cinema.Data.CinemaDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Nebula.Cinema.Data.CinemaDbContext context)
+        protected override void Seed(Evol.Cinema.Data.CinemaDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

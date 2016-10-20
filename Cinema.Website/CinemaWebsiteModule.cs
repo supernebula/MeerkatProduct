@@ -1,6 +1,6 @@
-﻿using Nebula.Cinema.Data;
-using Nebula.Cinema.Domain;
-using Nebula.Domain.Modules;
+﻿using Evol.Cinema.Data;
+using Evol.Cinema.Domain;
+using Evol.Domain.Modules;
 
 namespace Cinema.Website
 {

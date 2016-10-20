@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using log4net;
 
-namespace Nebula.Web.Filters
+namespace Evol.Web.Filters
 {
     public class LogExceptionAttribute : HandleErrorAttribute
     {

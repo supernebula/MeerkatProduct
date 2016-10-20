@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Nebula.Utilities.Extension
+namespace Evol.Utilities.Extension
 {
     /// <summary>
     /// 脱敏

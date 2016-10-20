@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Repositories;
-using Nebula.Test.Model;
-using Nebula.Utilities;
+using Evol.EntityFramework.Repository.Test.Core;
+using Evol.EntityFramework.Repository.Test.Repositories;
+using Evol.Test.Model;
+using Evol.Utilities;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     /// <summary>
     /// ConcurrentTest 的摘要说明

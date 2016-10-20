@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26505B67-6CB9-4191-A72F-C5D88EF7C635}</ProjectGuid>
+    <ProjectGuid>{3A834C79-05FE-4C07-A321-B6057C28F075}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Dapper.Repository</RootNamespace>
-    <AssemblyName>Nebula.Dapper.Repository</AssemblyName>
+    <RootNamespace>Evol.FirstEC.Data</RootNamespace>
+    <AssemblyName>Evol.FirstEC.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -52,7 +56,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,24 +65,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicDapperRepository.cs" />
-    <Compile Include="DapperDbContext.cs" />
-    <Compile Include="DbContextFactory.cs" />
-    <Compile Include="IDbConnectionFactory.cs" />
+    <Compile Include="Ioc\DataConventionalDependencyRegister.cs" />
+    <Compile Include="Map\CategaryMap.cs" />
+    <Compile Include="Map\CategarySpecRelationMap.cs" />
+    <Compile Include="Map\CategaryTagRelationMap.cs" />
+    <Compile Include="Map\InStockMap.cs" />
+    <Compile Include="Map\InStockSpecRelationMap.cs" />
+    <Compile Include="Map\OrderMap.cs" />
+    <Compile Include="Map\ProductTagRelationMap.cs" />
+    <Compile Include="Map\ShoppingCartMap.cs" />
+    <Compile Include="Map\SpecMap.cs" />
+    <Compile Include="Map\TagMap.cs" />
+    <Compile Include="Map\UserMap.cs" />
+    <Compile Include="NebulaFirstECDataModule.cs" />
+    <Compile Include="QueryEntries\ProductQuery.cs" />
+    <Compile Include="Map\ProductMap.cs" />
+    <Compile Include="FirstECDbContext.cs" />
+    <Compile Include="~Paged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategaryRepository.cs" />
+    <Compile Include="Repositories\CategarySpecRelationRepository.cs" />
+    <Compile Include="Repositories\CategaryTagRelationRepository.cs" />
+    <Compile Include="Repositories\InStockRepository.cs" />
+    <Compile Include="Repositories\InStockSpecRelationRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProductTagRelationRepository.cs" />
+    <Compile Include="Repositories\ShoppingCartRepository.cs" />
+    <Compile Include="Repositories\SpecRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
-      <Project>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</Project>
-      <Name>Nebula.EntityFramework.Repository</Name>
+    <ProjectReference Include="..\Nebula.Domain\Evol.Domain.csproj">
+      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
+      <Name>Evol.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj">
+      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
+      <Name>Evol.EntityFramework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.FirstEC.Domain\Evol.FirstEC.Domain.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Evol.FirstEC.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nebula.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

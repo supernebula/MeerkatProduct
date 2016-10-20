@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Utilities.Collection;
+using Evol.Utilities.Collection;
 
-namespace Nebula.Utilities.Test.Collection
+namespace Evol.Utilities.Test.Collection
 {
     [TestClass]
     public class BloomFilterTest

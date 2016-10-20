@@ -1,6 +1,6 @@
-﻿using Nebula.Domain.Events;
+﻿using Evol.Domain.Events;
 
-namespace Nebula.Domain.Messaging
+namespace Evol.Domain.Messaging
 {
     public interface IEventBus
     {

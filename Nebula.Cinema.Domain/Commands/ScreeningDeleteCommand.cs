@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Cinema.Domain.Commands
+namespace Evol.Cinema.Domain.Commands
 {
     class ScreeningDeleteCommand
     {

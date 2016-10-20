@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using Nebula.Domain.Ioc;
-using Nebula.Domain.Modules;
+using Evol.Domain.Ioc;
+using Evol.Domain.Modules;
 
-namespace Nebula.Cinema.Domain
+namespace Evol.Cinema.Domain
 {
     public class CinemaDomainModule : AppModule
     {

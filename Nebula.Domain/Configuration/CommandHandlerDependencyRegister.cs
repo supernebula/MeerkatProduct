@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Nebula.Common;
-using Nebula.Domain.Messaging;
+using Evol.Common;
+using Evol.Domain.Messaging;
 using Microsoft.Practices.Unity;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public class CommandHandlerDependencyRegister : IDependencyRegister
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Nebula.Utilities.Tests
+namespace Evol.Utilities.Tests
 {
     public static class TimeMonitor
     {

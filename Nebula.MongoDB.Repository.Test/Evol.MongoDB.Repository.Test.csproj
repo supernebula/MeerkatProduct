@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E552D76-C48C-4B30-B7D6-06A750329E79}</ProjectGuid>
+    <ProjectGuid>{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Cinema.Data.Test</RootNamespace>
-    <AssemblyName>Nebula.Cinema.Data.Test</AssemblyName>
+    <RootNamespace>Evol.MongoDB.Repository.Test</RootNamespace>
+    <AssemblyName>Evol.MongoDB.Repository.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

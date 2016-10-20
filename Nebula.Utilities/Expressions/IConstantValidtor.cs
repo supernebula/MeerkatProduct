@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Utilities.Expressions
+namespace Evol.Utilities.Expressions
 {
     public interface IConstantValidtor
     {

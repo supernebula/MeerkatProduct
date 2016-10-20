@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Domain.Messaging;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Domain.Events
+namespace Evol.Domain.Events
 {
     public class Event : IEvent
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.FirstEC.Domain.Models.AggregateRoots;
-using Nebula.FirstEC.Domain.QueryEntries;
+using Evol.FirstEC.Domain.Models.AggregateRoots;
+using Evol.FirstEC.Domain.QueryEntries;
 
-namespace Nebula.FirstEC.Data.QueryEntries
+namespace Evol.FirstEC.Data.QueryEntries
 {
     public class ProductQuery : IProductQuery
     {

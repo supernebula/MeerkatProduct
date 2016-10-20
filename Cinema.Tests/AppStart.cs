@@ -1,9 +1,9 @@
 ﻿using Microsoft.Practices.Unity;
 using Cinema.Website;
-using Nebula.Common.Repository;
-using Nebula.Domain;
-using Nebula.Domain.Messaging;
-using Nebula.EntityFramework.Repository;
+using Evol.Common.Repository;
+using Evol.Domain;
+using Evol.Domain.Messaging;
+using Evol.EntityFramework.Repository;
 
 namespace Cinema.Tests
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Dapper.Repository
+namespace Evol.Dapper.Repository
 {
     public interface IDbConnectionFactory<out TDbContext> where TDbContext : DapperDbContext
     {

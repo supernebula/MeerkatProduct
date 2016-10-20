@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-namespace Nebula.Utilities.Maths
+namespace Evol.Utilities.Maths
 {
     public class RandomUnitily
     {

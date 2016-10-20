@@ -1,7 +1,7 @@
-﻿using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.Test.Model;
+﻿using Evol.EntityFramework.Repository.Test.Core;
+using Evol.Test.Model;
 
-namespace Nebula.EntityFramework.Repository.Test.Repositories
+namespace Evol.EntityFramework.Repository.Test.Repositories
 {
     public class FakeOrderRepository : BasicEntityFrameworkRepository<FakeOrder, FakeEcDbContext>
     {

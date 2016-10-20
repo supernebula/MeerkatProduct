@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 
 
-namespace Nebula.Utilities.Serialization
+namespace Evol.Utilities.Serialization
 {
     public static class XmlUtility
     {

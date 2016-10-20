@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1B0B30AF-E41A-4719-AC85-97DB64FC8135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities", "Nebula.Utilities\Nebula.Utilities.csproj", "{8431D32B-C3BA-4EFB-B85D-7BC70798F571}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Utilities", "Nebula.Utilities\Evol.Utilities.csproj", "{8431D32B-C3BA-4EFB-B85D-7BC70798F571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Utilities.Test", "Nebula.Utilities.Test\Nebula.Utilities.Test.csproj", "{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Utilities.Test", "Nebula.Utilities.Test\Evol.Utilities.Test.csproj", "{8F600136-F3FB-4FC3-8CDF-982FD06CAC71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26F1E490-D348-4EA0-AF52-8CBA2D2F0F1B}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,13 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyntaxTest.cs", "SyntaxTest.cs\SyntaxTest.cs.csproj", "{E5675FBD-1E37-4F69-A0ED-6F5C0B38B456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cache.Test", "Nebula.Cache.Test\Nebula.Cache.Test.csproj", "{72804F53-5EB2-4E8C-874A-02C501ECFA6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Cache.Test", "Nebula.Cache.Test\Evol.Cache.Test.csproj", "{72804F53-5EB2-4E8C-874A-02C501ECFA6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code.Test", "Code.Test\Code.Test.csproj", "{62A8F971-350C-4FBD-84F4-E1E84655F16D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Web", "Nebula.Web\Nebula.Web.csproj", "{23781FB0-E74B-4EA6-B078-3C86630C7733}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Web", "Nebula.Web\Evol.Web.csproj", "{23781FB0-E74B-4EA6-B078-3C86630C7733}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.MongoDB.Repository", "Nebula.MongoDB.Repository\Nebula.MongoDB.Repository.csproj", "{471DA0B4-6C08-41B2-92A3-5F9E66B143A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.MongoDB.Repository", "Nebula.MongoDB.Repository\Evol.MongoDB.Repository.csproj", "{471DA0B4-6C08-41B2-92A3-5F9E66B143A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{6393B565-5C8B-49D4-A357-F56B681806DB}"
 EndProject
@@ -32,61 +32,61 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{5E813404-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{896D1BC2-0CB3-44BF-A835-92F4240FCA0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Memcached.Repository", "Nebula.Memcached.Repository\Nebula.Memcached.Repository.csproj", "{82AF8C4A-4673-48F7-A5AC-18DB6EF0FFA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Memcached.Repository", "Nebula.Memcached.Repository\Evol.Memcached.Repository.csproj", "{82AF8C4A-4673-48F7-A5AC-18DB6EF0FFA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository", "Nebula.Redis.Repository\Nebula.Redis.Repository.csproj", "{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Redis.Repository", "Nebula.Redis.Repository\Evol.Redis.Repository.csproj", "{EA99243B-502D-4DFA-B8E7-B4EB80090A3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test.FirstEC", "Test.FirstEC", "{64D5ABCD-EEC5-44C4-8543-012518D459FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.OpenAPI", "Nebula.FirstEC.OpenAPI\Nebula.FirstEC.OpenAPI.csproj", "{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.FirstEC.OpenAPI", "Nebula.FirstEC.OpenAPI\Evol.FirstEC.OpenAPI.csproj", "{3036D02C-DA69-4AA1-BF19-0A189D58CB2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.OpenAPI.Test", "Nebula.FirstEC.OpenAPI.Test\Nebula.FirstEC.OpenAPI.Test.csproj", "{FBB46A3C-9CE8-4274-8A45-EC0F9BE02BE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.WebSite.Tests", "Nebula.FirstEC.WebSite.Tests\Nebula.FirstEC.WebSite.Tests.csproj", "{B7E279B7-F4FD-402B-898B-C981362FB420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.RabbitMQ", "Nebula.FirstEC.RabbitMQ\Nebula.FirstEC.RabbitMQ.csproj", "{D4998922-900E-475C-B464-1CACAB01D1B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.FirstEC.RabbitMQ", "Nebula.FirstEC.RabbitMQ\Evol.FirstEC.RabbitMQ.csproj", "{D4998922-900E-475C-B464-1CACAB01D1B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.RabbitMQ.Test", "Nebula.FirstEC.RabbitMQ.Test\Nebula.FirstEC.RabbitMQ.Test.csproj", "{C05BFC1F-81DF-4012-A568-C45E7651893C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.EntityFramework.Repository", "Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.EntityFramework.Repository", "Nebula.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj", "{CD58A276-8A17-44FD-8764-09AD2E5403C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.EntityFramework.Repository.Test", "Nebula.EntityFramework.Repository.Test\Nebula.EntityFramework.Repository.Test.csproj", "{ED3625FB-8C0F-451B-AD23-662066D95582}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.EntityFramework.Repository.Test", "Nebula.EntityFramework.Repository.Test\Evol.EntityFramework.Repository.Test.csproj", "{ED3625FB-8C0F-451B-AD23-662066D95582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Memcached.Repository.Test", "Nebula.Memcached.Repository.Test\Nebula.Memcached.Repository.Test.csproj", "{617298CA-891B-4F39-9675-2DF3AAB93EC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Memcached.Repository.Test", "Nebula.Memcached.Repository.Test\Evol.Memcached.Repository.Test.csproj", "{617298CA-891B-4F39-9675-2DF3AAB93EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.MongoDB.Repository.Test", "Nebula.MongoDB.Repository.Test\Nebula.MongoDB.Repository.Test.csproj", "{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.MongoDB.Repository.Test", "Nebula.MongoDB.Repository.Test\Evol.MongoDB.Repository.Test.csproj", "{D5638C8D-3D06-439D-AAE4-0524DF6BAB93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Redis.Repository.Test", "Nebula.Redis.Repository.Test\Nebula.Redis.Repository.Test.csproj", "{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Redis.Repository.Test", "Nebula.Redis.Repository.Test\Evol.Redis.Repository.Test.csproj", "{97BF6A17-BA64-490B-8814-3EDE94E7BA9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Dapper.Repository", "Nebula.Dapper.Repository\Nebula.Dapper.Repository.csproj", "{26505B67-6CB9-4191-A72F-C5D88EF7C635}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Dapper.Repository", "Nebula.Dapper.Repository\Evol.Dapper.Repository.csproj", "{26505B67-6CB9-4191-A72F-C5D88EF7C635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.ServiceStackOrmLite.Repository", "Nebula.ServiceStackOrmLite.Repository\Nebula.ServiceStackOrmLite.Repository.csproj", "{61AED5B6-742E-4669-961A-F367092B9613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.ServiceStackOrmLite.Repository", "Nebula.ServiceStackOrmLite.Repository\Evol.ServiceStackOrmLite.Repository.csproj", "{61AED5B6-742E-4669-961A-F367092B9613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Common", "Nebula.Common\Nebula.Common.csproj", "{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Common", "Nebula.Common\Evol.Common.csproj", "{FFD8CED2-AAD0-443D-9C53-943C7A2327EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Dapper.Repository.Test", "Nebula.Dapper.Repository.Test\Nebula.Dapper.Repository.Test.csproj", "{1FE823B0-CB5E-40D1-8B9F-D36F691F66DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Dapper.Repository.Test", "Nebula.Dapper.Repository.Test\Evol.Dapper.Repository.Test.csproj", "{1FE823B0-CB5E-40D1-8B9F-D36F691F66DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Test.Model", "Nebula.Test.Model\Nebula.Test.Model.csproj", "{A626FA52-997D-4BA1-AAB9-83F0DC742AC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Test.Model", "Nebula.Test.Model\Evol.Test.Model.csproj", "{A626FA52-997D-4BA1-AAB9-83F0DC742AC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Data", "Nebula.FirstEC.Data\Nebula.FirstEC.Data.csproj", "{3A834C79-05FE-4C07-A321-B6057C28F075}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.FirstEC.Data", "Nebula.FirstEC.Data\Evol.FirstEC.Data.csproj", "{3A834C79-05FE-4C07-A321-B6057C28F075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Domain", "Nebula.FirstEC.Domain\Nebula.FirstEC.Domain.csproj", "{47FF7F27-1A70-4437-93D6-D53793C16DF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.FirstEC.Domain", "Nebula.FirstEC.Domain\Evol.FirstEC.Domain.csproj", "{47FF7F27-1A70-4437-93D6-D53793C16DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.FirstEC.Website", "Nebula.FirstEC.WebSite\Nebula.FirstEC.Website.csproj", "{5D052A4B-C284-4107-96A1-D168C71FA160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.FirstEC.Website", "Nebula.FirstEC.WebSite\Evol.FirstEC.Website.csproj", "{5D052A4B-C284-4107-96A1-D168C71FA160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Domain", "Nebula.Domain\Nebula.Domain.csproj", "{A4BA2B31-88D4-443E-8540-1751494D8577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Domain", "Nebula.Domain\Evol.Domain.csproj", "{A4BA2B31-88D4-443E-8540-1751494D8577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Domain", "Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj", "{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Cinema.Domain", "Nebula.Cinema.Domain\Evol.Cinema.Domain.csproj", "{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{71EE394E-791B-4F9D-ADB4-FBB0B36B2DC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Website", "Cinema.Website\Cinema.Website.csproj", "{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Data", "Nebula.Cinema.Data\Nebula.Cinema.Data.csproj", "{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Cinema.Data", "Nebula.Cinema.Data\Evol.Cinema.Data.csproj", "{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test.Cinema", "Test.Cinema", "{779497D8-07F0-465D-A0A5-D2B2E2F8D077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebula.Cinema.Data.Test", "Nebula.Cinema.Data.Test\Nebula.Cinema.Data.Test.csproj", "{0E552D76-C48C-4B30-B7D6-06A750329E79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evol.Cinema.Data.Test", "Nebula.Cinema.Data.Test\Evol.Cinema.Data.Test.csproj", "{0E552D76-C48C-4B30-B7D6-06A750329E79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinema.Tests", "Cinema.Tests\Cinema.Tests.csproj", "{EB5BF687-5229-4833-8F28-BCA1068BE5E7}"
 EndProject

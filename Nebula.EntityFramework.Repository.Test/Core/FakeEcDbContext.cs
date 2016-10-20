@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
-using Nebula.EntityFramework.Repository.Test.Migrations;
-using Nebula.EntityFramework.Repository;
+using Evol.EntityFramework.Repository.Test.Migrations;
+using Evol.EntityFramework.Repository;
 
-namespace Nebula.EntityFramework.Repository.Test.Core
+namespace Evol.EntityFramework.Repository.Test.Core
 {
     public class FakeEcDbContext : NamedDbContext 
     {

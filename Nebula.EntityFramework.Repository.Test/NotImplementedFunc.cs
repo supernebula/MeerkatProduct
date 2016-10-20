@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     /// <summary>
     /// 未测试实现的功能 EntityFramework

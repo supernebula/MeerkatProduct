@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Cinema.Domain.Models.Values;
+using Evol.Cinema.Domain.Models.Values;
 
-namespace Nebula.Cinema.Domain.QueryEntries.Parameters
+namespace Evol.Cinema.Domain.QueryEntries.Parameters
 {
     public class MovieQueryParameter
     {

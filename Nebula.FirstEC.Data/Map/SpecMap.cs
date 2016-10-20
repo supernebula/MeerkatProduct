@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Nebula.FirstEC.Domain.Models.AggregateRoots;
+using Evol.FirstEC.Domain.Models.AggregateRoots;
 
-namespace Nebula.FirstEC.Data.Map
+namespace Evol.FirstEC.Data.Map
 {
     public class SpecMap : EntityTypeConfiguration<Spec>
     {

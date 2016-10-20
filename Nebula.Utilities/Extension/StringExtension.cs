@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Nebula.Utilities.Extension
+namespace Evol.Utilities.Extension
 {
     public static class StringExtension
     {

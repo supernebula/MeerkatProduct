@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace Nebula.Utilities.Serialization
+namespace Evol.Utilities.Serialization
 {
     public class JsonUtility
     {

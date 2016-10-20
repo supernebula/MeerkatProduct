@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Domain.Messaging;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Domain.Commands
+namespace Evol.Domain.Commands
 {
     public class Command : ICommand
     {

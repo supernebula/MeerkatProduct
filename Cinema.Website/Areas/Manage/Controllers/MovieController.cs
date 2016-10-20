@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using System.Web.Mvc;
 using Cinema.Website.Areas.Manage.Models;
-using Nebula.Cinema.Domain.Commands;
-using Nebula.Cinema.Domain.QueryEntries;
-using Nebula.Cinema.Domain.QueryEntries.Parameters;
-using Nebula.Domain.Messaging;
+using Evol.Cinema.Domain.Commands;
+using Evol.Cinema.Domain.QueryEntries;
+using Evol.Cinema.Domain.QueryEntries.Parameters;
+using Evol.Domain.Messaging;
 
 namespace Cinema.Website.Areas.Manage.Controllers
 {

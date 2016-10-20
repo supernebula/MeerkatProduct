@@ -4,10 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Nebula.Domain.Commands;
-using Nebula.Domain.Configuration;
+using Evol.Domain.Commands;
+using Evol.Domain.Configuration;
 
-namespace Nebula.Domain.Messaging
+namespace Evol.Domain.Messaging
 {
     public class DefaultCommandHandlerFactory : ICommandHandlerFactory
     {

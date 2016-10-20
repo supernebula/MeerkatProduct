@@ -1,4 +1,4 @@
-namespace Nebula.Cinema.Data.Migrations
+namespace Evol.Cinema.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

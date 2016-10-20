@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public class EfUnitOfWork : UnitOfWorkBase
     {

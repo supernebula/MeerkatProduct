@@ -1,7 +1,7 @@
-﻿using Nebula.Cinema.Domain.Models.Entitys;
-using Nebula.Domain.Data;
+﻿using Evol.Cinema.Domain.Models.Entitys;
+using Evol.Domain.Data;
 
-namespace Nebula.Cinema.Domain.Repositories
+namespace Evol.Cinema.Domain.Repositories
 {
     public interface ISeatRepository : IRepository<Seat>
     {

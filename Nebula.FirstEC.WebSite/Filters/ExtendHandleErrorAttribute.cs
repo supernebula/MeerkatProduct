@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using log4net;
 
-namespace Nebula.FirstEC.WebSite.Filters
+namespace Evol.FirstEC.WebSite.Filters
 {
     public class ExtendHandleErrorAttribute : HandleErrorAttribute
     {

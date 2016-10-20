@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Cinema.Domain.Models.AggregateRoots
+namespace Evol.Cinema.Domain.Models.AggregateRoots
 {
     public class Actor : IPrimaryKey
     {

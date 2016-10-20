@@ -2,7 +2,7 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Unity.WebApi;
 
-namespace Nebula.FirstEC.OpenAPI
+namespace Evol.FirstEC.OpenAPI
 {
     public static class UnityConfig
     {

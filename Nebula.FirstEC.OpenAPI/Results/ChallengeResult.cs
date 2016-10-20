@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Nebula.FirstEC.OpenAPI.Results
+namespace Evol.FirstEC.OpenAPI.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

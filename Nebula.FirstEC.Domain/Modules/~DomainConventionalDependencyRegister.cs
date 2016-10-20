@@ -3,12 +3,12 @@
 //using System.Linq;
 //using System.Reflection;
 //using Microsoft.Practices.Unity;
-//using Nebula.Common;
-//using Nebula.Domain.Ioc;
-//using Nebula.Domain.Messaging;
-//using Nebula.FirstEC.Domain.CommandHandlers;
+//using Evol.Common;
+//using Evol.Domain.Ioc;
+//using Evol.Domain.Messaging;
+//using Evol.FirstEC.Domain.CommandHandlers;
 
-//namespace Nebula.FirstEC.Domain.Modules
+//namespace Evol.FirstEC.Domain.Modules
 //{
 //    public class DomainConventionalDependencyRegister : IConventionalDependencyRegister
 //    {

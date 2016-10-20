@@ -2,11 +2,11 @@
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
-using Nebula.Common.Repository;
-using Nebula.Domain.Commands;
-using Nebula.Domain.Data;
+using Evol.Common.Repository;
+using Evol.Domain.Commands;
+using Evol.Domain.Data;
 
-namespace Nebula.Domain.Messaging
+namespace Evol.Domain.Messaging
 {
     public class CommandBus : ICommandBus
     {

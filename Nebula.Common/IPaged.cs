@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Nebula.Common
+namespace Evol.Common
 {
     public interface IPaged<out T> : IPaged, IEnumerable<T>, IEnumerable
     {

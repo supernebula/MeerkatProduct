@@ -1,17 +1,17 @@
 ﻿using System.Reflection;
-using Nebula.FirstEC.Data.Ioc;
-using Nebula.Domain.Ioc;
-using Nebula.Domain.Modules;
-using Nebula.FirstEC.Domain;
+using Evol.FirstEC.Data.Ioc;
+using Evol.Domain.Ioc;
+using Evol.Domain.Modules;
+using Evol.FirstEC.Domain;
 
-namespace Nebula.FirstEC.Data
+namespace Evol.FirstEC.Data
 {
-    [DependOn(typeof(NebulaFirstEcDomainModule))]
-    public class NebulaFirstEcDataModule : AppModule
+    [DependOn(typeof(EvolFirstEcDomainModule))]
+    public class EvolFirstEcDataModule : AppModule
     {
         private readonly IConventionalDependencyRegister _dataDependencyRegister;
 
-        public NebulaFirstEcDataModule()
+        public EvolFirstEcDataModule()
         {
             _dataDependencyRegister = new DataConventionalDependencyRegister();
         }

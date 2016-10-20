@@ -1,7 +1,7 @@
-﻿using Nebula.Domain.Commands;
-using Nebula.Domain.Messaging;
+﻿using Evol.Domain.Commands;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public interface ICommandHandlerActivator
     {

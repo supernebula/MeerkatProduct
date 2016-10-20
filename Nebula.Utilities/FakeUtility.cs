@@ -1,8 +1,8 @@
 ﻿using System;
-using Nebula.Common;
-using Nebula.Utilities.Maths;
+using Evol.Common;
+using Evol.Utilities.Maths;
 
-namespace Nebula.Utilities
+namespace Evol.Utilities
 {
     public class FakeUtility
     {

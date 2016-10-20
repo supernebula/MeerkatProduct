@@ -1,7 +1,7 @@
-﻿using Nebula.Domain.Data;
-using Nebula.FirstEC.Domain.Models.AggregateRoots;
+﻿using Evol.Domain.Data;
+using Evol.FirstEC.Domain.Models.AggregateRoots;
 
-namespace Nebula.FirstEC.Domain.Repositories
+namespace Evol.FirstEC.Domain.Repositories
 {
     public interface ICategaryRepository : IRepository<Categary>
     {

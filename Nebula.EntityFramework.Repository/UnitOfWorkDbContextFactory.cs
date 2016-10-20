@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public class DefualtDbContextFactory : IDbContextFactory
     {

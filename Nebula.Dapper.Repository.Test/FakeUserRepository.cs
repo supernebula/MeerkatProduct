@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Nebula.Test.Model;
+using Evol.Test.Model;
 
-namespace Nebula.Dapper.Repository.Test
+namespace Evol.Dapper.Repository.Test
 {
     public class FakeUserRepository : BasicDapperRepository<FakeUser, FakeEcDbContext>
     {

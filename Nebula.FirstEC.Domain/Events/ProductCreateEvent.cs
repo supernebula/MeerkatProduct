@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Domain.Events;
+using Evol.Domain.Events;
 
-namespace Nebula.FirstEC.Domain.Events
+namespace Evol.FirstEC.Domain.Events
 {
     public class ProductCreateEvent : Event
     {

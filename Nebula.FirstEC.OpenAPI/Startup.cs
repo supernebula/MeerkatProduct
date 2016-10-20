@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(Nebula.FirstEC.OpenAPI.Startup))]
+[assembly: OwinStartup(typeof(Evol.FirstEC.OpenAPI.Startup))]
 
-namespace Nebula.FirstEC.OpenAPI
+namespace Evol.FirstEC.OpenAPI
 {
     public partial class Startup
     {

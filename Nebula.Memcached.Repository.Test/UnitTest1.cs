@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Memcached.Repository.Test
+namespace Evol.Memcached.Repository.Test
 {
     [TestClass]
     public class UnitTest1

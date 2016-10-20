@@ -1,8 +1,8 @@
 ﻿using System;
-using Nebula.EntityFramework.Repository.Test.QueryEntries.Parameters;
-using Nebula.Test.Model;
+using Evol.EntityFramework.Repository.Test.QueryEntries.Parameters;
+using Evol.Test.Model;
 
-namespace Nebula.EntityFramework.Repository.Test.QueryEntries
+namespace Evol.EntityFramework.Repository.Test.QueryEntries
 {
     public class UserQueryEntry
     {

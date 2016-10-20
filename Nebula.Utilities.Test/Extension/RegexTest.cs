@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Utilities.Test.Extension
+namespace Evol.Utilities.Test.Extension
 {
     [TestClass]
     public class RegexTest

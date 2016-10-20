@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public interface IActiveUnitOfWork
     {

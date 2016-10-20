@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
-using Nebula.Cinema.Data.Ioc;
-using Nebula.Cinema.Domain;
-using Nebula.Domain.Ioc;
-using Nebula.Domain.Modules;
+using Evol.Cinema.Data.Ioc;
+using Evol.Cinema.Domain;
+using Evol.Domain.Ioc;
+using Evol.Domain.Modules;
 
-namespace Nebula.Cinema.Data
+namespace Evol.Cinema.Data
 {
     [DependOn(typeof(CinemaDomainModule))]
     public class CinemaDataModule : AppModule

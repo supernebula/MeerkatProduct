@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4663F279-3833-4E3F-82A8-A5C4CDA62DA0}</ProjectGuid>
+    <ProjectGuid>{47FF7F27-1A70-4437-93D6-D53793C16DF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Cinema.Data</RootNamespace>
-    <AssemblyName>Nebula.Cinema.Data</AssemblyName>
+    <RootNamespace>Evol.FirstEC.Domain</RootNamespace>
+    <AssemblyName>Evol.FirstEC.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -55,7 +47,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,63 +56,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CinemaDbContext.cs" />
-    <Compile Include="Ioc\DataConventionalDependencyRegister.cs" />
-    <Compile Include="Map\ActorMap.cs" />
-    <Compile Include="Map\MovieMap.cs" />
-    <Compile Include="Map\ScreeningMap.cs" />
-    <Compile Include="Map\ScreeningRoomMap.cs" />
-    <Compile Include="Map\Seat.cs" />
-    <Compile Include="CinemaDataModule.cs" />
-    <Compile Include="Migrations\201609220224248_Create-Database.cs" />
-    <Compile Include="Migrations\201609220224248_Create-Database.Designer.cs">
-      <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609250304388_Update-Field.cs" />
-    <Compile Include="Migrations\201609250304388_Update-Field.Designer.cs">
-      <DependentUpon>201609250304388_Update-Field.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="CommandHandlers\ProductCommandHandler.cs" />
+    <Compile Include="Commands\ProductCreateCommand.cs" />
+    <Compile Include="Modules\~DomainConventionalDependencyRegister.cs" />
+    <Compile Include="Modules\~DomainIocImplProvider.cs" />
+    <Compile Include="Modules\~DomainIocRegister.cs" />
+    <Compile Include="EventHandlers\ProductCreateEventHandler.cs" />
+    <Compile Include="Events\ProductCreateEvent.cs" />
+    <Compile Include="Models\AggregateRoots\Tag.cs" />
+    <Compile Include="Models\AggregateRoots\ShoppingCart.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\AggregateRoots\Categary.cs" />
+    <Compile Include="Models\Entities\CategarySpecRelation.cs" />
+    <Compile Include="Models\Entities\CategaryTagRelation.cs" />
+    <Compile Include="Models\Entities\InStock.cs" />
+    <Compile Include="Models\Entities\InStockSpecRelation.cs" />
+    <Compile Include="Models\Entities\ProductTagRelation.cs" />
+    <Compile Include="Models\AggregateRoots\Order.cs" />
+    <Compile Include="Models\AggregateRoots\Product.cs" />
+    <Compile Include="Models\Values\ProductStatusType.cs" />
+    <Compile Include="NebulaFirstECDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryEntries\ActorQueryEntry.cs" />
-    <Compile Include="QueryEntries\MovieQueryEntry.cs" />
-    <Compile Include="QueryEntries\ScreeningQueryEntry.cs" />
-    <Compile Include="QueryEntries\ScreeningRoomQueryEntry.cs" />
-    <Compile Include="QueryEntries\SeatQueryEntry.cs" />
-    <Compile Include="Repositories\ActorRepository.cs" />
-    <Compile Include="Repositories\MovieRepository.cs" />
-    <Compile Include="Repositories\ScreeningRepository.cs" />
-    <Compile Include="Repositories\ScreeningRoomRepository.cs" />
-    <Compile Include="Repositories\SeatRepository.cs" />
+    <Compile Include="Models\AggregateRoots\Spec.cs" />
+    <Compile Include="Models\AggregateRoots\User.cs" />
+    <Compile Include="QueryEntries\ICategaryQuery.cs" />
+    <Compile Include="QueryEntries\ICategarySpecRelationQuery.cs" />
+    <Compile Include="QueryEntries\ICategaryTagRelationQuery.cs" />
+    <Compile Include="QueryEntries\IInStockQuery.cs" />
+    <Compile Include="QueryEntries\IInStockSpecRelationQuery.cs" />
+    <Compile Include="QueryEntries\IOrderQuery.cs" />
+    <Compile Include="QueryEntries\IProductQuery.cs" />
+    <Compile Include="QueryEntries\IProductTagRelationQuery.cs" />
+    <Compile Include="QueryEntries\~IQueryEntry.cs" />
+    <Compile Include="QueryEntries\IShoppingCartQuery.cs" />
+    <Compile Include="QueryEntries\ISpecQuery.cs" />
+    <Compile Include="QueryEntries\ITagQuery.cs" />
+    <Compile Include="QueryEntries\IUserQuery.cs" />
+    <Compile Include="Repositories\ICategaryRepository.cs" />
+    <Compile Include="Repositories\ICategarySpecRelationRepository.cs" />
+    <Compile Include="Repositories\ICategaryTagRelationRepository.cs" />
+    <Compile Include="Repositories\IInStockRepository.cs" />
+    <Compile Include="Repositories\IInStockSpecRelationRepository.cs" />
+    <Compile Include="Repositories\IOrderRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IProductTagRelationRepository.cs" />
+    <Compile Include="Repositories\~IRepository.cs" />
+    <Compile Include="Repositories\IShoppingCartRepository.cs" />
+    <Compile Include="Repositories\ISpecRepository.cs" />
+    <Compile Include="Repositories\ITagRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609220224248_Create-Database.resx">
-      <DependentUpon>201609220224248_Create-Database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609250304388_Update-Field.resx">
-      <DependentUpon>201609250304388_Update-Field.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">
-      <Project>{270E23FD-9CE4-4ED5-84ED-C4C0AE5D1CDF}</Project>
-      <Name>Nebula.Cinema.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
+    <ProjectReference Include="..\Nebula.Domain\Evol.Domain.csproj">
       <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
-      <Name>Nebula.Domain</Name>
+      <Name>Evol.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
-      <Project>{cd58a276-8a17-44fd-8764-09ad2e5403c4}</Project>
-      <Name>Nebula.EntityFramework.Repository</Name>
+    <ProjectReference Include="..\Nebula.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

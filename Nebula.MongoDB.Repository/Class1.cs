@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.MongoDB.Repository
+namespace Evol.MongoDB.Repository
 {
     public class Class1
     {

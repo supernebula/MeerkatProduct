@@ -1,10 +1,10 @@
-﻿//using Nebula.Common;
+﻿//using Evol.Common;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Linq.Expressions;
 
-//namespace Nebula.FirstEC.Domain.Repositories
+//namespace Evol.FirstEC.Domain.Repositories
 //{
 //    public interface IRepository<T> where T : IPrimaryKey
 //    {

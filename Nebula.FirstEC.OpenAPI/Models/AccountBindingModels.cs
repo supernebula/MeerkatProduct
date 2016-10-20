@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Nebula.FirstEC.OpenAPI.Models
+namespace Evol.FirstEC.OpenAPI.Models
 {
     // 用作 AccountController 操作的参数的模型。
 

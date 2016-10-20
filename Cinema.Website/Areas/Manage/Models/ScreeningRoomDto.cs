@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Nebula.Cinema.Domain.Models.AggregateRoots;
+using Evol.Cinema.Domain.Models.AggregateRoots;
 using System;
 using System.Collections.Generic;
 using System.Linq;

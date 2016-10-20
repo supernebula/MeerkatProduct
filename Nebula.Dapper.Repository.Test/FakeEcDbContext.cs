@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Dapper.Repository.Test
+namespace Evol.Dapper.Repository.Test
 {
     public class FakeEcDbContext : DapperDbContext
     {

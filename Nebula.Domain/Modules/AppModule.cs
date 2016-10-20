@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nebula.Domain.Ioc;
+using Evol.Domain.Ioc;
 using System.Reflection;
 
-namespace Nebula.Domain.Modules
+namespace Evol.Domain.Modules
 {
     /// <summary>
     /// 模型（目前每个项目看作一个模块）初始化

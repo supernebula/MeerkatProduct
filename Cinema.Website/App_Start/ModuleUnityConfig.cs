@@ -1,11 +1,11 @@
 ﻿
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Nebula.Common.Repository;
-using Nebula.Domain;
-using Nebula.Domain.Configuration;
-using Nebula.Domain.Messaging;
-using Nebula.EntityFramework.Repository;
+using Evol.Common.Repository;
+using Evol.Domain;
+using Evol.Domain.Configuration;
+using Evol.Domain.Messaging;
+using Evol.EntityFramework.Repository;
 using Unity.Mvc5;
 
 namespace Cinema.Website

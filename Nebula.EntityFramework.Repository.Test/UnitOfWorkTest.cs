@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Common.Repository;
-using Nebula.Domain.Data;
-using Nebula.EntityFramework.Repository.Test.Repositories;
-using Nebula.Test.Model;
+using Evol.Common.Repository;
+using Evol.Domain.Data;
+using Evol.EntityFramework.Repository.Test.Repositories;
+using Evol.Test.Model;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     /// <summary>
     /// UnitOfWorkTest 的摘要说明

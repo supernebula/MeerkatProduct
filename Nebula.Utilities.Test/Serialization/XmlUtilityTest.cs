@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Xml.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Utilities.Serialization;
+using Evol.Utilities.Serialization;
 using System.Diagnostics;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Utilities.Test.Serialization
+namespace Evol.Utilities.Test.Serialization
 {
     [TestClass]
     public class XmlUtilityTest

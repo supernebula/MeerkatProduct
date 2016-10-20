@@ -4,11 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Nebula.Domain.Messaging;
-using Nebula.Utilities;
+using Evol.Domain.Messaging;
+using Evol.Utilities;
 using Unity.Mvc5;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public class DependencyConfiguration
     {

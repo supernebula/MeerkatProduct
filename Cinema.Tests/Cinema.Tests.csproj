@@ -116,25 +116,25 @@
       <Project>{8472CD25-BF39-401D-A6A5-2C19F5A62AD6}</Project>
       <Name>Cinema.Website</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Cinema.Data\Nebula.Cinema.Data.csproj">
+    <ProjectReference Include="..\Nebula.Cinema.Data\Evol.Cinema.Data.csproj">
       <Project>{4663f279-3833-4e3f-82a8-a5c4cda62da0}</Project>
-      <Name>Nebula.Cinema.Data</Name>
+      <Name>Evol.Cinema.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Cinema.Domain\Nebula.Cinema.Domain.csproj">
+    <ProjectReference Include="..\Nebula.Cinema.Domain\Evol.Cinema.Domain.csproj">
       <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
-      <Name>Nebula.Cinema.Domain</Name>
+      <Name>Evol.Cinema.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Domain\Nebula.Domain.csproj">
+    <ProjectReference Include="..\Nebula.Domain\Evol.Domain.csproj">
       <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
-      <Name>Nebula.Domain</Name>
+      <Name>Evol.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Nebula.EntityFramework.Repository.csproj">
+    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj">
       <Project>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</Project>
-      <Name>Nebula.EntityFramework.Repository</Name>
+      <Name>Evol.EntityFramework.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

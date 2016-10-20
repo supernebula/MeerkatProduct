@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public interface IDependencyMapProvider
     {

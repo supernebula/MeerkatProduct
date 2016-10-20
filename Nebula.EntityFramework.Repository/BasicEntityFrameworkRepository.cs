@@ -5,9 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     /// <summary>
     /// 基础仓储

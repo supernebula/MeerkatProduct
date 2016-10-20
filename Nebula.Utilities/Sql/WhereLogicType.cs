@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Utilities.Sql
+namespace Evol.Utilities.Sql
 {
     public enum WhereLogicType
     {

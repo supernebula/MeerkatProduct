@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Domain.Messaging
+namespace Evol.Domain.Messaging
 {
     public interface ICommand
     {

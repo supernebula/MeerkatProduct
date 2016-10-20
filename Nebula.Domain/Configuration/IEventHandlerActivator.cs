@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Nebula.Domain.Events;
-using Nebula.Domain.Messaging;
+using Evol.Domain.Events;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public interface IEventHandlerActivator
     {

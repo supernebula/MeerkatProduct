@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Domain
+namespace Evol.Domain
 {
     public class UserSession : IUserSession
     {

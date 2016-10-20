@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Practices.Unity;
-using Nebula.Common;
-using Nebula.Domain.Data;
+using Evol.Common;
+using Evol.Domain.Data;
 
-namespace Nebula.Domain.Ioc
+namespace Evol.Domain.Ioc
 {
     public class DefualtDataConventionalDependencyRegister : IConventionalDependencyRegister
     {

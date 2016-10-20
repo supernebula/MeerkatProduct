@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Cinema.Domain.Models.Values
+namespace Evol.Cinema.Domain.Models.Values
 {
     public enum SeatType
     {

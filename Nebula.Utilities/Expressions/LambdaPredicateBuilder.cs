@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Nebula.Utilities.Expressions
+namespace Evol.Utilities.Expressions
 {
     /// <summary>
     /// IQueryable<T> 查询条件构建器, 目前只实现 &&、||

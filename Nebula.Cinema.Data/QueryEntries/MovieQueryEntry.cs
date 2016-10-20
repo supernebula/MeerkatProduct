@@ -5,13 +5,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
-using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Cinema.Domain.QueryEntries;
-using Nebula.Cinema.Domain.QueryEntries.Parameters;
-using Nebula.Cinema.Domain.Repositories;
-using Nebula.Common;
+using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Cinema.Domain.QueryEntries;
+using Evol.Cinema.Domain.QueryEntries.Parameters;
+using Evol.Cinema.Domain.Repositories;
+using Evol.Common;
 
-namespace Nebula.Cinema.Data.QueryEntries
+namespace Evol.Cinema.Data.QueryEntries
 {
     public class MovieQueryEntry : IMovieQueryEntry
     {

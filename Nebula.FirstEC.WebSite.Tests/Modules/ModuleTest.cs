@@ -3,14 +3,14 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Cinema.Domain.CommandHandlers;
-using Nebula.Cinema.Domain.Commands;
-using Nebula.Domain;
-using Nebula.Domain.Configuration;
-using Nebula.Domain.Messaging;
-using Nebula.FirstEC.Website;
+using Evol.Cinema.Domain.CommandHandlers;
+using Evol.Cinema.Domain.Commands;
+using Evol.Domain;
+using Evol.Domain.Configuration;
+using Evol.Domain.Messaging;
+using Evol.FirstEC.Website;
 
-namespace Nebula.First.WebSite.Tests.Modules
+namespace Evol.First.WebSite.Tests.Modules
 {
     [TestClass]
     public class ModuleTest
@@ -19,7 +19,7 @@ namespace Nebula.First.WebSite.Tests.Modules
         public void AppModuleInitTest()
         {
             var registrations1 = AppConfiguration.Current.Container.Registrations.Count();
-            var webModule = new NebulaFirstEcWebsiteModule();
+            var webModule = new EvolFirstEcWebsiteModule();
             webModule.Initailize();
             var registrations2 = AppConfiguration.Current.Container.Registrations.Count();
             Trace.WriteLine($"注册前：{registrations1}，注册后{registrations2}");

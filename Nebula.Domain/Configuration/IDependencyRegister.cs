@@ -2,7 +2,7 @@
 using System;
 using Microsoft.Practices.Unity;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public interface IDependencyRegister
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Redis.Repository.Test
+namespace Evol.Redis.Repository.Test
 {
     [TestClass]
     public class UnitTest1

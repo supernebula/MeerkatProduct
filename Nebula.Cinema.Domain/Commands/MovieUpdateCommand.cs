@@ -1,7 +1,7 @@
-﻿using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Domain.Commands;
+﻿using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Domain.Commands;
 
-namespace Nebula.Cinema.Domain.Commands
+namespace Evol.Cinema.Domain.Commands
 {
     public class MovieUpdateCommand : Command
     {

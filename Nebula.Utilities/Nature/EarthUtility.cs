@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Utilities.Nature
+namespace Evol.Utilities.Nature
 {
     public class EarthUtility
     {

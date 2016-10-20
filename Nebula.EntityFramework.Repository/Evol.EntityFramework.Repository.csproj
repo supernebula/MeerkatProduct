@@ -7,8 +7,8 @@
     <ProjectGuid>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.EntityFramework.Repository</RootNamespace>
-    <AssemblyName>Nebula.EntityFramework.Repository</AssemblyName>
+    <RootNamespace>Evol.EntityFramework.Repository</RootNamespace>
+    <AssemblyName>Evol.EntityFramework.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -87,13 +87,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.Utilities\Nebula.Utilities.csproj">
+    <ProjectReference Include="..\Nebula.Utilities\Evol.Utilities.csproj">
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
-      <Name>Nebula.Utilities</Name>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Nebula.FirstEC.Domain.Models.Entities
+namespace Evol.FirstEC.Domain.Models.Entities
 {
     public class InStock : BaseEntity
     {

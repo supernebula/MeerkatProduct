@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace Nebula.Utilities.Convert
+namespace Evol.Utilities.Convert
 {
     public static class DictionaryObjectConvert
     {

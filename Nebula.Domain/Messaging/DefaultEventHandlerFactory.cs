@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
-using Nebula.Domain.Events;
-using Nebula.Domain.Configuration;
+using Evol.Domain.Events;
+using Evol.Domain.Configuration;
 
-namespace Nebula.Domain.Messaging
+namespace Evol.Domain.Messaging
 {
     public class DefaultEventHandlerFactory : IEventHandlerFactory
     {

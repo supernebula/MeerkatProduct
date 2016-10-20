@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Reflection;
-using Nebula.EntityFramework.Repository;
+using Evol.EntityFramework.Repository;
 
-namespace Nebula.Cinema.Data
+namespace Evol.Cinema.Data
 {
 
     public class CinemaDbContext : NamedDbContext

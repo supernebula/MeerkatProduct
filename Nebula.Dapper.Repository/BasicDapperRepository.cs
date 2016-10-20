@@ -5,9 +5,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Practices.Unity;
 using Dapper;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Dapper.Repository
+namespace Evol.Dapper.Repository
 {
     public class BasicDapperRepository<T, TDbContext> : IDisposable where TDbContext : DapperDbContext, new() where T : class, IPrimaryKey
     {

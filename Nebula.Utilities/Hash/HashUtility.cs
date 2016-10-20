@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Nebula.Utilities.Hash
+namespace Evol.Utilities.Hash
 {
     public static class HashUtility
     {

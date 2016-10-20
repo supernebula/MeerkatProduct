@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Utilities.Expressions
+namespace Evol.Utilities.Expressions
 {
     public static class LambdaBuilderExtension
     {

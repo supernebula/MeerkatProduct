@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Nebula.FirstEC.Domain.Models.Entities;
+using Evol.FirstEC.Domain.Models.Entities;
 
-namespace Nebula.FirstEC.Data.Map
+namespace Evol.FirstEC.Data.Map
 {
     public class CategarySpecRelationMap : EntityTypeConfiguration<CategarySpecRelation>
     {

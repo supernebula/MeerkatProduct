@@ -10,7 +10,7 @@ using Code.Test.Model;
 using Microsoft.Practices.ObjectBuilder2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Practices.Unity;
-using Nebula.FirstEC.Domain;
+using Evol.FirstEC.Domain;
 
 namespace Code.Test
 {
@@ -21,16 +21,16 @@ namespace Code.Test
         public void ReflectionUnityTest()
         {
 
-            var interfNspace = "Nebula.FirstEC.Domain.Repositories";
-            var implNspace = "Nebula.FirstEC.Data.Repositories";
+            var interfNspace = "Evol.FirstEC.Domain.Repositories";
+            var implNspace = "Evol.FirstEC.Data.Repositories";
             
             //load assembly
             List<Type> types;
             //types =Assembly.GetExecutingAssembly().GetTypes().ToList(); 
             types = new List<Type>();
             var assemblies = new List<Assembly>();
-            //assemblies.Add(Assembly.Load("Nebula.FirstEC.Data"));
-            //assemblies.Add(Assembly.Load("Nebula.FirstEC.Domain"));
+            //assemblies.Add(Assembly.Load("Evol.FirstEC.Data"));
+            //assemblies.Add(Assembly.Load("Evol.FirstEC.Domain"));
             System.AppDomain.CurrentDomain.GetAssemblies().ToList().ForEach(assem =>
             {
                 types.AddRange(assem.GetTypes());

@@ -5,11 +5,11 @@
 //using System.Text;
 //using System.Threading.Tasks;
 //using Microsoft.Practices.Unity;
-//using Nebula.Common;
-//using Nebula.Domain.Ioc;
-//using Nebula.Domain.Messaging;
+//using Evol.Common;
+//using Evol.Domain.Ioc;
+//using Evol.Domain.Messaging;
 
-//namespace Nebula.Cinema.Domain.Modules
+//namespace Evol.Cinema.Domain.Modules
 //{
 //    public class DomainConventionalDependencyRegister : IConventionalDependencyRegister
 //    {

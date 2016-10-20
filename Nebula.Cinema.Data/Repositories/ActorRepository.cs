@@ -1,8 +1,8 @@
-﻿using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Cinema.Domain.Repositories;
-using Nebula.EntityFramework.Repository;
+﻿using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Cinema.Domain.Repositories;
+using Evol.EntityFramework.Repository;
 
-namespace Nebula.Cinema.Data.Repositories
+namespace Evol.Cinema.Data.Repositories
 {
     public class ActorRepository : BasicEntityFrameworkRepository<Actor, CinemaDbContext>, IActorRepository
     {

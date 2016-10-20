@@ -3,9 +3,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using Nebula.FirstEC.OpenAPI.Models;
+using Evol.FirstEC.OpenAPI.Models;
 
-namespace Nebula.FirstEC.OpenAPI
+namespace Evol.FirstEC.OpenAPI
 {
     // 配置此应用程序中使用的应用程序用户管理器。UserManager 在 ASP.NET Identity 中定义，并由此应用程序使用。
 

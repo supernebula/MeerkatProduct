@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.EntityFramework.Repository.Test.Core;
-using Nebula.EntityFramework.Repository.Test.Repositories;
-using Nebula.Test.Model;
+using Evol.EntityFramework.Repository.Test.Core;
+using Evol.EntityFramework.Repository.Test.Repositories;
+using Evol.Test.Model;
 
-namespace Nebula.EntityFramework.Repository.Test
+namespace Evol.EntityFramework.Repository.Test
 {
     [TestClass]
     public class BasicFuncTest

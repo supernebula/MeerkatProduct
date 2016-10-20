@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using Nebula.Test.Model;
+using Evol.Test.Model;
 
-namespace Nebula.EntityFramework.Repository.Test.Map
+namespace Evol.EntityFramework.Repository.Test.Map
 {
     public class FakeOrderMap : EntityTypeConfiguration<FakeOrder>
     {

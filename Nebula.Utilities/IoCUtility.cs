@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Utilities
+namespace Evol.Utilities
 {
     public class IoCUtility
     {

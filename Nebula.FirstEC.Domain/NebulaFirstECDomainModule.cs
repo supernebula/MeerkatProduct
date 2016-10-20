@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Reflection;
-using Nebula.Domain.Ioc;
-using Nebula.Domain.Modules;
+using Evol.Domain.Ioc;
+using Evol.Domain.Modules;
 
 
-namespace Nebula.FirstEC.Domain
+namespace Evol.FirstEC.Domain
 {
-    public class NebulaFirstEcDomainModule : AppModule
+    public class EvolFirstEcDomainModule : AppModule
     {
         private readonly IConventionalDependencyRegister _domainDependencyRegister;
 
-        public NebulaFirstEcDomainModule()
+        public EvolFirstEcDomainModule()
         {
             _domainDependencyRegister = new DefualtDomainConventionalDependencyRegister();
 

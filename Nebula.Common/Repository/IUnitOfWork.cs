@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Nebula.Common.Repository
+namespace Evol.Common.Repository
 {
     public interface IUnitOfWork : IDisposable
     {

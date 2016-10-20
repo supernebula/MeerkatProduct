@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.Cinema.Domain.Models.Entitys;
-using Nebula.Cinema.Domain.Models.Values;
-using Nebula.Common;
+using Evol.Cinema.Domain.Models.Entitys;
+using Evol.Cinema.Domain.Models.Values;
+using Evol.Common;
 
-namespace Nebula.Cinema.Domain.Models.AggregateRoots
+namespace Evol.Cinema.Domain.Models.AggregateRoots
 {
     public class ScreeningRoom : IPrimaryKey
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using Nebula.Utilities;
-using Nebula.Common;
+using Evol.Utilities;
+using Evol.Common;
 
-namespace Nebula.Test.Model
+namespace Evol.Test.Model
 {
     public class FakeOrder : BaseEntity
     {

@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace Nebula.Dapper.Repository
+namespace Evol.Dapper.Repository
 {
     public abstract class DapperDbContext
     {

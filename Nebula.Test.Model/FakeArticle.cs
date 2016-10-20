@@ -1,5 +1,5 @@
 ﻿
-namespace Nebula.Test.Model
+namespace Evol.Test.Model
 {
     public class FakeArticle : BaseEntity
     {

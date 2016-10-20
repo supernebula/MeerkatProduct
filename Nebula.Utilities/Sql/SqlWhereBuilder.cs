@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace Nebula.Utilities.Sql
+namespace Evol.Utilities.Sql
 {
 
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Redis.Repository
+namespace Evol.Redis.Repository
 {
     public class Class1
     {

@@ -1,4 +1,4 @@
-namespace Nebula.EntityFramework.Repository.Test.Migrations
+namespace Evol.EntityFramework.Repository.Test.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

@@ -1,6 +1,6 @@
 using System;
 
-namespace Nebula.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions
+namespace Evol.FirstEC.OpenAPI.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

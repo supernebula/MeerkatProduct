@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Nebula.Utilities.Test.Serialization
+namespace Evol.Utilities.Test.Serialization
 {
     [TestClass]
     public class JavaScriptTest

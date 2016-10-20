@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Domain.Data;
+using Evol.Domain.Data;
 
-namespace Nebula.FirstEC.Domain.QueryEntries
+namespace Evol.FirstEC.Domain.QueryEntries
 {
     public interface ICategaryTagRelationQuery : IQueryEntry
     {

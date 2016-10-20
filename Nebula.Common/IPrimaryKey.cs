@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nebula.Common
+namespace Evol.Common
 {
     public interface IPrimaryKey
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.Utilities.Test
+namespace Evol.Utilities.Test
 {
     [TestClass]
     public class FakeUtilityTest

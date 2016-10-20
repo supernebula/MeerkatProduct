@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Domain.Commands;
+using Evol.Domain.Commands;
 
-namespace Nebula.Cinema.Domain.Commands
+namespace Evol.Cinema.Domain.Commands
 {
     public class MovieDeleteCommand : Command
     {

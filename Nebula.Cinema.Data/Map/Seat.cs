@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Cinema.Domain.Models.Entitys;
+using Evol.Cinema.Domain.Models.Entitys;
 
-namespace Nebula.Cinema.Data.Map
+namespace Evol.Cinema.Data.Map
 {
     public class SeatMap : EntityTypeConfiguration<Seat>
     {

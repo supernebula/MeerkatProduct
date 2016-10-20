@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.Domain.Data
+namespace Evol.Domain.Data
 {
     public interface IQueryEntry
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.EntityFramework.Repository
+namespace Evol.EntityFramework.Repository
 {
     public class Paged<T> : List<T>, IPaged<T>
     {

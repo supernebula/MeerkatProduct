@@ -1,15 +1,15 @@
 ﻿//using System;
 //using System.Linq.Expressions;
 //using System.Diagnostics;
-//using Nebula.FirstEC.EFRepository.Model;
-//using Nebula.Utilities.Expressions;
+//using Evol.FirstEC.EFRepository.Model;
+//using Evol.Utilities.Expressions;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
-//using Nebula.Utilities.Tests;
-//using Nebula.Utilities.Sql;
+//using Evol.Utilities.Tests;
+//using Evol.Utilities.Sql;
 //using System.Collections;
 //using System.Collections.Generic;
 
-//namespace Nebula.Utilities.Test.Expressions
+//namespace Evol.Utilities.Test.Expressions
 //{
 //    [TestClass]
 //    public class DynamicExpressionTest

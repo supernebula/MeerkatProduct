@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nebula.FirstEC.WebSite
+namespace Evol.FirstEC.WebSite
 {
     public class BundleConfig
     {

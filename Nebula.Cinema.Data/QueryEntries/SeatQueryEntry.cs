@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Nebula.Cinema.Domain.Models.Entitys;
-using Nebula.Cinema.Domain.QueryEntries;
-using Nebula.Cinema.Domain.QueryEntries.Parameters;
-using Nebula.Common;
+using Evol.Cinema.Domain.Models.Entitys;
+using Evol.Cinema.Domain.QueryEntries;
+using Evol.Cinema.Domain.QueryEntries.Parameters;
+using Evol.Common;
 
-namespace Nebula.Cinema.Data.QueryEntries
+namespace Evol.Cinema.Data.QueryEntries
 {
     public class SeatQueryEntry : ISeatQueryEntry
     {

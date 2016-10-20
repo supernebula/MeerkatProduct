@@ -1,8 +1,8 @@
-﻿using Nebula.Utilities;
+﻿using Evol.Utilities;
 using System;
 using System.Collections.Generic;
 
-namespace Nebula.Test.Model
+namespace Evol.Test.Model
 {
     public class FakeProduct : BaseEntity
     {

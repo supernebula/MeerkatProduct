@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.FirstEC.Domain.Models
+namespace Evol.FirstEC.Domain.Models
 {
     public abstract class BaseEntity : IPrimaryKey, ISoftDelete
     {

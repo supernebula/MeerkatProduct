@@ -1,8 +1,8 @@
 ﻿using System;
-using Nebula.Common;
-using Nebula.Utilities;
+using Evol.Common;
+using Evol.Utilities;
 
-namespace Nebula.Test.Model
+namespace Evol.Test.Model
 {
     public class FakeUser : BaseEntity
     {

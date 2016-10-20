@@ -5,9 +5,9 @@
 //using System.Text;
 //using System.Threading.Tasks;
 //using Microsoft.Practices.Unity;
-//using Nebula.Domain.Ioc;
+//using Evol.Domain.Ioc;
 
-//namespace Nebula.FirstEC.Domain.Configuration
+//namespace Evol.FirstEC.Domain.Configuration
 //{
 //    class DomainIocRegister : IConventionalDependencyRegister
 //    {

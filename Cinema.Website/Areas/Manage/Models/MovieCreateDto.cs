@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using Nebula.Cinema.Domain.Models.AggregateRoots;
-using Nebula.Cinema.Domain.Models.Values;
+using Evol.Cinema.Domain.Models.AggregateRoots;
+using Evol.Cinema.Domain.Models.Values;
 
 namespace Cinema.Website.Areas.Manage.Models
 {

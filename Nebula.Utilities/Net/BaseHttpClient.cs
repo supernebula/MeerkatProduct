@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace Nebula.Utilities.Net
+namespace Evol.Utilities.Net
 {
     public class BaseClient
     {

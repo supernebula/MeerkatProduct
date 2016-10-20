@@ -1,7 +1,7 @@
 ﻿using System;
-using Nebula.Common;
+using Evol.Common;
 
-namespace Nebula.FirstEC.Domain.Models.Entities
+namespace Evol.FirstEC.Domain.Models.Entities
 {
     public class InStockSpecRelation : IPrimaryKey
     {

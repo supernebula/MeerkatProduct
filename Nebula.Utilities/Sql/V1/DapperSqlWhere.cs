@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Nebula.Utilities.Sql.V1
+namespace Evol.Utilities.Sql.V1
 {
     /// <summary>
     /// 

@@ -1,10 +1,10 @@
 ﻿//using System;
 //using System.Collections.Generic;
 //using System.Linq;
-//using Nebula.Domain.Ioc;
-//using Nebula.Utilities.Modules;
+//using Evol.Domain.Ioc;
+//using Evol.Utilities.Modules;
 
-//namespace Nebula.Utilities
+//namespace Evol.Utilities
 //{
 //    public abstract class AppModule
 //    {

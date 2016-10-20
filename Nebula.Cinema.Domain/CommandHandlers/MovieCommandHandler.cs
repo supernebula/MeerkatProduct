@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
-using Nebula.Cinema.Domain.Commands;
-using Nebula.Cinema.Domain.Repositories;
-using Nebula.Domain.Messaging;
+using Evol.Cinema.Domain.Commands;
+using Evol.Cinema.Domain.Repositories;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Cinema.Domain.CommandHandlers
+namespace Evol.Cinema.Domain.CommandHandlers
 {
     public class MovieCommandHandler : ICommandHandler<MovieCreateCommand>, ICommandHandler<MovieUpdateCommand>, ICommandHandler<MovieDeleteCommand>
     {

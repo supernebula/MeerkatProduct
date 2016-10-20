@@ -7,8 +7,8 @@
     <ProjectGuid>{8431D32B-C3BA-4EFB-B85D-7BC70798F571}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nebula.Utilities</RootNamespace>
-    <AssemblyName>Nebula.Utilities</AssemblyName>
+    <RootNamespace>Evol.Utilities</RootNamespace>
+    <AssemblyName>Evol.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -111,9 +111,9 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Common\Nebula.Common.csproj">
+    <ProjectReference Include="..\Nebula.Common\Evol.Common.csproj">
       <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
-      <Name>Nebula.Common</Name>
+      <Name>Evol.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

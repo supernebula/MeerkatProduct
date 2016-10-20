@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Cinema.Data.Test
+namespace Evol.Cinema.Data.Test
 {
     [TestClass]
     public class UnitTest1

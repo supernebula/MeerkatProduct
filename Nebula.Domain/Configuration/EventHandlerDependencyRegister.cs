@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Practices.Unity;
-using Nebula.Common;
-using Nebula.Domain.Messaging;
+using Evol.Common;
+using Evol.Domain.Messaging;
 
-namespace Nebula.Domain.Configuration
+namespace Evol.Domain.Configuration
 {
     public class EventHandlerDependencyRegister : IDependencyRegister
     {

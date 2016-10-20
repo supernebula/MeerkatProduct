@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Nebula.Utilities.Extension
+namespace Evol.Utilities.Extension
 {
     public static class RegexExtension
     {

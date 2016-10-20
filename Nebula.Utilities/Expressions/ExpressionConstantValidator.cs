@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Nebula.Utilities.Expressions
+namespace Evol.Utilities.Expressions
 {
     public class ExpressionConstantValidator : ExpressionVisitor
     {

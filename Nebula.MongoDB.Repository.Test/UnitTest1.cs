@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.MongoDB.Repository.Test
+namespace Evol.MongoDB.Repository.Test
 {
     [TestClass]
     public class UnitTest1

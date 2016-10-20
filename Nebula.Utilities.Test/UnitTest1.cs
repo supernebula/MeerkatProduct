@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Nebula.Utilities.Test
+namespace Evol.Utilities.Test
 {
     [TestClass]
     public class UnitTest1
