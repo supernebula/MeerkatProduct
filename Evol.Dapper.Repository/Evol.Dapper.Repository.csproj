@@ -81,7 +81,7 @@
       <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
       <Name>Evol.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nebula.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj">
+    <ProjectReference Include="..\Evol.EntityFramework.Repository\Evol.EntityFramework.Repository.csproj">
       <Project>{CD58A276-8A17-44FD-8764-09AD2E5403C4}</Project>
       <Name>Evol.EntityFramework.Repository</Name>
     </ProjectReference>

@@ -67,9 +67,21 @@
     <Compile Include="BatchQueryTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nebula.Test.Model\Evol.Test.Model.csproj">
+    <ProjectReference Include="..\Evol.Common\Evol.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Evol.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Dapper.Repository\Evol.Dapper.Repository.csproj">
+      <Project>{26505b67-6cb9-4191-a72f-c5d88ef7c635}</Project>
+      <Name>Evol.Dapper.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Test.Model\Evol.Test.Model.csproj">
       <Project>{a626fa52-997d-4ba1-aab9-83f0dc742ac9}</Project>
       <Name>Evol.Test.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

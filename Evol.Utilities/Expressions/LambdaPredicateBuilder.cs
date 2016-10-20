@@ -14,7 +14,7 @@ namespace Evol.Utilities.Expressions
     {
         private Expression<Func<T, bool>> _left;
 
-        private class DefaultExpression<T>
+        private class DefaultExpression<K>
         {
             public static Expression<Func<T, bool>> lambdaTrue = f => true;
             public static Expression<Func<T, bool>> lambdaFalse = f => false;

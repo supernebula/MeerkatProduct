@@ -196,6 +196,36 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evol.Cinema.Domain\Evol.Cinema.Domain.csproj">
+      <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
+      <Name>Evol.Cinema.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Common\Evol.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Evol.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Domain\Evol.Domain.csproj">
+      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
+      <Name>Evol.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.FirstEC.Data\Evol.FirstEC.Data.csproj">
+      <Project>{3a834c79-05fe-4c07-a321-b6057c28f075}</Project>
+      <Name>Evol.FirstEC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.FirstEC.Domain\Evol.FirstEC.Domain.csproj">
+      <Project>{47ff7f27-1a70-4437-93d6-d53793c16df4}</Project>
+      <Name>Evol.FirstEC.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Web\Evol.Web.csproj">
+      <Project>{23781fb0-e74b-4ea6-b078-3c86630c7733}</Project>
+      <Name>Evol.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -116,6 +116,28 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evol.Cinema.Domain\Evol.Cinema.Domain.csproj">
+      <Project>{270e23fd-9ce4-4ed5-84ed-c4c0ae5d1cdf}</Project>
+      <Name>Evol.Cinema.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Common\Evol.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Evol.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Domain\Evol.Domain.csproj">
+      <Project>{a4ba2b31-88d4-443e-8540-1751494d8577}</Project>
+      <Name>Evol.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.FirstEC.WebSite\Evol.FirstEC.Website.csproj">
+      <Project>{5d052a4b-c284-4107-96a1-d168c71fa160}</Project>
+      <Name>Evol.FirstEC.Website</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evol.Utilities\Evol.Utilities.csproj">
+      <Project>{8431d32b-c3ba-4efb-b85d-7bc70798f571}</Project>
+      <Name>Evol.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
