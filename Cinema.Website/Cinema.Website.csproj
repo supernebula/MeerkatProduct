@@ -268,7 +268,9 @@
     <Content Include="Areas\Manage\Views\Movie\Edit.cshtml" />
     <Content Include="Areas\Manage\Views\Movie\Create.cshtml" />
     <Content Include="Areas\Manage\Views\Default\Index.cshtml" />
-    <Content Include="log4net.config" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

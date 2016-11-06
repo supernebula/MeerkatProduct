@@ -14,9 +14,9 @@ namespace Evol.Web.Filters
        
         public override void OnException(ExceptionContext filterContext)
         {
-            var configPath = filterContext.HttpContext.Server.MapPath("~") + @"\log4net.config";
-            var configFileInfo = new System.IO.FileInfo(configPath);
-            var collection = log4net.Config.XmlConfigurator.Configure(configFileInfo);
+            //var configPath = filterContext.HttpContext.Server.MapPath("~") + @"\log4net.config";
+            //var configFileInfo = new System.IO.FileInfo(configPath);
+            //var collection = log4net.Config.XmlConfigurator.Configure(configFileInfo);
             ILog log = log4net.LogManager.GetLogger("logerror");
             log.Error(filterContext.Exception.Message, filterContext.Exception);
             filterContext.ExceptionHandled = true;
