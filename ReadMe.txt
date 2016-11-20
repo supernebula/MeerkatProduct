@@ -13,3 +13,5 @@ EntityFramework6 Tutorial
 http://www.entityframeworktutorial.net/
 Data Developer Center - Entity Framework (EF) Documentation
 https://msdn.microsoft.com/en-us/data/ee712907.aspx
+Eable ORM:
+ServiceStackOrmLite
