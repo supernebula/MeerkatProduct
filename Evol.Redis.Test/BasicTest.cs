@@ -49,6 +49,15 @@ namespace Evol.Redis.Test
             redis.Close();
         }
 
+        public void BitSetTest()
+        {
+            var redis = ConnectionMultiplexer.Connect("localhost");
+            Assert.IsTrue(redis.IsConnected);
+            var db = redis.GetDatabase();
+            db.StringGetBit((RedisKey)"", 1);
+
+        }
+
 
     }
 }
