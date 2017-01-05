@@ -58,12 +58,15 @@ namespace Evol.Redis.Test
             db.StringSetBit("bloom", 0, 1 == 1);
             db.StringSetBit("bloom", 1, 1 == 1);
             db.StringSetBit("bloom", 99, 1 == 1);
+            var bitSetCount = db.StringBitCount("bloom");
 
             var b0 = db.StringGetBit("bloom", 0) ? 1 : 0;
             var b1 = db.StringGetBit("bloom", 1) ? 1 : 0;
             var b2 = db.StringGetBit("bloom", 2) ? 1 : 0;
             var b3 = db.StringGetBit("bloom", 3) ? 1 : 0;
             var b99 = db.StringGetBit("bloom", 99) ? 1 : 0;
+            
+            Trace.WriteLine("bitSetCount=" + bitSetCount);
             Trace.WriteLine(string.Format("{0:d}{1:d}{2:d}{3:d}.........{4:d}", b0, b1, b2, b3, b99));
 
         }
