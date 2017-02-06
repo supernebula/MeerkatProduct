@@ -3,19 +3,33 @@ using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
 
 namespace Evol.MongoDB.Repository
 {
-    public abstract class BaseMongoDBRepository<T, TMongoDBContext> where TMongoDBContext : NamedMongoDBContext, new() where T : class
+    public abstract class BaseMongoDbRepository<T, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : class
     {
-        private TMongoDBContext _mongoDBContext { get; set; }
+        private TMongoDbContext MongoDbContext => MongoDbContextFactory.Get<TMongoDbContext>();
 
-        private IMongoDatabase _database { get; set; }
+        protected IMongoDatabase Database => MongoDbContext.Database;
 
+        protected IMongoCollection<T> Collection => Database.GetCollection<T>(nameof(T));
 
+        [Dependency]
+        public IMongoDbContextFactory MongoDbContextFactory { get; set; }
 
-        public BaseMongoDBRepository()
+        protected BaseMongoDbRepository()
         {
         }
+
+        protected BaseMongoDbRepository(IMongoDbContextFactory mongoDbContextFactory)
+        {
+            MongoDbContextFactory = mongoDbContextFactory;
+        }
+
+        //public T Find(ObjectId id)
+        //{
+        //    //Collection.Find(e => e)
+        //}
     }
 }

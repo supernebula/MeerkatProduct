@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Evol.MongoDB.Repository
 {
-    public class DefaultMongoDBContextFactory : IMongoDBContextFactory
+    public class DefaultMongoDbContextFactory : IMongoDbContextFactory
     {
+        private NamedMongoDbContext _dbContext;
 
-        public TDbContext Get<TDbContext>() where TDbContext : NamedMongoDBContext
-        {
-            throw new NotImplementedException();
+        public TDbContext Get<TDbContext>() where TDbContext : NamedMongoDbContext, new()
+        { 
+            if(_dbContext == null)
+                _dbContext = new TDbContext();
+            return (TDbContext)_dbContext;
         }
     }
 }

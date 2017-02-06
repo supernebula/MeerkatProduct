@@ -1,8 +1,8 @@
 ﻿
 namespace Evol.MongoDB.Repository
 {
-    public interface IMongoDBContextFactory
+    public interface IMongoDbContextFactory
     {
-        TDbContext Get<TDbContext>() where TDbContext : NamedMongoDBContext;
+        TDbContext Get<TDbContext>() where TDbContext : NamedMongoDbContext, new();
     }
 }
