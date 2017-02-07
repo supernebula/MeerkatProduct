@@ -4,10 +4,11 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
+using MongoDB.Bson.Serialization;
 
 namespace Evol.MongoDB.Repository
 {
-    public abstract class BaseMongoDbRepository<T, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : class
+    public abstract class BaseMongoDbRepository<T, TKey, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : IEntity<TKey> 
     {
         private TMongoDbContext MongoDbContext => MongoDbContextFactory.Get<TMongoDbContext>();
 
@@ -27,9 +28,10 @@ namespace Evol.MongoDB.Repository
             MongoDbContextFactory = mongoDbContextFactory;
         }
 
-        //public T Find(ObjectId id)
+        //public T Find(TKey id)
         //{
-        //    //Collection.Find(e => e)
+        //    BsonClassMap.RegisterClassMap<T>(cm => { });
+        //    Collection.Find(e => e.Id == id).FirstOrDefault();
         //}
     }
 }

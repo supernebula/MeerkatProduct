@@ -52,7 +52,6 @@
     <Compile Include="INamed.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\IUnitOfWorkOptions.cs" />
-    <Compile Include="Repository\NamedDbContext.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
