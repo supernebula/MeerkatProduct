@@ -66,12 +66,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="MongoMap\OrderMap.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Evol.Common\Evol.Common.csproj">
+      <Project>{ffd8ced2-aad0-443d-9c53-943c7a2327ee}</Project>
+      <Name>Evol.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Evol.MongoDB\Evol.MongoDB.csproj">
       <Project>{44ca5261-4125-4cb0-8d79-c1b1d905a188}</Project>
       <Name>Evol.MongoDB</Name>

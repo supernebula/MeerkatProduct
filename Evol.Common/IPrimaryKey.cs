@@ -2,8 +2,12 @@
 
 namespace Evol.Common
 {
-    public interface IPrimaryKey
+    public interface IPrimaryKey : IPrimaryKey<Guid>
     {
-        Guid Id { get; set; }
+    }
+
+    public interface IPrimaryKey<TKey>
+    {
+        TKey Id { get; set; }
     }
 }

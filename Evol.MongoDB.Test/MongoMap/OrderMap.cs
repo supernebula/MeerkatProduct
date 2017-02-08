@@ -15,9 +15,7 @@ namespace Evol.MongoDB.Test.MongoMap
             BsonClassMap.RegisterClassMap<Order>(cm =>
             {
                 cm.AutoMap();
-                cm.MapMember(c => c.Address);
-                cm.MapMember(c => c.Amount);
-                //cm.SetIgnoreExtraElements();
+                cm.MapIdProperty(e => e.Id);
             });
         }
     }

@@ -7,16 +7,13 @@ using Evol.MongoDB.Repository;
 
 namespace Evol.MongoDB.Test.Entities
 {
-    public class Order : IEntity<Guid>
+    public class Order : BaseEntity
     {
-        public Guid Id { get; set; }
-
         public string Receiver { get; set; }
 
         public string Address { get; set; }
 
         public decimal Amount { get; set; }
 
-        public DateTime CreateTime { get; set; }
     }
 }
