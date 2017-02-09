@@ -4,7 +4,7 @@ using Evol.Common;
 
 namespace Evol.MongoDB.Repository
 {
-    public class NamedMongoDbContext : MongoClient, INamed
+    public class NamedMongoDbContext : INamed
     {
         public string Name { get; set; }
 

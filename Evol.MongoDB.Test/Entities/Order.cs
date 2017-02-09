@@ -7,7 +7,7 @@ using Evol.MongoDB.Repository;
 
 namespace Evol.MongoDB.Test.Entities
 {
-    public class Order : BaseEntity
+    public class Order : BaseEntity, IEntity<string>
     {
         public string Receiver { get; set; }
 

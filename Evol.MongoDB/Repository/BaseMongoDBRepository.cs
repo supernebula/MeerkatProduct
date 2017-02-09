@@ -14,7 +14,7 @@ namespace Evol.MongoDB.Repository
 {
     public abstract class BaseMongoDbRepository<T, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : IEntity<string> 
     {
-        private TMongoDbContext MongoDbContext => MongoDbContextFactory.Get<TMongoDbContext>();
+        private NamedMongoDbContext MongoDbContext => MongoDbContextFactory.Get<TMongoDbContext>();
 
         protected IMongoDatabase Database => MongoDbContext.Database;
 

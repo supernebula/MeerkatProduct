@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,22 @@ namespace Evol.MongoDB.Repository
 {
     public class DefaultMongoDbContextFactory : IMongoDbContextFactory
     {
-        private NamedMongoDbContext _dbContext;
+        private ConcurrentDictionary<Type, NamedMongoDbContext> _contextDic = new ConcurrentDictionary<Type, NamedMongoDbContext>();
 
-        public TDbContext Get<TDbContext>() where TDbContext : NamedMongoDbContext, new()
-        { 
-            if(_dbContext == null)
-                _dbContext = new TDbContext();
-            return (TDbContext)_dbContext;
+        public NamedMongoDbContext Get<TDbContext>() where TDbContext : NamedMongoDbContext, new()
+        {
+            var typeKey = typeof(TDbContext);
+            NamedMongoDbContext dbContext = null;
+            if (_contextDic.ContainsKey(typeKey))
+                _contextDic.TryGetValue(typeKey, out dbContext);
+            if (dbContext == null)
+                _contextDic.TryRemove(typeKey, out dbContext);
+            else
+                return dbContext;
+
+            dbContext = new TDbContext();
+            _contextDic.TryAdd(typeKey, dbContext);
+            return dbContext;
         }
     }
 }
