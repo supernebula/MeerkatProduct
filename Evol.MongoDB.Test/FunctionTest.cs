@@ -22,14 +22,15 @@ namespace Evol.MongoDB.Test
         {
             var item = new Order()
             {
-                Id = Guid.NewGuid().ToString(),
+                //Id = ,
                 Receiver = "王五",
                 Address = "文一路500号",
                 Amount = 120.6m,
                 CreateTime = DateTime.Now
             };
 
-            orderRepository.AddAsync(item);
+            orderRepository.AddAsync(item).GetAwaiter().GetResult();
+            Assert.IsTrue(true);
         }
     }
 }

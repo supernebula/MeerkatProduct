@@ -18,7 +18,20 @@ namespace Evol.MongoDB.Repository
 
         protected IMongoDatabase Database => MongoDbContext.Database;
 
-        protected IMongoCollection<T> Collection => Database.GetCollection<T>(nameof(T));
+        private IMongoCollection<T> _collection;
+
+        protected IMongoCollection<T> Collection
+        {
+            get
+            {
+                if (_collection == null)
+                {
+                    var name = typeof(T).Name.ToLower();
+                    _collection = Database.GetCollection<T>(name);
+                }
+                return _collection; 
+            }
+        }
 
         [Dependency]
         public IMongoDbContextFactory MongoDbContextFactory { get; set; }
