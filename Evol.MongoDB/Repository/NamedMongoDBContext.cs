@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using MongoDB.Bson;
+﻿using System.Configuration;
 using MongoDB.Driver;
 using Evol.Common;
 
@@ -15,10 +12,13 @@ namespace Evol.MongoDB.Repository
 
         public IMongoDatabase Database { get; private set; }
 
-        protected NamedMongoDbContext(string connectionString, string databaseName)
+        protected NamedMongoDbContext(string connectionStringName)
         {
-            MongoClient = new MongoClient(connectionString);
-            Database = MongoClient.GetDatabase(databaseName);
+            Name = connectionStringName;
+            var connectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
+            var mongoUrl = new MongoUrl(connectionString);
+            MongoClient = new MongoClient(mongoUrl);
+            Database = MongoClient.GetDatabase(mongoUrl.DatabaseName);
         }
     }
 }

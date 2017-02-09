@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GenderType.cs" />
     <Compile Include="IDbContextSingleFactory.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="InterfaceClassPair.cs" />
     <Compile Include="IPaged.cs" />
     <Compile Include="IPrimaryKey.cs" />

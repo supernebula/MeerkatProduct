@@ -17,6 +17,7 @@ namespace Evol.MongoDB.Test.MongoMap
                 cm.AutoMap();
                 cm.MapIdProperty(e => e.Id);
             });
+
         }
     }
 }
