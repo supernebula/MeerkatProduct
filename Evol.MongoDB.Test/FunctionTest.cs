@@ -1,6 +1,8 @@
 ﻿using System;
 using Evol.MongoDB.Repository;
 using Evol.MongoDB.Test.Entities;
+using Evol.MongoDB.Test.Repository;
+using Evol.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Evol.MongoDB.Test
@@ -8,28 +10,31 @@ namespace Evol.MongoDB.Test
     [TestClass]
     public class FunctionTest
     {
-        private static OrderRepository orderRepository;
+        private static UserRepository userRepository;
 
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
 
-            orderRepository = new OrderRepository(new DefaultMongoDbContextFactory());
+            userRepository = new UserRepository(new DefaultMongoDbContextFactory());
         }
 
         [TestMethod]
         public void AddOneTest()
         {
-            var item = new Order()
+            var gender = FakeUtility.CreateGender();
+            var item = new User()
             {
-                //Id = ,
-                Receiver = "王五",
-                Address = "文一路500号",
-                Amount = 120.6m,
+                Username = FakeUtility.CreateUsername(5, 10),
+                Password = FakeUtility.CreatePassword(),
+                Email = FakeUtility.CreateEmail(),
+                Name = FakeUtility.CreatePersonName(gender),
+                Gender = gender,
+                Age = FakeUtility.RandomInt(18, 50),
                 CreateTime = DateTime.Now
             };
 
-            orderRepository.AddAsync(item).GetAwaiter().GetResult();
+            userRepository.AddAsync(item).GetAwaiter().GetResult();
             Assert.IsTrue(true);
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Evol.MongoDB.Repository;
 using Evol.MongoDB.Test.Entities;
 
-namespace Evol.MongoDB.Test
+namespace Evol.MongoDB.Test.Repository
 {
     public class OrderRepository : BaseMongoDbRepository<Order, TestMongoContext>
     {
