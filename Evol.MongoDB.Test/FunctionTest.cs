@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Evol.MongoDB.Repository;
 using Evol.MongoDB.Test.Entities;
 using Evol.MongoDB.Test.Repository;
@@ -36,6 +37,13 @@ namespace Evol.MongoDB.Test
 
             userRepository.AddAsync(item).GetAwaiter().GetResult();
             Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void SelectAllTest()
+        {
+            var all = userRepository.Queryable<User>(null, null).ToList();
+            Assert.IsNotNull(all);
         }
     }
 }
