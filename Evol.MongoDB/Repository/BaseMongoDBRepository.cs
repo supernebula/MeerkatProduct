@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Threading.Tasks;
 using Evol.Common;
 using Microsoft.Practices.Unity;
-using MongoDB.Bson.Serialization;
 using MongoDB.Driver.Linq;
 
 namespace Evol.MongoDB.Repository
@@ -64,7 +62,21 @@ namespace Evol.MongoDB.Repository
         /// <returns></returns>
         public virtual async Task<T> FindOneAsync(FilterDefinition<T> filter)
         {
+            if (filter == null)
+                throw new ArgumentNullException(nameof(filter));
             return await Collection.Find(filter).FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// 根据条件，返回单个文档
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public virtual async Task<T> FindOneAsync(Expression<Func<T, bool>> predicate)
+        {
+            if (predicate == null)
+                throw new ArgumentNullException(nameof(predicate));
+            return await Collection.AsQueryable().FirstOrDefaultAsync(predicate);
         }
 
         /// <summary>
@@ -87,9 +99,9 @@ namespace Evol.MongoDB.Repository
         /// <returns></returns>
         public virtual IQueryable<T> Queryable<TKey>(Expression<Func<T, bool>> predicate, Expression<Func<T, TKey>> orderByKeySelector, bool isDescending = true)
         {
-            var query = Collection.AsQueryable();
-            if (predicate != null)
-                query = query.Where(predicate);
+            if (predicate == null)
+                throw new ArgumentNullException(nameof(predicate));
+            var query = Collection.AsQueryable().Where(predicate);
             if (orderByKeySelector != null)
                 query = isDescending ? query.OrderByDescending(orderByKeySelector) : query.OrderBy(orderByKeySelector);
             return query;
@@ -105,6 +117,8 @@ namespace Evol.MongoDB.Repository
         /// <returns></returns>
         public virtual IFindFluent<T,T> FluentQueryable<TKey>(FilterDefinition<T> filter, string orderByPropertyName, bool isDescending = true)
         {
+            if (filter == null)
+                throw new ArgumentNullException(nameof(filter));
             var fluent = Collection.Find(filter);
             if (string.IsNullOrWhiteSpace(orderByPropertyName))
                 return fluent;
@@ -125,7 +139,9 @@ namespace Evol.MongoDB.Repository
         /// <returns></returns>
         public virtual async Task<List<T>> SelectAsync<TKey>(Expression<Func<T, bool>> predicate, Expression<Func<T, TKey>> orderByKeySelector, bool isDescending = true)
         {
-            var query = Collection.AsQueryable().Where(predicate);
+            var query = Collection.AsQueryable();
+            if (predicate != null)
+                query = query.Where(predicate);
             if (orderByKeySelector == null)
                 return await query.ToListAsync();
 
@@ -164,7 +180,9 @@ namespace Evol.MongoDB.Repository
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 20;
 
-            var query = Collection.AsQueryable().Where(predicate);
+            var query = Collection.AsQueryable();
+            if (predicate != null)
+                query = query.Where(predicate);
             var recordTotal = query.Count();
             var pageTotal = recordTotal/pageSize;
             if (recordTotal%pageSize > 0) pageTotal++;

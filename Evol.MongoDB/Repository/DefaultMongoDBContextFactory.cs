@@ -9,7 +9,7 @@ namespace Evol.MongoDB.Repository
 {
     public class DefaultMongoDbContextFactory : IMongoDbContextFactory
     {
-        private ConcurrentDictionary<Type, NamedMongoDbContext> _contextDic = new ConcurrentDictionary<Type, NamedMongoDbContext>();
+        private readonly ConcurrentDictionary<Type, NamedMongoDbContext> _contextDic = new ConcurrentDictionary<Type, NamedMongoDbContext>();
 
         public NamedMongoDbContext Get<TDbContext>() where TDbContext : NamedMongoDbContext, new()
         {
