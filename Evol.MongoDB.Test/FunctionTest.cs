@@ -14,22 +14,22 @@ namespace Evol.MongoDB.Test
     [TestClass]
     public class FunctionTest
     {
-        private static UserRepository userRepository;
+        private static UserRepository _userRepository;
 
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
 
-            userRepository = new UserRepository(new DefaultMongoDbContextFactory());
+            _userRepository = new UserRepository(new DefaultMongoDbContextFactory());
             InitData();
         }
 
         [ClassCleanup]
         public static void ClassClear()
         {
-            var list = userRepository.SelectAsync(null, e => e.Id).GetAwaiter().GetResult().ToList();
+            var list = _userRepository.SelectAsync(null, e => e.Id).GetAwaiter().GetResult().ToList();
             var ids = list.Skip(5).Select(e => e.Id).ToList();
-            var deleted = userRepository.DeleteBatchAsync(ids).GetAwaiter().GetResult();
+            var deleted = _userRepository.DeleteBatchAsync(ids).GetAwaiter().GetResult();
         }
 
         private static void InitData()
@@ -48,7 +48,7 @@ namespace Evol.MongoDB.Test
                     CreateTime = DateTime.Now
                 };
 
-                userRepository.AddAsync(item).GetAwaiter().GetResult();
+                _userRepository.AddAsync(item).GetAwaiter().GetResult();
                 Assert.IsTrue(true);
             }
         }
@@ -57,7 +57,7 @@ namespace Evol.MongoDB.Test
 
         private User FakeItem()
         {
-            var paged = userRepository.PagedSelectAsync(null, 1, 1).GetAwaiter().GetResult();
+            var paged = _userRepository.PagedSelectAsync(null, 1, 1).GetAwaiter().GetResult();
             var first = paged.FirstOrDefault();
             return first;
         }
@@ -77,7 +77,7 @@ namespace Evol.MongoDB.Test
                 CreateTime = DateTime.Now
             };
 
-            userRepository.AddAsync(item).GetAwaiter().GetResult();
+            _userRepository.AddAsync(item).GetAwaiter().GetResult();
             Assert.IsTrue(true);
         }
 
@@ -87,7 +87,7 @@ namespace Evol.MongoDB.Test
         public void DeleteOneTest()
         {
             var fakeUser = FakeItem();
-            var deleted = userRepository.DeleteAsync(fakeUser.Id).GetAwaiter().GetResult();
+            var deleted = _userRepository.DeleteAsync(fakeUser.Id).GetAwaiter().GetResult();
             Assert.IsTrue(deleted);
         }
 
@@ -101,7 +101,7 @@ namespace Evol.MongoDB.Test
             fakeUser.Age = FakeUtility.RandomInt(18, 50);
             fakeUser.CreateTime = DateTime.Now;
 
-            var updated = userRepository.UpdateAsync(fakeUser).GetAwaiter().GetResult();
+            var updated = _userRepository.UpdateAsync(fakeUser).GetAwaiter().GetResult();
             Assert.IsTrue(updated);
         }
 
@@ -112,12 +112,12 @@ namespace Evol.MongoDB.Test
             var fakeUser = FakeItem();
 
 
-            var user1 = userRepository.FindOneAsync(e => e.Email == fakeUser.Email).GetAwaiter().GetResult();
+            var user1 = _userRepository.FindOneAsync(e => e.Email == fakeUser.Email).GetAwaiter().GetResult();
             Assert.IsNotNull(user1);
             Expression<Func<User, bool>> express = u => u.Email == fakeUser.Email;
             FilterDefinition<User> filter = express;
 
-            var user2 = userRepository.FindOneAsync(filter).GetAwaiter().GetResult();
+            var user2 = _userRepository.FindOneAsync(filter).GetAwaiter().GetResult();
             Assert.IsNotNull(user2);
         }
 
@@ -125,7 +125,7 @@ namespace Evol.MongoDB.Test
         [TestMethod]
         public void SelectAllTest()
         {
-            var all = userRepository.Queryable<User>(null, null).ToList();
+            var all = _userRepository.Queryable<User>(null, null).ToList();
             Trace.WriteLine($"user count:{all.Count}");
             foreach (var item in all)
             {

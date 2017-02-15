@@ -73,7 +73,7 @@
     <Compile Include="FunctionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
-    <Compile Include="Repository\User.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="TestMongoContext.cs" />
   </ItemGroup>
   <ItemGroup>
