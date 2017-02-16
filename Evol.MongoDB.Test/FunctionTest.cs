@@ -23,11 +23,11 @@ namespace Evol.MongoDB.Test
         {
 
             _userRepository = new UserRepository(new DefaultMongoDbContextFactory());
+            InitClear();
             InitData();
         }
 
-        [ClassCleanup]
-        public static void ClassClear()
+        public static void InitClear()
         {
             var list = _userRepository.SelectAsync(null, e => e.Id).GetAwaiter().GetResult().ToList();
             var ids = list.Skip(5).Select(e => e.Id).ToList();
@@ -126,7 +126,7 @@ namespace Evol.MongoDB.Test
             fakeUser.Password = FakeUtility.CreatePassword();
             fakeUser.Email = FakeUtility.CreateEmail();
             fakeUser.Age = FakeUtility.RandomInt(18, 50);
-            fakeUser.CreateTime = DateTime.Now;
+            fakeUser.UpdateTime = DateTime.Now;
 
             var updated = _userRepository.UpdateAsync(fakeUser).GetAwaiter().GetResult();
             Assert.IsTrue(updated);
@@ -136,17 +136,16 @@ namespace Evol.MongoDB.Test
         public void UpdateOneDefinitionTest()
         {
             var fakeUser = FakeItem();
-            fakeUser.Gender = FakeUtility.CreateGender();
-            fakeUser.Password = FakeUtility.CreatePassword();
-            fakeUser.Email = FakeUtility.CreateEmail();
-            fakeUser.Age = FakeUtility.RandomInt(18, 50);
-            fakeUser.CreateTime = DateTime.Now;
-
-            var objUpDef = new ObjectUpdateDefinition<User>(fakeUser);
-            objUpDef.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "0000");
-            //var upDefBuilder = new ObjectUpdateDefinitionUpdateDefinitionBuilder<User>();
-            //var upDef = upDefBuilder.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "001");
-            var updated = _userRepository.UpdateAsync(fakeUser.Id, objUpDef).GetAwaiter().GetResult();
+            //var objUpDef = new ObjectUpdateDefinition<User>(new { Gender = GenderType.Male, Email = "0000@8010.net" });
+            ////objUpDef.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "0000");
+            ////var upDefBuilder = new ObjectUpdateDefinitionUpdateDefinitionBuilder<User>();
+            ////var upDef = upDefBuilder.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "001");
+            Trace.WriteLine($"Update Id:{fakeUser.Id}");
+            var updateDef = Builders<User>.Update.Set(e => e.Gender, GenderType.Female)
+                .Set(e => e.Email, "0000@8010.net")
+                .Set(e => e.Name, fakeUser.Name + "0001")
+                .Set(e => e.UpdateTime, DateTime.Now);
+            var updated = _userRepository.UpdateAsync(fakeUser.Id, updateDef).GetAwaiter().GetResult();
             Assert.IsTrue(updated);
         }
 
