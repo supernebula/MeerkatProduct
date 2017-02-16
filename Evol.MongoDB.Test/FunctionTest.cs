@@ -136,10 +136,6 @@ namespace Evol.MongoDB.Test
         public void UpdateOneDefinitionTest()
         {
             var fakeUser = FakeItem();
-            //var objUpDef = new ObjectUpdateDefinition<User>(new { Gender = GenderType.Male, Email = "0000@8010.net" });
-            ////objUpDef.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "0000");
-            ////var upDefBuilder = new ObjectUpdateDefinitionUpdateDefinitionBuilder<User>();
-            ////var upDef = upDefBuilder.AddToSet(nameof(fakeUser.Name), fakeUser.Name + "001");
             Trace.WriteLine($"Update Id:{fakeUser.Id}");
             var updateDef = Builders<User>.Update.Set(e => e.Gender, GenderType.Female)
                 .Set(e => e.Email, "0000@8010.net")
