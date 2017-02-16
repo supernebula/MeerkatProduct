@@ -110,12 +110,11 @@ namespace Evol.MongoDB.Repository
         /// <summary>
         /// 根据条件，返回排序链表查询源
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
         /// <param name="filter"></param>
         /// <param name="orderByPropertyName"></param>
         /// <param name="isDescending"></param>
         /// <returns></returns>
-        public virtual IFindFluent<T,T> FluentQueryable<TKey>(FilterDefinition<T> filter, string orderByPropertyName, bool isDescending = true)
+        public virtual IFindFluent<T,T> FluentQueryable(FilterDefinition<T> filter, string orderByPropertyName, bool isDescending = true)
         {
             if (filter == null)
                 throw new ArgumentNullException(nameof(filter));
@@ -157,7 +156,7 @@ namespace Evol.MongoDB.Repository
         /// <param name="orderByPropertyName"></param>
         /// <param name="isDescending"></param>
         /// <returns></returns>
-        public virtual async Task<List<T>> SelectAsync<TKey>(FilterDefinition<T> filter, string orderByPropertyName, bool isDescending = true)
+        public virtual async Task<List<T>> SelectAsync(FilterDefinition<T> filter, string orderByPropertyName, bool isDescending = true)
         {
             var fluent = Collection.Find(filter);
             if (string.IsNullOrWhiteSpace(orderByPropertyName))
