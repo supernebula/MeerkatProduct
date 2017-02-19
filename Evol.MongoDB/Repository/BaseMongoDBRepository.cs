@@ -10,7 +10,7 @@ using MongoDB.Driver.Linq;
 
 namespace Evol.MongoDB.Repository
 {
-    public abstract class BaseMongoDbRepository<T, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : IEntity<string> 
+    public class BaseMongoDbRepository<T, TMongoDbContext> where TMongoDbContext : NamedMongoDbContext, new() where T : IEntity<string> 
     {
         private NamedMongoDbContext MongoDbContext => MongoDbContextFactory.Get<TMongoDbContext>();
 

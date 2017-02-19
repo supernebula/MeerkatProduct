@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BaseMongoDBRepository.cs" />
+    <Compile Include="Repository\BaseQueryEntry.cs" />
     <Compile Include="Repository\DefaultMongoDBContextFactory.cs" />
     <Compile Include="Repository\IMongoDBContextFactory.cs" />
     <Compile Include="Repository\NamedMongoDBContext.cs" />
