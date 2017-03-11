@@ -13,7 +13,7 @@ namespace Evol.Utilities.Test.Collection
         public void TestMethod1()
         {
             var dateSize = 1000 * 1000;
-            var bloom = new BloomFilter<string>(dateSize, 1000 * 1000 * 1000);
+            var bloom = new MemoryBloomFilter<string>(dateSize, 1000 * 1000 * 1000);
 
             var list1 = new List<string>();
             for (int i = 0; i < dateSize; i++)

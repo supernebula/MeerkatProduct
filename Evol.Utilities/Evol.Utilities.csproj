@@ -71,9 +71,10 @@
   <ItemGroup>
     <Compile Include="AppModule~.cs" />
     <Compile Include="Cache\ExtendMemoryCache.cs" />
-    <Compile Include="Collection\BloomFilter.cs" />
+    <Compile Include="Collection\MemoryBloomFilter.cs" />
     <Compile Include="Convert\DictionaryObjectConvert.cs" />
     <Compile Include="Expressions\LambdaBuilder.cs" />
+    <Compile Include="Linq\PredicateBuilder.cs" />
     <Compile Include="Modules\DependModuleAttribute~.cs" />
     <Compile Include="Expressions\DefaultConstantValidtor.cs" />
     <Compile Include="Expressions\ExpressionConstantValidator.cs" />

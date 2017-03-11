@@ -29,7 +29,7 @@ namespace Evol.Utilities
             var interfaces  = FindTypeOfNamespace(interfaceNamespace, true, assemblies).Where(t => t.IsPublic).ToList();
 
 
-
+            TypeInfo
             //finds all interface with in specity namespaces
             //var interfaces = types.Where(t => t.IsPublic && t.IsInterface && t.Namespace == interfaceNamespace).ToList();
             //finds all implementClass of interface with in assembly
